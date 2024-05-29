@@ -1,0 +1,11 @@
+#+title: Kernel
+
+* What is Kernel?
+The core component of [[file:./os.org][Operating Systems]]
+
+* Features
+** Managing hardware by provide the software interface
+- memory
+- drive
+
+  kernel often manages protection of programs and multitasking

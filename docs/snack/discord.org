@@ -1,0 +1,135 @@
+#+title: Discord
+
+* Important Factors
+** For Databas
+e
+- Scalable
+- Fault-tolerant
+- relatively low maintenance.
+
+* Common Problems
+** In Database
+- Latency is unpredictable
+*** In Cassandra
+
+**** Latency
+
+All messages for a given channel and bucket will be stored together and replicated across three nodes
+
+***** Reads are more expensive than writes.
+- Writes - appended to a commit log and =written to an in memory structure= called a memtable that is eventually flushed to disk.
+- Reads - need to query the memtable and potentially multiple SSTables (on-disk-files), =a more expensive operation=.
+
+***** Conclusion
+Not separated large amount of reads -> Hotspot -> Low latency -> Affect to the other queries in the same node -> resulting in broader end-user impact.
+
+**** Cluster maintenance
+
+***** We're falling behind on compactions then Cassandra
+Cassandra would compact SSTables on disk for more performant reads.
+
+***** Tuning the JVM's garbage collector and heap settings
+(Written in Java)
+It because GC pauses =would cause significant latency spikes=.
+
+* ScyllaDB
+- Cassandra-compatible
+- Written in C++
+
+** Better than Cassandra
+- Performance
+- Repairs
+- Workload isolation
+  Shard-per-core architecture
+  Garbage collection-free life
+
+** How ScyllaDB can be better?
+*** When use reverse queries,
+- Prioritized improvements and implemented performant reverse queries.
+
+* Migration
+** Hot partition
+High traffic to a given partition resulted in unbounded concurrency, leading to cascading latency in which subsequent queries would continue to grow in latency.
+*** Data services
+Intermediary services that sit between out =API monolith= and our =database clusters=.
+**** This is written in [[https://discord.com/blog/why-discord-is-switching-from-go-to-rust][Rust]]!
+- Safe
+- Fast
+- Fearless concurrency
+- [[https://discord.com/blog/why-discord-is-switching-from-go-to-rust][Tokio]] ecosystem's asynchronous I/O features
+- There are drivers written in Rust (Cassandra, ScyllaDB)
+
+**** Process
+- It Contains gRPC endpoint(?) per database query
+- Intentionally contain no business logic
+
+***** Request coalescing
+#+begin_quote
+If multiple users are requesting the same row at the same time, we'll only query the database once.
+
+The first user that makes a request causes a worker task to spin up in the service.
+Subsequent requests will check for the existance of that task and subscribe to it.
+That worker task will query the database and return the row to all subscribers.
+[[~/Downloads/cs/discors-data-sv.png]]
+
+Let's imagine a big announcement on a large server that notifies ~@everyone~: users are going to open the app and read the message, sending tons of traffic(to read) to the database.
+
+The architecture where above is able to significantly reduce traffic spikes against the database.
+#+end_quote
+
+***** Consistent hash-base routing
+For enabling effective coalescing (reduce the load on database).
+1. Provide a routing key to each request (channel ID)
+2. All requests for the same channel go to the same instance of the service.
+[[~/Downloads/cs/discord-data-sv-upstream.png]]
+
+It buys us some times so that we can prepare new optiomal ScyllaDB cluster and excute the migration.
+
+** A Very Big Migration
+We need to migrate trillions of messages with no downtime.
+We need to do it quickly because while the Cassandra situation has somewhat improved, we're frequently firefighting.
+
+1. We provision a new ScyllaDB cluster using our [[https://discord.com/blog/how-discord-supercharges-network-disks-for-extreme-low-latency][super-disk storage topology]].
+  By using =Local SSDs for speed= and leveraging =RAID to mirror our data to a persistent disk=, we get the speed of attached local disks with the durability of a persistent disk.
+
+  First draft of migration => To get value quickly.
+  Start new ScyllaDB cluster => In cutover time, migrate historical data behind it.
+
+2. We begin dual-writing new data to Cassandra and ScyllaDB.
+   - And concurrently begin to provision ScyllaDB's Spark migrator
+     It requires a lot of tuning, and once we get it set up, we have an estimated time to completion: =three months=.
+     We need faster way to migrate..
+
+3. We elect to engage in some meme-driven engineering and rewrite the data migrator in Rust.
+
+4. We extended our data service library to perform large-scale data migration.
+   - It reads token range from a database, checkpoints them locally via SQLite,
+   - and then firehoses them into ScyllaDB.
+
+5. We hook up our new and improved migrator and get a new estimate: =nine days=!
+   - We can forget our complicated time-based approach and instead flip the switch for everying at once.
+   - Migrating messages at speeds of up to =3.2 milion per second=.
+   - Some last few token ranges of data contain gigantic ranges of tombstones that were never compacted away in Cassandra.
+     We compact that token range, =and seconds later=, the migration is complete!
+
+6. We performed automated data varidation by sending a small percentage of reads to both databases
+   - For comparing results, and everything looked great!
+   - The cluster held up well with full production traffic, whereas Cassandra was suffering increasingly frequent latency issues.
+
+7. We gathered together at our team onsite, flipped the switch to make ScallaDB the primary database, and ate celebratory cake!
+
+
+* Several Months Later
+- We're going from running 177 Cassandra nodes to just 72 ScyllaDB nodes.
+  Each ScyllaDB node has 9 TB of disk space, up from the average of 4 TB per Cassandra node.
+
+- Our tail latencies have also improved drastically.
+  Fetching historical messages has a p99 of between =40-125ms= on Cassandra,
+  with ScyllaDB having a nice and chill =15ms= p99 latency,
+  and message insert performance going from =5-70ms= p99 on Cassandra,
+  to a steady =5ms= p99 on ScyllaDB.
+
+* The World Cup.
+One thing we discovered very quickly was that goals showed up in our monitoring graphs.
+This give our team an excuse to watch soccer during meetings.
+We weren't "watching soccer during meetings", we were "proactively monitoring our systems' performance"

@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       05a813b7-c616-44e2-9ad6-5fb2efd8dbce
+:END:
+#+title: DreamBerd
+
+* DreamBerd
+Using the word 'DreamBerd' in your project name implies that the DreamBerd Foundation does not own your project.
+
+However, ~not~ using the word 'DreamBerd' in you project implies that the DreamBerd Foundation ~does~ own your project. If you woud like to keep ownership of your work, please always use the word 'DreamBerd' in it.
+
+DreamBerdScript (~not owned~ by the DreamBerd Foundation - you are free to use this name)
+
+#+begin_src python
+print("Hello world")! # by default
+print("Hello world")!!! # extra-bold
+print("Hello world")? # if you unsure - it prints debug info
+
+# not operator ';'
+if (;false) {
+        print("Hello world")!
+}
+
+const const name = "Like"!
+
+const var name = "Luke"!
+name.pop()! # can be edited, but not re-assigned
+name.pop()!
+
+var const name = "Luke"!
+name = "Lu"! # Variable variabels can be re-assinged.
+name.push("k")!
+name.push("e")!
+
+const const const pi = 3.14! # never changed value (Immutable)
+
+const const firstAlphabetLetter = 'A'!
+var const 👍 = True! # naming can be anything
+var var 1️⃣ = 1!
+const const 5 = 4!
+print(2 + 2 === 5)! # true
+
+const const scores = [3, 2, 5]!
+print(scores[-1]) # 3 - index starts at -1
+print(scores[0]) # 2
+print(scores[1]) # 5
+
+const var scores = [3, 2, 5]!
+scores[0.5] = 4
+print(scores) # [3, 2, 4, 5]
+
+const var health = 10!
+when (health = 0) { # why exists?
+    print("You lose")!
+}
+
+const const name<2> = "Luke"! # lasts for two lines
+const const name<20s> = "Luke"! # lasts for 20 seconds
+const const name<Infinity> = "Luke"! # lasts forever
+
+print(name)! # Luke
+const const name<-1> = "Luke"!
+
+# DreamBerd has not loop
+# DreamBerd installer installer
+
+
+const var keys = {}!
+addEventListener("keydown", e => keys[e.key] = true)!
+addEventListener("keyup", e => keys[e.key] = false)!
+
+function isKeyDown(key) => {
+    if (keys[key] = undefined) {
+            return maybe! # boolean can be maybe..
+    }
+    return keys[key]!
+}
+#+end_src

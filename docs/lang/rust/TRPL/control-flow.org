@@ -1,0 +1,17 @@
+#+title: Control Flow
+
+* If expression
+Rust only allow to use a ~bool~ in if expression.
+You must be explicit and always provide ~if~ with a Boolean as its condition.
+** Using if in a let Statement
+Because ~if~ is an expression, we can use it on the right side of a ~let~ statement to assign the outcome to a variable.
+
+* Repeatable
+** Kinds
+- ~loop~ - repeat until explicitly say to stop it
+- ~while~ - conditional loop
+- ~for~ - loop for iterator (arrays, maps, etc.)
+
+** Use cases of a loop
+- To retry an operation you know might fail, such as checking whether a thread has completed its job.
+- To pass the result of that operation out of the loop to the rest of your code.

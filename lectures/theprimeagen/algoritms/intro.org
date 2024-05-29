@@ -1,0 +1,26 @@
+#+title: Intro
+
+* Introduction
+** These are the algoritms I have ran into
+My goal is foundation
+
+** Why should I care about algoritms?
+- Isn't asking algoritms old fashion for interviews?
+- I don't actually use any of them on the job right?
+
+** Let me ask you this
+What data structure is used here (answer in your head)?
+#+begin_src javascript
+const a = [];
+#+end_src
+
+This isn't array
+
+Arrays are the simpliest Data Structure
+
+** Time and Space Complexity
+- There will be no proofs
+- There will be graphs though
+
+** Why TypesScript?
+- I do not like typescript for datastructures, but I chose it to make this class the most beginner friendly class

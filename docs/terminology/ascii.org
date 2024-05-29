@@ -1,0 +1,33 @@
+#+title: American Standard Code for Information Interchange
+
+* Character encoding
+그래픽 문자 -> 숫자에 연결 하는 작업
+
+1byte 로 표현 -> 8bit
+
+ASCII
+알파벳 1자 -> 7bit 로 표현 하는 규칙
+
+나머지 1bit를 통신 에러 검출 (parity bit = 동등한지비교)
+
+Too many language -> 7비트 부족 -> 1비트 추가 -> ANSI
+
+ANSI -> 8비트 부족 -> 전세계 언어 사용하자 -> UNICODE
+
+** UNICODE
+그래픽 문자 1개를 -> 16비트 -> 8비트로 표현
+
+*** CODEPOINT
+인코딩 규칙으로 생성한 문자 데이터의 숫자 값
+-> 65
+-> 8bit로
+
+*** UTF8
+U+0045
+
+
+* 공식문서를 읽는다
+** 피닉스 이해
+*** 하고 싶은 작업
+**** 어떻게 할까?
+문법 찾기

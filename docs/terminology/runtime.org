@@ -1,0 +1,30 @@
+#+title: Runtime
+
+* Definition
+The execution time that code is running
+
+The meaning of Runtime is more close to ~Runtime Libary~
+
+** Runtime Library
+A set of code that need to run but not in source code (written by creator of compiler)
+
+A set of code that need to run but does not precompiled to machine code (written by user of compiler)
+- usually compiled into bytecode
+
+Some kinds of layer between OS and Source Code
+
+** Isn't Compiled Source Code
+
+** Runtime Library In C
+C has very small runtime library
+
+-> It has a lot of responsible to control code
+-> It can be dangerous easily
+=> OS kill illegal request, doesn't tell you why, and usually dump into ~.dump~ file that's hard to make sense of
+=> Sometimes, there are codes that can be dangerous and not illegal, so you need to be careful if you use Compiled binary language
+
+** Runtime Library In Java
+[[file:./vm.org][Virtual Machine]] is very common runtime these days (part of runtime)
+
+** Runtime Library In Scripting language
+A scripting language ~doesn't precompile anything~ (Javascript, Perl, and PHP)

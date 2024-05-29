@@ -1,0 +1,5 @@
+* Interpolation
+A method of constructing new data points within range of discrete set of known data points.
+** String Interpolation
+(or variable interpolation, variable substitution, or variable expansion)
+The process of evaluating a string [[file:./literal.org][literal]] containing one or more placeholders, yielding a result in which the placeholders are replaced with their corresponding values.

@@ -1,0 +1,1405 @@
+:PROPERTIES:
+:ID:       048ae383-ef47-4a3e-b3ca-38410f3cd8a4
+:END:
+#+title: Rust
+
+* Table of conte :toc:
+- [[#jupyter][Jupyter]]
+  - [[#what-is-rust][What is Rust]]
+  - [[#ingredient-usage][Ingredient Usage]]
+  - [[#save][Save]]
+  - [[#doing][Doing]]
+  - [[#properties][Properties]]
+  - [[#typed-language][Typed language]]
+  - [[#dynamic][Dynamic]]
+  - [[#static][Static]]
+  - [[#mission-critical-computing][Mission Critical Computing]]
+  - [[#사용자--스마트폰][사용자 <=> 스마트폰]]
+  - [[#스마트폰--웹서버][스마트폰 <=> 웹서버]]
+  - [[#how][How?]]
+  - [[#space--time][Space + Time]]
+  - [[#공간과-시간의-대칭-구조][공간과 시간의 대칭 구조]]
+  - [[#syntax][Syntax]]
+- [[#easy-rust][Easy Rust]]
+  - [[#types][Types]]
+  - [[#type-inference][Type inference]]
+  - [[#display-and-debug][Display and Debug]]
+  - [[#immutable][Immutable]]
+  - [[#shadowing][Shadowing]]
+  - [[#memory-usage][Memory Usage]]
+  - [[#printing][Printing]]
+  - [[#strings--ownership][Strings & Ownership]]
+  - [[#const-and-static][Const and Static]]
+  - [[#more-on-references][More on references]]
+  - [[#mutable-references][Mutable references]]
+  - [[#giving-references-to-functions][Giving references to functions]]
+  - [[#copy-types][Copy types]]
+  - [[#collection-types][Collection types]]
+  - [[#control-flow][Control flow]]
+  - [[#structs][Structs]]
+  - [[#enum][Enum]]
+  - [[#loop][Loop]]
+  - [[#impelmenting-structs-and-enums][Impelmenting structs and enums]]
+  - [[#destructuring][Destructuring]]
+  - [[#references-and-the-dot-operator][References and the dot operator]]
+  - [[#generics][Generics]]
+  - [[#option--result][Option & Result]]
+  - [[#other-collections][Other collections]]
+  - [[#the--operator][The ? operator]]
+  - [[#traits][Traits]]
+  - [[#iterators][Iterators]]
+  - [[#closures][Closures]]
+  - [[#dbg--inspect][dbg! & .inspect]]
+  - [[#types-of-str][Types of &str]]
+  - [[#lifetimes][Lifetimes]]
+  - [[#interior-mutability][Interior mutability]]
+  - [[#cow][Cow]]
+  - [[#type-aliases][Type aliases]]
+  - [[#the-todo-macro][The todo! macro]]
+  - [[#rc][Rc]]
+  - [[#multiple-threads][Multiple threads]]
+  - [[#closures-in-function][Closures in function]]
+  - [[#impl-trait][impl Trait]]
+  - [[#arc][Arc]]
+  - [[#channels][Channels]]
+  - [[#reading-rust-documentation][Reading Rust documentation]]
+  - [[#attributes][Attributes]]
+  - [[#box][Box]]
+  - [[#box-around-traits][Box around traits]]
+  - [[#default-and-the-builder-pattern][Default and the builder pattern]]
+  - [[#deref-and-derefmut][Deref and DerefMut]]
+  - [[#crates-and-modules][Crates and modules]]
+  - [[#testing][Testing]]
+  - [[#external-crates][External crates]]
+  - [[#standard-library][Standard library]]
+  - [[#make-macro][Make macro]]
+  - [[#cargo][cargo]]
+  - [[#taking-user-input][Taking user input]]
+  - [[#using-files][Using files]]
+- [[#private-note][Private Note]]
+  - [[#archtecture][Archtecture]]
+  - [[#common-cases][Common Cases]]
+  - [[#common-methods][Common Methods]]
+  - [[#difference-between-map-and-for_each][Difference between .map() and .for_each()]]
+  - [[#glossary][Glossary]]
+  - [[#ownership][Ownership]]
+
+* Jupyter
+** What is Rust
+- Base on Erlang
+- Functional + OOP + Procedural
+
+Assembly > Rust > Erlang > Elixir
+
+추상화(Absctraction) <=> 구체화(Concretization)
+
+*** 추상화 ( Elixir )
+- 구체적인 정보를 숨겨서, 사용자가 입력하는 것에 의존해서 반응하도록 만든다.
+*** 구체화 ( Rust )
+- 조금더 구체화, 세밀화
+- 타입 지정
+
+** Ingredient Usage
+** Save
+*** 냉동실
+- Static
+- Constant
+*** 냉장실
+- Heap
+*** 요리솥
+- Stack
+** Doing
+*** 요리하기
+- Function
+- Process
+- Thread
+
+** Properties
+- 사람마다 냉장고 관리 스타일이 다르다 => 언어마다 Memory 관리 스타일이 다르다
+- Rust는 엄격하게 메모리를 관리하는 언어이다. => 성능과 직결
+- Rust는 성능이 보장되어야 하는 분야에 쓰이는 언어. => 안전, 보안
+통과 음식 => Data Type과  Value의 관계
+모든 데이터는, 각각 적절한 Types에 들어간다.
+
+** Typed language
+주인과, 고객과 의견이 다르다.
+데이터가 메모리에서 차지하는 공간 결정
+** Dynamic
+Compiler가 데이터 타입 결정
+- 개발자는 데이터 타입을 =정하지 않음= => 여유있는 선택
+- JS
+** Static
+Compiler가 데이터 타입 결정
+- 개발자가 데이터 타입을 =보정함= => 알맞은 선택
+- Rust
+
+** Mission Critical Computing
+오류가 발생돼서는 안되는일 (리스트 너무 높음)
+- Rust는 사람의 실수를, 시스템적으로 방지하도록 만들어진 언어
+- 실수가 최대한 적도록 구조 설계
+- 개발자 실수 => 경고 + 차단
+
+** 사용자 <=> 스마트폰
+- JS/TS
+** 스마트폰 <=> 웹서버
+All Rest languages
++ Higher
+  - Python, Ruby, R, Elixir
++ Lower
+  - C, C++, Java, Rust
+
+** How?
+*** Resource Optimization => Fast
+- CPU Optimization by Verb
+  - Process, Thread, Blocking, Non-blocking, Asynchronous, Synchronous, Parrallel, Concurrency
+- Memory Optimization by Noun(Type)
+  - Data Type, Lifetime
+*** Safety
+- Owned Data
+  - 모든 데이터는, 반드시 하나의 소유자를 갖는다.
+  - 반드시 한번만 소멸된다.
+  - 소유권은 이전될 수 있다.
+  - 공동 소유자가 존재할 수 있다.
+- Borrowed Data
+  - 다른 소유자에게 빌려온 데이터
+  - 빌려주는 횟수는 제한이 없다
+  - 빌려주는 사람은, 반드시 빌려간 사람보다 오래 살아야 한다.
+
+** Space + Time
+- I(명사 = 공간적) like(동사 = 시간적) Rust(명사 = 공간적)
+- Rust의 모태 => Erlang의 모태 => 영어
+  - 모든 프로그래밍언어의 모태는 영어이다.
+  - 영어의 문법구조가, 프로그래밍언어에 반영되어 있다.
+** 공간과 시간의 대칭 구조
+** Syntax
+~Type::something()~ : function of type (not take self)
+~Type.someting()~ : method on ~Struct~ and ~Enum~ (take self)
+
+* Easy Rust
+** Types
+단어의 타입 : 명사, 형용사, 부사, 전치사..
+Rust's Type : None, Verb
+*** Primitive types
+/Datas in stack. 도마/
+**** Integers
+=Types + BitCount= or =CPU Architecture=
++ Signed
+  /plus & minus (+, -)/
+  =i8=
+  =i16=
+  =i32= - default
+  =i64=
+  =i128=
+  =isize=
++ UnSigned
+  /only be positive/
+  =u8=
+  =u16=
+  =u32=
+  =u64=
+  =u128=
+  =usize=
+***** Reason for the different types (1)
+smaller number of bytes is faster to process.
+**** Char
+=char (1bytes)=
+/The characters that are used most have numbers less than 256 => they can fit into a u8./
+  - Rust can safely *cast* a =u8= into a =char= (by *as* keyword)
+    - Cast is useful because, Rust is very strict.
+      - Rust always needs to know the type.
+      - Rust won't let you use two different types together even if they are both integers.
+        ~i32 as u8 as char~
+/When using as part of a string, the string is encoded to use the least amount of memory needed for each character./
+***** Reason for the different types (2)
+/usize is the size that Rust uses for indexing. (which item is first...)/
+- An index can't be negative, so it needs to be a number with a u /(unsigned)/
+- It should be big, because sometimes you need to index many things
+- It can't be u64, because 32-bit computers can't use u64.
+***** Why char is 4bytes
+/since 4bytes are enough to hold any kind of character./
+- Basic letters & symbols usually need 1 out of 4 bytes ~(a b 1 2 + - = $ @)~
+- Other letters like German Umlauts of accents need 2 out of 4 bytes
+- Korean, japanese or Chinese characters need 3 or 4 bytes
+***** ETC.
+- ~.len()~
+  gives a size in bytes.
+- ~.char().len()~
+  gives a size in chracters.
+**** Float
+/Numbers with decimal point/
+=f32=
+=f64= - default
+#+begin_src rust
+let my_float = 5.;
+let my_other_float = my_float as f64; // cast
+#+end_src
+**** Reference (Pointer)
+Address of memory that be attached after =&=
+**** Function
+~fn <name> -> <return type> {~<body>}~
+**** Collections..
+- Array
+- Tuple
+*** Complext types
+/Datas in heap. 냉장고/
+**** String
+**** Struct
+**** Vector
+...
+*** Lifetime types
+
+** Type inference
+/don't tell the compiler the type, it decide by itslef/
+*** Why you need to tell type?
+- Doing something very complex and the compiler doesn't know the type you want.
+- When you want different type.
+  #+begin_src rust
+  let small_number: u8 = 10;
+  let small_number = 10u8;
+  let small_number = 10_u8;
+  let small_number = 10__u8;
+  let big_number = 100_000_000_i32;
+  #+end_src
+** Display and Debug
+*** debug print?
+/printing for programmer. Reveal more information./
+** Immutable
+/Main difference between Rust and Others(C, C++ ..)
+Rust use variable with =let= keyword and it's immutable./
+** Shadowing
+/declare a variable with the same name as another variable. Good when you need to change a variable a lot. Usually use for quick variables that you don't care too much about./
+*** Glossary
+- shadowed variable with a new binding
+** Memory Usage
+#+begin_quote
+Put specific ~size~ of ~Data~ of some ~Type~ on ~Memory~ (~Stack~ or ~Heap~)
+In ~Memory~, ~Process~ (or ~Thread)~ do ~Function~ on ~Stack~ and return result ~Value~.
+If ~Function~ need to access ~Heap~ then see ~Reference(Pointer)~ and get ~Value~.
+As ~Heap~ is far from ~Process~ (or ~Thread~), spend more time than ~Stack~.
+The ~size~ of values on ~Stacks~ are determinded at ~compile time~.
+The ~size~ of values on ~Heaps~ are not determinded at ~compile time~.
+#+end_quote
+/Rust needs to know the size of a variable at compile time
+(for detect memory error at compile time)./
+
+/So simple variables like i32 go on the ~Stack~, because we know their exact size. You always know that an i32 is going to be 4 bytes, because 32 bits = 4 bytes. So i32 can always go on the ~Stack~./
+
+/But some types(Dynamic Types) don't know the size at ~compile time~ . But the ~Stack~ needs to know the exact size./
+- So first you put the data in the ~Heap~, because the ~Heap~ can have any size of data.
+- And then to find it a pointer goes on the ~Stack~.
+
+This is fine because we always know the size of a pointer(it's 24bits). So then the computer first goes to the stack, reads the pointer(reference), and follows it to the heap where the data is.
+
+*** Stack
+- faster than heap
+*** Heap
+- not so fast
+*** Pointer(Reference)
+/It means you borrow the value, but you don't own it. In Rust, reference have a =&= in front of them./
+#+begin_src rust
+let my_variable = 8; // makes a immutable variable
+let my_reference = &my_variable; // makes a immutable reference
+#+end_src
+=my_reference is a reference to my_variable.=
+** Printing
+/Rust has variety features for printing.(refer [[/Users/a1/Devs/Example/Rust/hello-rust/src/main.rs][main.rs]])/
+** Strings & Ownership
+/&str and String are very closely linked together, even though they are different./
+*** &str
+/Simple string. When you write ~let my_variable = "Hello, world!"~, you create a &str./
+- Borrowed(&) == ~Not owned~ type
+- Has =&= in front of it because you need a reference to use a =str=
+  Because the stack needs to know the size, but the &str has dynamic size. So we give it a =&= that it knows the size of. Means reference to str, you don't own it's value.
+*** String
+/More complicated string. It is a bit slower, but it has more functions. A ~String~ is a pointer on stack, with data on the heap./
+- ~Owned~ type.
+  If owned type variable is move to other variable or function, previous variable will destroy(Can't use on previous location). It can use on moved location.
+- Dynamically sized type.
+  Size can be different.
+**** How to make String
+- Use ~String::from~
+- Use ~String.into()~
+  - Make sure prefix of into() feature is really String.
+** Const and Static
+/There are two other ways to declare values, not just with ~let~. These are ~const~ and ~static~. Also, Rust won't use type inference:you need to write the type for them. These are for values that don't change(~const~ means constant). The difference is that:/
+*** Const
+~const~ is for values that don't change, the name is replaced with the value when it's used.
+*** Static
+~static~ is similar to ~const~, but has a fixed memory location and can act as a global variable.
+
+=Usualy use const, outside of main function (live for the whole program). And you must write them with ALL CAPITAL LETTERS.=
+** More on references
+/If you declare variable in scope, reference dies outside of scope. The computer will clean up the memory and use it for something else. So accessing reference from outside occurs error because it's already gone. Rust prevents us from making a mistake with memory here./
+
+=If you own a ~String~ you can pass it around, but a ~&String~ will die if its String dies. So you don't pass around "ownership" with it.=
+** Mutable references
+/Use when you want reference to change data(use ~&mut~ instead of &). But you can't reach the value only use ~reference~. You need =*=. * means "I don't want the reference, I want the value behind the reference"./
+
+- & : referencing
+- * : dereferencing
+
+*** Rules of reference (mut & immut)
+1. If you have only immutable references, you can have as many as you want. 1 is fine, 3 is fine, 1000 is fine. No problem.
+2. If you have a mutable reference, you can only have one. Also, you can't have an immutable reference *and* a mutable reference together.
+=Because mutable references can change the data. You could get problems if you change the data when other references are reading it.=
+
+**** Situation 1
+/only one mutable reference./
+- When you give login information of account to manager to help by making edits.
+  The manager has =mutable reference=. Manager can make any changes he wants, and give it back later. This is fine, because nobody else is looking at my account.
+
+**** Situation 2
+/only immutable references./
+- When you give article in account to 100 people.
+  All 100 people can now see article and they all have an =immutable reference=. This is fine, because they can see it but nobody can change the data.
+
+
+**** Situation 3
+/the problem references./
+- When you give login information of account to manager and give article in account to 100 people.
+  All 100 people can see article and the manager have a =mutable reference=. It means the manager can change article while some people are viewing it. This situation is not what they expected.
+** Giving references to functions
+/The rule in Rust on values is: a value can only have one owner./
++ If you give ~country~ to function, function is own it.
+  1. We create the ~String~ called ~country~. ~country~ is the owner.
+  2. We give country to ~print_country~. ~print_country~ doesn't have an ~->~, so it doesn't return anything. After ~print_country~ finishes, our ~String~ is now dead. (because ~String~ owner is function)
+  3. We try to give ~country~ to ~print_country~, but we already did that. We don't have ~country~ to give anymore.
++ Use cases
+  - ~fn function_name(variable: String)~ takes a ~String~ and =owns= it. If it doesn't return anything, then the variable dies inside the function.
+  - ~fn function_name(variable: &String)~ borrows a ~String~ and can look at it.
+  - ~fn function_name(variable: &mut String)~ borrows a ~String~ and can change it.
+** Copy types
+/Simple types all on the stack, and the compiler knows their size. That means that they are very easy to copy, so the compiler always copies when you send it to a function. It always copies because they are so small and easy that there is no reason not to copy. So you don't need to worry about ownership for these types./
+*** How to know if a type implements copy
++ You can check the ~char~ documentation.([[https://doc.rust-lang.org/std/primitive.char.html#impl-Copy-for-char][char-docs]])
+  On the left you can see =Trait Implementations=. You can see for example =Copy, Debug, and Display=.
+  - is copied when you send it to a function (Copy)
+  - can use {} to print (Display)
+  - can use {:?} to print (Debug)
++ You can check the ~String~ documentation.([[https://doc.rust-lang.org/std/string/struct.String.html#trait-implementations][String-docs]])
+  You can't find the =Copy= in =Trait Implemetations=. But it has =Clone=.
+  - ~String~ isn't copied type.
+  - =Clone= is similar to =Copy=, but usually needs more memory.
+    You have to call it with ~.clone()~ - it won't clone just by itself.
+  - The most efficient way is using reference by =&=.
+*** Uninitialized value
+- You have a code block and the value for your variable is inside it.
+- The variable needs to live outside of the code block.
+** Collection types
+/Use when you need more than one value in one spot. In the same way that we have ~&str~ and ~String~, we have arrays and vectors./
+*** Array
+Data inside aquare brackets.
++ Rule
+  - Can't change thier size.
+  - must only contain the same type.
++ Faster with less functionality.
++ Use [] to access index
+
+*** Vector
+- Slower with more functionality.
+- Can change thier size.
+- Has capacity
+  - If you go past the capacity, it will make its capacity double and copy the items into the new space (called reallocation).
+- Use [] to access index
+
+*** Tuple
+/No arguments in a function actually means an empty tuple. Furthermore, don't return anything in a function means return an empty tuple./
+#+begin_src rust
+fn do_somthing() {} // return empty tuple
+fn do_somthing() -> () {} // same as above
+#+end_src
+- Use . to access index
+** Control flow
+/Telling your code what to do in different situations./
+*** match
+/short version of condition./
+~pattern => ~what to do~
+
++ Glossary
+  - Each line called =arm=.
+
++ Rule
+  - You must match for every possible result.
+  - Put a comma between the arms.
+  - If matched then ignore rest arms.
+** Structs
+/You can create your own type. You will use structs all the time in Rust because they are so convenient./
+*** Rule
+- Use ~struct~ keyword
+- Name UpperCamelCase
+- Return its reference when create.
+*** Types
+**** unit struct
+- doesn't have anything
+**** tuple(unnamed) struct
+- simple struct which is only need to write the types
+**** named struct
+- common struct that you declare field names and types inside a {} code block.
+** Enum
+/enumerations. (type that you can create)/
+/similar with struct/
++ ~enum~
+  when you want one thing *OR* another thing.
+  - for many choices
+  - you have to choose one (called variants)
+  - is u32 number starting with 0. (Rust keep add 1)
+  - At compile time, Rust allocates up to 2 memory per type.
+  - saved on the stack at compile time. (fast!)
+  - want one thing
+
++ ~struct~
+  when you want one thing *AND* another thing.
+  - want many things
+** Loop
+/Repeat anything you want./
+*** Properties
+- Can have loop name ~'name: loop {..}~
+
+** Impelmenting structs and enums
+#+begin_quote
+implement some functionality for a ~type~.
+Using functions on a ~struct~ and an ~enum~ by ~impl~ block. These functions called 'methods'.
+
+#+end_quote
+*** Method
+- take ~self~ (or ~&self~ or ~&mut self~).
+- Regular methods use a ~.~ (a period). ~.clone()~ is regular method.
+*** Associated functions ('static method' in others)
+- Don't take self.
+- Associated == Related to
+- Use ~::~, ~String::from()~
+- Most often used to create new variables.
+
+** Destructuring
+/Get variables that are not part of a structure./
+
+** References and the dot operator
+/Only can compair between same type variables./
+** Generics
+/Maybe one type, maybe another type. ~<T>~ Any type you put into the function./
+- Please only take ~T~ if it has ~Display~ (limit) => Ok
+- I am giving ~Display~ to ~T~ (add) => Err
+*** Common Trait for Generics
+- ~std::cmp::PartialOrd~ - Let's us compair
+- ~std::fmt::Display~ - Let's us can display
+- ~std::fmt::Debug~ - Let's us debug
+
+** Option & Result
+/Two enums to make code safer./
+*** Option
+When you have a value that might exist, or might not exist.
+- Some(value) : a value exist.
+  - .is_some()
+- None : a value not exist.
+  - .is_none()
+
+*** Result
+May be it will fail
+- Ok - okay
+  - .is_ok()
+- Err - error
+  - .is_err()
+
+** Other [[https://doc.rust-lang.org/beta/std/collections][collections]]
+*** HashMap
+/A Collection made out of keys and values./
+- Not in order.
+- []
+  Return index value
+- .insert()
+  Overwrite previous value
+- .get()
+  Return Option
+- .entry()
+  Make Entry (Occupied, Vacant)
+- .or_insert()
+  Insert, if entry is not Empty(not Occupied)
+**** Use full cases.
++ If you want to save your book names and count
+  ~HashMap[Entry(name, count)...]~
+*** HashSet
+/HashMap that only has keys. Often used if you just want to know if a key exists or not./
+*** BTreeMap
+/Similar to a ~HashMap~, but ordered./
+- In order (descent)
+
+*** BinaryHeap
+/Mostly unordered, but a bit of order. It keeps the largest item in the front, but the other items are in any order./
+*** VecDeque
+/Double linked list of Vec. Vec that is good at popping items both off the front and the back (Origin Vec is not goot at it from the front.)/
+#+begin_comment
+When you want to get last item by Vec.pop(), it just takes off the last item on the right and nothing else is moved.
+
+But you want to get first item, all the items to the right are moved over one position to the left. ~By using .remove()~
+#+end_comment
+** The ? operator
+/The shoter way to deal with ~Option~ and ~Result~. It returns Ok() or Err(). Usually used to file manage, because many things can go wrong./
+
+** Traits
+/About =behaviour= for ~Struct~ and ~Enum~ (Debug, Copy, Clone...)./
+- To give a type a trait, you have to implement it.
+- ~Which functions should i write?~
+  If user should use the function the same way everytime.
+- ~Which functions should the user write?~
+  If user will use it differently.
+
+*** Display
+- is something that a type can do.
+*** Debug
+*** Copy
+- Allow copy for a type
+*** Clone
+- Need to use Copy trait
+*** ToString
+- Another trait, it's also something that a type can do: it can change into a ~String~
+*** From
+/Usually used ~Trait~ that many type have. There are a lot of use cases./
+**** Example of Vector
+#+begin_quote
+From<&'_ [T]>
+From<&'_ mut [T]>
+From<&'_ str>
+From<&'a Vec<T>>
+From<[T; N]>
+From<BinaryHeap<T>>
+From<Box<[T]>>
+From<CString>
+From<Cow<'a, [T]>>
+From<String>
+From<Vec<NonZeroU8>>
+From<Vec<T>>
+From<VecDeque<T>>
+...
+#+end_quote
+*** AsRef
+/Take self and gives a reference from one type to another type. Only for ~String~?/
+- AsRef<str> => ~String~ to ~&str~
+- AsRef<[u8]> => ~String~ to ~u8~
+- AsRef<OsStr> => ~String~ to ~OsStr~
+*** Chaning methods
+/Put many methods together in a single statement./
+
+** Iterators
+/Construct that can give you the items in the collection, one at a time. By using ~.next()~ and ~Option~./
+- ~for~ loop gives you an iterator. That Owns its values.
+- ~.iter()~ : for an iterator of references
+- ~.iter_mut()~ : for an iterator of mutable references
+- ~.into_iter()~ : for an iterator of values (not references)
+*** Need Associated type : Item (a type that goes together)
+*** Need Required Mothods : next
+** Closures
+/Quick functions that don't need a name. Enclose item to inside../
+- Sometimes they are called lambdas.
+- Easy to find because they use ~||~ instead of ~()~.
+- They are very common in Rust => Once you learn to use them you will wonder how you lived without them.
+
+*** a || that ~doesn't enclose~ a variable from outside is an ~"anonymous function"~. It means doesn't have a name. It makes the same machine code as a function with a name.
+*** a || that ~does enclose~ a variable from outside is a ~"closure"~. It "encloses" the variables around it to use them. Usually used inside of method, because it is very convenient.
+
+
+Sometimes you see ~|_|~ in a closure. This means that the closure need an argument (like x), but you don't want to use it. So that means "Okay, this closure takes an argument but i won't give it a name because i don't care about it"
+
+*** Other Methods
+- ~.take_while()~ which takes into an iterator as long as it gets ~true~ (~take while x > 5~ for example)
+- ~.cloned()~ which makes a clone inside the iterator. This turns a reference into a value.
+- ~.by_ref()~ which makes an iterator take a reference. This is good to make sure that you can use a ~Vec~ or something similar after you use it to make an iterator.
+- Many other ~_while~ methods: ~.skip_while()~, ~.map_while()~, and so on
+- ~.sum()~ just adds everything together.
+- ~.chunks()~ Way of cutting up a vector into a size you want. It will gives sliced vectors with no duplicate value.
+- ~.windows()~ Way of cutting up a vector into a size you want. It will give sliced vectors for each element until reach the end value.
+** dbg! & .inspect
+/Very useful macro that prints quick information. It is a good alternative to ~println!~ becuase it is faster to a type and gives more informaiton./
+/It means ="What are you doing iat this moment?"=./
+*** dbg!
+Similar with ~println!~, but it can wrap expression and statement, anything you want!!
+*** .inspect
+Similar with ~dbg!~, but it used like ~.map()~ in an iterator.
+** Types of &str
+/There is more than one type of ~&str~./
+*** String literals
+- Make these when you write ~let my_str = "I am a &str"~.
+- They last for the whole program, because they are written directly into the *binary*.
+- They have the type ~&'staticstr~. ' means its lifetime, and string literal have a lifetime called ~static~ (Same meaning with last for the whole program)
+*** Borrowed str
+- This is the regular ~&str~ form without a ~static~ lifetime.
+- If you create a ~String~ and get a reference to it, Rust will convert it to a ~&str~ when you need it.
+  #+begin_src rust
+ fn prints_str(my_str: &str){ // it can use &String like a &str
+    println!("{}", my_str);
+ }
+
+ fn main() {
+    let my_string = String::from("I am a string");
+    prints_str(&my_string); // we give pritns_str a &String => Will convert to &str by Rust!!
+ }
+  #+end_src
+** Lifetimes
+=How long the variable lives=
+/You only need to think about lifetimes with references./
+/This is because references can't live longer than the ~object they come from~./
+#+begin_verse
+Why Lifetime is important?
+- Because ~compiler optimization~
+- To optimize, compiler need to know each lifetime of variables
+#+end_verse
+- Common Case = Reference in Struct
+  Struct's lifetime must be gaven from outside, because each Struct has different reference.
+- Tips
+  1. You can stay with owned types, use clones etc. if you want to avoid them for the time being.
+  2. Much of the time, when the compiler wants a lifetime you will just end up writing <'a> here and there and then it will work. it just a way of saying "don't worry, i won't give you anything that doesn't live long enough"
+  3. Write some code with owned values, then make one a reference, The compiler will start to complain, but also give some suggestions. And if it gets too complicated, you can undo it and try again next time.
+*** Similar with ~General~
+- Please ~only take~ an input if it lives as long as Struct (limit) => Ok
+- I will ~make~ the input live as long as Struct (add) => Err
+*** missing lifetime specifier
+  Need to add a ~'~ with the lifetime
+  Contains a borrowed value, but there is no value for it to be borrowed from.
+*** annonymous lifetime ('_)
+An indicator that references are being used.
+** Interior mutability
+/Way to change variable without ~mut~ Immutable variable/
+/Enables mutation inside an immutable things(variable, struct, etc)/
+*** Cell
+/It gives Copy values not references./
+#+begin_quote
+A mutable memory location
+- Has same memory layout and caveats as =UnsafeCell<T>=
+#+end_quote
+~Immutable<Cell<Mutable>>~
+- ~.set()~ : change value inside of Cell
+*** RefCell
+/A mutable memory location with dynamically checked borrow rules./
+
+/Called =Reference Cell=. It checks borrows at ~runtime~ (it would be error), So is good to compile and run for check./
+- ~.borrow()~ : &
+- ~.borrow_mut()~ : &mut
+- ~.replace()~
+- ~.replace_with(closure)~
+*** Mutex
+/Mutual Exclusion (can change only one at a time - safe)./
+- ~.lock()~ : Locking a door from the inside.
+*** RwLock
+/Read Write Lock. Lit is like a ~Mutex~ but also like a ~RefCell~./
+- ~.write().unwrap()~ : Instead of .lock().unwrap().
+- ~.read().unwrap()~ : To access value
+
+**** Rule
+1. many ~.read()~ variables is okay.
+2. one ~.write()~ variable is okay.
+3. More than one ~.write()~ is not okay.
+4. Using ~.write()~ and ~.read()~ together is not okay.
+** Cow
+/Enum that =clone on write=. And lets you return a ~&str~ (Borrowed) if you don't need a ~String~ (Owned), and a ~String~ if you need it. Borrowed <-> Owned/
+
+- ToOwned
+  Trait that is a type that can be turned into an owned type.
+- Sized
+  Maybe Sized, but maybe not
+** Type aliases
+/"giving a new name to another type"/
+/Usually you use them when you have a very long type and don't want to write it every time./
+/When you want to give a type a better name that is easy to remember./
+*** /Here is type that i not difficult, but you want to make your code easier to understand for other people./
+#+begin_src rust
+type CharacterVec = Vec<str>;
+fn main() {}
+#+end_src
+
+*** /Here is a type that is very difficult to read./
+#+begin_src rust
+// this return type is extremely long
+fn returns<'a >(input: &'a Vec<char>) -> std::iter::Take<std::iter::Skip<std::slice::Iter<'a, char>>>{
+    input.iter().skip(4).take(5)
+}
+fn main(){}
+#+end_src
+
+- /So you can change it to this:/
+#+begin_src rust
+type SkipFourTakeFive<'a > = std::iter::Take<std::iter::Skip<std::slice::Iter<'a, char>>>>;
+
+fn returns<'a>(input: &'a Vec<char>) -> SkipFourTakeFive {
+    input.iter().skip(4).take(5)
+}
+fn main(){}
+#+end_src
+
+*** /Import items to make the type shorter:/
+#+begin_src rust
+use std::iter::{Take, Skip};
+use std::slice::Iter;
+
+fn returns<'a>(input: &'a Vec<char>) -> Take<Skip<Iter<'a, char>>> {
+  input.iter().skip(4).take(5)
+}
+#+end_src
+
+So you can decide what looks best in your code depending on what you like.
+=It doesn't create an actual new type=
+It's just a name to use instead of an existing type.
+So if you write ~type File = String;~, the compiler just sees a ~String~. So this will print =true=
+#+begin_src rust
+type File = String;
+
+fn main(){
+    let my_file = File::from("I am file contents");
+    let my_string = String::from("I am file contents");
+    println!("{}", my_file == my_string);
+}
+#+end_src
+
+- If you want a new file type that the compiler sees as a ~File~, you can put it in a struct.
+#+begin_src rust
+struct File(String); // File is a wrapper around String
+
+fn main() {
+    let my_file = File(String::from("I am file contents"));
+    let my_string = String::from("I am file contents");
+    println!("{}", my_file == my_string); // cannot compare File with String (different type!!)
+    println!("{}", my_file.0 == my_string); // my_file.0 is a String! => it can be compaired
+}
+#+end_src
+
+- In other people's code you can only use ~.0~ if it's marked ~pub~ for public. And that's why these sorts of types use the ~Deref~ trait a lot.
+*** Importing and renaming inside a function
+1. Usually you write ~use~ at the top of the program, like this:
+#+begin_src rust
+use std::cell::{Cell, RefCell};
+
+enum MapDirection {
+    North,
+    NorthEast,
+    East,
+    SouthEast,
+    South,
+    SouthWest,
+    West,
+    NorthWest,
+}
+
+fn main() {}
+
+fn give_direction(direction: &MapDirection) {
+    use MapDirection::*; // Import everything in MapDirection => ⚠ it cant be duplicate error
+    let m = "You are heading";
+
+    match direction {
+        // MapDirection::North => println!("You are heading north."),
+        // MapDirection::NorthEast => println!("You are heading northeast."),
+        North => println!("{} north.", m),
+        NorthEast => println!("{} northeast.", m),
+        // So much more left to type...
+        // ⚠️ because we didn't write every possible variant
+    }
+}
+
+#+end_src
+
+2. You can also use ~as~ to change the name. When you are using someone else's code and you can't change the names in an enum:
+#+begin_src rust
+enum FileState {
+    CannotAccessFile,
+    FileOpenedAndReady,
+    NosuchFileExists,
+    SimilarFileNameInNextDirectory,
+}
+
+fn main() {}
+#+end_src
+
+3. So then you can 1) import everything and 2) change the names:
+   #+begin_src rust
+    enum FileState {
+        CannotAccessFile,
+        FileOpenedAndReady,
+        NosuchFileExists,
+        SimilarFileNameInNextDirectory,
+    }
+
+   fn give_filestate(input: &FileState) {
+       use FileState::{
+           CannotAccessFile as NoAccess,
+           FileOpenedAndReady as Good,
+           NoSuchFileExists as NoFile,
+           SimilarFileNameInNextDirectory as OtherDirectory,
+       } // import and change name using as keyword
+       match input {
+           NoAccess => println!("Can't access file."),
+           Good => println!("Here is your file"),
+           NoFile => println!("Sorry, there is no file by that name."),
+           OtherDirectory => println!("Please check the other directory."),
+       }
+   }
+   #+end_src
+** The todo! macro
+=I will do it later, please be quiet (but only for about part of excution - not type)=
+#+begin_src rust
+fn test1() -> Option<String> {
+    todo!()
+}
+#+end_src
+- ~unimplemented!()~ : exactly same with ~todo!()~
+** Rc
+/Reference counter./
+/Allow multiple ownership by cloning reference/
+#+begin_src rust
+use std::rc::Rc;
+
+struct City {
+    name: String,
+    city_history: Rc<String>, // Set type
+}
+
+fn main(){
+    let seoul = City {
+        name: "Seoul".to_string(),
+        city_history: Rc::new("Init History"), // Make Rc
+    }
+    let busan = &seoul; // Read only - You can't write => dangling pointer
+    print_content(seoul); // Change owner
+}
+#+end_src
+
+- If it's be =0=, will disappear.
+*** Week Pointer?
+Useful if two ~Rc~ s point at each other, they can't die.(reference cycle)
+- item1(Rc<item2>) && item2(Rc<item1>) => Can't get 0
+- If ~Rc~ has only weak references then it can die.
+- ~Rc::downgrade(&item)~ instead of ~Rc::clone(&item)~ to make weak referces.
+- Use ~Rc::weak_count(&item)~ if you want to see the weak count
+** Multiple threads
+/You can do many things at the same time. (=Concurrency, Running together=)/
+Modern computers have ~more than one core~ so they can do more than one thing at the same time
+
+Rust uses threads that are called "OS threads".
+- OS threads - Means the operating system ~creates the thread~ on a different core. (different from the green threads)
+
+- It will be different every time. Sometimes it will print, and sometimes it won't print (this depends on your computer speed too)
+  That is becauste sometimes ~main()~ finishes before the ~threads~ finishes.
+  Sometimes the threads will panic
+
+*** Usage
+- ~let thread = std::thread::spawn(||{})~ : Spawn new thread.
+*** Methods
+- ~.join()~ : Wait until all the threads are done, returns ~Result~
+** Closures in function
+/You can make your own functions that take closures, but inside them it is less free and you have to decide the type./
+- Outside a function a closure can decide by itself between ~Fn~, ~FnMut~ and ~FnOnce~, but inside you have to choose one.
+*** =Closures= as input parameters => Need Type
+- ~FnOnce~ : Takes the whole value
+- ~FnMut~ : Takes a mutable reference
+- ~Fn~ : Takes a regular reference
+** impl Trait
+/Similar to generics./
+~f(input: impl Into<String>){...}~
+=impl Trait= : it can return closures because their function signatures are traits.
+** Arc
+#+begin_quote
+="Atomic reference counting pointer for threads"=
+
+Atomic : It uses the computer's processor so that data only gets ~written once~ each time.
+
+pointer : It used to save memory address
+
+=It's sure that this memory location is only gets written once each time.=
+#+end_quote
+/We used an ~Rc~ to give a variable more than one owner./
+/If we are doing the same thing in a thread, we need an ~Arc~.(shared ownership of a value)/
+
+- ~Arc<Mutex<i32>>~ : An ~i32~ that can be changed, protected by an ~Arc~.
+*** Usage
+1. ~Arc::new(Mutex::new(v))~ : Make =safe= variable
+2. ~Arc::clone(v)~ : Clone variable
+3. Change with =thread=!!!
+
+** Channels
+/Easy way to use many threads that send to one place./
+They are fairly popular because they are pretty simple to put togheter.
+You can create a channel in Rust with ~std::sync::mpsc~.
+
+~mpsc~ means =Multiple Producer, Single Consumer=, so =many threads sending to one place=.
+
+To start a channel, you use ~channel()~.
+This creates a ~Sender~ and a ~Receiver~ that are tied together.
+You can see this in the function signature:
+#+begin_src rust
+pub fn channel<T>() -> (Sender<T>, Receiver<T>)
+#+end_src
+
+Like an ~Arc~ because you can clone it and =send the clones= into other threads.
+- ~.flatten()~ : Creates an iterator that flattens nested structure.
+
+** Reading Rust documentation
+*** For testing
+#+begin_quote
+Why need testing function?
+
+- In a document you would need a lot of room to ~println!~ everything.
+- You would require ~Display~ or ~Debug~ for the things you want to print.
+#+end_quote
+- ~assert_eq!()~
+  the two items inside () must be equal.
+*** Documentation tip
+You can see more information about anything you want.
+- String == Vec<u8>
+*** Information on traits
+~Require Methods~ is very important part of the documentaion.
+It means =you have to write yourself=
+- ~Iterator~ : need to write ~.next()~
+- ~From~ : need to write ~.from()~
+- ~[derive(Debgu)]~ : need to write ~.fmt()~, but usually you just use ~#[derive(Debug)]~ (automation)
+** Attributes
+~#[derive(Debug)]~ : this type of code is called an =attribute=
+- small pieces of code that give infoirmation to the compiler.
+- Not easy to create, but they are very easy to use.
+- If you write an attribute with just ~#~ then it will affect the code on the =next line=.
+- If you write it with ~#!~ then it will affect everything in its own space.
+
+*** ~#[allow(dead_code)]~
+- literally allow dead code
+- It's useful to teach others. ( Clean result )
+*** ~#[allow(unused_variables)]~
+- literally allow unused variables
+- It's useful to teach others.
+*** ~#[derive(TraitName)]~
+Lets you derive some traits for structs and enums that you create.
+- Use with traits that can be automatically derived.
+  (some like ~Display~ can't be automatically derived)
+- Some like ~Copy~ need other trait ( Copy need ~Clone~ )
+*** ~#[cfg(test)]~
+Configuration and tells the compiler whether to run code or not.
+Code that be applied this attributes doesn't run code until you tell it.
+*** ~#[cfg(target_os = "windows")]~
+With that you can tell the compiler to only run the code on Windows, or Linux, or anything else.
+*** ~#![no_std]~
+Tells Rust not to bring in the standard library.
+Use if you need small devices that don't have much memory or space.
+
+** Box
+/You can put a type on the ~heap~ instead of the stack/
+
+=&= is used for =str= because the compiler doesn't know the size of a =str=
+but =&= reference is always the same length, so the compiler can use it.
+
+~Box~ is similar.
+Also, you can use =*= on a Box to get to the value, just like =&=
+
+You can also use a Box to create structs with the same struct inside.(~recursive~) Inside Struct A is mybe another Struct A.
+Sometimes you can use Boxes to create linked lists, although these lists are not very popular in Rust.
+
+Even without data it is a bit complicated, and Rust does not use this type of pattern very much.
+This is because Rust has strict rules on borrowing and ownership, as you know.
+But if you want to start a list like this (a linked list), ~Box~ can help
+
+A ~Box~ also lets you use ~std::mem::drop~ on it (because it's on the heap)
+
+** Box around traits
+~Box~ is very useful for returning traits.
+/Traits have many different types, but the compiler wants to know thier size before runtime./
+
+- You can write traits in =generic functions=
+  It only takes something with ~Display~, so it can't accept another structs like ~DoesntImplementDisplay~.
+  But it can take in a lot of others like ~String~ (because they've Display)
+
+- We can use ~impl Trait~ to return other traits, or closures.
+  ~Box~ can be used in a similar way.
+  You can use a ~Box~ because otherwise the compiler won't know the size of the value.
+
+A trait can be used on something of any size
+So use ~Box~ to only put data on stack
+
+*** Common usage
+~Box<dyn Error>~ : Error can has the dynamic size, so Box tells compiler the size of reference
+** Default and the builder pattern
+You can implement the ~Default~ trait to give values to a ~struct~ or ~enum~ that you think will be most common.
+=The builder pattern= works nicely with this to let users easily make changes when they want.
+
+*** Default
+Actually, most general types in Rust already have ~Default~
+They are not surpirsing: 0, ""(empty strings), false, etc
+
+Maybe in our world we want most of the characters to be named Billy, age 15, height 170, weight 70, and alive.
+We can implement ~Default~ so that we can just write ~Character::default()~ to create.
+
+*** The builder pattern
+We will have many Billys, so we will keep the default.
+But a lot of other characters will be only a bit different.
+The builder pattern lets us chain very small methods to change one value each time.
+
+/First, make methods to ~Struct~ or ~Enum~ then use ~.build()~ for checking/
+
+- Uses cases (many method)
+  #+begin_src rust
+  let character_1 = Character::default().height(180).weight(80).name("Skoler");
+  #+end_src
+
+~.build()~
+A sort of final check
+1. Make =can_use= field in Struct
+2. check the info that user provided and change =can_use= according to.
+3. So we can check the value if it has the right one in build.
+
+** Deref and DerefMut
+*** Deref
+The trait that lets you use =*= to dereference something.
+We saw the word ~Deref~ before when using a tuple struct to make a new type.
+
+We can't use =*= like we can with ~Box~
+- It can point to its item
+- It has information about it
+- =It can use its methods=
+
+**** Example
+~String~ is actually a smart pointer to ~&str~.
+
+~Vec~ is actually a smart pointer to ~array~.
+*** DerefMut
+We can change the values through =*=
+It looks almost the same with ~Deref~
+** Crates and modules
+*** Crate
+=It means "Inside this project" or "Inside this file"=
+Every code in Rust, you are writng it in a ~crate~.
+- A crate is the file, or files, that go together for your code.
+- Inside the file you write you can also make a ~mod~.
+- A ~mod~ is a space for function, structs, etc. and is used for a few reasons:
+  1. Bulding your code : it helps you think about the general structure of your code.
+  2. Reading your code : people can understand your code more easily.
+     ~std::collections::HashMap~ tells you tdaht it's in ~std~ inside the module ~collections~.
+     This gives you a hint that maybe there are more collection types inside ~collections~ that you can try.
+  3. Privacy : everything starts out as private. That lets you keep users from using functions directly.
+
+- ~pubs~
+  1. for a struct : it makes the struct public, but the items are not public. To make an item public, you have to write ~pub~ for each one too.
+
+  2. for an enum or trait : everything becomes public. This makes sense because traits are about giving the same behaviour to something. And enums are about choosing between items, and you need to see them all to choose them.
+
+  3. for a module : a top level module will be ~pub~ because if it isn't pub then nobody can touch anything in it at all. But modules inside modules need ~pub~ to be public.
+
+** Testing
+Testing is very easy in Rust, because you can write tests =right next to your code=.
+Testing is a good subject to learn after that understand modules.
+
+We dont' use ~Run~ for tests, we use ~Test~.
+
+~#[test]~
+
+Tests are great for when you change your code.
+If you change your code later on and run the tests, if one of them doesn't work =you will know what to fix=.
+
+*** Test-driven development
+/Writing =tests first=, then writing the code./
+
+*** Before implement program
+/Write the ~Logic~ for program/
+
+=Calculator Example=
+- All empty spaces should be removed. => ~.filter()~
+- The input should turn into a ~Vec~ with all the inputs. ~+~ doesn't need to be an input, but when the program sees ~+~ it should know that the number is ~done~. =11 + 1= should do somthing like this
+  1) See ~1~, push it into an empty string.
+  2) See another ~1~, push it into the string (it is now "11")
+  3) See a ~+~, know the number has ended. It will push the string into ~Vec~, then clear teh string.
+- The program must count the number of -. An odd number will mean subtract, an even number will mean add. So "1--9" should give 10, not -8.
+- The program should remove anything after the last number. ~5+5+++++-----+~ is made out of all the characters in ~OKAY_CHARACTERS~, but it should turn to ~5+5~. This is easy with ~.trim_end_matches()~, where you remove anything that matchs at the end of a ~&str~
+
+
+*** Back and forth process
+1) First you write all the tests you can think of.
+2) Then you start writing the code.
+3) As you write the code, you get ideas for other tests.
+4) You add the tests, and your tests grow as you go.
+   The more tests you have, the more times your code gets checked
+
+
+*** Clippy (Refector)
+/For refectoring/
+This will look at your code and give you useful tips to make it simpler.
+
+~cargo clippy~
+
+=The short name isn't always good=
+- calculator.clear()
+- clc.clr()
+** External crates
+=Someone else's crates. Not mine=
+
+*** WHY
+- it is very easy to import other crates.
+- The Rust standard library is quite small. (We need more!!)
+*** HOW
+/Use ~Cargo.toml~ for this/
+*** Where can we find it? - [[https://crates.io/][crates.io]]
+** Standard library
+*** OsString and CString
+~std::ffi~ : helps you use Rust with other languages or operating systems.
+- Has type like ~OsString~ and ~CString~, which are like ~String~ for the operating system of ~String~ for the language C.
+- They each have their own ~&str~ type too: ~OsStr~ and ~CStr~.
+- ~ffi~ means ="foreign function interface"=.
+
+**** OsString
+Use when you have to work with an operating system that =doesn't have Unicode=.
+All Rust strings are unicode, but not every operating system has it.
+
+/Why use OsString/ : To read other OSs Unicode
+1) A String on Unix (Linux, etc.) might be lots of =bytes= together that don't have zeros. And sometimes you read them as Unicode UTF-8.
+2) A String on Windows might be made of =random 16-bit values= that don't have zeros. And sometimes you read them as Unicode UTF-16.
+3) In Rust, strings are always valid UTF-8, which may contain zeros.
+
+#+begin_src rust
+let my_string = OsString::from("This string wokrs for you OS too!");
+
+// Inside of OsString..
+pub fn into_string(self) -> Result<String, OsString> // if it doesn't work then you just get it back
+#+end_src
+
+*** std::mem
+#+begin_src rust
+// owned src!
+pub fn replace<T>(dest: &mut T, mut src: T) -> T {
+    swap(dest, &mut src); // It uses .swap(), mutalble src
+    src // return old value
+}
+
+pub fn take<T>(dest: &mut T) -> T
+where
+    T: Default,
+#+end_src
+*** prelude
+
+"You don't have to write prelude code"
+
+- Unpin -> it is used for almost every type (like Sized, which is also very common)
+  pin : to not let something move.
+#+begin_src rust
+use std::marker::{Copy, Send, Sized, Sync, Unpin};
+
+#+end_src
+
+The reason of you don't have to write ~use std::vec::Vec~ to create a ~Vec~
+You can see all the items [[ https://doc.rust-lang.org/std/prelude/index.html#prelude-contents ][here]]
+- ~use~ keyword
+- ~std::vec::Vec~ is called =path=
+- ~Vec~ is called =name=
+- ~::~ is called =separator=
+- ~use~ is called =prelude=
+- ~prelude~ is a =module=
+
+**** Unpin
+~std::marker::{Copy, Send, Sized, Sync, Unpin}~.
+You haven't seen ~Unpin~ before, becuase it is used for =almost every type= (like =Sized= which is also very common).
+To ~pin~ means to =not let something move=.
+**** ToOwned
+~std::borrow::ToOwned~
+You saw this before a bit with =Cow=, which can take borrowed content and make it owned.
+It uses ~.to_owned()~ to do this.
+You can also use ~to_owned()~ on a =&str= to get a =String=, and the same for other borrowed values.
+**** Iterators
+~std::iter::{Iterator, Extend, IntoIterator, DoubleEndedIterator, ExactSizeIterator}~
+We used =.rev()= for an iterator before: this actually makes a =DoubleEndedIterator=.
+An =ExactSizeIterator= is just something like ~0..10~: it already knows that it has a ~.len()~ of 10,
+Other iterators don't know their length for sure.
+**** No prelude
+~#![no_implicit_prelude]~
+Let's give it a try and watch the compiler complain
+In this case, you need to tell Rust to use the =extern= (external) crate called =std=, and then the items you want.
+(Finally you'd know, why Rust use the =prelude=)
+
+But why didn't we see the =extern= keyword before?
+It's because you don't need it that much anymore.
+Before, when bringing in an external crate you had to use it.
+So to use =rand= in the past, you had to write ~extern crate rand~
+
+*** macros
+This macro is kind of like ~todo!()~ except it's for code that you will never do.
+
+Maybe you have a ~match~ in an enum that you know will never choose one of the arms, so the code can never be reached.
+
+if that's so, you can write ~unreachable!()~ so the compiler knows that it can ignore that part.
+
+- Your program doesn't let anyone choose Chernobyl.
+
+But the enum was made a long time ago in someone else's code, and you can't change it.
+
+So in the ~match~ arm you can use it.
+
+If the compiler ever calls ~unreachable!()~, the program will =panic=.
+
+**** column!, line!, file!, module_path!
+These four macros are kind of like ~dbg!()~ because you just put them in to give you debug information.
+
+But they don't take any variables - you just use them with the brackets and nothing else.
+- ~column!()~ : gives you the column where you wrote it,
+- ~file!()~ : gives you the name of the file where you wrote it
+- ~line!()~ : gives you the line where you wrote it
+- ~module_path!()~ : gives you the module where it is.
+
+**** cfg!
+We know that you can use attributes like ~#[cfg(test)]~ and ~#[cfg(windows)]~ to tell the compiler what to do in certain cases.
+
+When you have ~test~, it will run the code when you run Rust under testing mode (if it's on your computer you type ~cargo test~)
+
+And when you use ~windows~, it will run the code if the user is using Windows.
+But maybe you just want to change one tiny bit of code ~depending on~ the operating system, etc.
+** Make macro
+/Code that writes code/
+~macro_rules!()~
+
+*** General Types
+- ~ident~ (identifier) : for variable or function names.
+- ~tt~ (token tree) : sort of means any type of input.
+
+** cargo
+~rustc~ means =Rust compiler=, and it's what does the actual compiling.
+A rust file ends whit an ~.rs~.
+
+But most people don't write something like ~rustc main.rs~ to compile.
+
+They use something called ~cargo~, which is the main package manager for Rust.
+
+One note about the name: it's called ~cargo~ because when you put crates together, you get cargo.
+
+A ~crate~ is a wooden box that you see on ships or trucks, but you remember that =every Rust project= is also called a crate.
+
+Then when you put them together you get the whole cargo.
+
+You can see this when you use cargo to run a project.
+
+Let's try something simple with ~rand~: we'll just randomly choose between eight letters.
+
+*** cargo run
+This will ~build~ our program and ~run~ it for us.
+Rust is very fast, because it compiles =ahead of time=.
+
+*** cargo build
+Only build
+
+*** ~--realease~ option
+Compile everything in your code.
+You can get more info about execution results.
+
+*** cargo check
+Just check
+
+*** cargo new
+Create new Rust project
+
+*** cargo clean
+Clean all crates in the project
+** Taking user input
+*** ~std:: io::stdin~ : standard in, the input from the keyboard.
+- ~.read_line()~ : put the input into =&mut String=
+
+*** ~std::env::Args~ : get user input of invironment
+Get the user types when starting the program.
+
+Usually used for user settings. (If you want to make sure that the user writes some input)
+
+*** ~std::env::Vars~ : get system variables
+** Using files
+Now that we are using Rust on the computer, we can start working with files.
+You will notice that now we will start to see more and more ~Result~ s in our code.
+That is because once you start working with files and similar things, many things can go wrong.
+A file might not be there, or maybe the computer can't read it.
+
+*** Question mark
+You might remember that if you want to use the ~?~ operator, it has to return a ~Result~ in the function it is in.
+If you can't remember the error type, you can just give it nothing and let the compiler tell you.
+
+*** ~std:: io::Results~
+Also, Rust has a convenient Result type when using ~File~ and similar things.
+It's called ~std:: io::Result~, and this is what you usually see in ~main()~ when you are using ~?~ to open and do things to files.
+
+*** OpenOptions
+~append()~ : add to the content that's already there instead of deleting.
+~create()~ : lets ~OpenOptions~ create a file.
+~create_new()~ : it will only create a file if it's not there already.
+~read()~ : set this to ~true~ if you want it to be able to read a file.
+~trucate()~ : set this to ~true~ if you want to cut the file content to 0 (delete contents) when you open it.
+~write()~ : lets it write to a file.
+
+* Private Note
+1. Programmer needs feature detecting memory errors at compile time.
+2. To detect error at compile time, you need to know what size of memory.
+3. To know size of memory, save data in heap and make reference it.
+4. Then compiler can know size of it, because reference always be 32bit size.
+** Archtecture
+- Stack = save memory address of heap (means make a pointer).
+- Heap = save dynamic data that can't save in stack.
+  #+begin_src rust
+  let a = String::from("Hello");
+  let b = &a;
+  let c = a.clone();
+  let d = 1;
+  let e = d; // copied type!
+  #+end_src
+
+  #+begin_src json
+  Stack: {
+      0x001: {
+        Identifier: a,
+        Type: String,
+        Memory: 0x111,
+      },
+      0x002: {
+        Identifier: b,
+        Type: Address,
+        Memory: 0x001,
+      },
+      0x003: {
+        Identifier: c,
+        Type: String,
+        Memory: 0x111,
+      },
+      0x004: {
+        Identifier: d,
+        Type: i32,
+        Memory: 1,
+      },
+      0x005: {
+        Identifier: e,
+        Type: i32,
+        Memory: 1,
+      },
+  },
+
+  Heap : {
+      0x111: {
+        Memory: "Hello"
+      }
+  }
+  #+end_src
+** Common Cases
+*** About using variable
+If you want to change value => use mut => Is there any returning mut?
+*** About accuracy of function (for dubug)
+1. ~panic!()~
+2. ~assert!()~
+   if the part inside () is not true, the program will panic
+3. ~assert_eq!()~
+   the two items inside () must be equal.
+4. ~assert_ne!()~
+   the two items inside () must be not equal.
+5. ~.unwrap()~
+   it will panic if there's not value.
+6. ~.expect()~
+   similar with ~.unwrap()~, set message!
+** Common Methods
+*** .into() : use Self::from(..)
+** Difference between .map() and .for_each()
+*** .map()
+Map ~Struct~ for doing something to each item and passing it on.
+=Doesn't do anything unless you use a method like .collect() because this is fast!! Just make Structure and wait..=
+
+- If it's a ~Function~ rather than a ~Struct~...
+  iterate over all the ~i32~ from the iterator
+  then enumerate over all the ~i32~ from the iterator
+  then map over all the enumerated ~i32~
+
+*** .for_each()
+~Function~ for doing something when you see each item.
+** Glossary
+- indices : index
+** Ownership
+*** &var : borrowed, immutable
+*** &mut var : borrowed, mutable
+*** var : owned, mutable

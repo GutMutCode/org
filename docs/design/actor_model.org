@@ -1,0 +1,11 @@
+#+title: Actor Model
+
+* Definition
+A mathematical modle of concurrent computation that treats an /actor/ as the basic building block of concurrent computation.
+
+In response to a message it receives, an actor can:
+
+- make local decisions,
+- create more actors,
+- send more messages,
+- and determine how to respond to the next message received

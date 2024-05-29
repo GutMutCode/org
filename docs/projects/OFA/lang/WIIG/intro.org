@@ -1,0 +1,35 @@
+#+title: Intro
+
+* Interpreter?
+text goes in => something comes out.
+
+Take other programs as their input => produce something.
+
+Seemingly random characters are fed into the interpreter => suddenly become meaningful.
+
+translate this language to operate something while reading it.
+
+/Just interpret the input right away/
+
+** Generic state
+*** Interpreter
+Take source code => ~evaluate~ it without producing some visible, intermediate result that later be executed.
+
+*** Compiler
+Take source code => ~produce~ output in another language that the underlying system can understand
+
+** Kinds
+*** small
+
+*** much more elaborate
+obtimized, advanced parsing and evaluating techniques
+**** Jit
+compile the input just-in-time into native machine code that gets then executed.
+
+*** someting in between them
+
+1. parse the source code
+2. build an abstract syntax tree(AST) out of it
+3. evaluate this tree
+
+This kind of interpreter genually called ="tree-walking"= interpreter, because it "walks" the AST and interprets it.

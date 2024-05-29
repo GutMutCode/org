@@ -1,0 +1,74 @@
+#+title: SQL Statements
+
+* What is SQL statements?
+[[file:./stmt.org][Statements]] used to interact with relational databases
+
+* Examples
+** Data Query Language (DQL)
+*** SELECT
+Retrives data from one or more tables
+#+begin_src sql
+SELECT column1, column2 FROM your_table WHERE condition;
+#+end_src
+
+** Data Definition Language (DDL)
+*** CREATE
+Creates datatbaae object such as tables, indexes, or views
+#+begin_src sql
+CREATE TABLE your_table (
+    column1 datatype1,
+    column2 datattype2,
+    ...
+);
+#+end_src
+
+*** ALTER
+Modifies the structure of an existing database object (e.g., table)
+#+begin_src sql
+ALTER TABLE your_table ADD column3 datatype3;
+#+end_src
+
+*** DROP
+Deletes a database object (e.g., table)
+#+begin_src sql
+DROP TABLE your_table;
+#+end_src
+
+** Data Manipulation Language (DML)
+*** INSERT
+Adds new records into a table
+#+begin_src sql
+INSERT INTO your_table (column1, column2) VALUES (value1, value2);
+#+end_src
+
+*** UPDATE
+Modifies existing records in a table
+#+begin_src sql
+UPDATE your_table SET column1 = new_value WHERE condition;
+#+end_src
+
+*** DELETE
+Removes records from a table based on a condition
+#+begin_src sql
+DELETE FROM your_table WHERE condition;
+#+end_src
+
+
+** Transaction Control Langauge (TCL)
+*** COMMIT
+Saves all changes made during the current transaction
+#+begin_src sql
+COMMIT;
+#+end_src
+
+*** ROLLBACK
+Undoes changes made during the current transaction
+#+begin_src sql
+ROLLBACK;
+#+end_src
+
+*** SAVEPOINT
+Creates a point within a transaction to which you can later roll back
+#+begin_src sql
+SAVEPOINT your_savepoint;
+#+end_src

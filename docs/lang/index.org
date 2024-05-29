@@ -1,0 +1,14 @@
+#+title: Docs of Programming Languages
+
+* Programming Languages
+** [[file:./rust/index.org][Rust]]
+** [[file:./elixir/index.org][Elixir]]
+** [[file:./htmx/index.org][htmx]]
+** [[file:./js/index.org][js]]
+** [[file:./zig/index.org][Zig]]
+** [[file:./java/index.org][Java]]
+** [[file:./julia/index.org][Julia]]
+** [[file:./wasm/index.org][Wasm]]
+
+* Reference
+[[file:../index.org][Docs]]

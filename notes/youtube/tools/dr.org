@@ -1,0 +1,62 @@
+#+title: Davinci Resolve
+
+* Animation
+** Anim Curves
+*** Expression
+time (current frame - mutable)
+-
+RenderStart (object's start frame - immutable)
+/
+FrameFormat.Rate (project's frame rate - immutable) / 2
+
+#+begin_src davinci resolve
+iif
+(
+  ((time-comp.RenderStart) / (comp:GetPrefs().Comp.FrameFormat.Rate) / 2) < 1,
+  ((time-comp.RenderStart) / (comp:GetPrefs().Comp.FrameFormat.Rate) / 2),
+  1
+)
+#+end_src
+
+* Green Bar
+Indicates which parts of the current selected tool are cached to RAM
+
+- Fusion know freeze frames or static images and calculate only once.
+
+* Expression
+Can be used to ~get a dynamic value~
+
+Function in Programming Langauge
+#+begin_quote
+The value of the size control on a Transform tool
+#+end_quote
+
+** Rule
+#+begin_quote
+Name.Control
+
+Transform2.Size
+#+end_quote
+
+
+* The things we have to avoid (aware)
+** Requesting the value of a control frame by frame
+If you don't need ~dynamic detecting (detect frame by frame)~,
+
+instanciate a tool or Publish a control ~for direct connecting~
+
+** Fusion can't change multiple controls/parameters at once
+
+If there are many things to change, You need to change them ~manualy one by one~
+- Or use Change String Scripts
+
+** If Expression output a text or a state/boolean
+It will be quite difficult to fix an error, if you can't see the output of the Expression
+
+-> Use Text+ tool for read ou the state of every kind of expression
+
+** Disable effects when HiQ mode is disabled
+To enhance playhead's performance
+
+* About Animation Preset
+** less information about animation & usecases

@@ -1,0 +1,6 @@
+#+title: Macro
+
+* Macro
+#+begin_quote
+Let's write code that lets us write code that writes code!
+#+end_quote

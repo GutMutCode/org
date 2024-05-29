@@ -1,0 +1,11 @@
+#+title: URI
+
+* What is URI?
+Uniform Resource Identifier
+
+Identifier to manage resources in uniform way
+
+* How the URI looks like?
+URI patterns are designed in a hierarchal manner
+
+~/users/123~ might represnt the user with ID 123

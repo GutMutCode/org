@@ -1,0 +1,331 @@
+:PROPERTIES:
+:ID:       9a2d52f3-cee3-416c-9786-3cefeb053ebb
+:END:
+#+title: Chinese
+
+* How to type pronounce
+ralt + a = ¯
+ralt + e = ´
+ralt + v = ˇ
+ralt + ` = `
+
+
+* 学习
+[[https://en.wiktionary.org/wiki/Appendix:Mandarin_Frequency_lists/1-1000][Mandarin Frequncy lists]]
+
+* 孔子 - 论语
+#+begin_quote
+侖
+
+論,论 (lun) 논할 논
+語,语 (yu) 말씀 어
+#+end_quote
+- 我爱你
+* 苦悶 (kumen)
+草 (cao) 풀 초
+古 (gu) 옛 고
+苦 (ku) 쓸 고
+門 (men) 문 문
+心 (xin) 마음 심
+- 한자 + 중국어 + 일본어를 통합해서 배울 수 있는 방법이 있지 않을까? - 누군가 선행한 사람의 지식이 필요하다.
+- 선행한 사람의 고민 해결 방법 탐색하기
+* 單語 (tannyu)
+#+begin_quote
+單 (dan) 홑 단 / 単 (tann)
+言 (yán) 말씀 언 / げん (genn)
+吾 (wu) 나 오 / 吾 (ware)
+語 (yu) 말씀 어 /
+單語 (danyu) 단어
+#+end_quote
+人 (ren) 사람 인
+木 (mu) 나무 목
+休 (xiu) 쉴 휴
+口 (kou) 입 구
+兄 (xiong) 형 형
+介 (jie) 끼이다 개
+大 (da) 크다 대
+太 (da) 크다 태
+立 (li) 서다 립
+並,并 (bing) 나란하다 병
+比 (bi) 견주다 비
+車 (che) 수레 차
+父 (fu) 아비 부
+交 (jiao) 사귈 교
+比較,比较 (bijiao) 비교
+戶 (hu) 집 호
+肩 (jian) 어깨 견
+比肩 (bijian) 비견
+手 (sh) 손 수
+批 (pi) 비평하다 비
+卩 (jie) 무릎꿇을 절
+尸 (shi) 주검 시
+目 (mu) 눈 목
+臣 (chen) 신하 신
+臥,卧 (wo) 엎드릴 와
+艮 (gen) 그칠 간
+眼 (yan) 눈 안
+眼目 (yanmu) 안목
+著眼,着眼 (zhuoyan) 착안
+眼鏡 (yanjing) 안경
+見 (jian) 볼 견
+見聞 (jianwen) 견문
+意見,意见 (yijian) 의견
+會見,会见 (huijian) 회견
+灌 (guan) 황새 관
+觀,观 (guan) 보다 관
+觀察,观茶 (guancha) 관찰
+心 (xin) 심장 심
+觀心,观心 (guanxin) 관심
+示 (shi) 보일 시
+夕 (xi) 저녁 석
+祭 (ji) 제사 제
+視,视 (shi) 보다 시
+視察,視察 (shicha) 시찰
+視力,視力 (shili) 시력
+視線,視线 (shixian) 시선
+皿 (min) 이름 명
+監,监 (jian) 살펴보다 감
+監察,监察 (jiancha) 감찰
+覽,览 (lan) 살펴보다 람
+觀覽,观览 (guanlan) 관람
+閱覽,阅览 (yuelan) 열람
+手 (shou) 손 수
+看 (kan) 지켜보다 간
+看破 (kanpo) 간파
+看板 (kanban) 간판
+看過,看过 (kanguo) 간과
+看護,看护 (kanhu) 간호
+看病 (kanbing) 간병
+少 (shou) 적을 소
+省 (xing/sheng) 살피다 성, 덜 생
+省察 (xingcha) 성찰
+廠,厂 (chang) 기슭 엄
+又 (yòu) 또 우, 오른손 우
+反 (fan) 돌이키다 반
+反省 (fanxing) 반성
+省略 (shenglue) 생략
+兆 (zhou) 조,점괘 조
+眺 (tiao) 바라보다 조
+眺望 (tiaowang) 조망
+眼 (yan) 눈 안
+青 (qing)[칭] 푸를 청
+睛 (jing) 눈동자 정
+眼睛 (yanjing) 안정
+王 (wang) 왕 왕
+白 (bai) 흰 백
+珀 (po) 호박 박
+碧 (bi) 푸를 벽
+碧眼 (biyan) 벽안
+眉 (mei) 눈썹 미
+白眉 (baimei) 백미 - 중국 촉한 능력자 에이스 마량이 흰 눈썹을 가지고 있었음
+門 (men) 문 문
+日 (ri) 날 일
+眉間 (meijian) 미간
+自 (zi) 스스로 자
+身 (shen) 몸 신
+自身 (zishen) 자신
+弓 (gong) 활 궁
+夷 (yi) 오랑케 이
+叚 (jia) 빌릴 가
+假 (jia) 거짓 가
+昔 (xi) 예 석
+借 (jie) 빌릴,말린고기 차
+叚借 (jiajie) 가차
+畀 (bi) 줄 비
+鼻 (bi) 코 비
+息 (xi) 숨 쉬다 식
+犬 (quan) 개 견
+臭 (chou) 냄새 취
+嗅 (xiu) 맡을 후
+休息 (xiuxi) 휴식
+歹 (dai) 부서진 뼈 알, 몹쓸 대
+虫 (hui, chong) 벌레 훼, 충
+良 (liang) 어질 량(양)
+食 (shi) 밥 식
+蝕 (shi) 좀먹을 식
+值 (zhi) 곧을 직
+殖 (zhi) 불릴 식
+幺 (yao) 작을 요
+糸 (mì) 실 사
+卜 (bo) 점괘 복
+攴 (pū) 칠 복
+支 (zhī) 지탱할 지
+每 (mei) 늘 매
+敏(min) 민첩할 민
+繁 (fan) 번성할 번
+子 (zi) 사람 자
+彐 (ji) 돼지 머리
+丨 (gun) 뚫을 곤
+聿 (yu) 붓 율, 사
+女 (nu) 여자 녀
+妻 (qi) 아내 처
+西 (xi) 서녘 서
+棲,栖 (qi) 깃들일 서
+棲息 (qixi) 서식
+宀 (mian) 집 면
+八 (bā) 여덟, 나눌 팔
+穴 (xue) 구멍 혈
+禾 (he) 벼 화
+私,厶 (si) 팔뚝, 활, 사사로울 사
+肱,厷 (gong) 팔뚝 굉
+土 (tu) 흙 토
+至 (zhi) 이를,덜렁거릴 지
+窒 (zhi) 막힐 질
+窒息 (zhixi) 질식
+口 (kou) 입 구
+脣 (chun) 입술 순
+辰 (chen) 새벽,별 진
+肉 (rou) 고기 육
+月 (yue) 육달월 월
+丹脣皓齒 (danchunhaochi) 단순호치
+脣亡齒寒 (chunwangchihan) 순망치한
+齒 (chi) 이 치
+止 (zhi) 발,그칠 지
+齒牙 (chiya) 치아
+牙 (ya) 어금니 아
+舌 (she) 혀 설
+咽 (yan) 목구멍 인
+因 (yin) 원인 인
+本 (ben) 근본 본
+呼 (hu) 부를 호
+吸 (xi) 마실 흡
+
+* Curious
+正 (zheng) 바르다 정
+疋 (ya) 바르다 아, 짝 필
+定 (ding) 정하다 정
+不 (bu) 아니 부 - 옳지 않음
+不定 (buding) 부정 - 일정하지 않음
+不正 (buzheng) 부정 - 바르지 않음
+爪 (zhao) 손톱 조
+尹 (yun) 성씨 윤, 다스릴 윤
+爭 (zheng) 다툴 쟁
+淨 (jing) 깨끗할 정
+不淨 (buzing) 부정 - 깨끗하지 않음
+否 (fou) 아닐 비 - 인정하지 않음
+否定 (fouding) 부정 - 옳지 않다고 인정함
+臼 (jiu) 절구 구
+千 (qian) 일천 천
+臿 (cha) 가래, 찧을 삽
+揷 (cha) 꽂을 삽
+入 (ru) 들어가다 입
+牛 (niu) 소 우
+寺 (si) 절 사
+特 (te) 특별하다 특
+刀 (dāo) 칼 도
+丰 (feng) 풍채 풍
+害 (hai) 해할 해
+割 (ge) 벨 할
+當 (dang) 마땅 당
+割當 (gedang) 할당 - 여러 몫으로 나눔
+婁 (lou) 끌 누
+數 (shu) 셈 수
+余 (yu) 나,나머지 여
+除 (chu) 덜 제
+皮 (pi) 가죽,표면 피
+衣 (yi) 옷 의
+被 (bei) 덮을,당하다 피
+工 (gong) 장인 공
+式 (shi) 법 식
+商 (shang) 상나라,장사,몫 상
+累 (lei) 묶을,여러 누
+畐 (fu) 가득할 부
+富 (fu) 부유할 부
+者 (zhe) 놈 자
+價 (jia) 값,명성 가
+賈 (jia) 값,명성 가
+襾 (ya) {밥}덮을 아
+貝 (bei) 조개,돈 패
+值 (zhi) 값 치
+直 (zhi) 곧을,바로 직
+瓶 (ping) 병 병
+瓦 (wa) 기와 와
+并 (bing) 아우를 병
+現 (xian) 드러날 현
+玉 (yu) 구슬 옥
+象 (xiang) 코끼리 상
+未 (wei) 아니다 미
+熟 (shu) 익을 숙
+構 (gou) 얽을 구
+文 (wen) 글(월) 문
+分 (fen) 나눌 분
+散 (san) 흩어질 산
+聯 (lian) 연이을 연
+慣 (guan) 익술할 관
+貫 (guan) 꿸 관
+用 (yong) 쓸 용
+做 (zuo) 지을 주
+故 (gu) 이유, 옛날 이야기 고
+依 (yi) 의지할 의
+存 (cun) 있을 존
+參 (san) 살피다 참
+照 (zhao) 비추다 조
+行 (hang) 다니다, 가다, 하다 행
+政 (zheng) 바로잡다, 다스리다 정
+早 (zao) 이르다 조
+熟 (shu) 익을 숙
+保 (bao) 보호하다 보
+守 (shou) 지키다 수
+繼 (ji) 잇다 계
+承 (cheng) 잇다 승
+相 (xiang) 서로 상
+續 (xu) 잇다 속
+賦 (fu) 세금 매기다 부
+課 (ke) 공부하다 과
+監 (jian) 보다 감
+查 (zha) 조사하다 사
+體 (ti) 몸 체
+推 (tui) 밀다 추
+論 (lun) 논하다 론
+從 (cong) 좇다 종
+量 (liang) 헤아리다 양
+接 (jie) 이을 접
+尾 (wei) 꼬리 미
+科 (kē) 과목 과
+創 (chuāng) 비롯할 창
+板 (bān) 널판지 판
+修 (xiū) 연구하다, 고치다 수
+思 (sī) 생각하다 사
+惟 (wéi) 오직 유
+善 (shàn) 선하다 선
+實 (shí) 열매 실
+在 (zái) 존재하다 재
+婦 (fù) 붙이다 부
+錄 (lù) 기록하다 록
+命 (mìng) 명령하다 명
+
+
+** 整理 (zhengli) 정리
+#+begin_quote
+整 (zheng) 가지런할 정
+束 (shu) 묶을 속
+攴 (pu) 하도록하다
+理 (li) 다스릴 리
+#+end_quote
+** 한자 기본 구조
+#+begin_quote
+漢 (han) 한나라 한
+
+字 (zi) 글자 자
+基 (ji) 자리,기초 기
+本 (ben) 근본 본
+構 (gou) 얽다,짜다 구
+造 (zao) 짓다 조
+#+end_quote
+모양 + 음
+
+- 모양 : 사물에서 가져옴
+- 음 : 다른 한자에서 따옴
+
+
+* 통계
+統 (tǒng) 거느리다 통
+- 充 (chōng) 가득차다 충
+計 (jì) 셀 계
+
+分 (fēn) 나눌 분
+散 (sàn) 흩을 산
+
+標 (biāo) 표하다 표, 나무의 끝 표
+- 票 (piào) 가볍다 표, 지폐 표
+本 (běn)

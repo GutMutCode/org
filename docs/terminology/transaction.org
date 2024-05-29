@@ -1,0 +1,7 @@
+#+title: Transaction
+
+* Definition
+** In the context of Database
+Any operation that is treated as =a single unit of work=, performed by the database management system(DBM)
+
+- either completes fully or does not complete at all, and leaves the stroage system in a consistent state

@@ -1,0 +1,7 @@
+#+title: Opcode
+
+* What is Opcode?
+The `Operator` part of [[file:./instruction.org][instruction]]
+#+begin_src asm
+add $1, iex
+#+end_src

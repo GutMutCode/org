@@ -1,0 +1,64 @@
+#+title: Curious
+
+* From kakao
+** Network bandwidth
+worker node => 10 ~ 20mb about resource?
+
+** TPS
+Trafic per second
+- Before deploy
+- After deploy
+
+- Handling by Tomcat WAS
+  - Number of threads -> dynamic setting -> check thread config
+  # - You have to make each threads' pod's thread around 200.
+  - You have to make the number of threads for each thread around 200.
+
+** APM
+Application Monitor
+
+See requests when latency is occured.
+
+- External DB request? - SQL, REDIS, etc.
+
+- Application request
+  Domain related request?
+
+** DB connection
+*** Check RDB connection pool (reserved thread)
+- Before start server
+- After start server
+*** in-memory (REDIS)
+Single node -> single connection -> no error?
+
+** Java application Apiaca
+warm up
+
+1. Starting process of server
+2.
+
+*** API
+- mapping kubernetes request
+  for start ~warmer()~ method
+  - this isn't used as actual service
+  - logic -> lack of warmup
+
+** Kubernetes
+liveness/readiness probe (request) - for what?
+- request certain data
+
+* From Zig
+** What is means that use the LLVM project as the backend for the compiler?
+*** What can i know
+Compile have the backend
+*** GoTo
+[[file:./terminology/llvm.org][LLVM Projects]]
+** What changing alignment of a pointer means?
+
+* From Monkey
+Why some programming language separate variable assignment and function assignment?
+
+** What `f` means in `Errorf` or `Logf` functions?
+Format
+* From ToyDB
+PostgreSQL's internal architecture is the same as the toydb? (key/value store feature on bottom of storage)

@@ -1,0 +1,92 @@
+#+title: Nullnull
+
+* Socket Programming
+** Syntax
+*** The way to use functions
+The reason of use this function
+|> Network
+|> OSI 7 Layer
+|> TCP/IP Socket
+
+** The way to design protocol
+The things that you have to aware.
+*** Echo server
+*** Chating server
+
+** IOCP
+*** Asynchronous File I/O
+*** Queue
+*** Thread scheduling
+Automation by use OS's features.
+** Environment
+Wireshark => packet analysis
+PC more than one => To occur errors intendedly
+
+Cross calbe => load testing
+
+Network Error handling
+=> Detach Lan cable from pc.
+=> timeout
+
+*** For only one host.
+- Many Process
+  == Many Socket
+  - Server
+  - Client
+
+**** Process flow
+client process request(L5 or high) =>
+
+client socket(L4) =>
+make packet (L3) =>
+see ip and transter to a destination =>
+receive packet (L3) =>
+server socket(L4) =>
+
+server process receive(L5 or high)
+
+*** For Many host.
+
+
+* Syntax
+** Create Worker thread
+MS Development Network
+#+begin_src c
+HANDLE CreateThread(
+                    [in, optional] LPSECURITY_ATTRIBUTES lpThreadAttributes, [out, optional] LPDWORD lpThreadId
+                    );
+#+end_src
+
+- LPDWORD
+  => Long Pont Double WORD
+
+* Glossary
+** 127.0.0.1 == Loopback
+** Difference between TCP/UDP
+TCP => client/server
+UDP => peer to peer
+
+** Thread
+*** Window
+Execution unit that using the ~cpu~.
+**** Have 1MB isolated stack memory in virtual memory
+*** Multi threading
+Concurruntly execute the program.
+*** Main thread
+Usually used thread.
+**** Any other thread => worker thread
+
+** Process
+The thread suite.
+- OS =>
+  - Allocate virtual memory to process
+  - Give process some permission
+
+** Concurreny programming
+*** Queue
+- Race condition (relevant to sequence of execution)
+
+*** Flow Control
+- Insert Control
+  - Blocking
+- Signal(Event) Control

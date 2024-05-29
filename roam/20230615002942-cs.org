@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       284d9fc7-2f80-47bc-9c27-ecfc9fd3af2d
+:END:
+#+title: CS
+
+* Computer science
+** System software
+Software for software.
+*** Programming language
+A way to communicate with computer
+
+We need to know design principle to deliver clear meaning.
+
+- General principle
+- What to know for design language
+*** Compiler
+System software that converts programming languages to binary
+
+- Design principle for compiler
+- Formal language to define syntax
+- Compiler sequence
+- Making compiler
+*** Operating system
+Manage resource inside of computer
+
+- Features to efficiently use resource
+- Analyzing kernel
+** Data science
+*** 비정형 빅데이터
+- Way to analyze data.
+- Find a pattern.
+*** Artificial intelligence
+- Way to analyze data of computer.

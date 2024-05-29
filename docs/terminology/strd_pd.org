@@ -1,0 +1,119 @@
+#+title: Stored Procedure
+
+* Table of Contents :toc:
+- [[#what-is-stored-procedure][What is stored procedure?]]
+- [[#the-main-purpose][The main purpose]]
+  - [[#code-reusability][Code Reusability]]
+  - [[#modularity][Modularity]]
+  - [[#improved-performance][Improved Performance]]
+  - [[#security][Security]]
+  - [[#transaction-control][Transaction Control]]
+  - [[#reduced-network-traffic][Reduced Network Traffic]]
+  - [[#encapsulation-of-business-logic][Encapsulation of Business Logic]]
+- [[#examples][Examples]]
+  - [[#a-stored-procedures-in-sql-server][a stored procedures in SQL Server]]
+  - [[#select-record-that-contain-string-in-multiple-tables-in-database][select record that contain string in multiple tables in database]]
+
+* What is stored procedure?
+A precompiled collection of one or more [[file:./sql_stmt.org][SQL statements]]
+
+- stored in [[file:./data_dic.org][database's data dictionary]]
+
+can be executed as a single unit
+
+typically written in a procedural language ( like SQL PL, PL/pgSQL, T-SQL, or PL/SQL )
+
+* The main purpose
+** Code Reusability
+*** Define a set of SQL statements as a stored procedure
+
+*** Reuse it multiple times in different part of your application
+
+** Modularity
+*** Encapsulating a set of SQL statements within a stored procedure
+
+** Improved Performance
+stored procedrues are precompiled and stored in a compiled form in database
+
+which can result in improved performance compared to sending individual SQL statements from the application to the database
+
+** Security
+You can grant or revoke permissions on stored procedures independently of the underlying table
+
+This allows for fine-grained control over who can execute specific operations in the database
+
+** Transaction Control
+Stored procedures can be used to define transactions
+
+allowing you to group multiple SQL statements into a single transaction
+
+This ensures data consistency and integrity
+
+** Reduced Network Traffic
+When executing a stored procedure, you send a single call to the database
+
+which can be more efficient than sending multiple individual SQL statements over the network
+
+** Encapsulation of Business Logic
+Stored procedures allow you to encapsulate complex business logic within the database,
+
+promoting a separation of concerns between the application layer and the database layer
+
+* Examples
+** a stored procedures in SQL Server
+#+begin_src sql
+CREATE PROCEDURE GetCustomerByID
+    @CustomerID INT
+AS
+BEGIN
+    SELECT * FROM Customers WHERE CustomerID = @CustomerID;
+END;
+#+end_src
+
+** select record that contain string in multiple tables in database
+#+begin_src sql
+-- Create a stored procedure to search for the string in all tables
+DELIMITER //
+
+CREATE PROCEDURE SearchTablesForString(p_search_string VARCHAR(255))
+BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE table_name VARCHAR(255);
+
+    -- Cursor to iterate through tables in the information schema
+    DECLARE cur_tables CURSOR FOR
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = 'your_database_name';
+
+    -- Declare continue handler to exit the loop
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    -- Open the cursor
+    OPEN cur_tables;
+
+    -- Loop through each table
+    read_tables: LOOP
+        -- Fetch the next table name
+        FETCH cur_tables INTO table_name;
+
+        -- Exit the loop if there are no more tables
+        IF done THEN
+            LEAVE read_tables;
+        END IF;
+
+        -- Dynamic SQL to search for the string in the current table
+        SET @sql = CONCAT('SELECT * FROM ', table_name, ' WHERE column_name LIKE ''%', p_search_string, '%''');
+
+        -- Prepare and execute the dynamic SQL
+        PREPARE stmt FROM @sql;
+        EXECUTE stmt;
+        DEALLOCATE PREPARE stmt;
+    END LOOP;
+
+    -- Close the cursor
+    CLOSE cur_tables;
+END //
+
+DELIMITER ;
+#+end_src

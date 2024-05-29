@@ -1,0 +1,4 @@
+#+title: Index
+
+* Key features
+** [[file:./pipelining.org][Pipelining]]

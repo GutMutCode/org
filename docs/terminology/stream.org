@@ -1,0 +1,4 @@
+#+title: Stream
+
+* What is Stream?
+Memory space that have starting point but doesn't have ending point or size.

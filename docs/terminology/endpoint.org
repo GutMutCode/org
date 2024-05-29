@@ -1,0 +1,59 @@
+#+title: Endpoint
+
+* Table of Contents :toc:
+- [[#what-is-endpoint][What is Endpoint?]]
+  - [[#in-english][In English]]
+  - [[#in-programming][In programming]]
+- [[#kinds-of-endpoint][Kinds of Endpoint]]
+  - [[#network-endpoint][Network Endpoint]]
+  - [[#application-endpoint][Application Endpoint]]
+  - [[#data-stream-endpoint][Data Stream Endpoint]]
+  - [[#user-interface-endpoint][User Interface Endpoint]]
+  - [[#peer-to-peer-network-endpoint][Peer-to-Peer Network Endpoint]]
+- [[#endpoint][EndPoint]]
+  - [[#wikipidia][Wikipidia]]
+  - [[#microsoft-security][Microsoft Security]]
+
+* What is Endpoint?
+** In English
+A point marking the completion of a process or stage of a process
+
+** In programming
+A sepecific locaion or [[file:./interface.org][interface]] where data communication can occur between two or more systems or applications
+
+* Kinds of Endpoint
+
+** Network Endpoint
+A point of contact for a network service, such as a server hosting an application or a device connected to the internet.
+
+** Application Endpoint
+A specific entry point within the application where requests are received, processed and responded to by the application logic
+
+(In the context of software applications)
+
+** Data Stream Endpoint
+A source or sink in a data processing pipeline =that comsumes or produces continuous streams of data=, such as message queues (e.g. RabbitMQ, Kafka), databaes, file systems, or real-time anlytics platforms like Apache Flink or Apache Kafka.
+
+** User Interface Endpoint
+The place where a user interacts with an application
+
+Either through graphical elements like windows, buttons, and menus or text-based interfaces like command lines or chat applications
+
+** Peer-to-Peer Network Endpoint
+The interconnected P2P nodes that can communicate with each other.
+
+Often using a decentralized protocol like BitTorrent or IPFS to exchange data and manage network resources
+
+
+* EndPoint
+** Wikipidia
+*** communication endpoint
+It is ~an interface~ =exposed by= a communicating party of by a communication channel.
+~A type~ of communication [[file:./node.org][network node]].
+
+** Microsoft Security
+~Physical devices~ that =connect to= ~a network system~ such as mobile devices, desktop computers, virtual machines, embedded devices, and servers.
+
+~Physical devices~ that =connect to= and =exchange= information with ~a computer network~.
+
+When ~a device~ =connects to= ~a network~, the flow of information between, for instance, a laptop and a network, is much like a conversation between two people over the phone.

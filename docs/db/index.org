@@ -1,0 +1,100 @@
+#+title: Index
+
+* Databases
+** [[file:./surreal/index.org][SurrelDB]]
+** [[file:./redis/index.org][Redis]]
+** [[file:./psql/index.org][PostgreSQL]]
+
+* How to choose right Database for purpose
+** Coding Apple
+*** In-Memory Datbase
+
+**** Kinds
+***** Redis
+Key-value Databse
+Stores data into RAM first and backup to a Storage(SSD, HDD)
+
+**** Usage
+- Caching to RAM for most used data
+- Pub/Sub
+- Streaming
+- Login logging
+
+*** Relational Database
+**** Kinds
+MySQL
+Oracle
+PostgreSQL
+
+**** Nomalization
+reducing duplication
+
+**** Transaction (ACID)
+security, rollback feature
+
+**** Pros
+***** Reliable Data Manage
+
+**** Cons
+***** Complex Input/Output Processing
+
+*** Graph Database
+
+**** Kinds
+neo4j
+
+**** Usage
+- To store relation
+  - route of airplane
+  - friendship in sns
+  - recommendation
+
+*** Document Database
+There are no reducing duplication (no nomalization)
+
+**** Kinds
+MongoDB
+
+**** Structure
+Collection > Document > JSON data
+
+**** Pros
+***** Simple Input/Ouput Processing
+
+***** Distributing process
+SNS, Chat, Board, Game
+
+**** Cons
+***** Lack of consistency
+DB `A` and DB `B` can have different data of the same object
+
+*** Column-family Database
+**** Kinds
+Cassandra
+
+**** Structure
+tuples in the same relation can have different attribute one another
+
+**** Pros
+Same with Document Database
+
++ time logging features
+
+**** Cons
+Same with Document Database
+
+*** Search Engine
+To store indices of search
+
+- manage indices of another DB
+- realtime searching word
+- searching word recommendation
+- fixing word syntax
+
+**** Kinds
+elastic search
+Amazon CloudSearch
+Google Cloud Search
+
+**** Structure
+Index > document

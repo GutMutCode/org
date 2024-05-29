@@ -1,0 +1,7 @@
+#+title: LFCR
+
+* Line feed
+Move cursor to entry point of line.
+
+* Carrage Return
+Move cursor to next line.

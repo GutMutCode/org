@@ -1,0 +1,35 @@
+#+title: Relational Algebra
+
+* What is Relational Algebra?
+A theoretical framework and a set of operations used to manimupate and query relational databases
+
+to provide a formal and mathematical way to express operations on relations, which are tables in a relational database
+
+to provide a foundation for relational database query languages, like SQL
+
+* Basic Operations
+** Selection (sigma)
+Selects rows from a relation(table) that satisfy a specified condition
+
+#+begin_example
+sigma_age>30(employees)
+
+selects rows from the "employees" table where the age is greater than 30
+#+end_example
+
+
+** Projection (pie)
+Selects specific columns from a relation, discarding the others
+
+#+begin_example
+pie_name, salary(employees)
+
+selects only the "name" and "salary" columns from the "employees" table
+#+end_example
+
+** Union (upsilon)
+Combines two relations, removing duplicates
+
+#+begin_example
+R upsilon S
+#+end_example

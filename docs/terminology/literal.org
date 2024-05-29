@@ -1,0 +1,8 @@
+#+title: Literal
+
+* Literal
+A notation for representing a fixed value in source code.
+
+** String Literal
+(or anonymous string)
+A literal for a string value in the source code of a cumputer program.

@@ -1,0 +1,6 @@
+#+title: Apple
+
+* TOC :toc:
+- [[#apple-silicon][Apple Silicon]]
+
+* [[file:./apple-silicon.org][Apple Silicon]]

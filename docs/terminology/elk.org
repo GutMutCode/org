@@ -1,0 +1,53 @@
+#+title: ELK
+
+* What is ELK
+Elasticsearch + Logstash + Kibana
+
+This gives you the ability to
+
+** aggregate logs
+from all your systems and applications
+
+** analyze logs
+
+** create visualizations
+*** infrastructure monitoring
+*** faster troubleshooting
+*** security analytics
+*** and more~
+
+* Structure
+** Elasticsearch
+A distributed search and analytics engine built on Apache Lucene (based on Java)
+
+*** Support various languages
+*** High? performance
+*** schema-free JSON document
+
+** Logstash
+- An open-source data ingestion tool
+- lightweight, open-source, server-side data processing pipeline
+- this can load data into Elasticsearch easly =(powerful log processing capabilities)=
+
+*** prebuilt filters and support for over 200 plugins
+**** ingest data regardless of the data source or type
+**** easy index your data
+
+*** Collect data from vairous sources
+*** Transform it
+*** Send it to your desired destination
+
+** Kibana
+A data visualization and exploration tool
+- this can load data from Elasticsearch easly =(powerful log processing capabilities)=
+
+*** log and time-series analytics
+*** application monitoring
+*** operational intelligence use cases
+
+*** visualization
+**** histograms
+**** line graphs
+**** pie charts
+**** heat maps
+**** built-in geospetial support

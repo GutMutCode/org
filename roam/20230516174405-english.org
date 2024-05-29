@@ -1,0 +1,417 @@
+:PROPERTIES:
+:ID:       6b305446-359e-4a1e-88ee-9d766d38bcb9
+:END:
+#+title: English
+
+* Table of Contents :toc:
+- [[#good-way-to-learn][Good Way to learn.]]
+- [[#syntax][Syntax]]
+  - [[#when][WHEN]]
+  - [[#how][HOW]]
+- [[#warning][Warning]]
+  - [[#when-1][WHEN]]
+- [[#words][Words]]
+  - [[#domain][Domain]]
+- [[#common-usage][Common usage]]
+  - [[#stands-for-][stands for ~]]
+  - [[#-at-hand][~ at hand]]
+  - [[#whether--or-not][whether ~ or not]]
+  - [[#tells-noun][tells =Noun=]]
+  - [[#bitch-about-][bitch about ~]]
+  - [[#while-we-are-on-the-][while we are on the ~]]
+  - [[#1-together-that-2][1 together that 2]]
+  - [[#this-is-name-speaking][This is NAME speaking.]]
+- [[#jupyter][Jupyter]]
+  - [[#품사][품사]]
+  - [[#명사와-명사구][명사와 명사구]]
+  - [[#관사][관사]]
+  - [[#대명사에-관사가-없는-이유][대명사에 관사가 없는 이유]]
+  - [[#형용사][형용사]]
+  - [[#동사구][동사구]]
+- [[#curious][Curious]]
+  - [[#번역기를-돌려봤을때는-의미가-맞다고-나오는데-내가-작문한-내용이-정말-외국사람들이-일반적으로-사용하는-문장인지-의구심이-든다][번역기를 돌려봤을때는 의미가 맞다고 나오는데, 내가 작문한 내용이 정말 외국사람들이 일반적으로 사용하는 문장인지 의구심이 든다.]]
+  - [[#in-which][in which]]
+- [[#abbreviations][Abbreviations]]
+  - [[#fr][fr]]
+  - [[#idc][idc]]
+  - [[#yall][yall]]
+  - [[#tbh][tbh]]
+  - [[#ong][Ong]]
+  - [[#ppl][ppl]]
+  - [[#idk][idk]]
+  - [[#u][u]]
+  - [[#r][r]]
+  - [[#ngl][Ngl]]
+  - [[#ofc][ofc]]
+  - [[#bc][bc]]
+  - [[#sec][sec]]
+- [[#phrasal-verb][Phrasal verb]]
+- [[#difficult-sentences][Difficult sentences]]
+  - [[#elon-musk--andrew-tates][Elon musk & Andrew tates]]
+  - [[#able-as-noun][~able as noun]]
+  - [[#theprimeagen][ThePrimeAgen]]
+- [[#how-to-learn-any-language-in-six-months][How to learn any language in six months]]
+  - [[#principles][Principles]]
+  - [[#actions][Actions]]
+- [[#my-rule][MY RULE]]
+  - [[#you-should-learn-like-a-kid][You should learn like a kid]]
+
+* Good Way to learn.
+- Find somethings that interests you and read.
+- Join foreign community that you want
+
+* Syntax
+** WHEN
+*** To and For
+**** When to use ~to~
+     - When the reason or purpose is a verb.
+**** When to use ~for~
+     - When the reason or purpose is a noun.
+     - Cut if you see ~verb~ after ~for~
+*** In and On
+    #+BEGIN_QUOTE
+    In and on are prepositions that are used to ~describe location~, among other things
+    There are simple rules that will help you choose between in and on for location,
+    although naturally there are exceptions to the rules.
+    #+END_QUOTE
+**** When to use ~in~ 
+     Use in when something is ~located inside~ of a defined space.
+     It could be flat space, like a yard, or a three-dimensional space, like a box, house, or car.
+     The space does not need to be closed on all sides
+     (There is water ~in~ the glass)
+     - With situation, time, case..
+**** When to use ~on~ 
+     Use on when something is ~touching the surface~ of something.
+     It could be a horizontal surface, like a floor or beach, or a vertical surface, like a wall
+     (There hung pictures ~on~ the wall)
+     We also use ~on~ for the surfaces of body parts (He has a tatto ~on~ his arm)
+**** Difference
+     - There is someone ~in~ my bed.
+     - There is a book ~on~ my bed.
+
+**** Exceptions
+     1. Although we use ~in~ with cars, use ~on~ for larger vehicles,
+        like planes, trains, and buses 
+        ("They have wifi ~on~ the plane").
+     2. To talk about something that is part of a written document, use ~in~,
+        regardless of the format of the document 
+        ("The quote appeared ~in~ a blog post")
+     3. With websites, use ~on~
+
+*** As and Like
+    =As= and =Like= are often confused since they can both be used for comparisons.
+    There are, however, important differences.
+**** Making comparisons
+***** as + adjective + as and as much as
+     We often use the structure =as + adjective + as= or =as much as= to say if something has,
+     or doesn't have, =the same amount= of that quality as something else.
+
+     - She loves curry as much as i do.
+     - He's not as tall as his brother.
+     - It's not as expensiv as the other hotel.
+     - That dog is as big as that child!
+
+     You also have to use as in the expression the same as.
+
+     - Your phone is the same as mine.
+     - Texting is not the same as speaking in person.
+
+
+***** like + noun
+      In the following comparisons, 
+      like is followed by a =noun= or a =pronoun= to say that two things are =similar=.
+
+      - He's like a fahter to me.
+      - She's acting like a child.
+      - It's like a burger but with big mushrooms instead of bread.
+      - There are lots of people like us.
+
+      It is also common to make comparisons using =like= with =verbs= of the senses.
+
+      - She =looks= like her mother.
+      - It =sounds= like a cat.
+      - Nothing =tastes= like homemade lemonade.
+      - It =smells= like medicine.
+      - It =feels= like cotton.
+
+***** as if/ as though + clause
+      As if and as though can be used to compare a real situation to an imaginary situation.
+      They are followed by a clause (a subject and verb).
+
+      - You look as if you've seen a ghost.
+      - I felt as if i was floating above the ground.
+      - You talk as though we're never going to see each other again.
+
+**** Examples
+     I worked =as= an actor for two years.
+     I went home early =as= i felt ill.
+     He looks =as= if he hasn't slept.
+     =As= you know, this is the third time i've had to complain.
+     He looks =like= his dad.
+     She's =like= a sister to me.
+     Try to do something relaxing, =like= reading a book or having a bath.
+
+*** When to use ~get~ with =past completive verb=
+*** Only and Also
+**** When to use ~only~ with =verb=
+     - Before verb?
+**** When to use ~also~ with =verb=
+     - After verb?
+*** When to use ~a, an, the~
+*** When to use ~that, which~
+** HOW
+*** How to use ~only~
+    - Only take a message if it done?
+
+*** How to use the =have=
+    The verb have is used as an auxiliary verb.
+    - She =has= =run= a lovely, deep, bubble bath.
+    - Katie =had= =read= about the concert in the newspaper.
+
+    and also as a main verb.
+    - She is =having= a bath at the moment.
+    - The driver has =had= his breakfast, so we can go.
+
+
+* Warning
+** WHEN
+*** When you use ~verb~
+    - Consider time
+*** When you use ~noun~
+    - Consider a, an, and the
+* Words
+** Domain
+   /An area of territory =owned= or =controlled= by a ruler of government./
+*** In several domains.
+*** To particular domains.
+* Common usage
+** stands for ~
+** ~ at hand
+** whether ~ or not
+** tells =Noun=
+** bitch about ~
+   ~ 에 대해서 욕을 하다.
+** while we are on the ~
+   ~ 하는 동안
+** 1 together that 2
+   - 2 인 1 ( 꾸미기 )
+** This is NAME speaking.
+   - 지금 제가 말하고 있습니다
+* Jupyter
+** 품사
+   /Types/
+   -  명사, 형용사, 부사, 전치사...
+** 명사와 명사구
+   Noun = N = n
+   공간적인 대상 = computer, pencil, cat, .. god, love, evil, ... korea, Japan
+   명사 == 코딩언어의 object
+
+*** 종류
+    1. 구체적인 형태가 있는 대상 : desk, pencil,cup...
+    2. 개념적인 대상 : dream, idea, purpose, goal
+*** 대화의 기본 단위 => 문장 (sentence)
+
+    문장
+    - 하나 이상의 ~품사~ 들의 조합
+    - 하나 이상의 절로 구성
+
+      명사가 문장 내에 쓰일때 => 반드시 명사구의 형태로 쓰인다.
+
+    명사 => 명사구(noun phrase = np = NP) => 절(clause)의 요소
+
+    I(명사구) like Haskell(명사구)
+
+    Give me(n) an(?) apple(n)
+
+    명사구 = 관사 + (형) + 명사 + (형)
+** 관사
+   /어떤 대상의 숫자 표현/
+*** 예제
+    one flower, two flowers, three flowers
+**** 특정되지 않은
+     - one flower => a flower
+     - many flowers => (zero) flowers
+**** 우리가 모두 아는 (그..)
+     - one flower which both you and me know => the flower
+     - many flower which both you and me know => the flowers
+
+*** 종류
+** 대명사에 관사가 없는 이유
+   명사는 반드시 명사구의 형태로 사용
+
+   Give me ~an apple~
+   Give me ~apples~
+   Give me ~two apples~
+
+   단어(명사) => 문장속에 삽입 => 명사구
+
+   왜 me 앞에는 관사가 없을까?
+   - 부정관사인가?
+     - 정해져 있으므로 부정관사는 아님.
+
+       There is a red apple on the table. It is from Jane for me.
+   It = a red apple
+
+   ~명사구~ 를 대신하는 단어들 = ~대명사~
+** 형용사
+   Adjective
+*** 규칙
+    1. 명사구에 포함
+       - a ~beautiful red~ flower
+         명사 앞 && 관사 뒤 || 명사 뒤
+    2. 동사구를 보충
+       - this flower is ~beautiful~
+         동사구 뒤
+    3. 선택적 사용
+** 동사구
+   명사구
+* Curious
+** 번역기를 돌려봤을때는 의미가 맞다고 나오는데, 내가 작문한 내용이 정말 외국사람들이 일반적으로 사용하는 문장인지 의구심이 든다.
+   - 실제로 외국인에게 사용해본다.
+   - 외국인에게 물어본다.
+     - 어디서 물어봄? => ~외국 커뮤니티~
+   - 자연스럽다는 것은 무엇인가?
+     일반적으로 통용되는 것 (옳고 그름을 의미하지는 않음)
+
+** in which
+the scenario in which...
+
+* Abbreviations
+** fr
+For Real
+
+** idc
+I don't care
+
+** yall
+You All
+
+** tbh
+To Be Honest
+
+** Ong
+On God
+
+** ppl
+People
+
+** idk
+I Don't Know
+
+** u
+You
+
+** r
+Are
+
+** Ngl
+Not Gonna Lie
+
+** ofc
+Of Course
+
+** bc
+because
+
+** sec
+second
+
+* Phrasal verb
+regular verb + prepositions or adverb => meaning is change!
+
+* Difficult sentences
+** Elon musk & Andrew tates
+- the globalist view is that all it's saying is that all life is equal whatever it is
+  the globalist view is that
+  all it's saying is that
+  all life is equal whatever it is
+
+- and just because you believe that hierarchical your obligation mean somebody else is ~
+  and just because
+  you believe that
+  hierarchical your obligation
+  mean(because) somebody else is
+
+- Neo liberals in their own PR they are ones you're the worst things on the earth
+  Neo liberals in their own PR
+  They are ones
+  You(ones) are the worst things on the earth
+
+- nobody in history book ever who did that either was the good guy
+  Nobody in history book
+  ever who did that
+  either was the good guy
+
+- they have different reason for why people might feel one way
+  they have different reason
+  for why people might feel one way
+
+- science that evidence show is real
+  science that
+  evidence show
+  is real
+
+** ~able as noun
+it's not noun
+
+it's adjective
+
+** ThePrimeAgen
+Twitter,
+with all of its Badness
+still operates better
+than almost every triple A game
+
+* How to learn any language in six months
+** Principles
+*** Focus on language content that is relevant to you
+Relevant to you == Fastest
+
+Meaningful to you
+
+Important to you
+
+*** Use your language as a tool to communicate right from day 1
+*** When you first understand language then you will acquire the language unconsciously
+*** Psycho-pysiological State is matter
+You need to be tolerant of ambiguity
+
+** Actions
+*** Listen a lot (Brain soaking)
+It doesn't matter if you understand it or not
+
+*** Focus on getting the ~meaning~ first (before get the words)
+
+*** Start Mixing
+**** Week 1 - Tool Box Stratege
+***** What is this?
+***** How do you say?
+***** I don't understand..
+
+**** Weeks 2-3
+Pronouns, Common Verbs, Adjectives
+
+**** Weeks 4
+Glue words
+
+*** Language parent
+someone that help me to learn language
+
+**** Rules
+works to understand what your saying
+does not correct mistakes
+confirms understanding by using correct language
+uses words the leaner knows
+
+*** COPY NATIVES
+
+*** Direct connect to mental image
+
+* MY RULE
+You should know the pattern that native peoples are using
+
+** You should learn like a kid
+*** just listen as many as possible
+You don't need to understand whatever
+
+*** copy their pronouncies

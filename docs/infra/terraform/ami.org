@@ -1,0 +1,77 @@
+#+title: Ami
+
+* AWS docs
+** [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#finding-quick-start-ami][Find a Linux AMI]]
+*** Summary
+Consider the following requirements
+
+1. The Region
+2. The operation system
+3. The architecture:
+   - 32-bit(i386)
+   - 64-bit(x86_64)
+   - 64-bit ARM(arm64)
+4. The root device
+5. The provider (for example, Amazon Web Service)
+6. Additional software (for example, SQL Server)
+** [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#finding-an-ami-aws-cli][Find an AMI using the AWS CLI]]
+*** Summary
+**** Find Linux AMI by Region
+https://cloud-images.ubuntu.com/locator/ec2/
+**** Find by system manager's configuration
+
+Follow below instruction
+
+1. configure your region - need credential
+   #+begin_src bash
+   aws configure
+   #+end_src
+
+2. set sso config
+   #+begin_src bash
+   aws configure sso
+   #+end_src
+
+3. show list of public AMIs owned by Amazon.
+   #+begin_src bash
+   aws ec2 describe-images --owners self amazon
+   #+end_src
+
+   add filter
+   #+begin_src bash
+   aws ec2 describe-images --owners self amazon --filters "Name=root-device-type,Values=ebs"
+   #+end_src
+
+
+**** Find the latest AMI ( recommended )
+#+begin_src bash
+aws ssm get-parameters-by-path --path /aws/service/ami-amazon-linux-latest --query "Parameters[].Name"
+#+end_src
+
+** [[https://docs.aws.amazon.com/linux/al2023/ug/ec2.html#launch-via-aws-cli][Lanching Amazon Linux 2023 using the SSm parameter and AWS CLI]]
+*** Summary
+#+begin_src bash
+aws ec2 run-instances \
+  --image-id \
+    resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
+  --instance-type m5.xlarge \
+  --region us-east-1 \
+  --key-name aws-key-us-east-1 \
+  --security-group-ids sg-004a7650
+#+end_src
+
+- ~al2023-ami-kernel-default-arm64~ for arm64 architecture
+- ~al2023-ami-minimal-kernel-default-arm64~ for arm64 architecture (minimal AMI)
+- ~al2023-ami-kernel-default-x86_64~ for x86_64 architecture
+- ~al2023-ami-minimal-kernel-default-x86_64~ for x86_64 architecture (minimal AMI)
+
+**** Desc
+The ~--image-id~ flag specifies the SSM parameter value.
+
+The ~--instance-type~ flag specifies the type and size of the instance. This flag must be compatible with the AMI type that you selected.
+
+The ~--region~ flag specifies the AWS Region where you create your instance.
+
+The ~--key-name~ flag specifies the AWS Region's key that's used to connect to the instance. If you don't provide a key that exists in the Region where you create the instance, you can't connect to the instance using SSH.
+
+The ~--security-group-ids~ flag specifies the security group that determines the access permissions for inbound and outbound network traffic.

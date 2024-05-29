@@ -1,0 +1,11 @@
+#+title: Connection
+
+* What is connection?
+A code that refers to prior arrangement for data transmission (communication)
+
+** [[file:./http.org][HTTP]]
+** [[file:./tcp.org][TCP]]
+** [[file:./websocket.org][WebSocket]]
+
+* Connectionless?
+The communication that doesn't have to prepare

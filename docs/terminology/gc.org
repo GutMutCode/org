@@ -1,0 +1,4 @@
+#+title: Garbage Collection
+
+* What is Garbage Collection?
+memory management to automatically reclaim memory that is no longer in use by a [[file:./execution.org][program]]

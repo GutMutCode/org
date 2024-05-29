@@ -1,0 +1,79 @@
+#+title: Boot
+
+* Table of Contents :toc:
+- [[#what-is-boot-booting][What is Boot? (Booting)]]
+- [[#full-process-of-booting][Full Process of Booting]]
+  - [[#power-on-or-restart][Power On or Restart]]
+  - [[#hardware-initiates-a-startup-process][Hardware initiates a startup process]]
+- [[#rebooting][Rebooting]]
+  - [[#hard][Hard]]
+  - [[#soft][Soft]]
+- [[#multiboot][Multiboot]]
+  - [[#os-dev][OS-dev]]
+- [[#boot-loader][Boot Loader]]
+  - [[#what-is-the-main-purpose-of-boot-loader][What is the main purpose of Boot Loader?]]
+  - [[#grub][GRUB]]
+
+* What is Boot? (Booting)
+The process of starting a computer as initiated via hardware such as a button or by a software command
+
+* Full Process of Booting
+** Power On or Restart
+- The power supply unit turns on, and initialized
+- take some times until it can generate reliable power for the rest of the computer
+- The chipset on motherboard generate =a reset signal= to the ~processor(CPU)~ until it receives =the Power Good Signal= from the power supply
+- the power good signal is received, and CPU automatically look at the same place in the system BIOS ROM (processor maker pre-program this) and start [[file:./bios.org][BIOS]] =boot program= (usually located at FFFF0h) directly on that ROM
+- BIOS boot program runs [[file:./boot.org][boot loader]], loads the [[file:./os.org][OS kernel]] into the memory then CPU start executing OS
+
+** Hardware initiates a startup process
+system's firmware (such as BIOS or UEFI) run
+
+*** initializes hardware components
+Identifies and enumerates all available hardware devices and assign a unique number, called a device ID
+(printers, keyboards, graphics cards, network adapters, etc)
+
+* Rebooting
+Restarting computer
+
+** Hard
+After electrical power to the CPU is switched from off to on
+
+** Soft
+Where the power is not cut
+
+In some systems, soft rebooting is just clear main memory(RAM) to zero
+
+* Multiboot
+An [[file:./openstd.org][open standard]] describing how a bootloader can load kernels in a uniform way
+
+It describe an easy interface between =the bootloader= and the operating system =kernel=
+
+- putting =a few magic values= in some global variables (known as a multiboot header) which is searched by the bootloader and operating system kernel
+- include some important information such as memory maps
+
+** OS-dev
+An open standard that provides kernels with a uniform way to be booted by Multiboot-compliant bootloaders
+
+* Boot Loader
+The boot program that is executed by [[file:./bios.org][BIOS]] (generally in the hard disk)
+
+A small size of boot loader is in the Master Boot Record(MBR) on the data store device
+
+Modern boot loaders such as GRUB(explained below) isn't enough to include their code in the MBR, so they are stored separately to another sector
+
+** What is the main purpose of Boot Loader?
+When it is loaded into memory by BIOS (or [[file:./efi.org][ESP]]), it loads [[file:./os.org][operating system kernel]] into memory
+
+** GRUB
+Ubuntu's boot loader
+
+A copy of ~/boot/grub/core.img~ file is placed in the sectors following the MBR
+
+*** Features
+**** provide a user interface or menu
+allowing the user to choose from multiple operating systems or boot configurations
+
+*** image
+- base grub code
+- modules needed to access to ~/boot/grub~
+- grub config file that describes what operating systems can be booted, and where they can be found

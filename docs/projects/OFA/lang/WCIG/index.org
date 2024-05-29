@@ -1,0 +1,10 @@
+#+title: Writing A Compiler In Go
+
+* [[file:../../readme.org][Purpose]]
+
+* The way I like in this book.
+I never wanted to write something that scares people off with its size.
+
+* The things what I'm learned in this book (what I'm focused on)
+** Behave depending on the right purpose
+Write the purpose exactly before doing

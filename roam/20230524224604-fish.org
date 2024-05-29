@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       70c649be-5457-4262-a7e5-bb83b3a13d2b
+:END:
+#+title: Fish
+
+* Fish Shell
+** set
+For manage env
+*** define
+#+begin_src fish
+set -gx BREW /opt/homebrew
+#+end_src
+*** print
+#+begin_src fish
+set -q BREW
+#+end_src
+
+** test
+Evaluate expression and return boolean.
+#+begin_src fish
+test -e /opt/homebrew
+#+end_src
+** if
+#+begin_src fish
+# exists
+if test -e /opt/homebrew
+    echo "brew dir success"
+end
+# env exists
+if not set -q BREW
+    echo "brew path not exists.."
+end
+#+end_src
+** function
+#+begin_src fish
+function fish_prompt
+    set -l prompt_symbol '$'
+    fish_is_root_user; and set prompt_symbol '#'
+
+    echo -s (prompt_hostname) \
+    (set_color blue) (prompt_pwd) \
+    (set_color yellow) $prompt_symbol (set_color normal)
+end
+
+function mkdir -d "Create a directory and set CWD"
+    command mkdir $argv
+    if test $status = 0
+        switch $argv[(count $argv)]
+            case '-*'
+
+            case '*'
+                cd $argv[(count $argv)]
+                return
+        end
+    end
+end
+#+end_src

@@ -1,0 +1,47 @@
+#+title: Thread
+
+* What is thread?
+A lightweight [[file:./process.org][process]] that shares the same memory space with other threads in a process
+
+An individual sequences of instructions within a process
+
+/time device system/
+
+It's managed by [[file:./os.org][operating system]] or application(?)
+
+A process is always created with one thread, called ~initial thread~
+
+* Core features
+Breaking down a task into smaller subtasks and execute that subtasks simultaneously
+
+하나의 프로세스 내부에서도, 순서에 무관한 작업(명령어)들이 존재한다
+- 특정 작업이 수행되는 동안, 다른 작업을 하도록 하는게 효율적이다 -> 쉬지마!
+
+** Parallel execution
+The OS create threads and decide which CPU core will exectute the thread based on various factors such as current workload of each core, the priority of the thread and the overall system load
+
+allow tasks to run =concurrently=
+
+tasks don't have to wait for each other to complete
+
+It's effective in such as request-receive tasks
+
+** Load balancing
+As distributing computational loads into multiple threads, process's tasks are getting more stable and prevent individual tasks from bottlenecking
+
+** Improved responsiveness
+Threads enable a program to perform other tasks while it's waiting for I/O operations (e.g., reading from disk, sending network requests) to complete
+
+** Task isolation and resource management
+Thread can be isolated from one another, ensuring that a program doesn't interfere with the execution of other tasks or programs
+
+manage tools (e.g., mutexes, semaphores) help coordinate access to shared resources, preventing race condition
+
+** Scalability
+Thread allow a program to use multiple processor
+
+[[file:./os.org][OS scheduler]] decides which thread to execute next based on factors like CPU utilization, priority, and context switching requirements
+
+** Compatibility
+
+** Resource optimization

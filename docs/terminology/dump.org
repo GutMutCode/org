@@ -1,0 +1,18 @@
+#+title: Dump
+
+* Dump
+** As my predict
+- Monitor something and copy to file
+
+** Core Dump
+
+*** Wikipedia
+(or memory dump, crash dump, storage dump, system dump, or ABEND dump)
+Consist of ~the recorded state~ of the working memory of a computer program at a specific time, generally when the program has crashed or otherwise terminated abnormally.
+
+In practice, other key pieces of program state =are usually dumped= at the same time, including the processor registers, which =may include= the program counter and stack pointer, memory management information, and other processor and operating system flags and information.
+
+*** Computerhope
+Raw data from a computer's memory.
+If is written to the file system if software crashes (terminates unexpectedly)
+This information is a snapshot of what was going on in the computer at the moment the error occurred.

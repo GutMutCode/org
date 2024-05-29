@@ -1,0 +1,9 @@
+#+title: Magic Number
+
+* Definition
+Direct usage of a number in source code
+
+- A unique value =with unexplained meaning= of multiple occurrences which could be replaced with a named constant.
+
+- A constant numerical or text value used to identify a file format or protocol
+- A distinctive unique value that is unlikely to be mistaken for other meanings

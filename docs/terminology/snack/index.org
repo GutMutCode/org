@@ -1,0 +1,7 @@
+#+title: Snack
+
+* Snack
+[[file:./why-should-avoid-linked-list.org][Why you should avoid linked-list]]
+
+* Refs
+[[../index.org][..]]

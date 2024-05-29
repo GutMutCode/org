@@ -1,0 +1,39 @@
+#+title: IP
+
+* Table of Contents :toc:
+- [[#what-does-ip-stands-for][What does IP stands for?]]
+- [[#how-ip-data-looks-like][How IP data looks like?]]
+- [[#ip-address][IP address?]]
+  - [[#requirements][Requirements]]
+  - [[#how-to-assign][How to assign?]]
+- [[#special-addresses][Special Addresses]]
+  - [[#loopback-address][Loopback address]]
+
+* What does IP stands for?
+Internet [[file:./protocol.org][Protocol]]
+
+A protocol to communicate between computer with ip address
+
+* How IP data looks like?
+The data using IP protocol called [[file:./packet.org][packet]]
+
+* IP address?
+The identifier that distinguish computers within [[file:./network.org][network]]
+
+** Requirements
+*** IP address must be unique
+If isn't, it occurs IP conflict that those computers cannot connect to the network
+
+** How to assign?
+*** Static
+To configurate IP addresses manually (ip, subnet mask, gateway, dns)
+
+*** Dynamic
+IP addresses automatically assigned by [[file:./dhcp.org][DHCP]] server
+
+
+* Special Addresses
+** Loopback address
+A ip address of self
+
+127.0.0.1

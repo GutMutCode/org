@@ -1,0 +1,59 @@
+#+title: Data Dictionary
+
+* What is Data Dictionary in Database?
+A data catalog or metadata repository
+
+* What information do it store?
+about the structure, organization, and usage of the data within database
+
+** Table Definitions
+Details about the tables in the database
+
+*** names
+*** columns
+*** data types
+*** constraints
+*** relationships with other tables
+
+** Column Descriptions
+Descriptions or comments associated with each column
+
+providing information about the purpose or content of the data in that column
+
+** Indexes and Keys
+*** Indexes
+*** Primary keys
+*** Foreign keys
+*** Other constraints defined on the table
+
+** Stored Procedures and Functions
+*** Definitions of stored procedures
+*** Functions
+*** Triggers
+*** other database objects along with their parameters and logic
+
+** User and Role Information
+*** DB User
+*** Role
+*** Permissions within the database
+
+** Views
+Definitions of views created in the database, including the underlying SQL queries
+
+** Data Types
+Definitions of custom or user-defined data types used in the database
+
+** Statistics
+Information about the distribution of data in tables and indexes
+
+helping the ~query optimizer~ make informed decisions about query execution plans
+
+** System Configuration
+Database-wide settings and configurations
+
+*** collation
+*** character sets
+*** other environment-specific parameters
+
+** Audit Trail
+Logging information about changes made to the database, including who made the changes and when

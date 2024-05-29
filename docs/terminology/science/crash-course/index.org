@@ -1,0 +1,4 @@
+#+title: Crach Course
+
+* Physics
+** 25 - [[file:./elec_charge.org][Electric Charge]]

@@ -1,0 +1,15 @@
+#+title: Encoding
+
+* Definitaion
+The process of converting human readable data into efficient data
+
+The process of =putting a sequence of characters= (letters, numbers, punctuation, and certain symbols) into a ~specialized format~ for efficient transmission or storage with bytecode.
+
+** Base64 format
+image link => 64진법으로 이루어진 텍스트
+
+*** 바꾸는 이유
+to secure the data
+
+* Decoding
+The process of destructing a specialized format into a raw data format (sequence of characters)

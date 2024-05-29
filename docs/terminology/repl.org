@@ -1,0 +1,12 @@
+#+title: Repl
+
+* Definition
+Read-Eval-Print Loop
+
+= console = interactive mode
+
+** Concpet
+1. Read input
+2. send input to interpreter ( for evluation )
+3. Print the result/output of the interpreter
+4. Looping ( start again )

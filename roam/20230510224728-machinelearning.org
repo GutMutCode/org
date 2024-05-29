@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       9d16df6c-0b27-4bf1-b482-e812e01744d6
+:END:
+#+title: MachineLearning
+
+* Machine Learning
+* Foregoing & Group Learning
+The best part of ML is including Tesla is continuous and group learning.
+If on AI doctor system learns some new fact about patient and diagnosys, the fact shall be shared by other AI doctors in the world.

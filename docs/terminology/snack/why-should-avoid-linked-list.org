@@ -1,0 +1,124 @@
+#+title: Why Should Avoid Linked List
+
+* Youtube script
+Algorithms here i'd like to show an example that first was shown to me by john bentley of algorithms fame
+make a sequence of random integers
+keeping them in order
+and so
+you're given
+the numbers five one four two and it builds up the sequence as you see it there
+and then you remove them again by giving a set of positions of which one you
+take out
+and so the exercise is for which n is it better to use a linked list on a vector
+or an array
+and everybody gets this one wrong
+here's huh my graph has disappeared
+this is embarrassing okay
+So imagine this to be a graph
+the imaginary low line down by the bottom showing efficient usage little time is the vector
+the one that is looking like an exponential
+trying to go through the ceiling
+is the list
+and trying to figure out why the
+list is so inefficient
+I thought maybe it's all this allocation that's been done for the nodes
+so the little middle green line which you can't see either
+is the lists
+with um allocation taken out pre totally pre-allocated
+the point here is that the vector is always better than the list
+and the list gets worse the further you go out
+and this is for the case where you're
+
+Doing a lot of insertions and deletions
+which when i was taught about data structures was what you use lists for
+because they're really good in inserting deleting if you want to insert in the middle
+of a thousand a hundred thousand integer vector you have to shove on average
+50 000 elements one position if you take one out you have to shove them above the half the way back
+now this is completely irrelevant what matters is the linear search to get to the insertion point
+of course you have to go through
+half of the list to find on the average insertion point for a list
+and in an attempt to fairness i also did the same vectors instead of using a binary search
+but anyway so the linear search dominate completely
+and linear search for vectors it's not
+
+actually such a good idea
+first of all
+a vector is for a list
+a list is much bigger for a given data structure than a vector because you don't have to just store the element the integer you have to store the two pointers forward and backwards
+you have to use a doubly linked list if you're inserting otherwise you have the extra problems
+
+And that completely dominates
+so the
+graph here this graph here that you can't see
+shows you that there's not a minor
+disadvantage here
+we're talking about things being 50 or 100 times slower with with a linked list
+and the traversal dominates
+so compactness matters vectors are more compact than lists
+
+And predictable usage patterns matters enormously
+with the vector you have to shove a lot of elements or but caches are really really good at that
+so surprisingly vectors are random access constructs
+but you can stream them
+lists don't have random access but when you traverse
+
+Lists you keep doing random access there's a node here and goes to that node in memory
+so you actually random access in your memory and you're maximizing your
+cash misses
+which is exactly the opposite of what you want
+so the
+lesson i'm trying to say here is
+stay compact say predictable
+and you have three orders of magnitude of performance to
+deal with here
+to gain by
+being compact
+now
+people have looked at that graph you didn't see
+and said well i
+don't use lists of a hundred thousand and two hundred thousand elements
+and there's two kinds of people there's a sort of the
+the google and amazon people that says
+Because i don't have such little data structures
+and then there's the students that
+i think a thousand elements is a long list
+and so i don't use that many hundred thousand lists but using a few hundred
+thousand element lists is exactly the same
+as a matter of fact you can get the performance effects out of individual data structures so here's a very simple
+
+One up there a vector of points with
+four points
+the way that'll be laid down in memory if you use the standard is up there labeled c++
+you have a little handle
+a lot in c++ is these little handles that tells you how to use things
+and then the resource managed which happens to be a compact data structure
+with eight
+integers because it's integer points
+and that's fine it's compact you have a single d reference to get to it
+you have a little bit of memory overhead because
+vector keeps its elements on the free store so you get the
+extra word or two as a free store header
+but that's the way it looks
+it's fairly compact if you don't want to put it on the free store don't
+but usually that you can afford it
+
+Now i'm told very often that i have to write in a truly object oriented style
+and there's languages that ensure you do that
+and in truly object oriented style of course an object is referred to by a reference
+so you have a reference to the object
+there's the object down there in the next line with the four the count in it
+and this happens to be
+a container of
+user-defined objects so
+again you have a container of references
+and there you have the objects so
+that turns the linear compact data structure into a linked structure
+we just saw
+on this invisible slide
+what linked structures do to your performance and
+here
+you get a rough doubling of the size
+of the data structure
+and whenever you want to access an element
+Instead of getting one indirection you get one two three in directions
+and indirections again is things that con that the modern computers don't like very much pointers are poison to most of geminis so

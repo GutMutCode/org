@@ -1,0 +1,37 @@
+#+title: Dynamic Host Configuration Protocol
+
+* What is DHCP?
+A protocol that assign an [[file:./ip.org][IP]] address to computer dynamically (as a ~lease~ as long as periodic time)
+
+* Features
+This, assign:
+** IP address
+within DHCP Scope
+
+*** DHCP Scope
+a range of IP addresses configured by administrator (customizable)
+#+begin_example
+Start IP address: 10.0.0.1
+...(MANY!)
+End IP address: 10.0.0.100
+#+end_example
+
+*** Why they're leased?
+If you give the computer a actual IP address, when it comes detached the IP address still has occupied
+
+So, computers managed by DHCP server tell the DHCP server which IP addresses are still being used and which ones are not being used
+
+*** ~To reserve~ specific IP address all the time
+
+Reservation by MAC address
+#+begin_example
+10.0.0.1, MY-PC, 00:17:20:49:72:04
+#+end_example
+
+
+** Subnet mask
+** Default gateway
+** DNS server
+
+* Where is a DHCP server generally?
+Router's built-in DHCP server, etc..

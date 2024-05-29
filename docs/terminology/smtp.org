@@ -1,0 +1,6 @@
+#+title: SMTP
+
+* What does SMTP stands for?
+Simple Mail Transfer [[file:./protocol.org][Protocol]]
+
+A protocol used to send and recieve mail

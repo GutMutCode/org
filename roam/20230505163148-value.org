@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       c6467ecd-c5bf-4229-af37-471f344dd72c
+:END:
+#+title: Value
+* What is most variable things?
+1. The Power to [[id:9d59761a-63b0-4f37-b994-e5004b90926e][TrustMyself]]
+2. The [[id:44c53d76-466e-463a-b0c5-5f2c91506074][Freedom]] to easly choose my actions.
+3. [[id:ae83d7b4-faa4-43ad-93fb-f65bba226a88][BeBetter]]
+
+* Joy somthing
+** Concentrate to somthing
+Concentrate what can i do.
+
+* The sentence what i decide it is valuable.
+** Feynman
+#+begin_quote
+You ask me if ordinary person--by studing hard--would get to be able to imagine these things like I imagine.
+Of course! I was an ordinary person who studied hard!
+There's no miracle people. It just happens they got interested in this things, and learn all this stuff.
+They're just people.
+There's no telent, special, miracle ability to understand quantum mechanics or a miracle ability to imagine electromagnetic fields that comes without practice and reading and learning and study.
+So you've says, take and ordinary person, who's willing to devote a great deaul of time and study and work and thinking and mathmetic and time right then he's become a scientist
+#+end_quote
+
+#+begin_quote
+What i cannot create, I do not understand
+#+end_quote
+
+** HongIk
+誠 (cheng) 정성 성
+言 말씀 언 + 成 이룰 성
+
+*** 至誠無息 - 지성무식
+
+지극한 정성은 멈추지 않는다.
+
+
+*** 不誠無物 - 불성무물
+
+정성이 없으면, 물건이 만들어지지 않는다.

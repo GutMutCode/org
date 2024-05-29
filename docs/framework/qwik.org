@@ -1,0 +1,29 @@
+#+title: Qwik
+
+* Main Idea
+/Have only to download and execute the bare minimum of the application/
+
+** Delay Execution
+*** Fast start up
+because, there is a minimum amount of JavaScript code to execute (about 1KB to become interactive)
+
+- aggressively delaying the application download and execution
+
+** Resumability & Serialization
+*** Application can executed while the server left off
+
+Other frameworks doesn't preserve a structure of inner state, when trasitioning from the server to the browser (=handoff=)
+=> It need to be rebuilt in the browser => duplicating the work that was done on the server (hydration)
+
+serializes listeners, data structures and app state =into the HTML=
+=> client can resume execution where the server left off
+
+* What they solve
+** Network bandwidth
+A large amount of code is shipped, which may take a long time on slow networks
+
+** Startup time
+Once on the client, the code need to be executed (as part of hydration) to get the site interactive
+
+* Why not fix exesting frameworks/tools?
+lazy loading feature =can not be retroactively added= to the existing frameworks/tools without changing them funcamentally.

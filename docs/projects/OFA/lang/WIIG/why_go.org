@@ -1,0 +1,8 @@
+#+title: Why Go
+
+* Why Go
+** Advantages
+*** Easy to read and subsequently understand
+*** Great tooling
+1. Univertial formatting style by gofmt
+2. built-in testing framework

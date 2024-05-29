@@ -1,0 +1,142 @@
+#+title: TRPL
+
+* The Rust Programming Language
+#+begin_quote
+by Steve Klabnik and Carol Nichols, with contributions from the Rust community
+#+end_quote
+
+This version of the text assumes you're using Rust 1.67.1 (released 2023.02.09) or later.
+
+** [[file:./foreword.org][Foreword]]
+** [[file:./intro.org][Introduction]]
+
+
+* Getting Started
+[[file:./installation.org][Installation]]
+[[file:./guessing.org][Guessing Game]]
+
+* Common Programming Concepts
+** [[file:./cpc-intro.org][Intro]]
+** [[file:./mutability.org][Variables and Mutability]]
+** [[file:./types.org][Data types]]
+** [[file:./func.org][Functions]]
+** [[file:./control-flow.org][Control Flow]]
+
+* Understanding Ownership
+** [[file:./ownership.org][Ownership]]
+** [[file:./ref-borrow.org][References and Borrowing]]
+** [[file:./slice-type.org][The Slice Type]]
+
+* Using Structs to Structure Related Data
+** [[file:./structure.org][Intro]]
+** [[file:./def-structs.org][Defining and Instantiating Structs]]
+** [[file:./ex-struct.org][An Example Program Using Structs]]
+** [[file:./method.org][Method Syntax]]
+
+* Enums and Pattern Matching
+** [[file:./enum.org][Intro]]
+** [[file:./def-enum.org][Defining an Enum]]
+** [[file:./match.org][The match Control Flow Construct]]
+** [[file:./if-let.org][Concise Control Flow with if let]]
+
+* Managing Growing Projects with Packages, Crates, and Modules
+** [[file:./projects.org][Intro]]
+** [[file:./pkg-crt.org][Packages and Crates]]
+** [[file:./mod.org][Defining Modules to Control Scope and Privary]]
+** [[file:./paths.org][Paths for Referring to an Item in the Moodule Tree]]
+** [[file:./use.org][Bringing Paths into Scope with the use Keyword]]
+** [[file:./mod-fs.org][Separating Modules into Different Files]]
+
+* Common Collections
+** [[file:./collection-intro.org][Intro]]
+** [[file:./vectors.org][Storing Lists of Values with Vectors]]
+** [[file:./strings.org][Storing UTF-8 Encoded Text with Strings]]
+** [[file:./hashmaps.org][Storing Keys with Associated Values in Hash Maps]]
+
+* Error Handling
+** [[file:./error.org][Intro]]
+** [[file:./unrecoverable.org][Unrecoverable Errors with panic!]]
+** [[file:./recoverable.org][Recoverable Errors with Result]]
+** [[file:./panic_or_not.org][To panic! or Not to panic!]]
+
+* Generic Types, Traits, and Lifetimes
+** [[file:./intro-generic.org][Intro]]
+** [[file:./generic.org][Generic Data Types]]
+** [[file:./traits.org][Traits: Defining Shared Behavior]]
+** [[file:./lifetimes.org][Validating References with Lifetimes]]
+
+* Writng Automated Tests
+** [[file:./test-intro.org][Intro]]
+** [[file:./how-to-tests.org][How to Write Tests]]
+** [[file:./cont-tests.org][Controlling How Tests Are Run]]
+** [[file:./test-org.org][Test Organization]]
+
+
+* An I/O Project: Building a Command Line Program
+** [[file:./cli-pj.org][Intro]]
+** [[file:./cli-in.org][Accepting Command Line Argument]]
+** [[file:./read-file.org][Reading a File]]
+** [[file:./refactor-pj.org][Refactoring to Improve Modularity and Error Handling]]
+** [[file:./tdd.org][Developint the Library's Functionality with Test-Driven Development]]
+** [[file:env.org][Working with Environment Variables]]
+** [[file:./stderr.org][Writing Error Message to Standard Error Instead of Standard Output]]
+
+* Functional Language Features: Iterators and Closures
+** [[file:./func-pg.org][Intro]]
+** [[file:./closures.org][Closures: Anonymous Functions that Capture Their Environment]]
+** [[file:./iterators.org][Processing a Series of Items with Iterators]]
+** [[file:./improve-io.org][Improving Our I/O Project]]
+** [[file:./iter-perf.org][Comparing Performance: Loops vs. Iterators]]
+
+
+* More About Cargo and Crates.io
+** [[file:./cratesio.org][Intro]]
+** [[file:./custom-prof.org][Customizing Builds with Release Profiles]]
+** [[file:./publish.org][Publising a Crate to Crates.io]]
+** [[file:./workspaces.org][Cargo Workspaces]]
+** [[file:./cargo-install.org][Installing Binaries with cargo install]]
+** [[file:./extend-cargo.org][Extending Cargo with Custom Commands]]
+
+* Smart Pointer
+** [[file:./smart-pointer.org][Intro]]
+** [[file:./box.org][Using Box<T> to Point to Data on the Heap]]
+** [[file:./smartp-ref.org][Treating Smart Pointers Like Regular References with the Deref Trait]]
+** [[file:./drop.org][Running Code on Cleanup with the Drop Trait]]
+** [[file:./rc.org][Rc<T>, the Reference Counted Smart Pointer]]
+** [[file:./refcell.org][RefCell<T> and the Interior Mutability Pattern]]
+** [[file:./ref_cycle.org][Referenc Cycles Can Leak Memory]]
+
+* Fearless Concurrency
+** [[file:./concurrency.org][Intro]]
+** [[file:./simultaneously.org][Using Threads to Run Code Simultaneously]]
+** [[file:./msg_trans.org][Using Message Passing to Transfer Data Between Threads]]
+** [[file:./shared_state.org][Shared-State Concurrency]]
+** [[file:./extend_conc.org][Extensible Concurrency with the Sync and Send Traits]]
+
+* Object-Oriented Programming Features of Rust
+** [[file:./oop.org][Intro]]
+** [[file:./oop_char.org][Characteristics of Object-Oriented Languages]]
+** [[file:./trait_obj.org][Using Trait Objects That Allow for Values of Different Types]]
+** [[file:./impl_oop.org][Implementing an Object-Oriented Design Pattern]]
+
+* Pattern Matching
+** [[file:./pattern_match.org][Intro]]
+** [[file:./use_pattern.org][All the Places Patterns Can Be Used]]
+** [[file:./refutability.org][Refutability: Whether a Pattern Might Fail to Match]]
+** [[file:./pattern_syn.org][Pattern Syntax]]
+
+* Advanced Features
+** [[file:./intro-advanced.org][Intro]]
+** [[file:./unsafe.org][Unsafe Rust]]
+** [[file:./adv_traits.org][Advanced Traits]]
+** [[file:./adv_types.org][Advanced Types]]
+** [[file:./macros.org][Macros]]
+
+* Final Project: Building a Multithreaded Web Server
+** [[file:./s-th-ws.org][Building a Single-Threaded Web Server]]
+** [[file:./mt-ws.org][Turning Our Single-Threaded Server into a Multithreaded Server]]
+** [[file:./cleanup.org][Graceful Shutdown and Cleanup]]
+
+* Reference
+[[file:../index.org][Rust Lang]]
+[[file:./note.org][Note]]

@@ -1,0 +1,6 @@
+#+title: Transistor
+
+* What is transistor
+A fundamental component of modern electronics, used to amplify or switch electronic signals and electrical power
+
+* How it works?

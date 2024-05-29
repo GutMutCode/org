@@ -1,0 +1,10 @@
+#+title: Instance
+
+* Definition
+** Wikipedia
+A [[file:./context.org][context]] which is sharing data structure with other context
+Any time a new context is created based on some model, it is said that the model has been instantiated.
+
+In practice, this instance usually has a data structure in common with other instances, but the values stored in the instances are separate.
+
+Changing the values in one instance wil then not interfere with the values of some other instance.

@@ -1,0 +1,19 @@
+#+title: GNU Compiler Collection
+
+* What is GCC?
+The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages
+
+* Purpose
+The compiler for the GNU operating system
+
+* Building GCC
+Compilers are upgraded through a process called bootstrapping
+
+** Bootstrap
+If your system compiler is not the same major version as the compiler version you wish to build, (if you have 4.6.2 and want 4.7.2), You should bootstrap
+
+1. first compiler - old system compiler that produces slow code
+2. second compiler - new version of a slow compiler that produces fast code
+3. third compiler - other new a fast compiler that produces fast code
+
+You need to verify the correctness of our new fast compiler that produces fast code

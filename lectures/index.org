@@ -1,0 +1,6 @@
+#+title: Lecture
+
+* Lecture
+** By person
+[[file:./nullnull.org][NullNull]]
+[[file:./theprimeagen.org][ThePrimeagen]]

@@ -1,0 +1,4 @@
+#+title: First Class Citizen
+
+* Definition
+An entity which supports all the operations generally available to other entities.

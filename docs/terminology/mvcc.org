@@ -1,0 +1,7 @@
+#+title: MVCC or MCC
+
+* Definition
+Multiversion concurrency control
+
+A concurrency control method used by database management system (DMS) to provide concurrent access to the database
+and in programming language to implement [[file:./transactional-memory.org][transactional memory]].

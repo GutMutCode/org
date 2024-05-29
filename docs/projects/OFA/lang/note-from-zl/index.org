@@ -1,0 +1,35 @@
+#+title: Note from ziglearn
+
+* Repo
+https://ziglearn.org/
+
+* Working with C
+** ABI
+Zig natively supports C ABIs for ~extern~ things; which C ABI is used depends on the target you are compiling for (e.g. CPU architecture, operating system)
+
+This allows near-seamless interoperation with code that was not written in Zig; the usage of C ABIs is standard amongst programming languages.
+
+Zig internally does not use an ABI, meaning code should explicitly conform to a C ABI where reproducible and defined binary-level behaviour is needed.
+
+** C Primitives
+Zig has C primitives for conforming to the C ABI ( prefix ~c_~ )
+
+** Calling conventions
+How functions are called
+
+This includes how arguments are supplied to the function and how the return value is received.
+
+In Zig, the attribute ~callconv~ may be given to a function. ( found in ~std.builtin.CallingConvention~ )
+
+Making your functions with the C calling convention is crucial when you're calling Zig from C.
+
+** Extern Structs
+Normal structs in Zig do not have a defined layout; ~extern~ structs are required for when you want the layout of your struct to match the layout of your C ABI.
+
+Filename: hello-zig/src/extern.zig
+
+** Alignments
+For example, that the address of an ~f32~ value must be a multiple of 4, meaning ~f32~ has an alignment of 4.
+
+This so-called "natural alignment" of primitive data types depends on CPU architecture.
+All alignments are powers of 2.

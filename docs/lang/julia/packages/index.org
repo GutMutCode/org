@@ -1,0 +1,8 @@
+#+title: Packages
+
+* Packages for Julia
+** For Animation
+[[file:./javis.org][Javis.jl]]
+
+** For Machine Learning
+[[file:./mlj.org][MLJ.jl]]

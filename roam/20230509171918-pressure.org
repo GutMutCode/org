@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       0d8f1cd3-f9d5-40fc-9c7b-6b6345d166fa
+:END:
+#+title: Pressure
+
+#+begin_quote
+What would you like to do all day without any external pressure?
+#+end_quote
+
+* Pressure & Solution
+** Phone Notification
+- Turn on focus mode
+** Set my private work room

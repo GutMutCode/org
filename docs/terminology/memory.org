@@ -1,0 +1,30 @@
+#+title: Memory
+
+* What is memory
+
+* Kinds
+** ROM
+Read Only Memory
+- It doesn't require power
+
+*** PROM
+Programable Read Only Memory
+
+- replace the original *ROM*
+- burn out bits of the chip causing thier state to change
+
+*** EPROM
+Erasable Programmable Read Only Memory
+
+- replace the *PROM*
+- had a little window on them
+- erase data by shine ultraviolet light into them
+
+*** EEPROM
+Electrically Erasable Programmable Read Only Memory
+
+- replace the *EPROM*
+- had a special software to erase data
+
+** RAM
+Random Access Memory

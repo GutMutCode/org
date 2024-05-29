@@ -1,0 +1,101 @@
+#+title: Inter Arch
+
+* Table of Contents :toc:
+- [[#directories][Directories]]
+  - [[#_build--all-artifacts-that-are-created-by-phoenix][~_build~ => All artifacts that are created by phoenix]]
+  - [[#assets--front-end-assets][~assets~ => front-end assets]]
+  - [[#priv--all-resources-needs-at-production-but-not-directly-part-of-source-code][~priv~ => All resources needs at production but not directly part of source code]]
+  - [[#config--project-configuration][~config~ => project configuration]]
+  - [[#deps--mix-dependencies][~deps~ => Mix dependencies]]
+  - [[#lib--source-code-dir][~lib~ => source code dir]]
+  - [[#test--for-test][~test~ => for test]]
+- [[#files-for-start][Files for start]]
+  - [[#libhello][lib/hello]]
+  - [[#libhello_web][lib/hello_web]]
+  - [[#assets][assets]]
+
+* Directories
+** ~_build~ => All artifacts that are created by phoenix
+
+** ~assets~ => front-end assets
+- some likes ~js~ and ~css~
+- automatically bundled by the ~esbuild~
+
+** ~priv~ => All resources needs at production but not directly part of source code
+- images, fonts, db scripts, etc.
+
+** ~config~ => project configuration
+- config.exs
+  =entry point= for config, import specific config at the end ( can overwrite )
+
+- dev.exs, test.exs, prod.exs
+  overwrite =config.exs=
+
+- runtime.exs
+  set runtime environments
+
+  best place for =secrets= and dynamic config
+
+** ~deps~ => Mix dependencies
+all deps lists in the =mix.exs= > =defp deps do=
+
+this dir must not be checked into version control tool
+
+remove this dir if you want to download all deps from scratch
+
+** ~lib~ => source code dir
+*** =lib/hello=
+Responsible to host all of your [[file:../../../terminology/businesslogic.org][business logic]] and business domain - Model
+
+*** =lib/hello_web=
+Responsible for exposing your business domain to the world - View & Controller
+
+** ~test~ => for test
+
+* Files for start
+
+** lib/hello
+*** =application.ex= => define application named ~Hello.Application~
+Phoenix is simple Elixir application
+
+This =module= defines which services are part of our [[file:./efp/application.org][application]]
+
+*** =mailer.ex= => control testing email
+#+begin_src elixir
+defmodule Hello.Mailer do
+  use Swoosh.Mailer, otp_app: :hello
+end
+#+end_src
+
+*** =repo.ex= => control database by business logic
+
+** lib/hello_web
+*** =endpoint.ex= => entry-point for HTTP requests
+
+localhost:4000 => endpoint start processing the data => eventually leading to ~the router~
+
+*** =router.ex= => routing requests to the proper controller
+Which call a view module to render HTML pages back to clients
+
+You can see more precisely in [[file:./reqlcycle.org][Request life-cycle]]
+
+*** =telemetry.ex= => collect metrics and send monitoring events of our app
+
+*** =gettext.ex= => provides internationalization through [[file:./gettext.org][Gettext]]
+
+** assets
+Phoenix use ~esbuild~ for compile(bundle) assets
+
+*** =priv/static= => keep generated assets
+served by Plug.Static in ~lib/hello_web/endpoint.ex~
+
+*** Updating the front end app according to changes in assets
+You need to run dev mode (MIX_ENV=dev)
+
+#+begin_quote
+You can put off front end part by mix command
+#+end_quote
+
+*** Customize
+[[https://hexdocs.pm/phoenix/asset_management.html#custom_builds][Asset Management]]
+[[https://hexdocs.pm/phoenix/asset_management.html#css][CSS]]

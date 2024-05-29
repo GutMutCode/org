@@ -1,0 +1,6 @@
+#+title: CRC
+
+* What is the CRC?
+Cyclic Redundancy Check
+
+A code that detect corrupted data

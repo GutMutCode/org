@@ -1,0 +1,83 @@
+* Pattern matching
+In this chapter, we will show how the ~=~ operator in Elixir is actually a ~match~ operator
+and how to use it to pattern match inside data structures.
+Finally, we will learn about the pin operator ~^~ used to access previously bound values.
+** The match operator
+We have used the ~=~ operator a couple times to assign variables in Elixir:
+#+BEGIN_SRC elixir
+x = 1 # 1
+x # 1
+#+END_SRC
+
+In Elixir, the ~=~ operator is actually called the match operator. Let's see why:
+#+BEGIN_SRC elixir
+x = 1 # 1
+1 = x # 1
+2 = x # (MatchError) no match of right hand side value: 1
+#+END_SRC
+Notice that ~1 + x~ is a valid expression, and it matched because both the left and right side are ~equal~ to 1.
+When the sides do not match, a ~MatchError~ is raised.
+
+A variable can only be assigned on the left side of ~=~:
+#+BEGIN_SRC elixir
+1 = unknwon # (CompileError) iex:1: undefined function unknown/0
+#+END_SRC
+
+* Pattern matching
+The match operator is not only used to match against simple values,
+but it is also useful for ~destructuring~ more complex data types.
+For example, we can pattern match on tuples:
+#+BEGIN_SRC elixir
+{a, b, c} = {:hello, "world", 42} # {:hello, "world", 42"}
+a # :hello
+b # "world"
+#+END_SRC
+
+A pattern match error will occur if the sides can't be matched,
+for example if ~the tuples have different sizes~:
+#+BEGIN_SRC elixir
+{a, b, c} = {:hello, "world"} # (MatchError) no match of right hand side value: {:hello, "world"}
+#+END_SRC
+
+And also when comparing different types,
+for example if matching a tuple on the left side with a list on the right side:
+#+BEGIN_SRC elixir
+{a,b,c} = [:hello, "world", 42] # (MatchError) no match of right hand side value: [:hello, "world", 42]
+#+END_SRC
+
+More interestingly, we can match on specific values.
+The example below asserts that the left side will only match the right side when the right side is a tuple that starts with the atom ~:ok~
+#+BEGIN_SRC elixir
+{:ok, result} = {:ok, 13} # {:ok, 13}
+result # 13
+{:ok, result} = {:error, :oops} # (MatchError) no match of right hand side value: {:error, :oops}
+#+END_SRC
+
+We can pattern match on lists:
+#+BEGIN_SRC elixir
+[a, b, c] = [1, 2, 3] # [1, 2, 3]
+a # 1
+#+END_SRC
+
+A list also supports matching on its own head and tail:
+#+BEGIN_SRC elixir
+[head | tail] = [1, 2, 3] # [1, 2, 3]
+head # 1
+tail # [2, 3]
+#+END_SRC
+
+Similar to the ~hd/1~ and ~tl/1~ functions,
+we cant' match an empty list with a head and tail pattern:
+#+BEGIN_SRC elixir
+[head | tail] = [] # (MatchError) no match of rigth hand side value: []
+#+END_SRC
+
+The ~[head|tail]~ format is not only used on pattern matching but also for ~prepending~ items to a list:
+#+BEGIN_SRC elixir
+list = [1, 2, 3] # [1, 2, 3]
+[0 | list] # [0, 1, 2, 3]
+#+END_SRC
+
+Pattern matching allows developers to easily ~destructure~ data types such as tuples and lists.
+As we will see in the following chapters, it is one of the foundations of recursion in Elixir
+and applies to other types as well, like maps and binaries.

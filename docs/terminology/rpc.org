@@ -1,0 +1,16 @@
+#+title: RPC
+
+* What is RPC?
+Remote Procedure Call
+
+This can be accociated with the session layer, it often relies on lower-level protocols, such as TCP/IP, for the actual communication between devices
+
+A protocol that allows a program to cause a procedure to execute on ~another address space~ (commonly on another machine)
+
+#+begin_src vbnet
+Client: CALL add(3, 5)
+Server: RETURN 8
+#+end_src
+
+- Client is making an RPC call to a remote server
+- Asking it to execute the "add" procedure with argument 3 and 5

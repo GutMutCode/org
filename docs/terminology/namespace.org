@@ -1,0 +1,16 @@
+#+title: Namespace
+
+* Definition
+** Wikipedia
+A set of signs (names) that are used to identify and refer to objects of various kinds.
+
+A namespace ensures that all of a given set of objects =have unique names= so that they can be easily identified.
+
+* Namespacing
+The practice of organizing and grouping items, such as variables, functions, or classes, into distinct and separate containers called =namespaces=
+
+* Kinds of namespace
+** Scope (in all programming language)
+** Module (Python, etc)
+** Object (Java, JS, etc)
+** Namespace (C++, etc)

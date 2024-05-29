@@ -1,0 +1,4 @@
+#+title: Polymer
+
+* What is Polymer?
+A substance or material consisting of very large molecules called macromolecules, composed of many repeating subunits

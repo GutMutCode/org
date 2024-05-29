@@ -1,0 +1,62 @@
+#+title: Abstract
+
+* Table of Contents :toc:
+- [[#abstract][Abstract]]
+- [[#abstraction][Abstraction]]
+  - [[#what-is-abstraction][What is Abstraction?]]
+  - [[#wikipedia][Wikipedia]]
+  - [[#techopedia][Techopedia]]
+  - [[#indeed][Indeed]]
+- [[#why-should-we-abstract][Why should we abstract?]]
+- [[#levels-of-abstraction][Levels of abstraction]]
+  - [[#data-abstraction][Data Abstraction]]
+  - [[#procedural-abstraction][Procedural Abstraction]]
+  - [[#control-abstraction][Control Abstraction]]
+  - [[#object-oriented-abstraction][Object-Oriented Abstraction]]
+
+* Abstract
+~Grouping~ something has same logic (such as classify) to hiding the implementation details of a system or component and exposing only the necessary functionalities or interfaces to the users
+
+~Defining~ the concept or structure associated between one another (is similar with capturing with camera)
+
+Removing or Generalizing physical, spatial, or temporal details or attributes to focus in particular term
+
+* Abstraction
+** What is Abstraction?
+The concept or structure describing what things looks like
+
+** Wikipedia
+#+begin_quote
+The essence of abstraction is preserving information that is relevant in a given context, and forgetting information that is irrelevant in that context.
+#+end_quote
+
+- ~The process~ of =removing= or =generalizing= physical, spatial, or temporal ~details~ or ~attributes~ in the study of objects or systems =to= =focus= attention =on= ~details~ of greater importance; it is similar in natrue to the process of generalization;
+
+- ~the creation~ of abstract concept-objects by mirroring common features or attributes of various non-abstract objects or systems of study - the result of the process of abstraction.
+
+The process of abstraction can also be referred to as =modeling= and is closely related to the concepts of /theory/ and /design/.
+
+
+** Techopedia
+=The extraction= of ~relevant information~ from a larger data set, where utilizing abstraction =allows= engineers and others =to simplify= ~a codebase~.
+
+** Indeed
+The process of removing elements of code or program that aren't relevant or that distract form more important elements.
+
+* Why should we abstract?
+Abstraction allow developers to focus on the high-level design and functionality of a system without worrying about the low-level implementation details.
+It helps in managing complexity by breaking down a system into manageable parts and providing clear interfaces for interaction between these parts.
+
+* Levels of abstraction
+** Data Abstraction
+Representing complex data types in a simplified manner and providing operations to manipulate them without exposing the underlying implementation details.
+
+** Procedural Abstraction
+Encapsulating a sequence of operations into a single procedure or function, hiding the details of how the operations are performed.
+
+** Control Abstraction
+Providing high-level contol structures, sush as loops and conditionals, that allow programmers to specify the flow of control in a program without dealing with the low-level details of the underlying hardware.
+
+** Object-Oriented Abstraction
+In object-oriented programming, abstraction is achieved through the use of classes and objects.
+Classes encapsulate data and behavior into a single unit, hiding the implementation details of how the data is represented and manipulated.

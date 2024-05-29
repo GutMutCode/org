@@ -1,0 +1,58 @@
+
+* The whole scene
+
+** emphasize content
+*** Zoom in
+**** twice per one subtitle
+**** if it's needed
+
+** Scene change
+*** Fade in
+**** From black screen
+Useful at start point
+*** Zoom in & switch the scene
+*** Get from any direction
+**** The circumstance that has the same contents but other instructions
+
+
+*** Using Big front subtitle
+*** When i have to change?
+**** When the subtitle is ended.
+
+
+** Background & Front
+*** Timelaps & Big subtitle
+*** Main video & Transparent background, subtitle
+
+** Flow
+*** Zoom in continuously
+
+* Inner object
+** blew up from bottom
+** transparent object
+If i mention a previous video
+** Fade in object
+with subtitles
+** emphasize object
+emphasize the partial location on video
+
+* Subtitles
+** Sync with Sound
+** Backgrounded
+** The more information that not in the voice script
+
+* Sound
+** Intro
+** Main contents
+** Scene change
+
+
+* Instructions
+** Scene change
+1. Zoom in
+2. Just change
+* Naming
+
+231023_연습
+
+파일 이름과 폴더이름을 동일하게 작성하기

@@ -1,0 +1,24 @@
+#+title: Bytecode
+
+* What is Bytecode?
+One of the [[file:./ir.org][IR]]
+
+It is called `bytecode` because it consists of compact, binary instructions that are ~typically one byte in size~
+
+Like some other IRs, bytecode read by [[file:./vm.org][Virtual Machine]] and compiled into specific machine code
+
+* Kinds of Bytecode
+** Java JVM's Bytecode
+Can be read by Java [[file:./runtime.org][Runtime]] (written in C/C++)
+
+** Python PVM's Bytecode
+Can be read by Python Runtime (written in C)
+
+** Erlang BEAM's Bytecode
+Can be read by Erlang Runtime (written in C)
+
+** Javascript's Bytecode
+Can be read by JS Runtime
+- written in C/C++ (chrome V8, Nitro, NodeJS...)
+- written in Rust (denojs engine)
+- written in Zig (bunjs engine)

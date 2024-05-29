@@ -1,0 +1,46 @@
+#+title: Electric Charge
+
+* Static electricity
+It occurs when an object obtains a net amount of positive or negative =electric charge=
+It creating an imbalance that want to be returned to equilibrium
+
+** To understand Electricity
+*** Atom
+**** Charged particles
+- It contains *positive charge: protons* and *nagative charge: electrons*
+
+generally there's an equal number of each
+= the net electric charge of the atom is 0
+= electrically neutral
+
+***** In solid
+protons -> stay fixed
+electrons -> some are free to move around
+
+****** Moving electron - =free electrons=
+- reside in atom's outer shell as valence electrons
+- are easily plucked off and carried around, when acted upon by an `outside force`
+
+******* How easy to move around
+It's depend on materials
+
+******** Conductors
+It lets free electrons move freely throughout the solid (like copper)
+
+******** Insulators
+It holds on to them tightly, limiting their flow (like wood)
+
+******* What causes these charged particles to move in the first place?
+An imbalance of electrical charge
+- some part of an object has a different number of free electrons than another part.
+
+Too many electrons
+Missing free electrons
+
+******* How to make charged materials?
+******** Charging by friction
+ friction will make charged materials, but
+
+********* Law of conservation of electric charge
+- You can never create electric charge
+- Charge can only move from one place to another

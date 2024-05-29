@@ -1,0 +1,6 @@
+#+title: Evaluate
+
+* What is evaluate?
+Converting [[file:./ast.org][AST]] into =output=
+
+To compute calculations by execute commands of program

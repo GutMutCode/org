@@ -1,0 +1,88 @@
+* Table of Contents :toc:
+- [[#math-for-computer-science][Math for computer science]]
+- [[#math-from-scratch][Math from scratch]]
+  - [[#3blue1brown][3Blue1Brown]]
+  - [[#toc][TOC]]
+  - [[#discussion-from-x][Discussion from X]]
+- [[#clone-mathing][Clone mathing]]
+
+* Math for computer science
+[[file:./trigonometry.org][Trigonometry]]
+[[file:./exponential.org][Exponential]]
+[[file:./logarithmic.org][Logarithmic]]
+[[file:./twos-comp.org][Two's complement]]
+[[file:./modular.org][Modular arithmetic]]
+
+* Math from scratch
+** 3Blue1Brown
+We have to focus on conceptual part of math, not a computation part
+
+** TOC
+*** Algebra (Khan Academy)
+Needed for everything that follows
+
+*** Trigometry (Khan Academy)
+=Game engines= rely on:
+- aiming
+- control angle
+
+*** Linear Algebra
+file:./linear_algebra.org
+
+=Graphics engine=
+- signal processing
+- dealing with complex 3D movements and rotations (Linear Algebra Done Right)
+
+*** Calculus
+=Game engines= (Khan Academy)
+- know how fast a character needs to accelerate =to make it across the screen in ten seconds=
+- Air registance
+- write low-level functions (multiplication, division, etc.)
+
+**** [[file:./calculus/index.org][Calculus by code]]
+
+*** Number of theory
+low-level programming
+- understanding hex, binary, decimal conversion
+- cryptography
+
+*** Fourier Analysis
+- signal processing
+- circuits
+- interface with electronics
+
+*** Quaternions
+make your code more efficient
+
+*** Lambda calculus
+do more abstract of theoretical computer science
+
+
+** Discussion from X
+Halmos - [][Naive Set Theory]
+Axler - [[file:../books/linear-algebra-done-right/index.org][Linear Algebra Done Right]]
+
+*Goal* - Be able to speak any mathmatician in the world and be able to hold a conversation or understand their contribution for 30 minutes.
+
+Elon musk - Actually we're definitly not smart enough to even know what the right questions are to ask
+
+Tesla AI specialization Chip
+- Highly energy optimized
+  HW3, 4,5
+
+energy optimizing is extremely important.
+
+More electricity generation
+More voltage Transformers
+Transformers need Transformers
+
+Dojo - traning efficiency
+- memory bandwidth => important for training of LLM
+
+Silicon shortage today
+- voltage Transformers shortage
+- electricity shortage
+
+"useful compute unit of energy"
+
+* Clone mathing

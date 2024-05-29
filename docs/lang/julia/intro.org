@@ -1,0 +1,31 @@
+#+title: Intro
+
+* Introduction of julia
+** Noteworthy difference with other languages
+- Julia is ~MATLAB~ clone.
+
+*** Array
+
+**** indexed
+#+begin_src julia
+A[i,j]
+#+end_src
+
+**** not automatically grow
+#+begin_src julia
+a = [0, 0, 0, 0]
+a[5] = 5 # error!
+#+end_src
+
+#+RESULTS:
+
+*** Variables
+
+**** not copied
+when assigned to another variable ( immutablity )
+#+begin_src julia
+A = B # same variable but deferent name?
+A = copy(B) # copy
+#+end_src
+
+when passed to a function

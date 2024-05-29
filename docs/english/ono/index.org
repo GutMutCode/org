@@ -1,0 +1,192 @@
+#+title: ONO
+
+* 02.24.2024
+** cause
+- trying to find the =cause= of the accident
+- a =cause= for celebration
+- She is the =cause= of your troubles
+- discharged for =cause=
+
+- They are
+
+** agent
+
+* 02.26.2024
+** representative
+*** adjective
+- a =representative= moviegoer
+
+*** noun
+- a =representative= to a convention of conference
+
+** committee
+- high-class =committee=
+
+** delegate
+*** noun
+- U.N. =delegates= from African nations
+- The nominee netted a handful of /delegates/ in the state's caucus
+
+*** verb
+- =delegate= authority
+- =delegate= the task to her assistant
+
+* 02.27.2024
+** concise
+I like a concise description
+
+* 02.28.2024
+** indebted
+I'm indebted to my parents deeply.
+
+** nonetheless
+(in spite of what has just been said)
+Nonetheless, I've learned a lot
+
+** pleasant & pleasure
+It is pleasant night, isn't it?
+
+This is my pleasure
+
+** criticism
+I think the criticism must be controlled elaborately
+
+** stem
+The C programming language stem from UNIX
+
+** proceed
+The smell proceeded from toilet..
+
+My work is proceeded well!
+
+** statement
+I think we need a statement more accurate
+
+** assertion
+Your assertion is on point..!
+
+* 03.01.2024
+** esoteric
+I don't like esoteric description
+
+** condense
+He've condensed a lot of books
+
+condensed milk
+
+** generous
+I love generous people
+
+** ample
+I have ample money for enjoy my hobby
+
+** pursuit
+desire pursuit
+
+** analogue
+What are analogues in this cases?
+
+** otherwise == or?
+Makefiles must be indented using TABs and not spaces or ~make~ will fail.
+
+** combersome
+I don't like combersome description.
+
+** span
+I want to span my knowledges.
+
+** preface
+Preface the phrase with a hash mark if you want to add hash tag.
+
+* 03.02.2024
+** occation
+You might have to hard work occationally
+
+** aside
+putting aside describing.
+
+* 03.03.2024
+** enumerate
+I want to enumerate all of prerequisites in this situation.
+
+* 03.06.2024
+** barely
+I drink coffee barely.
+
+** gain steam
+I was gained steam to study hard.
+
+** since
+Since I was decide, I've never violate them.
+
+** progress
+I've made a lot of progress in programming.
+
+** touch on
+We describe functions to touch on pointers.
+
+* 03.07.2024
+** contribute
+I contribute on this work.
+
+** spontaneously
+I always worked spontaneously.
+
+** pejorative
+Don't say pejoratives.
+
+** composite
+let's combine composite markdown files.
+
+* 03.13.2024
+** transitive
+being or relating to a relation with the property that
+if the relation holds between a first element and a second
+and between the second element and a third,
+it holds between the first and third elements
+
+equality is a /transitive/ relation
+
+* 03.18.2024
+** grave deficiency
+I have had grave deficiency in that terms of finance
+
+** modest
+I have had modest size of head phone.
+
+** contribution
+I contributing on this project gravely.
+I'm proud of myself for this contribution.
+
+** accompany
+I want to colleague to accompany project
+
+** uniform
+I have had a uniform routine at that time.
+
+** assure
+He is assured of existence of god.
+
+** conceal
+I have concealed my sincerity to her.
+
+** strengthen
+I strengthening my skills everyday.
+
+** retain
+I had retained my emotion comfortably.
+
+* Things that what I'm curious
+The C programming language (wears well) as ~one~'s experience (with it grows)
+- Who is one?
+
+make sure that most existing programs would remain valid, or, failing that, that compilers could procuse warnings of new behaviour.
+
+* 05.07.2024
+** The thing is (중요한 것은, 놀라운 것은)
+The thing with insertion sort is that it's been implemented in C++ with only three lines of code.
+
+** Shows up
+It also shows up in some "Sliding Window" problems.
+
+* 05.28.2024

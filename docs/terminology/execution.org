@@ -1,0 +1,80 @@
+#+title: Execution
+
+* Table of Contents :toc:
+- [[#what-is-program][What is program?]]
+- [[#how-is-a-program-runs][How is a program runs?]]
+  - [[#writing-source-codes][Writing Source Codes]]
+  - [[#compilation][Compilation]]
+  - [[#object-code-generation][Object Code Generation]]
+  - [[#linking][Linking]]
+  - [[#executable-file][Executable File]]
+  - [[#loading][Loading]]
+  - [[#execution][Execution]]
+  - [[#runtime][Runtime]]
+  - [[#termination][Termination]]
+
+* What is program?
+~A set of instruction~ that can be used directly on CPU core.
+
+It called executable file and saved at disk storage like SSD or HDD
+
+* How is a program runs?
+** Writing Source Codes
+Writing source codes by various programming language such like C, C++, etc and save it to the storage drive
+
+In this case, let say we use C and [[file:./llvm.org][LLVM]] toolchain for compiler.
+
+** Compilation
+Translate source code into =intermidiate representation(IR)= and save it to the storage drive
+
+Is this platform specific?
+
+In this case, C source code is translated into LLVM IR by LLVM's clang
+
+Interpreted languages like Python and Javascript may skip the compilation step and directly interpret the source code
+
+Some languages that support Just-In-Time feature like Java and .NET may skip the compilation step at a part of source code for improved performance
+
+** Object Code Generation
+The compiler generate object code, which is =a binary representation= for the program that is specific to the target architecture
+
+This object code may consist of [[file:./isa.org][machine code instructions]] and data
+
+In this case, LLVM IR translated into machine code instructions by LLVM backend
+
+** Linking
+Creating execution file
+
+In many cases, the program may =be split into multiple source files=, each compiled separately
+
+Linker combine these compiled files along with any =necessary libraries= to create the final executable file
+
+** Executable File
+Finally CPU can understand this file because execution file is consist of machine code instruction and data
+
+This files called ~The Program~
+
+But for now, it doesn't run. Just saved
+
+** Loading
+[[file:./os.org][The operating system]] loads the executable file into memory when the program is executed
+
+*** What the 'Load' means in Computer?
+Copy a data into memory
+
+*** Loading Process
+- allocating memory space for the program
+- initializing various data structures
+
+** Execution
+The operating system transfers control to the program's entry point, which is the starting point of the program's execution.
+
+** Runtime
+During runtime, the program interacts with the computer's hardware and other software components.
+
+It performs coputations, reads and writes data, and responds to user input
+
+** Termination
+The program may terminate when it completes its tasks or in response to specific conditions
+
+During termination, the operating system may clean up resources, release memory, and perform other necessary actions

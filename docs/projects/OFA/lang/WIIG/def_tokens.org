@@ -1,0 +1,45 @@
+#+title: Def Tokens
+
+* Target of Lexing
+#+begin_src monkey
+let five = 5;
+let ten = 10;
+
+let add = fn(x, y) {
+  x + y;
+};
+
+let result = add(five, ten);
+#+end_src
+
+** numbers
+~5~, ~10~
+
+we just want to know if it's a number
+
+** variable names
+~x~, ~y~, ~add~ and ~result~
+
+we'll call them "identifiers"
+
+** keywords
+~let~, ~fn~
+
+this *should* make a difference in the parsing stage => separate all of this
+
+** special characters
+~(~, ~)~, ~{~, ~}~, ~=~, ~,~, ~;~
+
+* Requirements
+** Types
+=distinguish= between all tokens such as "integer", "right bracket", etc.
+
+define ~TokenType~ as string
+- we don't have to any boilerplate and helper function to debug.
+  (Just print string)
+
+
+** Some fields
+=holds= the literal value of the token
+
+=reuse= it later and the information whether a "number" token is a ~5~ or a ~10~ =doesn't get lost=.

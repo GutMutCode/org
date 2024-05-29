@@ -1,0 +1,6 @@
+#+title: Migration
+
+* What is Migration im computing?
+Move data into other location
+
+Apply data into other location

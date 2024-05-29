@@ -1,0 +1,91 @@
+#+title: Parse
+
+* Definition
+To convert [[file:./tokenization.org][tokens]] into [[file:./ast.org][AST]]
+
+** Wikipedia
+Syntax analysis, or syntactic analysis
+The process of analyzing a string of symbols, either in antural language, computer languages or data structure.
+
+** Techopedia
+Where a string of commands - usually a program - is separated into more easily processed components, which are analyzed for correct syntax and then attached to tags that define each component.
+
+** Parser
+Parser ~= Compiler ~= Interpreter ~= Programming language
+
+Take source code as input, and produce a data structure which represents this source code
+
+While building up the data structure, parser =analyse= the input, =checking= that it conforms to the expected structure.
+- This is the reason why parser be called syntactic analysis
+
+#+begin_src js
+var input = '{"name": "Thorsten", "age": 28}';
+var output = JSON.parse(input);
+output //=> { name: 'Thorsten', age: 28 }
+output.name //=> 'Thorsten'
+output.age //=> 28
+#+end_src
+
+#+begin_src js
+if ((5 + 2 * 3) == 91) { return computesStuff(input1, input2); }
+#+end_src
+
+Every implementations of parser are all pretty similar,
+the concept is the same,
+but they differ in details.
+
+*** Parser Generater
+yacc, bison or ANTLR.
+
+When fed with a formal description of a language, =produce= *parsers* as their output.
+
+The output is code that can then be compiled/interpreted and itself fed with source code as input to produce a syntax tree.
+
+There are a lot of parser generaters, differing in the format of the input they accept and the language of the output they produce.
+
+They often use Context Free Grammer (CFG)
+
+**** Context Free Grammer (CFG)
+  A set of rules that describe how to form correct (valid according to the syntax) sentences in a language.
+***** The most common notational formats of CFG
+****** BNF
+Backus-Naur Form
+
+#+begin_src exmascript
+PrimaryExpression ::= "this"
+                    | ObjectLiteral
+                    | ( "(" Expression ")" )
+                    | Identifier
+                    | ArrayLiteral
+                    | Literal
+Literal ::= ( <DECIMAL_LITERAL>
+            | <HEX_INTEGER_LITERAL>
+            | <STRING_LITERAL>
+            | <BOOLEAN_LITERAL>
+            | <NULL_LITERAL>
+            | <REGULAR_EXPRESSION_LITERAL> )
+Identifier ::= <IDENTIFIER_NAME>
+ArrayLiteral ::= "[" ( ( Elision )? "]"
+                 | ElementList Elision "]"
+                 | ( ElementList )? "]" )
+ElementList ::= ( Elision )? AssignmentExpression
+                ( Elision AssignmentExpression )*
+Elision ::= ( "," )+
+ObjectLiteral ::= "{" ( PropertyNameAndValueList )? "}"
+PropertyNameAndValueList ::= PropertyNameAndValue ( "," PropertyNameAndValue
+                                                  | "," )*
+PropertyNameAndValue ::= PropertyName ":" AssignmentExpression
+PropertyName ::= Identifier
+              | <STRING_LITERAL>
+              | <DECIMAL_LITERAL>
+#+end_src
+
+A parser generator woud take something like this and turn it into compilable C code, for example.
+
+****** EBNF
+Extended Backus-Naur Form
+
+**** Well suited to being automatically generated
+
+** My Notes
+Relating a meaning to tokens by create syntax =tree=

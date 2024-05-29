@@ -1,0 +1,7 @@
+#+title: Hashtable
+
+* Definition
+** In computing
+also known as *hash map*,
+a data structure that implements an =associative array=, alsoo called dictionary,
+which is an =abstract data type= that =maps= ~keys~ to ~values~.

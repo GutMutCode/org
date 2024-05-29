@@ -1,0 +1,49 @@
+#+TITLE: Org Agenda file
+* Task List
+** Elixir [%]
+** Rust [%]
+*** TODO Easy Rust
+SCHEDULED: <2023-05-12 Fri ++1d>
++ [X] Listen lecture if you don't know what to do.
++ [X] Read 1 chapter.
+** ML
+*** TODO EMC
+SCHEDULED: <2023-05-08 Mon ++1d>
++ [ ] Listen 1 lecture.
++ [ ] Fix IBM acount
+
+** VIDEO Be YouTuber [16%]
+DEADLINE: <2023-05-29 Mon>
++ [-] Watch Video about video editing [50%]
+  - [X] Write What i want
+  - [X] Videos Making video
+  - [ ] Idea Making
+  - [ ] Get insite
++ [ ] Write ideas [0%]
+  - [ ] Pacman
+  - [ ] Legend of Zelda
++ [ ] Concept Art [0%]
+  - [ ] Get Reference
+  - [ ] Twitter
+  - [ ] Discord Server ( Live2D )
++ [X] Face Tracking [100%]
+  - [X] VTubeStudio
+    background => 8 : 크로마키
++ [ ] OBS Studio [0%]
+  - [ ] Broadcast
++ [ ] Make a video about nvim & emacs.
+  - [ ] Collect Reference
+
+** DONE Decide Rest of Leave [100%]
+CLOSED: [2023-05-23 Tue 15:03] DEADLINE: <2023-05-22 Mon>
++ [X] Rest
++ [X] Leave
+** TODO Find the truth about human [0%]
+- [ ] Select relative contents
+- [ ] Read relative books
+- [ ] Watch relative vedios
+
+* Personal Task List
+** Shopping List
+SCHEDULED: <2023-05-14 Sun 17:00>
++ [ ] shrimp

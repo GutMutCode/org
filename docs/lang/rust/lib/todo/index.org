@@ -1,0 +1,25 @@
+#+title: Index
+
+* To-DO App Backend with Lunatic & submillisecond
+** Advantages
+fail fast, catch error fast, work on the "green path" frist before considering the gazillion diifferent ways this could be wrong
+
+** Piles
+Fancy collection of ~Tasks~ which can act either as a ~Queue~ or as a ~Stack~
+- ~Tasks~ always within the ~Piles~
+  + ~Tasks~ is not an actor, it just a data in ~Piles~
+
+** AbstractProcess
+All the incomming requests are sent into the =Mailbox= and requests are processed in order.
+
+We don't have to manually lock the process, because lunatic automatically does.
+
+*** Process of start
+
+1. init() => create a new pile using the provided ~PileInfo~.
+2. complete_current() => used to remove and return the next ~Task~ from the ~Pile~.
+3. push_task() => used to add a new tasks at tha back of the ~Pile~.
+4. pile_top() => returns the ~Task~ according to field's structure.
+
+* Reference
+[[file:../lunatic.org][lunatic]]

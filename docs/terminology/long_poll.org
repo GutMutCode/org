@@ -1,0 +1,4 @@
+#+title: Long Poll
+
+* What does =long poll= means?
+A technique used by an application ~to repeatedly check~ for new events or data from a server or another external source

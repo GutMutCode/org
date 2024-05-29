@@ -1,0 +1,3 @@
+#+title: Machine Learning
+
+* [[file:./imbedding.org][Imbedding]]

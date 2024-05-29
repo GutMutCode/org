@@ -1,0 +1,15 @@
+#+title: World's Simplest SQL Compiler and Virtual Machine
+
+* The front-end
+** SQL compiler
+parses a string and outputs an internal representation called bytecode.
+
+** Virtual Machine
+recived bytecode from SQL compiler and executes it.
+
+* Advantages of separating front-end as this structure
+- Reduces the complexity (VM doesn't worried about syntax errors)
+- Allows compiling comon queries once and =caching= the bytecode for improve performance
+
+* Flow
+None-SQL statements like ~.exit~ are caleld "meta-commands"

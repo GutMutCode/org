@@ -1,0 +1,4 @@
+#+title: Placeholder
+
+* Placeholder
+Boxes or spaces where the user can write or type to fill in the form

@@ -1,0 +1,77 @@
+#+title: Stack
+
+* Table of Contents :toc:
+- [[#what-is-the-stack][What is the Stack?]]
+- [[#structure][Structure]]
+  - [[#stack-origin][Stack Origin]]
+  - [[#stack-pointer][Stack Pointer]]
+- [[#how-the-stack-work][How the stack work?]]
+  - [[#in-a-scope][In a scope]]
+- [[#problems][Problems]]
+  - [[#no-dynamic-size][No Dynamic size]]
+  - [[#stack-can-be-allocated-infinitely][Stack can be allocated infinitely]]
+  - [[#no-multi-threading][No multi-threading]]
+  - [[#solution][Solution]]
+- [[#what-you-need-to-know][What you need to know]]
+
+* What is the Stack?
+When a program is started and an operating system provided a memory space to,
+each variables in the program are stacked into the memory in order from the top to bottom =by default=.
+
+These memory spaces are called ~stack~.
+
+* Structure
+** Stack Origin
+A memory address that the first variable is stored
+
+** Stack Pointer
+A memory address that the last variable is stored
+
+Many modern [[file:./computer.org][CPU]] incorporate a dedicated register to store stack pointer (stack register)
+
+Because of the stack pointer, CPU doesn't need to fetch data from memory and cache directly
+- Can be more fast!
+
+* How the stack work?
+1. Fetch the stack pointer
+2. Add the 1 to it (point to another memory space!)
+3. Allocate variable
+
+This kinds of work is insufficient for [[file:./heap.org][heap]]
+
+** In a scope
+In a scope, there are variables managed by locally.
+This mean when scope is concluded, all the variables should be removed.
+
+So a stack process in scope is like following:
+1. Work like above...
+2. Encounter a scope
+3. Create a return-link depends on a return value
+4. Work like above...
+5. Scope is concluded
+6. Store a return value to return-link depends on before work
+7. Fetch the stack pointer
+8. Substract a number of variables
+9. Allocate variable and so on
+
+A stack range which managed by single scope is called =stack frame=
+
+In the 3, you should specify the exact memory size of return-link =to compiler generate efficient machine code=
+This is why we specify a return type
+
+* Problems
+** No Dynamic size
+A array size is must be specified as exact size.
+This is not useful..
+
+** Stack can be allocated infinitely
+A large size of data can occur stack overflow
+
+** No multi-threading
+Each thread necessitates its own stack, posing a limitation when attempting to share memory between threads
+
+** Solution
+The [[file:./heap.org][Heap]]
+
+* What you need to know
+The stack processing is depends on a programming language you use and compiler

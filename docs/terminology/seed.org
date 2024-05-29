@@ -1,0 +1,9 @@
+* Seed
+  In computing, and specifically peer-to-peer sharing,
+  ~seeding~ is the uploading of already downloaded content for others to download from.
+
+** Peer
+   A computer that is connected to the network
+
+  peer becomes a seed when having acquired the entire set of data,
+  it =begins= to =offer= its upload bandwidth to other peers =attempting= to =download= the file.

@@ -1,0 +1,13 @@
+#+title: Same-origin policy
+
+* Definition
+Prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's [[file:./dom.org][Document Object Model]]
+
+A web browser =permits scripts contained in a first web page= to access data in a second web page,
+but only if both web pages have =the same origin=
+
+** Origin
+It's defined as a combination of:
+*** URI scheme
+*** Host name
+*** Port number

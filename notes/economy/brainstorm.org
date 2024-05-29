@@ -1,0 +1,284 @@
+#+title: Brainstorm
+
+* Create Youtube Banner
+** Ppl need official template
+
+* Network Speed
+Youtube Cache Server -> Loading time is too long
+
+Game Download Speed -> Too long
+
+** How to fix?
+*** Set the Network Cable
+**** Create Network Cable
+***** Buy ingredient
+****** Learn the structure
+******* Fiber-optic cable
+******** one or more optical fibers
+to carry light
+
+coated with plastic layers
+
+contained in a protective tube
+
+1 petabit / second over a distance of 50km
+
+864-count, consisting of 36 ribbons each containing 24 strands of fiber
+
+******* Electrical cable
+******** Twisted pairs
+twisted pairs of copper wires
+
+********* Why twist?
+~To reduce electromagnetic interference~ from external sources and crosstalk between adjacent pairs
+
+******** Insulation
+Each copper conductor within a pair is individually insulated
+
+~to prevent electrical interfernce~ between them
+
+******** Jacket
+The twisted pairs are then encased in a protective outer covering called the jacket
+
+The jacket provides additional ~protection~ and ~durability~ to the cable
+
+It is usually made of [[file:../materials/pvc.org][PVC]] (polyvinyl chloride) or a similar material
+
+******** Color Coding
+The twisted pairs are color-coded
+
+~to make it easier to identify~ and connect the wires correctly
+
+The most common color-coding scheme for twisted pair cables is =TIA/EIA-568-B=, which specifies different colors for each pair
+
+******** Connector
+Network cables typically have connectors at each end
+
+The most common connector for Ethernet cables is the =RJ45 (Registered Jack 45)=
+which looks similar to a telephone connector but has more pins
+
+This connector is used to plug the cable into network devices such as
+computers, routers, switches, and other networking equipment
+
+
+****** List
+******* Copper wires
+******** How to twist?
+********* Buy a machine
+********* Create a machine
+******* Insulation
+
+******* Jacket
+******* Connector
+
+***** Research ingredient
+
+**** Set to some Land or a Submarine
+***** Network Service Providers (NSPs)
+The backbone companies of the internet
+
+fiber optic cables
+routers
+data centers
+
+They sell bandwidth and connectivity ~to other internet service providers (ISPs)~
+
+***** Internet Service Providers (ISPs)
+Companies that provide Internet access ~to end-users~
+
+fiber optic cables
+DSL
+wireless connection
+
+***** Peering Points and Internet Exchange Points (IXPs)
+Physical locations where different networks and ISPs connect to exchange traffic directly
+
+improving performance and reducing costs
+
+***** Submarine Cables
+Connect different continents and regions
+
+forming the backbone of international Internet connectivity
+
+***** Content Delivery Networks (CDNs)
+Distributed networks of servers strategically placed around the world
+
+They cache and deliver contents (sudh as web pages, images, and videos) closer to end-users,
+reducing latency and improving the overall user experience
+
+*** Home & Some place
+*** Roads
+*** Electricity
+
+* Youtube
+Adsense => 32 days
+
+라이브 => 유동인구 => 전용 페이지
+
+팬 소통
+
+* China
+10년 단위 정책
+
+미래는 밝다, 가는길은 굵곡이 있다
+
+데리고 갈거다
+
+소비가 줄었다 -> 해외관광 < 국내관광(저렴)
+
+** 홍콩
+*** 과거 이미지
+자유무역, 세금저렴, 선진국, 아름다움, 우수 인력
+
+*** 현재 이미지
+중국 정책 변경으로 인해 달라짐?
+
+** 싱가폴
+중국부자 자산관리 허브
+
+** 두바이
+가상자산 모두 허용 -> 은행계좌와 연결
+
+** 가상화폐
+반은행주의 -> 탈중앙
+
+중국에서 불법
+
+** 온라인 게임 규제
+의견안 -> 모여서 토론
+
+20만위안 ~= 3500만원 -> 50만원 -> 게임 산업 경쟁력 하락
+
+메타버스 -> 존경,대우 받기
+
+콘텐츠 규제 -> 싸움, 전쟁
+
+** 시진핑 주석 -> 공동 부유 -> 사회 주의
+
+** 산업 변화
+WEB 2.0 -> 알리바바, 바이두
+
+WEB 3.0 -> 데이터의 소유
+
+핀더더, 틱톡 vs. 아마존
+- 라이브 커머스
+- 공장 앞 라이브
+- 고객 직접 연결
+- 맞춤 제작 및, 당일 발송
+
+*** 핀더더(테무) - 공동구매
+- 무조건 싸게 판다 -> 시장장악
+- MD못씀 -> AI
+
+*** 틱톡 - 바이트댄스
+
+** 제조업 숙련도
+중국의 제조업 생태계 -> 원가 =절감=
+
+*** TSMC
+미국 지원 약속 무산?
+
+투자금
+
+인력 -> 공고망 부족?
+
+*** 베트남
+와이보?
+
+조립
+
+*** 중국의 4차산업 지향
+완비된 플랫폼
+
+** 구정
+중국에서 1년에 가장 소비가 많은 시기
+
+** 구조
+*** 성
+31개
+
+**** 당서기
+정책 방향 실행
+
+총서기가 될 수 있음
+
+**** 성장
+행정 장관
+
+**** 총서기
+담당성의 경제성과가 가장 좋은 서기 선출
+
+성과의 일부분을, 보상으로 받을 수 있음 -> 성장 동기 부여
+
+** 시진핑
+공동이익 -> 빈부격차 축소
+
+부패 청산 -> 당서기 보상 축소 -> 당서기 동기 저하 -> 성장 저하
+부동산 투기 제제 -> 신용 축소 -> 금리 상승(13.5%) -> 민영기업 도산
+
+* 경제 사이클
+생산 과잉 -> 수요 생성(양적 생성에 한계) -> 과잉에 비해 더 많은 수요(굳이?) -> 수요 빠른 해결 위한 설비 투자(대출?), 생산 확대(일자리 +) ->
+
+생산량과 소비량의 불균형
+
+기업의 생산
+
+직종별 최저임금제
+- 기업에, 개인이 미치는 영향을 분석해 결정
+
+* 팀장
+팀전체에 영향
+
+깔끔하고 명확하게 전달
+
+왜 이런결정을 해왔는지 -> 정확한 원인파악 -> 문제 해결
+
+* 온라인 사업을 하고 싶어하는 사람 (바우처)
+하지만 본인이 하기는 어려운사람
+
+* 국내 스타트업 창업지원
+기술 보증 대출
+
+* 연구소
+인건비, 시제품 제작비
+
+비용처리 + 25% 세금 감면
+
+* 3년이내 벤처인증 (인증)
+법인세 50%
+취등록세
+재산세
+
+* 대출
+정부산하 기관 보증서 -> 은행대출
+
+기관대출
+
+신용보증재단 -> 사전교육시, 더 많은 대출
+
+거치기간 -> 원리금 상환 (부담스러울 수 있음 - 현예금 필요)
+
+* 지원금
+사업계획에 따른, 영수증 첨부 (계산서 부인 조심)
+
+* 도파민
+미래의 생존과 번식의 대한 기대
+
+타인과의 경쟁의식
+
+전환비용 줄이기
+
+* 기계가 해야할일
+사람들이 악한일을 저지르지 못하도록하는 "절대적" 환경
+
+** 절대적의 의미
+규칙의 예외가 없는
+
+*** 예외가 없으려면
+진리에 기반한 규칙 세우기
+
+**** 진리란?
+누구나 동의할 수 밖에 없는 사실
+누구도 반박할 수 없는 사실
+
+[[file:../hongick/truth/index.org][진리]]

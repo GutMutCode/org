@@ -1,0 +1,44 @@
+#+TITLE: Org Agenda file
+* Task List
+** TODO Make a video about org-agenda.
+SCHEDULED: <2023-05-05 Fri 09:30>
++ You can use SPC-m-t-t to mark as "todo"
++ SPC-m-d-s opens the org-schedule.
++ Click on the date in the calendar.
++ You can use S-ARROWS to change date of scheduled item.
++ In normal mode, RET toggles TODO and DONE.
+
+** TODO Review lists and checkboxes in org mode. [1/3] [33%]
+SCHEDULED: <2023-05-06 Sat 17:00 ++2d>
++ [X] CTRL-RET adds a new list items at the same level.
++ [-] This works for bullets too.
+  + [ ] Sublist item 1
+  + [X] Sublist item 2
+  + [ ] Sublist item 3
++ [ ] Tick/untick with C-c C-c or SPC-m-x
+
+** DONE Org Agenda - launch with SPC-o-A followed by...
+CLOSED: [2023-05-04 Thu 17:25]
+*** a = agenda for current week (things tdhat are scheduled)
+*** t = todo items that are open (not done)
+**** Inside the todo view, you can simply hit "t" to change the state.
+**** This also works inside the agenda view.
+**** Outside of this view, you need to hit SPC-m-t to get the state list.
+*** s = search by keyword
+You can use regex in the searches.
+
+* Personal Task List
+** Hone tasks [0/4]
++ [ ] Mow the yard.
++ [ ] Put trash out for pickup.
++ [ ] Wash the car.
+** DONE Shopping List
+CLOSED: [2023-05-05 Fri 13:20] SCHEDULED: <2023-05-05 Fri 13:00>
++ [X] Egg
++ [X] Kimchi
++ [X] Olive Oil
+** TODO Gym schedule
+SCHEDULED: <2023-05-05 Fri 09:00>--<2023-06-01 Thu>
++ [ ] Leg day
++ [ ] chest, shoulders and biceps
++ [ ] abs, back and triceps

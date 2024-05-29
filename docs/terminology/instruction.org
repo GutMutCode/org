@@ -1,0 +1,49 @@
+#+title: Machine Instruction
+
+* Definition
+A simple operation of a processor(CPU) defined by the processor instruction set.
+
+`op-code operand operand`
+
+Usually constructed to 1 byte hexadecimal number, but as this is difficult to read, it's converted to string called mnemonic.
+
+* Architecture
+** x86
+#+begin_src asm
+add eax, 1
+addw $0x1, %ax
+addl $0x1, %eax
+#+end_src
+
+eax operation zeros out the upper 32 bits of rax
+
+#+begin_quote
+before : ~rax = 0xa3d903d69abcfdb0~
+
+32bits after : ~rax = 0x000000009abcfdb1~
+16bits after : ~rax = 0xa3d903d69abcfdb1~
+
+*They are not the same*
+#+end_quote
+
+*** 32-bit register eax
+
+#+begin_src asm
+addl $1, %eax
+#+end_src
+
+l == the bit width of the operands (eax)
+
+*** 16-bit register ax
+#+begin_src asm
+addw $1, %ax
+#+end_src
+
+w == the bit width of the operands (ax)
+
+** [[file:./opcode.org][Opcode]]
+descibes(determines) what operation is performed
+
+** Mnemonic
+~add, addl, addw~
+A simbolic name for these opcodes

@@ -1,0 +1,120 @@
+#+title: Algorithms
+
+* Goal
+1. Solve computational problems.
+2. Prove correctness
+3. Argue effciency
+4. Communication
+
+* What's a problem?
+
+* Problem solve
+** Input -> Output
+Usually, we're putting it in terms of predicates because, in general we don't really want to talk about small instances of problems.
+
+** Do any pair of students have the same birthday?
+Numbers of students > 365
+
+* General Problems
+** arbitrary sized inputs
+*But we want the fixed size argorithm to solve those problems.*
+
+* What is the argorithm
+The Rule or Principle
+
+Some kind of precedure
+
+Like recipe
+
+A sequence of things that you should do
+** Correct Argorithm
+Some kind of functions that takes these inputs, maps it to =a single output=.
+
+** Example
+Maintain record
+Interview students one by one.
+Check if brithday in record if so return pair
+Add new students to record
+Return None
+
+** We want to argue something for large value is correct
+Induction
+
+Code pieces can take on any arbitrarily large size input.
+- In the input can be arbitrarily large, but our code is small, then that code needs to loop, or recurse, or repeat some of these lines of code in order to just read that output.
+
+  + a course on proofs
+  + and inductive reasoning
+  + and discrete mathematics
+
+*** What do i need for an inductive proof?
+- Some kind of a predicate.
+- Some kind of a statement of a bypothesis of something that should be maintained.
+
+*** What do i want to proof for this thing?
+When precedure was over, the argorithm has either already it had returned with a pair that match, or if we're in a case where there wasn't a pair somewhere in my set, that it returned none.
+
+*** How can i generalize that concept? - to make it something i can induct on?
+Inductive hypothesis
+
+If first ~K~ students contain match, alg returns a match before interviewing, student ~K + 1~
+
+Base Case : ~K = 0~ check
+
+Assume the inductive hypothesis true for ~K = K'~
+
+Nice things about induction is that isolates our problem to not consider everything all at once, but break it down into a smaller interface so i can do less work at each step.
+
+- If ~K'~ contains match -> already returned by Induction
+- Else, if ~K' + 1~ student's contains match, the algorithm checks all of the possiblities ~K'~ against all students (essentially by brute force)
+  Check if birthday is in record
+
+** What is efficiency mean?
+It meams that not only how fast, does this algorithm run, but how fast does it compare to other possible ways of approaching this problems.
+
+So how could we measure how fast an algorithm runs?
+- just recode the time it takes for a computer to do this things, but there is a problem.
+
+It depends on the strength of your computer
+- running environment
+
+
+I don't want to count how long it would take on a real-machine.
+- I want to abstract the time it takes the machine to do stuff out of the picture.
+
+What we want to say is, let's assume that each kind oof fundamental operation that the computer can do takes some fixed amount of time.
+How many of those kinds of fixed operations / does the algorithm need to perform to be able to solve this problem?
+
+So we don't measure time, instead count ops
+
+The idea is, we want a measure of how well an algorithm performs, not necessarily an implementation of that algorithm.
+
+** Asymptotic analysis
+Comparing functions using this.
+
+Expect performance dependon size of our input (n)
+
+*** Big O notation
+Which corresponds to upper bounds.
+
+*** Omega
+Which corresonds to lower bounds.
+
+*** Theta
+Which corresponds to both.
+
+** Common functions that relate an algorithm's input size to its performance.
+A linear time algorithm
+
+big O(1)
+theta (lg n)
+big O(n)
+theta (n lg n)
+theta (n^2)
+theta (n^c)
+2^theta(n) = exponential time
+
+This is what we call polynomial time as long as c is some constant.
+
+What the constant look like?
+What does log look like?

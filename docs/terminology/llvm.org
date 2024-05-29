@@ -1,0 +1,38 @@
+#+title: Low-Level Virtual Machine
+
+* What is LLVM?
+a A [[file:./vm.org][virtual machine]] and compiler infrastructure project designed to provide a collection of =modular= and =reusable= compiler and toolchain components.
+
+** Difference with traditional VM
+It provide a set of libraries and tools for building compilers and other programming language-related tool, not directly executed at the CPU
+
+* How LLVM works?
+** Frontend
+Responsible for translating source code from a high-level programming language(e.g., C, C++, Swift) into LLVM [[file:./ir.org][IR]](Intermidiate Representation)
+
+** Backend
+Responsible for translating LLVM IR ~into machine code~ for a specific target architecture
+
+* Features
+** Compiler Optimization
+applying transformations into LLVM IR such as loop unrolling, inlining, constant propagation, and more
+
+** Just-In-Time compilation
+compile at runtime
+
+compiler can make optimizations based on runtime information
+
+** Target independent Code Generator
+the same LLVM IR can be used as input
+and LLVM can generate machine code for different target architectures, facilitating portability
+
+** Clang
+A C, C++, and Objective-C frontend for LLVM
+
+It translate source code into LLVM IR
+
+** LLVM Toolchain
+a comprehensive toolchain that includes various utilities for working with LLVM IR
+
+- Optimizing code
+- Generating machine code

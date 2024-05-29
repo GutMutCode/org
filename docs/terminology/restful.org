@@ -1,0 +1,43 @@
+#+title: RESTful
+
+* Table of Contents :toc:
+- [[#what-is-restful-api][What is RESTful API?]]
+- [[#what-does-restful-mean][What does RESTful mean?]]
+  - [[#statelessness][Statelessness]]
+  - [[#resource-based][Resource-Based]]
+  - [[#representation][Representation]]
+  - [[#uniform-interface-design][Uniform Interface Design]]
+- [[#what-you-should-to-know][What you should to know]]
+
+* What is RESTful [[file:./api.org][API]]?
+A api that meets Representational State Trasfer [[file:./protocol.org][Protocol]]
+
+A architectural style for designing =networked= applications
+
+* What does RESTful mean?
+Restraining data transfer rules for simplicity, scalability and the use of standard HTTP method
+
+** [[file:./stateless.org][Statelessness]]
+Each request from a client to a server ~must contain all the information~ needed to understand and process the request
+
+** Resource-Based
+Resources in REST must identified by a [[file:./uri.org][URI]]
+
+** Representation
+Resources are must can represented in various formats, such as JSON or XML
+
+Client interact with resources by exchanging representations
+
+For examples, a lcient may request a resource in JSON format, and the server responds with the resource's representation in JSON
+
+** Uniform Interface Design
+You must use standard HTTP methods for having a uniform and consistent communication
+
+This simplifies the interaction between clients and servers
+
+*** [[file:./httpreq.org][HTTP Methods]]
+*** URI Structure
+*** Hypermedia as the Engie of Application State (HATEOAS)
+
+* What you should to know
+HTTP requests aren't RESTful - In the description fo `The Phoenix Router`

@@ -1,0 +1,16 @@
+#+title: Hypervisor
+
+* What is Hypervisor
+A software that allows the server to run multiple [[file:./vm.org][virtual machines]]
+
+* Common Hypervisors
+- VMware ESXI
+- Citric XenServer
+- MicroSoft Hypr-V
+
+* Types
+** Type1
+Type1 hypervisor manage hardware resource directly (before Operating System)
+
+** Type2
+Type2 hypervisor is contained in the Operating Systems

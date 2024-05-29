@@ -1,0 +1,5 @@
+#+title: Embedded System
+
+* What is Embedeed system?
+A combination fo computer processor, computer memory, and input/output peripheral devices that
+- has a dedicated function within a larger mechanical or electronic system

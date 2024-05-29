@@ -1,0 +1,97 @@
+#+title: Software Defined Vehicle
+
+* How to learn Software Defined Vehicle?
+** Understand Basic Automotive Concepts
+Automotive engineering, such as:
+
+1. vehicle architecture
+2. powertrain
+3. chassis
+4. safety systems
+
+** Learn about Connected Vehicles
+How vehicles are connected to external networks, such as:
+~the internet~ and other ~vehicles~ (V2X communication)
+
+Explore technologies like:
+1. Vehicle-to-Infrastructure (V2I)
+2. Vehicle-to-Cloud(V2C) communication
+
+** Study Automotive Software Architecture
+Learn about the software architecture of modern vehicles, including:
+
+1. Electronic Control Units(ECUs)
+2. in-vehicle networks (CAN, LIN, Ethernet)
+3. communication protocols (e.g., CAN bus)
+
+Understand the role of:
+
+1. operating systems (such as AUTOSAR)
+2. middleware
+3. application software in automotive systems
+
+** Explore Advanced Driver Assistance Systems (ADAS):
+Study ADAS technologies, including:
+
+1. adaptive cruise control
+2. lane-keeping assist
+3. autonomous emergency braking
+4. parking assistance
+
+Learn about sensor fusion techniques that integrate data from:
+cameras, radar, lidar, and ultrasonic sensors.
+
+** Dive into Autonomous Driving:
+Explore the principles of autonomous vehicle (AV) technology, including:
+
+1. perception
+2. decision-making
+3. control algorithms
+
+Understand levels of autonomy defined by SAE international (e.g. Level 1 to Level 5 autonomy).
+
+Learn about simulation tools and techniques used for ~testing~ and ~validation~ of AV algorithms.
+
+** Study Vehicle-to-Everything (V2X) Communication:
+Learn about V2X communication protocols, such as:
+
+1. Dedicated Short-Range Communication (DSRC)
+2. Celluar Vehicle-to-Everything (C-V2X)
+
+Understand applications of V2X communication including:
+1. vehicle safety
+2. traffic management
+3. cooperative driving
+
+** Explore Software-Defined Vehicle Platforms:
+Study emerging software-defined vehicle platforms that:
+
+1. leverage virtualization
+2. containerization
+3. edge computing
+
+Learn about software-defined vehicle architectures that enable.. :
+
+1. over-the-air (OTA) updates
+2. software-defined networking (SDN)
+3. dynamic resource allocation
+
+** Gain Hands-On Experience:
+Experiment with software tools and development kits for automotive software development, such as:
+
+1. AUTOSAR Classic Platform
+2. Adaptive Platform
+3. MATLAB/Simulink
+4. ROS(Robot Operating System)
+
+Paritipate in coding projects or hackathons focused on automotive software development.
+
+Consider internships or entry-level positions in companies working on automotive software technologies.
+
+** Stay Updated with Industry Trends:
+Follow Industry conferences, webinars, and publications to stay updated on the latest advancements in automotive software-defined vehicles.
+
+Join online forums, discussion groups, or communities focused on automotive software development.
+
+** Specialize in a Subfield:
+Depending on your interests, consider specializing in areas such as cybersecurity for connected vehicles, AI for autonomous driving, or software-defined vehicle platforms.

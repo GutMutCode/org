@@ -1,0 +1,7 @@
+#+title: Gettext
+
+* What is Gettext?
+The tool for internationalization and localization
+
+** This inspired by [[https://www.gnu.org/software/gettext/][the gettext in GNU]]
+A set of tools that provides a framework to help other GNU packages produce multi-lingual messages

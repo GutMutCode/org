@@ -1,0 +1,4 @@
+#+title: FTP
+
+* What does FTP stands for?
+File Transfer Protocol

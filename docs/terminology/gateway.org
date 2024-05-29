@@ -1,0 +1,28 @@
+#+title: Gateway
+
+* Gateway
+A device or software program that connects and translates data between different networks, allowing them to communicate and share information
+
+It's operated in L3 of the [[file:./osi.org][OSI]]
+
+Commonly used to connect networks that use different communication [[file:./protocol.org][protocols]]
+
+* API Gateway
+Client send an HTTP request to the API gateway
+
+The API gateway parses and validates the attributes in the HTTP request
+
+The API gateway performs allow-list/deny-list checks
+
+The API gateway talks to an identity provider for authentication and authorization
+
+The rate limiting rules are applied to the request.
+If it is over the limit, the request is rejected
+
+The request has passed basic checks,
+the API gateway finds the relevant service to route to by path matching
+
+The API gateway transforms the request into the appropriate protocol and sends it to backend microservices
+
+The API gateway can handle errors properly, and deals with faults if the error takes a longer time to recover (circuit break)
+It can also leverage [[file:./elk.org][ELK (Elastic-Logstash-Kibana)]]

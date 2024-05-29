@@ -1,0 +1,7 @@
+#+title: Node
+
+* Node
+~A basic unit~ of ~a data structure~, such as a linked list or tree data structure.
+
+** Network Node
+Either a redistribution point or communication [[file:./endpoint.org][endpoint]].

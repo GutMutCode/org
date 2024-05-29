@@ -1,0 +1,4 @@
+#+title: Closure
+
+* Meaning
+Close over an environment, and can later access, open it

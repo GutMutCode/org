@@ -1,0 +1,122 @@
+#+title: DBMS
+
+* Table of Contents :toc:
+- [[#what-does-dbms-stand-for][What does DBMS stand for?]]
+- [[#structure][Structure]]
+  - [[#sql-compiler][SQL compiler]]
+  - [[#storage-manager][Storage Manager]]
+  - [[#buffer-manager][Buffer Manager]]
+  - [[#query-processor][Query Processor]]
+  - [[#query-optimizer][Query Optimizer]]
+  - [[#transaction-manager][Transaction Manager]]
+  - [[#concurrency-control-manager][Concurrency Control Manager]]
+  - [[#recovery-manager][Recovery Manager]]
+  - [[#indexes][Indexes]]
+  - [[#data-dictionary][Data Dictionary]]
+  - [[#transaction-log][Transaction Log]]
+- [[#the-ansi-three-layer-database-architecture][The ANSI three-layer database architecture]]
+  - [[#why-should-we-fulfil-this-architecture][Why should we fulfil this architecture?]]
+  - [[#structure-1][Structure]]
+  - [[#data-independence][Data independence]]
+
+* What does DBMS stand for?
+DataBase Management System
+
+If you want more detail, see [[file:./db.org][Database]]
+
+* Structure
+** SQL compiler
+*** DDL compiler
+Data Define Language
+
+*** DML compiler
+Data Manipulate Language
+
+*** Embedded DML compiler
+Embedded Data Minipulate Language
+
+** Storage Manager
+This is responsible for managing the storage of data on physical storage devices such as hard drives or solid-state drives. It deals with tasks like data allocation, data access, and data organization on the storage medium.
+
+** Buffer Manager
+This is responsible for managing the transfer of data between the disk storage and main memory (RAM).
+It caches data blocks from disk into memory to reduce the number of disk I/O operations, thus improving perfomance.
+
+** Query Processor
+Query Processor interprets queries written in a query language (e.g., SQL) and generate a query execution =plan=.
+This plan outlines the steps needed to execute the query efficiently, including accessing data, performing joins, aggregations, and sorting.
+
+** Query Optimizer
+Query Optimizer is a crucial component that analyzes different execution plans for a given query and chooses the most efficient one based on factors such as data statistics, available indexes, and system resources.
+
+** Transaction Manager
+The transaction manager ensures the ACID (Atomicity, Consistency, Isolation, Durability) properties of database transactions.
+It oversees the execution of transactions, coordinates concurrency control mechanisms to handle multiple transactions executing simultaneously, and ensures that transactions are either committed or rolled back atomically.
+
+** Concurrency Control Manager
+Concurrecny control mechanisms ensure that multiple transactions can execute concurrently without interfering with each other's results.
+Techniques such as locking, timestamp ordering, and optimistic concurrency control are used to manage concurrent access to data while preserving data consistency.
+
+** Recovery Manager
+The recovery manager ensures the durability property of transactions by providing mechanisms for recovering the database to a consistent state after a system failure (e.g., power outage or hardware failure).
+It maintains transaction logs and uses techniques such as write-ahead logging and checkpointing to recover the database to a consistent state.
+
+** Indexes
+Indexes are data structures used to speed up data retrieval operations by providing fast access paths to specific data values.
+Common types of indexes include B-trees, hash indexes, and bitmap indexes.
+
+** Data Dictionary
+The data dictionary stores metadata about the database schema, such as information about tables, columns, indexes, and constraints.
+It is used by the query processor and optimizer during query execution and optimization.
+
+** Transaction Log
+The transaction log records all changes made to the database, including insertions, updates, and deletions.
+It is used for recovery purposes to roll back or roll forward transactions in the event of a system failure.
+
+* The ANSI three-layer database architecture
+ANSI/SPARC architecture
+American National Standard Institute (ANSI)
+Standards Planning and Requirements Committee (SPARC) in the late 1970s.
+
+This architecture provides a clear separation between the different components of a database system and defines the relationships between them.
+
+** Why should we fulfil this architecture?
+This architecture promoting modularity, flexibility, and maintainability in database design and management.
+
+A specialized separation allow developers to make changes to the database system without affecting the applications or users accessing the data, thereby facilitating database evolution and adaptation to changing requirements and technologies.
+
+** Structure
+*** External Level (View Level) - user
+This layer represents the user's view of the database.
+It defines various user views or user interfaces to the data.
+Each user or application may have a different view of the dataatbase tailored to their specific needs.
+The external level hides the details of the internal and conceptual levels, presenting only the relevant portions of the database to the users.
+
+*** Conceptual Level (Logical Level) - SQL devs
+This layer represents the logical structure of the entire database.
+It defines the logical organization of the data without specifying how the data is physically stored or accessed.
+The conceptual level provides a global view of the database, including all entities, relationships, constraints, and rules.
+It serves as an intermediary between the external and internal levels, mapping the user views to the physical storage structures.
+
+*** Internal Level (Storage Level) - DBMS devs
+This layer represents the physical storage of the database on the underlying hardware.
+It defines how the data is stored, indexed, and accessed on disk or other storage media.
+The internal level deals with issues such as data storage formats, access methods, indexing techniques, and physical storage optimization.
+It is concerned with efficiency and performance aspects of data storage and retrieval.
+
+** Data independence
+A ability to change the database schema at one level without affecting the schema at the other levels.
+
+*** Logical Data Independence
+The ability to change the conceptual schema (logical level) without affecting the external schemas (external level)
+
+- Changes to the logical schema include modifications to the structure of the database, such as adding or removing entities, attributes, or relationships, and altering constraints or rules.
+- Users or applications accessing the database through external schemas should remain unaffected by changes made at the conceptual level.
+- This type of data independence allows for flexibility in adapting the database structure to evolving business requirements without requiring changes to user interfaces or applications.
+
+*** Physical Data Independence
+Physical data independence refers to the ability to change the internal schema (storage level) without affecting the conceptual schema (logical level) or external schemas (external level).
+
+- Changes to the physical schema involve modifications to how data is stored, indexed, or accessed on the underlying storage devices.
+- For example, changes in storage structures, access methods, or optimziation techniques should not impact the logical or external views of the database.
+- This type of data independence allows for improvements in data storage efficiency, performance optimizations, or changes in the underlying hardware infrastructure without disrupting the logical or external representations of the database.

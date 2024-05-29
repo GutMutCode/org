@@ -1,0 +1,234 @@
+* Sigils
+We have already =learned= that Elixir =provides= double-quoted strings and single-quoted char lists.
+However, this only =covers= the surface of structures
+that =have= textual representation in the language.
+Atoms,for example, =are= mostly =created= via the ~:atom~ representation.
+
+One of Elixir's goals =is= extensibility:
+developers should be able to =extend= the language to =fit= any particular domain.
+Computer science =has= =become= such a wide field that
+it =is= impossible for a language to =tackle= all aspects of it as part of its core.
+Instead, Elixir =aims= to =make= itself extensible
+so developers,companies,and communities can =extend= the language to their relevant domains.
+
+in this chapter, we =are= =going= to =explore= sigils,
+which =are= one of the mechanisms provided by the language for =working= with textual representations.
+Sigils =start= with the tilde (~) character which =is= =followed= by a letter (which =identifies= the sigil)
+and then a delimiter;optionally,modifiers can =be= =added= after the final delimiter.
+
+** Regular expressions
+The most common sigil in Elixir =is= ~~r~, which =is= =used= to =create= [[file:../../../notes/cs/regular-expression.org][regualr expressions]]
+#+BEGIN_SRC elixir
+# A regular expression that matches strings which contain "foo" or "bar":
+regex = ~r/foo|bar/ #=> ~r/foo|bar/
+"foo" =~ regex #=> true
+"bat" =~ regex #=> false
+#+END_SRC
+
+Elixir =provides= Perl-compatible regular expressions (regexes),
+as implemented by the [[http://www.pcre.org/][PCRE]] library.
+Regexes also support modifiers.
+For example, the ~i~ modifier =makes= a regulare expression case insensitive:
+#+BEGIN_SRC elixir
+"HELLO" =~ ~r/hello/ #=> false
+"HELLO" =~ ~r/hello/i #=> true
+#+END_SRC
+
+=Check= =out= the [[https://hexdocs.pm/elixir/Regex.html][Regex module]] for more information on other modifiers
+and the supported operations with regular expressions.
+
+So far, all examples =have= =used= ~/~ to =delimit= a regular expression.
+However,sigils =support= 8 different delimiters:
+#+BEGIN_SRC elixir
+~r/hello/
+~r|hello|
+~r"hello"
+~r'hello'
+~r(hello)
+~r[hello]
+~r{hello}
+~r<hello>
+#+END_SRC
+
+The reason behind supporting different delimiters =is= to =provide= a way to =write= literals
+without escaped delimiters.
+For example, a regular expression with forward slashes
+like ~~r(^https?://)~ =reads= arguably =better= than ~~r^https?:\/\//~.
+Similarly,if the regualr expression has forward slashes and capturing groups (that use ~()~),
+you may then =choose= double quotes instead of parentheses.
+
+** Strings, char lists, and word lists sigils
+Besides regualr expressions, Elixir ships with three other sigils.
+*** Strings
+The ~~s~ sigil =is= =used= to =generate= strings, like double quotes =are=.
+The ~~s~ sigil =is= useful when a string =contains= double quotes:
+#+BEGIN_SRC elixir
+~s (this is a string with "double" quotes, not 'single' ones)
+#=> "this is a string with \"double\" quotes, not 'single' ones"
+#+END_SRC
+*** Char lists
+The ~~c~ sigil =is= the regular way to =represent= charlists.
+#+BEGIN_SRC elixir
+[?c, ?a, ?t] #=> ~c"cat"
+~c(this is a char list containing "double quotes")
+#=> ~c"this is a char list containing \"double quotes\""
+#+END_SRC
+*** Word lists
+The ~~w~ sigil =is= =used= to =generate= lists of words (words =are= just regular strings).
+Inside the ~~w~ sigil, words =are= =separeted= by whitespace.
+#+BEGIN_SRC elixir
+~w(foo bar bat) #=> ["foo", "bar", "bat"]
+#+END_SRC
+
+The ~~w~ sigil also =accepts= the ~c~, ~s~ and ~a~ modifiers (for char lists,strings,and atoms,respectively),
+which =specify= the data type of the elements of the resulting list:
+#+BEGIN_SRC elixir
+~w(foo bar bat)a #=> [:foo, :bar, :bat]
+#+END_SRC
+
+** Interpolation and escaping in string sigils
+Elixir =supports= some sigil variants to =deal= with excaping characters and interpolation.
+In particular,uppercase letters sigils do not =perform= interpolation nor escaping.
+For example, although both ~~s~ and ~~S~ will =return= strings,
+the former =allows= escape codes and interpolation while the latter =does= not:
+#+BEGIN_SRC elixir
+~s(String with escape codes \x26 #{"inter" <> "polation"})
+#=> "String with escape codes & interpolation"
+~S(String without escape codes \x26 without #{interpolation})
+#=> "String without escape codes \\x26 without \#{interpolation}"
+#+END_SRC
+
+The following escape codes can =be= =used= in strings and char lists:
+  - ~\\~ - single backslash
+  - ~\a~ - bell/alert
+  - ~\b~ - backspace
+  - ~\d~ - delete
+  - ~\e~ - escape
+  - ~\f~ - form feed
+  - ~\n~ - newline
+  - ~\r~ - carriage return
+  - ~\s~ - space
+  - ~\t~ - tab
+  - ~\v~ - vertical tab
+  - ~\0~ - null byte
+  - ~\xDD~ - represents a single byte in hexadecimal (such as ~\x13~)
+  - ~\uDDDD~ - represents a Unicode codepoint in hexadecimal (such as ~\u{1F600}~)
+
+    In addition to those,a double quote inside a double-quoted string =needs= to =be= =escaped= as ~\"~,
+    and,analogously,a single quote inside a single-quoted char list =needs= to =be= =escaped= as ~\'~.
+    Nevertheless,it =is= better style to =change= delimiters as =seen= above than to escape them.
+
+    Sigils also =support= heredocs,that =is=,three double-quotes or single-quotes as separators:
+    #+BEGIN_SRC elixir
+~s"""
+this is
+a heredoc string
+     """
+    #+END_SRC
+
+    The most common use case for heredoc sigils =is= when =writing= documentation.
+    For example, =writing= escape characters in the documentation
+    would soon =become= error prone because of the need to =double-escape= some characters:
+    #+BEGIN_SRC elixir
+@doc """
+Converts double-quotes to single-quotes.
+
+## Examples
+
+iex> convert("\\\"foo\\\"")
+"'foo'"
+     """
+def convert(...)
+    #+END_SRC
+
+    By using ~~S~,this problem can =be= =avoided= altogether:
+    #+BEGIN_SRC elixir
+@doc ~S"""
+Converts double-quotes to single-quotes.
+
+## Examples
+
+iex> convert("\"foo\"")
+"'foo'"
+
+"""
+def convert(...)
+    #+END_SRC
+
+** Calendar sigils
+Elixir =offers= several sigils to =deal= with various flavors of times and dates.
+
+*** Date
+A [[https://hexdocs.pm/elixir/Date.html][%Date{}]] struct =contains= the fields ~year~, ~month~, ~day~, and ~calendar~.
+You can =create= one using the ~~D~ sigil:
+#+BEGIN_SRC elixir
+d = ~D[2019-10-31] #=> ~D[2019-10-31]
+d.day #=> 31
+#+END_SRC
+
+*** Time
+The [[https://hexdocs.pm/elixir/Time.html][%Time{}]] struct =contains= the fields ~hour~, ~minute~, ~second~, ~microsecond~, and ~calendar~.
+You can =create= one using the ~~T~ sigil:
+#+BEGIN_SRC elixir
+t = ~T[23:00:07.0] #=> ~T[23:00:07.0]
+t.second #=> 7
+#+END_SRC
+
+*** NaiveDateTime
+The [[https://hexdocs.pm/elixir/DateTime.html][%NaiveDateTime{}]] struct =contains= fields for both ~Date~ and ~Time~.
+You can =create= one using the ~~N~ sigil:
+#+BEGIN_SRC elixir
+ndt = ~N[2019-10-31 23:00:07] #=> ~N[2019-10-31 23:00:07]
+#+END_SRC
+
+Why =is= it =called= naive?
+Because it does not =contain= timezone information.
+Therefore, the given datetime may not =exist= at all or it may =exist= twice in certain timezones
+for example, when we =move= the clock back and forward for daylight saving time.
+
+*** UTC DateTime
+A [[https://hexdocs.pm/elixir/DateTime.html][%DateTime{}]] struct contains the same fields as a ~NaiveDateTime~
+with the addition of fields to =track= timezones.
+The ~~U~ sigil =allows= developers to =create= a DateTime in the UTC timezone:
+#+BEGIN_SRC elixir
+dt = ~U[2019-10-31 19:59:03Z] #=> ~U[2019-10-31 19:59:03Z]
+%DateTime{minute: munute, time_zone: time_zone} = dt
+#=> ~U[2019-10-31 19:59:03Z]
+minute #=> 59
+time_zone #=> "Etc/UTC"
+#+END_SRC
+
+** Custom sigils
+As hinted at the beginning of this chapter, sigils in Elixir =are= extensible.
+In fact, using the sigil ~~r/foo/i~ =is= equivalent to =calling= ~sigil_r~
+with a binary and a char list as the argument:
+#+BEGIN_SRC elixir
+sigil_r(<<"foo">>, ~c"i") #=> ~r"foo"i
+#+END_SRC
+
+We can =access= the documentation for the ~~r~ sigil via ~sigil_r~:
+#+BEGIN_SRC elixir
+h sigil_r
+...
+#+END_SRC
+
+We can also =provide= our own sigils
+by =implementing= functions that =follow= the ~sigil_{character}~ pattern.
+For example, let's =implement= the ~~i~ sigil that =returns= an integer
+(with the optional ~n~ modifier to =make= it negative):
+#+BEGIN_SRC elixir
+defmodule MySigils do
+  def sigil_i(string, []), do: String.to_integer(string)
+  def sigil_i(string, [?n]), do: -String.to_integer(string)
+end
+import MySigils
+~i(13) #=> 13
+~i(42)n #=> -42
+#+END_SRC
+
+Sigils can also =be= =used= to =do= compile-time work with the help of macros.
+For example, regular expressions in Elixir =are= =compiled= into an efficient representation
+during compilation of the source code, therefore =skipping= this step at runtime.
+If you're =interested= in the subject, we =recommend= you =learn= more about macros
+and =check= =out= how sigils =are= =implemented= in the ~Kernel~ module
+(where the ~sigil_*~ functions =are= =defined=).

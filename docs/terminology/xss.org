@@ -1,0 +1,9 @@
+#+title: XSS (Cross-Site-Scripting)
+
+* Definition
+The secure vulnerability in web applications
+
+Usually means client can inject scripts
+
+** Attackers
+They try to access controls such as [[file:./SOP.org][same-origin policy]]

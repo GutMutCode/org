@@ -1,0 +1,6 @@
+#+title: Mount
+
+* What is mount?
+The process of making a stroage device of file system accessible and available for use by an [[file:./os.org][operating systems]]
+
+This allows users to access files and data stored on external devices such as USB devices, SD cards, hard disks, network shares, or cloud storage services

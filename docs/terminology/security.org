@@ -1,0 +1,4 @@
+#+title: Security
+
+* What is security in computing?
+Preventing CPU from unauthorized accesses and malicious actions

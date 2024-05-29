@@ -1,0 +1,6 @@
+#+title: Specification
+
+* Definition
+A set of documented requirements to be satisfied by hardware or software
+
+The contract that used in computer program for user and developer

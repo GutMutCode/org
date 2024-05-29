@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       4404713d-a346-4628-ac3f-81fa25fbecc7
+:END:
+#+title: HowToLearn
+
+* Learning Efficiently
+** Look around many features as fast as possible.
+* Learning Funny
+** Do something to feel the importance
+- 배움의 중요성을 느낄 수 있는 경험을 최대한 효과적으로 느끼게 해준다.
+- 원하는 것과 연결 시켜주는 경험
+** Do you want.
+** Read what you're curious about.
+** Do what you want using knowledge that you learn.
+* Good way
+- No test
+- Just feedback
+  Reason of feedback => find people who can proof theory
+  For next action
+- Make Project
+- Consider together
+* Step for action
+/Find next question/
+- Look failure of other person
+- Minimum practical unit
+- Minimum Viable Product
+
+* Test
+- Small start
+- getting bigger
+- Give up as soon as possible
+  Separate me from idea
+
+* If you have problem that has reason...
+- Do you accept that reason?
+
+* Just for fun
+Naysayer

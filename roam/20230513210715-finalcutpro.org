@@ -1,0 +1,168 @@
+:PROPERTIES:
+:ID:       8dbc337a-e31b-49f1-a760-27f6a2febafa
+:END:
+#+title: FinalCutPro
+* ShortCuts
+** Timeline
+*** Normal
+**** Select
+A
+**** Blade
++ B
+  - Change to blade tool
++ Cmd + B
+  - Cut layers on current playhead
++ Shift + Cmd + B
+  - Cut all layers on playhead
+**** Speed up
+L
+**** Add freeze frame
+Opt + F
+/freeze video and add some element./
+**** Zoom In / Out
++ In
+  Cmd + '+'
++ Out
+  Cmd + -
+**** Range select
+R
+**** Delete rest of clip
+Opt + ]
+**** Delete beginning of clip
+Opt + [
+**** Redo
+Shift + Cmd + Z
+**** Gap & Placeholder
+- Gap : Opt + W
+- Placehlder : Cmd + Opt + W
+
+*** Select
+**** Enable loop
+Cmd + L
+**** Disable element
+V
+**** Disable all element except selected one.
+Opt + S
+**** Paste copied effects.
+Cmd + Opt + v
+**** Paste copied attributes.
+Shift + Cmd + v
+**** Remove specific attributes.
+Shift + Cmd + x
+**** Go to start of video
+/
+
+
+* Common Features
+** Copy Effects
+- Apply same effect to many videos.
+** Edit specific part
+- Drag part of video
+
+* Audio
+** Timeline
+*** Volume set
+*** Fade in & out
+*** Detach from video
+- Right click
+- Extend sound effect & make smooth transition
+** Inspect
+*** Noise Removal
+** Effect
+*** Compressor
+- Manage Sound level to same between me and others
+
+
+* Faster Editing
+** Optimize
+- camera
+** Proxy
+/fast rendering, save time/
+- change frame scale when editing
+** Cut & Chop - use shortcut
+** Preset
+*** Inspect
+- Save Effects Preset
+* Best Effects
+** Text popup
+1. Drag all part of you want
+2. Click Trim and drag the dotted line as far as you want
+3. Copy effect & Repeat
+** Censored effect
+- Pixellate
+- Mask
+  1. Draw mask as far as you want to pixelate.
+  2. Move keyframe by 3.
+  3. Move mask to obejct to fit.
+  4. Repeat
+** Stop Motion
+1. Make text with short frame (usually 3 frame)
+2. Change text angle little.
+3. Copy text and repeat.
+** Overlay
+- Inspect > Blend Mode > Select 'Screen'
+** Before & After reveal
+1. Copy & Paste video (make two)
+2. Place 'before' video to bottom and 'after' video to top.
+3. Select 'before' video and change color.
+4. Add wipe effects to 'after' video as far as you want.
+   - Can set wipe edge.
+** Remove objects effect
+1. Add mask to video and select plane place to cover object.
+2. Drag mask to obejcts.
+3. Increase the feather of mask.
+** Ken Burns (zoom animation)
+- Set start position and end position.
+** Swoosh In/Out
+1. Add slide to video.
+2. Set type and direction.
+** Handheld Effect
+1. Add handheld to video.
+2. Set shakiness and distance.
+** Facetracking
+1. Add simple dot (text) to video.
+2. Place dot to centre of face.
+3. Jump for two frames and move video based on dot for face tracking.
+4. Repeat
+* Color grading
+- Preference > color wheel
+  - Reset - Double click
+
+* MacOS Tips
+- Use computer foramt
+- Don't use prores codec. Use H.264
+- Save effects preset
+  - for youtube studio (video & audio)
+- Record your project's growing
+  - Take snapshot.
+
+* What want to use.
+- Transition > Change frame size
+  - Repeat big and small.
+- Transition > Change music (mood change, feel new)
+- Transition > Stop music (Attension)
+- Sound Effects
+- Separate Cam part and screen part.
+- Zoom in > Highlight & Hand Writing > Zoom out > Repeat
+** <2023-10-14 Sat>
+1. Move transition (l,r,d,u)
+2. Opacity transition -
+3. Voice that applied echo effect
+4. Camera movement for track the line or object
+
+* Plugins
+https://www.motionvfx.com/store/final-cut-pro?free=true&focused_prod=3857&page=1
+
+https://alex4d.com
+
+http://www.le-shu.com/category/fcp/fcpx-titles/?price=4#/page/2
+
+* Ray
+https://10154417130356796.sellfy.store/
+* Sound Effects
+** 허당 반전
+Turntable Scratch 2
+** 전환
+Swish 1,2 -> 아래 많음
+** 충격
+Distortion

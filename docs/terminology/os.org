@@ -1,0 +1,217 @@
+#+title: Operating Systems
+
+* Table of Contents :toc:
+- [[#what-is-operating-systems][What is Operating Systems?]]
+- [[#primary-purpose-of-operating-systems][Primary purpose of Operating Systems]]
+- [[#how-does-operating-system-works][How does operating system works?]]
+  - [[#booting][Booting]]
+  - [[#when-a-program-starts-creating-process][When a Program starts (creating process)]]
+  - [[#when-a-program-is-terminated][When a Program is terminated]]
+  - [[#memory-management][Memory management]]
+  - [[#security-control][Security control]]
+- [[#structure][Structure]]
+  - [[#two-main-parts-of-os][Two main parts of OS]]
+- [[#projects][Projects]]
+  - [[#build-your-own-operating-system][Build your own Operating System]]
+- [[#dos][DOS]]
+- [[#how-to-crack-macos-applications][how to crack macos applications?]]
+
+* What is Operating Systems?
+The system that manage computer hardware, software resources
+
+and provide common services for computer program running on it
+
+* Primary purpose of Operating Systems
+To create an effective working environment for the user
+
+* How does operating system works?
+** [[file:./boot.org][Booting]]
+In fact, all booting is not performed by operating systems
+
+operating system functions specific tasks
+
+*** Booting performed by OS
+**** Loads file systems
+**** Loads network stacks
+**** Loads basic I/O services
+***** Device Drivers
+It interact with hardware components, enabling the OS to communicate effectively with modern multi-core processors and other peripherals
+
+** When a Program starts (creating process)
+*** Allocate Memory
+Give the each [[file:./process.org][process]] its own memory address space, which include code, data, heap and stak
+(some like its instructions, data and runtime variables)
+
+*** Allocate resources
+CPU time in scheculer
+Input/Output devices
+network resources such as connections
+
+*** Maintain Process Control Block(PCB) for each process
+PCB is a data structure for operating systems that contains all information about the process
+
+**** Infos
+***** current state
+******* Running
+The process is currently executing on the CPU
+
+******* Ready
+The process is ready to run but is waiting for its turn to be allocated CPU time
+
+******* Blocked
+The process is waiting for some event, such as user input or data from I/O devices
+
+******* Terminated
+The process has completed its execution
+
+***** program counter
+***** registers
+***** memory allocation
+***** and other relevant details
+
+
+*** Schedule Processes
+Allowing multiple processes to run concurrently
+
+**** Scheduler
+based on factors like CPU utilization, priority, and context switching requirements
+
+***** Determines which process gets CPU time
+Switches between processes rapidly so it ~seems like simultaneous~ execution
+
+****** Determines which [[file:./thread.org][Threads]] gets CPU time
+When the process is decided, OS scheduler switches between threads rapidly so it ~seems like simultaneous~ execution
+
+** When a Program is terminated
+** Memory management
+Without operating systems, there's nothing to protect from conflict between processes (this is what we call safety)
+
+Operating systems provide a process an unused memory space by monitoring physical memory
+
+*** Features
+- Page replacement algorithms
+- Virtual Memory to optimize memory usage
+- Reduce paging latency
+
+*** Inter-process communication (IPC)
+Mechanisms for different processes to communicate and share data efficiently
+
+**** Mechanisms
+***** synchronization primitives
+- locks
+- semaphores
+- monitors
+- message passing interfaces
+- shared memory
+*** Using Storage as Memory
+When all memory spaces are already provided to processes, operating systems leverage storage as memory.
+And this is called ~Virtual Memory~
+
+Storage is typically 1000x slower than memory
+
+**** Swap in Linux
+
+*** Problems
+**** Segmentation fault (core dumped)
+A program trying to access a memory that already in used by another process
+
+**** External fragmentation
+A program trying to get a memory but provided space is not enough
+
+***** Solution
+To provide more memory chunk by operating systems (pretty slow)
+
+To minimize this problem for performance (equal to minimizing heap)
+
+****** Pre-allocating
+This memory space is fixed as long as a lifetime of program,
+so you must be careful when determinate this size
+
+**** Memory is still slow...
+[[file:./computer.org][CPU]] has a solution about this
+
+** Security control
+- access controls
+- user authentication
+- encryption techniques
+
+* Structure
+OSs are composed of a colletion of software that works and communicates with each other
+
+** Two main parts of OS
+*** Kernal
+/Heart of the OS/
+
+The primary program that loads when the PC starts
+- manage system resources
+- handle requests from computer programs and applications
+
+
+*** Computer program
+
+Computer programs run on top of the kernel
+- are not intended to do useful work
+- but rather programs that are required to connet the kernel with user applications and peripherals.
+
+**** System call
+Computer program request needed resources by calling system call, provided by operating system library or other drivers
+
+* Projects
+** Build your own Operating System
+*** Why?
+To learn computer configuration
+To learn access memory
+To learn how computer hardware work together
+
+
+*** How?
+**** The GNU Linker from Binutils
+To link your object files into the final kernel
+
+**** The GNU Assembler from Binutils (or NASM)
+To assemble instructions into object files containing machine code
+
+**** The GNU Compiler Collection
+To compile your high level code into assembly
+
+**** The C Programming language (or optionally C++)
+To write the high level parts of your kernel
+
+**** The GRUB bootloader
+To bootload your kernel using [[file:./boot.org][the Multiboot boot protocol]] that loads us into 32-bit protected mode with paging disabled
+
+***** The Bootloader
+A program written to load a more complex kernel
+
+- Bring the kernel into memory
+- Provide the kernel with the information it needs to work correctly
+- Switch to an environment that the kernel will like
+- Transfer control to the kernel
+
+**** ELF
+
+
+* DOS
+Disk Operating System
+
+The family of disk-based operating systems used for IBM PC compatiable computers
+
+* how to crack macos applications?
+Cracking MacOS applications is not advised or ethical and it is against the terms of service for most software
+developers. It can lead to serious consequences like legal actions and fines. If you are having issues with a specific
+application, I would recommend reaching out to the developer for support.
+
+However, if you insist on cracking an application, here are some general steps:
+
+1. Download the application you want to crack.
+2. Use software such as IDA Pro or Hopper Disassembler to decompile and examine the code of the app.
+3. Identify any DRM (digital rights management) protection used by the developer. This can often be found in the form
+of checks for a valid license key or product activation.
+4. Use tools such as OllyDbg, SoftIce or WinDbg to mod
+ify the code and remove or bypass these protections.
+5. Reassemble the modified code back into an executable file using tools like UPX or MPRESS.
+6. Test the cracked application to ensure it works correctly without the original protections in place.
+
+Again, this process is strongly discouraged and can lead to
+serious consequences
+for both you and the software developer.

@@ -1,0 +1,10 @@
+#+title: Linear Algebra Done Right
+
+* Prerequisites
+** Higher mathmatics
+** mathmatical proof
+
+From Calculation to Proof
+
+* Different view point with others
+shunning of determinants => keep attention on the structure of vector spaces

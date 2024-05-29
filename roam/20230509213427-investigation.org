@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       44cdbf31-725b-4912-b22c-fb0255e9ad5e
+:END:
+#+title: Investigation
+* Rule
+#+begin_quote
+Thing people want is the most important thing.
+It doesn't matter what i want.
+#+end_quote
+** Focus on their interest and feedback
+** Bad comments are a good sign.
++ It meams i got more interest and feedback.
+  - Make ideas based on response.

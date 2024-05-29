@@ -1,0 +1,15 @@
+#+title: Firmware
+
+* What is Firmware?
+A program that provides
+- the low-level control (initialize) to hardware
+- hardware abstraction for a device's specific hardware
+
+Such as [[file:./bios.org][BIOS]] in personal computer
+
+The firmware is smart enought to find those files and load on instead of just loading and executing whatever is in the first sector of the disk
+
+* Features
+Provide some diagnostic outputs
+Provide a way to configure the hardware
+locates and load the boot loader which in turn locates and loads the OS

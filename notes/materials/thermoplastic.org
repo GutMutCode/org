@@ -1,0 +1,4 @@
+#+title: Thermoplastic
+
+* What is Thermoplastic?
+A class of [[file:./polymer.org][polymer]] that can be softened through heating

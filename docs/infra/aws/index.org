@@ -1,0 +1,4 @@
+#+title: Index
+
+* AWS
+** [[file:./iam_ic.org][IAM Identify Center]]

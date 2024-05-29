@@ -1,0 +1,58 @@
+#+title: Index
+
+* An area of knowledge
+** mathematics
+An area of knowledge that includes the topics of numbers, formulas and related structures, shapes and the spaces in which they are contained, and quantities and their changes.
+
+Most mathematical activity involves the discovery of properties of abstract objects
+
+*** Abstract Objects (Mathematical object)
+An abstract concept arising in mathmatics
+
+The object is anything that has been (or could be) formally defined, and with which one may do deductive reasoning and mathematical proofs
+
+**** Abstraction
+A process wherein general rules and concepts are derived from the usage and classification of specific examples, literal (real or concrete) signifiers, first principles, or other methods.
+
+**** Concept (개념)
+
+**** Deductive Reasoning
+The mental process of drawing deductive inferences.
+
+***** Inference
+Stpes in reasoning, moving from premises to logical consequences.
+
+****** Premise
+A proposition--a true or false declarative statements--used in an argument to prove the truth of another proposition called conclusion.
+
+******* Proposition
+Declarative sentence denote
+
+******** Declarative sentence
+It makes a statement or assertion.
+
+`You're my friend.`
+
+********* Statement
+The state described by sentence.
+
+******** Imperative sentence
+It makes a command.
+
+`Be my friend!`
+
+**** Mathematical Proof
+
+*** A branch of mathematics
+**** Geometry
+***** Euclidean space
+****** Euclidean plane
+
+**** Number theory
+**** Algebra
+**** Calculus
+**** Analysis
+**** Discrete mathematics-Logic
+**** Set theory
+**** Probability-Statistics
+**** Decision theory

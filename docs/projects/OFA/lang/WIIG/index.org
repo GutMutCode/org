@@ -1,0 +1,35 @@
+#+title: Index
+
+* [[file:../../readme.org][Purpose]]
+
+* Writing an Interpreter In GO
+** [[file:./intro.org][Intro]]
+** [[file:./TMPL.org][The Monkey Programming Language & Interpreter]]
+** [[file:./why_go.org][Why Go?]]
+** [[file:./lexing.org][Lexing]]
+** [[file:./def_tokens.org][Defining Our Tokens]]
+** [[file:./parser.org][Parser]]
+** [[file:./eval.org][Evaluation]]
+** [[file:./macro.org][Macro]]
+
+* The way I like in this book.
+/Skip that part not because it's too complex, but because it would take away from the essential simpleness, making it harder to understand/
+
+Suited to our =needs=
+
+To see the benefits they provide.
+To see the drawbacks they have.
+To see the problems they solve.
+
+* The things what I'm learned in this book (what I'm focused on)
+** Behave depending on the right purpose
+Don't see other's code before fully understand the problems
+** Push your code to remote only when you...
+I need a convention about flow about managing git
+** The ordered list of program is useful when I understand the code
+
+* What I'm curious about
+** Why "rescue", "catch" are not easy to use?
+
+* Referece
+[[file:../index.org][Books]]

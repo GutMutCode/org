@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f969ef6c-fcae-4432-bdab-bcfdaadb649a
+:END:
+#+title: HG
+
+* 한글 - 훈민정음
+#+begin_quote
+지혜로운 사람은 아침나절이 되기 전에 이해하고, 어리석은 사람도 열흘만에 배운다.
+#+end_quote

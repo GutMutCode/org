@@ -1,0 +1,10 @@
+#+title: Serialization
+
+* Serialization
+~The process~ of =translating= a data structure or object state into ~a format~ that =can be stored= effectively (e.g. files in secondary storage devices, data buffers in premary storage devices)
+
+** Examples
+*** Serialization
+General String -> Json format
+*** Deserialization
+Json format -> General String

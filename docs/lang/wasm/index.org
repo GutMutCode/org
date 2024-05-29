@@ -1,0 +1,51 @@
+#+title: Wasm
+
+* Main featrues
+** sandbox environment
+- guarantees memory safety
+* Main purpose
+** translate to machine code
+- to provide near native performance
+** Design to be a target code not manualy hardcoding
+* Core system
+** Type
+- i32
+- i64
+- f32
+- f64
+** Function
+Wasm has functions which map a vector of value types to a vector of value types:
+#+begin_src wasm
+function = vec(valtype) -> vec(valtype)
+#+end_src
+** Memory model
+Wasm has a linear memory model which is just a contiguous vector of raw bytes.
+
+code can grow this memory but =not shrink it=.
+
+*** accessing
+by load and store operations in Wasm module (can be accessed directly in JS)
+
+*** modeling
+1. popping some values off a virtual stack
+2. do something with this value
+3. pushing some values onto this stack
+
+*** Examples
+
+#+begin_src wasm
+i64.const 16
+i64.const 2
+i64.div_u
+#+end_src
+
+1. push ~16~ on the top of stack as an i64 constant
+2. push ~2~ on the top of stack as an i64 constant
+3. pop two values off the top of stack, perform unsigned division between those two values and push the result back onto the top of the stack
+
+* With other langauge
+** The languages that use LLVM backend
+LLVM is used to turn intermediate representation (IR) into machine code for the particular target of your choosing
+*** Targets
+It's kind of architecture such as ~x86_64~ or ~armv7~.
+*Wasm is just another target*

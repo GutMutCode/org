@@ -1,0 +1,83 @@
+#+title: UDP
+
+* Table of Contents :toc:
+- [[#what-is-a-udp][What is a UDP?]]
+- [[#how-does-udp-work][How does UDP work?]]
+  - [[#receiver--sender][Receiver & Sender]]
+  - [[#method-of-transmission][Method of transmission]]
+- [[#advantages][Advantages]]
+  - [[#transfering-many-of-data][Transfering many of data]]
+  - [[#transfering-to-many-of-computers-at-once-broadcasting][Transfering to many of computers at once (BroadCasting)]]
+- [[#child-protocol][Child Protocol]]
+  - [[#session-initiation-protocol-sip][Session Initiation Protocol (SIP)]]
+- [[#what-is-form-of-data-used-in-udp][What is form of data used in UDP?]]
+  - [[#datagram][Datagram]]
+- [[#what-are-differences-with-tcp][What are differences with TCP?]]
+  - [[#멀티미디어-데이터-전송][멀티미디어 데이터 전송]]
+  - [[#실시간-서비스][실시간 서비스]]
+  - [[#데이터-경계가-존재한다][데이터 경계가 존재한다]]
+
+* What is a UDP?
+User Datagram Protocol
+
+* How does UDP work?
+UDP allow all data from others
+So, unlike [[file:./tcp.org][TCP]], UDP send data ~without acknowledge~
+
+** Receiver & Sender
+All computers using UDP are have receiver and sender
+
+*** Receiver
+Receive all of data from others
+
+*** Sender
+Send data to other computer
+
+** Method of transmission
+*** Uni-Casting
+~What does Uni mean in this term?~
+
+Specifying a IP address and transfer data to it
+
+*** Broad-Casting
+Specifying a group of computers and transfer data to them
+
+* Advantages
+** Transfering many of data
+1. streaming services
+2. telephone services
+
+** Transfering to many of computers at once (BroadCasting)
+1. streaming services
+2. telephone services
+3. Domain Name Server ([[file:./dns.org][DNS]])
+4. Simple Network Management Protocol (SNMP)
+   Like a local network
+
+* Child Protocol
+** Session Initiation Protocol (SIP)
+This help to build a environment for real-time transmission such as video/audio call services
+
+* What is form of data used in UDP?
+** Datagram
+UDP packet has a meaning as itself, and this is called the Datagram.
+
+* What are differences with TCP?
+Unlike TCP, UDP doesn't have ~Flow control~
+
+** 멀티미디어 데이터 전송
+일부가 손실되어도 문제되지 않는다.
+
+** 실시간 서비스
+빠른 전송속도가 중요하다.
+
+*** Is the UCP really faster than the TDP?
+**** No Handshaking
+**** No Gaurantee
+
+** 데이터 경계가 존재한다
+UDP must have to 입력함수 호출 횟수 == 출력함수 호출 횟수
+- Datagram Data
+
+TCP shouldn't have to 입력함수 호출 횟수 != 출력함수 호출 횟수
+- Stream Data

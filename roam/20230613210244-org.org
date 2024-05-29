@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       8c67cf3f-3da4-4b81-956f-52088242a25d
+:END:
+#+title: Org
+
+* Most use keybinds
+** Move head
+Org mode subtree up/down/left/right
+- <leader> m s h/j/k/l
+- << or >>
+*** test

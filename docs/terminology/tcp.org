@@ -1,0 +1,128 @@
+#+title: TCP
+
+* Table of Contents :toc:
+- [[#what-does-tcp-stands-for][What does TCP stands for?]]
+- [[#how-does-tcp-work][How does TCP work?]]
+  - [[#tcp-connection-establishing-3-way-handshaking][TCP Connection Establishing (3-Way Handshaking)]]
+  - [[#communication-send--receive][Communication (Send & Receive)]]
+  - [[#four-way-tcp-termination-4-way-handshaking][Four-way TCP Termination (4-Way handshaking)]]
+- [[#how-tcp-data-looks-like][How TCP data looks like?]]
+- [[#child-protocol][Child Protocol]]
+- [[#warnings][Warnings]]
+- [[#buffers][Buffers]]
+  - [[#where-is-the-rest-30-byte][Where is the rest? (30 byte)]]
+  - [[#io-buffers][I/O buffers]]
+  - [[#socket-communication-in-tcp][Socket communication in TCP]]
+- [[#termination][Termination]]
+  - [[#half-close][Half-close]]
+
+* What does TCP stands for?
+Transmission Control [[file:./protocol.org][Protocol]]
+
+To enable devices to =reliable= communicate on networks
+
+* How does TCP work?
+It works by establishing and maintaining end-to-end TCP connections between communicating entities called [[file:./socket.org][sockets]]
+
+** TCP Connection Establishing (3-Way Handshaking)
+1) Client sends a SYN(synchronize) packet
+   This packet consists of TCP + SYN flag
+
+   TCP packet has identifier called ~SEQ~
+
+2) Server responds with SYN-ACK(acknowledge)
+   Server acknowledge the client's request and responds with a packet
+
+   This packet consists of TCP + SYN + ACK flag
+
+   ACK has the data that is ~received SEQ + 1~
+
+3) Client sends an ACK packet
+   Client sends a TCP packet with ACK flag so that finally connection is established
+
+
+
+Results) Connection is established and the Server create a =session= (socket) for it
+
+
+** Communication (Send & Receive)
+1) Client sends a packet
+   TCP (~SEQ 1000 + 100byte~)
+
+2) Server receives a packet and acknowledges with ACK
+   Send : TCP(with a ACK flag) - A packet that the server sends is called `PUSH`
+
+   ACK has the data that is ~received SEQ + size of Data + 1~ (ACK 1101)
+
+3) Client receives PUSH and acknowledges with ACK
+   Send : TCP(with a ACK flag)
+
+4) Prepare next packet
+   If the sender received the right ACK, it prepare the next packet
+
+If Server or Client aren't receive ACK, the connection will be terminated
+
+
+** Four-way TCP Termination (4-Way handshaking)
+The sender(client in this case) might has a remained data to transmit.
+
+1) Client send FIN(finish) packet
+   TCP(with a FIN flag)
+
+2) Server acknowledges with ACK
+   TCP(with a ACK flag, ~SEQ + 1~)
+
+3) Server sends FIN packet
+   TCP(with a FIN flag, ~SEQ + 1~)
+
+4) Client acknowledges with ACK
+   TCP(with a ACK flag)
+
+
+Results) Connection is fully closed
+
+* How TCP data looks like?
+The data using TCP protocol called [[file:./segment.org][segment]]
+
+* Child Protocol
+[[file:./http.org][HTTP]], [[file:./ftp.org][FTP]], etc.
+
+* Warnings
+The server resources are limited and clients are generally disconnected incidentally,
+so the server must to send a packet to monitor the connection status by receive ACK flag
+
+If the client doesn't sends a ACK packet for a period time, the server must terminate it
+
+* Buffers
+TCP socket data has no limits (stream format data)
+
+40 byte write -> 10 byte read * 4
+
+** Where is the rest? (30 byte)
+read() and write() pass through the buffer (I/O buffers)
+
+** I/O buffers
+*** Input Buffers
+Socket closed -> Input buffer is closed automatically
+
+*** Output Buffers
+Socket closed -> Output buffer still tramsfer the data it has
+
+The data in output buffer is guaranteed to be transmitted.
+
+** Socket communication in TCP
+Sliding Window Protocol
+
+A input buffer of a socket determine the size of the received data
+* Termination
+You may should to receive a critical data before the socket is terminated!
+
+** Half-close
+close the one of sender or receiver
+
+do not use ~close~ or ~closesocket~, use =shutdown=.
+
+*** Why should I use Half-close?
+We need to know the end of the received data and to respond it.
+
+We cannot use closed socket to respond.

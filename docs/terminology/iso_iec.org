@@ -1,0 +1,17 @@
+#+title: ISO/IEC
+
+* What does ISO/IEC stand for?
+ISO : International Standardization Organization
+
+IEC : International Electrotechnical Commission
+
+* What do they do?
+Create a standard in many terms
+
+* References
+[[https://www.open-std.org][Open Standard]]
+
+[[https://www.ibm.com/docs/en/i/7.5?topic=programming][IBM docs for Standard]]
+
+** How to find a grossary?
+from [[https://www.nist.gov][NIST]]

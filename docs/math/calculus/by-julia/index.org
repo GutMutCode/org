@@ -1,0 +1,13 @@
+#+title: Calculus with Julia
+
+* Peface
+** Harvard style rule of four
+the conversation should include a graphical, numerical, algebric, and verbal component.
+
+** Goal
+To get at the concepts using technology as much as possible without getting bogged down in the mechanics of the computer language.
+
+** View point of this project
+To a reduce set of computational concepts ( do not cover thoroughly many aspects of programming )
+
+* Recalculus Concepts

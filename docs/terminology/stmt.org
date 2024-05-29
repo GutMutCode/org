@@ -1,0 +1,4 @@
+#+title: Statement
+
+* What is statement in computing?
+A command that doesn't return value to call environment

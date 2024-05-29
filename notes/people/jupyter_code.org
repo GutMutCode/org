@@ -1,0 +1,15 @@
+* Coding
+** System Programming
+C, C++, Rust
+
+Tesla < Airplane < Satelie < Rocket < Fighter Jet
+
+** Machine Learning
+Python
+
+Some coding work can't be done by human brains
+
+** Web Programming
+JS + TS + Elixir/Phoenix
+
+Kakao Bank

@@ -1,0 +1,38 @@
+#+title: Concurrency
+
+* What is concurrency in programming?
+The ability that deals with the execution of multiple tasks (or processes) at the same time
+
+This tipically indicate parallel, with the goal of improving overall system efficiency and performance
+
+multicore processors and distributed systems can achieve this
+
+* Key concepts of concurrency
+** Concurrency
+The ability of a program to execute multiple tasks at the same time
+
+** Parallelism
+The simultaneous execution of multiple tasks using multiple processors or cores
+(The real efficiency)
+
+** Thread
+file:./thread.org
+Threads are a very =common= unit that is applied concurrency
+
+** Mutex (Mutual Exclusion)
+A synchronization mechanism that ensures only one thread can access a shared resource at a time
+
+- to prevent data corruption or inconsistency
+
+** Semaphore
+'mark, sign, token' (sema) + 'bearer, carrier' (phore)
+
+A synchronization primitive
+
+- to controls access to a shared resource
+- by ~limiting the number of threads~ that can access it simultaneously
+
+** Deadlock
+A situation where two or more threads are waiting for each other to release a lock
+
+- theses threads are unable to proceed permanently

@@ -1,0 +1,44 @@
+#+title: Http Request
+
+* Definition
+The request for HTTP data
+
+* Structure
+Destination + Verb + Path
+
+** Destination
+http://localhost:4000/
+
+** Verb (Methods)
+*** GET
+Get the data from server
+
+- This can be cached in client (browser)
+
+*** POST
+Post the data into server
+
+- This cannot be cached
+
+*** PUT
+*** DELETE
+
+** Path
+/
+/hello
+
+** Status
+*** 200
+OK
+
+- client got a successful response
+
+*** 404
+Not found
+
+- client got a response that indicate a server cannot found client requested data
+
+*** 503
+Service Unavailable
+
+- server cannot handle the request

@@ -1,0 +1,9 @@
+#+title: Heap
+
+* What is heap?
+When a program is started and an operating system provided a memory space to,
+each variables in the program are stacked into the memory in order from the top to bottom =by default=.
+This memory is called [[file:./stack.org][stack]].
+But in program, you can use heap structure to allocate variables, not a stack.
+
+heap is provided by operating system, so you may request to the operating system by [[file:./os.org][system call]]

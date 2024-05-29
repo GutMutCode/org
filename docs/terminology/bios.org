@@ -1,0 +1,85 @@
+#+title: Basic Input/Ouput System
+
+* Table Of Contents :toc:
+- [[#what-is-bios][What is BIOS?]]
+- [[#how-does-biossystem-works][How does BIOS(system) works?]]
+  - [[#power-on-self-test-post][Power-On Self Test (POST)]]
+  - [[#looks-for-video-cards-bios-and-executed][Looks for video card's BIOS and executed]]
+  - [[#looks-for-other-devices-bios-and-executed][Looks for other device's BIOS and executed]]
+  - [[#display-its-startup-screen][Display its startup screen]]
+  - [[#more-testing][More Testing]]
+  - [[#perform-system-inventory][Perform system inventory]]
+  - [[#detect-plug-and-play-devices][Detect Plug and Play devices]]
+  - [[#display-its-summary][Display its summary]]
+  - [[#search-for-a-drive-to-boot-from][Search for a drive to boot from]]
+  - [[#looks-for-boot-information-from-it][Looks for boot information from it]]
+  - [[#boot-operating-system][Boot operating system]]
+- [[#for-now][For Now]]
+- [[#procedure][Procedure]]
+
+* What is BIOS?
+A [[file:./firmware.org][firmware]] used to provide runtime services for operating systems and programs and to perform hardware initilization during the [[file:./boot.org][booting]] process ~when the computer starts~
+
+BIOSes are exist in many hardware of computer such as motherboard's BIOS ROM, gpu, etc
+
+Conventionally BIOS indicate motherboard's BIOS (called system BIOS)
+
+* How does BIOS(system) works?
+When BIOS starts, it performs 4 tasks
+
+** Power-On Self Test (POST)
+Ensure the computer meets requirements to boot up properly
+
+Checking error by testing itself and if there are fatal errors, the boot process stops and create beep sound
+
+** Looks for video card's BIOS and executed
+The BIOS that initialize video card
+
+- normally found at location C000h
+- most morden video cards display information on the screen about the video card
+
+** Looks for other device's BIOS and executed
+The BIOS that initialize for that device
+
+- Normally, the IDE/ATA hard disk BIOS will be found at C8000h and exectued
+
+** Display its startup screen
+
+** More Testing
+memory count-up test
+- If BIOS encounters error at this point, error messages are displayed on the screen
+
+** Perform system inventory
+Determine what sort of hardware is in the system
+
+- determine memory timing
+- set hard drive parameters and access modes
+
+** Detect Plug and Play devices
+
+** Display its summary
+
+** Search for a drive to boot from
+Boot according to boot sequence BIOS setting (floppy disk - A:, hard disk - C:, usb, etc)
+
+** Looks for boot information from it
+*** From the hard disk
+If it is searching a hard disk, it looks for a [[file:./boot.org][master boot record]] at cylinder 0, head 0, sector 1 (the first sector on the disk)
+
+*** From the floppy disk
+It looks at the same address on the floppy disk for a volume boot sector
+
+** Boot operating system
+With information in boot sector, BIOS loads [[file:./boot.org][bootloader]] into memory
+
+If no boot device at all can be found, the system will normally display an erro message and then freeze up the system
+
+* For Now
+It is being replaced these days with [[file:./efi.org][EFI]] firmware
+
+* Procedure
+loads and executes the first sector of the disk it decide to boot from (tipically =the first hard disk detected=)
+
+By convention the first sector of a hard disk, called the Master Boot Record(MBR),
+- contains a [[file:./storage.org][DOS]] partition table listing the location of the partitions on the disk,
+- leaves some space for the boot loader

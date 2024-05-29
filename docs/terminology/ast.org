@@ -1,0 +1,17 @@
+#+title: Ast
+
+* Abstract Syntax Tree
+One of [[file:./ir.org][IR]]
+
+A tree structure that [[file:./abstract.org][abstract]] the syntax of the program
+
+A hierarchical(=tree=) structure that captures the =syntactic= strcuture of the program
+
+Certain details visible in the source code are omitted in the AST
+
+** In Programming
+To transform tokens into syntax tree structure
+
+* How to make AST?
+- Define abstract syntax
+- Make them tree

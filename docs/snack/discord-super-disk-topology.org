@@ -1,0 +1,161 @@
+#+title: Discord Super Disk Topology
+
+* Data scale of Discord
+=4 bilion= messages by =millions= of people per =day=
+
+* Purpose of real-time chat platform
+We want our databases to respond to the high frequency of queries as fast as possible
+
+* The biggest impact on our database
+The latency of individual disk operations
+- how long it takes to read or write data from the physical hardware.
+
+** handling requests in parallel
+*** Not blocking on a single disk operation
+- Limit :
+  at a certain threshold, the database will need to =wait for an outstanding disk operation= to complete =before it will issue another=.
+  The database eventually reaches a point where it can no longer immediately fetch data for incoming queries.
+  This cause disk operations and queries to "back up",
+  slowing the response to the client who issue the query, which in turn causes poor application performance.
+
+  - Worst case:
+    This can cascade into an ever-expanding queue of disks operations whose queries time out by the time the disk is available.
+
+  - Summary
+    The database would report an ever-growing queue of disk reads,
+    and queries would start timing out.
+
+* Real hardware
+In Google Cloud and they provide ready access to ="Local SSDs"= - NVMe based instance storage, which do have incredibly fast latency profiles.
+
+** Problems
+We ran into enough reliability issues that we didn't feel comfortable with depending on this solution for our critical data storage.
+(another instance storage in GCP => is called Persistent Disks)
+
+** Questions
+How do we get incredibly low latency when we can't rely on the super-fast on-device storage?
+
+** Persistent Disks
+1. Can be attached/detached from servers on the fly,
+2. can be resized without downtime,
+3. can generate point-in-time snapshot ay any time,
+4. and are replicated by design (to prevent data loss in the event that a single piece of hardware dies).
+
+*** Downside
+These disks are not attached directly to a server, but are connected from a somewhat-nearby location (probably the same building as the server) via the network.
+
+- PCI or SATA connection(Local SSDs) that spans less than a meter => very low latency => ~around half a milisecond~
+- Average latency of disk operations => can be on the order of ~couple miliseconds~
+
+** Local SSDs
+- As with traditional hard drives, the downside is that a hardware issue with one of these disks (or a disk controller) means we immediately lose everyting on that disk.
+- Worse than that case:
+  When the /host/ has problems; if the host to which the Local SSDs are attached has critical issues, the disks and their =data are gone forever=.
+  This is critical for certain workflow (like some data backups)
+
+** There is no perfect disk
+At least within the ecosystem of common cloud providers.
+
+* What if,
+** We didn't need /all/ of that flexibility?
+- Write latency - isn't critical
+- Read latency - =is critical=
+
+- Resizing disks without downtime
+  isn't important -> alternate with better estimate storage growth and provision larger disks ahead of time.
+
+* What was most variable for the operation of our database?
+** Use both at appropriative place
+*** Local SSDs for Reading
+*** Persistent disks for Writing
+- snapshoting,
+- redundancy via replication
+
+* Super-Disk
+Software-level disk
+
+- GCP's Local SSDs as the cache
+- Persistent Disks as the storage layer
+
+** Ubuntu on database server
+The Linux kernel is able to cache data at the disk level in a variety of ways,
+providing modules such as /dm-cache/, /lvm-cache/, and /bcache/.
+
+** How failures in cache disk were handled?
+*** Bad sector
+Reading =a bad sector= from the cache caused the entire read operation to fail. (Local disk is the same)
+
+- Fixed by overwriting the sector on the cache with data from the storage layer,
+  but the disk caching solutions we evaluated either didn't have this capability or required more complex configuration than we wanted to consider during this phase of research.
+
+- Without the cache fixing bad sectors,
+  they will be exposed to the calling application, and our databases will shutdown for data safety reasons when encountering bad sector reads:
+  #+begin_quote
+  storage_service - Shutting down communications due to I/O errors until operator intervention
+  storage_service - Disk error: std::system_error (error system:61, No data available)
+  #+end_quote
+
+  With our requirements updated to include "Survive bad sectors on the Local SSD",
+  we investigated an entirely different type of Linux kernel system: =md=
+
+*** MD
+/md/ allows Linux to create software RAID ararys,
+*turning multiple disks into one "array"(virtual disk).*
+
+A simple mirrored (=RAID1=) array between Local SSDs and Persistent Disks would not solve our problem;
+reads would still hit the Persistent Disks for about half of all operations.
+
+However, /md/ offers additional features not persent in a traditional RAID controller, one of which is ="write-mostly"=.
+The kernel man pages give the best summary of this feature:
+#+begin_quote
+Individul devices in a RAID1 can be marked as "write-mostly".
+These drives are excluded from the normal read balancing and will only be read from when there is no other option.
+This can be useful =for devices connected over a slow link=. => Persistent Disks
+#+end_quote
+
+*A RAID1 array containing a Local SSD and a Persistent Disk set to write-mostly would meet all our requirements.*
+
+One last problem remained: Local SSDs in GCP are exactly 375GB in size.
+- Discord =requires a terabyte or more of storage per database instance= for certain applications, so this is nowwhere near enough space.
+  We could attach multiple Local SSDs to a server, but we needed a way to turn a bunch of smaller disks into one larger disk.
+
+*md offers a number of RAID configurations that stripe data across multiple disks.*
+- RAID0
+  splits raw data across all disks, and if =one disk is lost=, the entire array fails and =all data is lost=.
+- RAID5, RAID6
+  maintain parity and allow the loss of at least one disk =at the cost of performance penalties=.
+  This is great for maintaining uptime--just remove the failed disks and replace it with a fresh one.
+
+*In GCP world, there is no concept of replacing a Local SSD*
+- these are devices located deep inside Google data centers.
+- provide ="guarantee"= around the failure of Local SSDs:
+  if any local SSD fails, the entire server is migrated to a different set of hardware,
+  essentially erasing all Local SSD data for that server.
+
+*Since we don't(can't) worry about replacing Local SSDs,*
+and to reduce the performance impact of striped RAID arrays,
+- we settled on RAID0 as our strategy to =turn multiple Local SSDs into one low-latency virtual disk=.
+
+- With a RAID0 on top of the Local SSDs, and a RAID1 between the Persistent Disk and RAID0 array,
+  we could configure the database with a disk drive that would offer low-latency reads,
+  while still allowing use to benefit from the best properties of Persistent Disks.
+  [[~/Downloads/blogs/discord-super-disk.png]]
+
+** Database performance
+This new disk configuration looked good in testing, but how would it behave with an actual database on top of it?
+
+- At peak load
+  Our databases no longer started queueing up disk operations, and we saw no change in query latency.
+  In practice, this means our metrics show =fewer outstanding database disk reads= on super-disks than on Persistent Disks, due to less time spent on I/O operations.
+
+These performance increases let use squeeze more queries onto the same servers,
+which is great news for those of us maintaining the database servers (and for the finance department).
+
+* Learn about
+The world of cloud computing causes so many systems to behave in ways that are nothing like thier physical data center counterparts.
+
+The inner workings of disk devices (in both Linux and GCP) is important,
+and improved our culture of testing and validating architectural changes.
+
+* Consequences
+Our databases have continued to scale with the growth of Discord's user base.

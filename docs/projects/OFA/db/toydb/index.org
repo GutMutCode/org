@@ -1,0 +1,44 @@
+#+title: ToyDB
+
+* [[file:../../readme.org][Purpose]]
+
+* Repo
+https://github.com/erikgrinaker/toydb
+
+* Architecture
+** Node component
+[[file:./imgs/toydb-architecture.svg]]
+*** Storage engine
+store data and manages transactions(SQL data), on disk and in memory
+
+1. simple key/value storage on the bottom
+2. [[file:../../../../cs/mvcc.org][MVCC]] adds [[file:../../../../cs/acid.org][ACID]] trnsactions by wrapping the key/value store
+3. SQL storage provide basic *CRUD operation* on tables, rows, and indexes.
+
+*** [[file:../../../cs/consensus.org][Raft consensus]] engine
+handles cluster coordination and state machine replication
+
+1. =Raft state machine= interface wrap =SQL storage engine= and allow it to be managed by the Raft consensus engine
+2. =The Raft node= receives command from =clients= and coordinates with other Raft nodes to reach consensus on an ordered command log.
+3. Once commands are committed to the log, they are sent to =the state machine driver= which applies them to =the local state machine=.
+
+*** SQL engine
+parses, plans, and execute SQL statments for clients
+
+1. =Raft-base SQL storage engine= implements =the SQL storage interface= and submits commands to =the Raft cluster=.
+   It allows the rest of the SQL layer to use the Raft cluster as if it was local storage
+2. =The SQL engine= manages =client SQL sessions=, which take SQL queries as text, parse them, generate query plans, and execute them against the SQL storage engine
+
+*** ToyDB server
+Surround all of these component and network connection, lhandles configureation, logging, and other process-level concerns
+
+** Storage Engine
+this is actually two different stroage engines:
+- key/value stoorage used by =the SQL engine=
+- log-structured storage used by =the Raft node=
+
+
+* Why i'm stop this for know - Wed 13.Sep.2023
+It is too complicate for beginner
+*There is lack of explanation about relevance to production database.*
+- I'm interruped learning because of this thinking when encounter difficult problems.

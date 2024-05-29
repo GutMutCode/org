@@ -1,0 +1,84 @@
+#+title: Eval
+
+* Evaluation
+Giving the meaning to abstract syntax tree
+
+* Interpreter Vs. Compiler
+** Interpreter
+- Doesn't leave executable artifacts behind
+** Compiler
+- Leave executable artifacts behind
+
+* Process
+1. Traverse the AST
+2. Visit node and do what the node signifies (tree-walking)
+
+** Some other interpreters
+*** the evaluation steps is optimized (more sutable for recursive and repeated evaluation)
+- rewrite the AST (e.g. remove unused variable bindings)
+- convert the AST into another intermediate representation (IR, ex. bytecode)
+
+*** Bytecode
+- A IR of the AST
+
+- Isn't machine code nor is it assembly language
+
+- Interpreted by =virtual machine=, that's part of interpreter
+
+**** Opcode
+Def - The instruction that make up the bytecode
+
+In General, bytecode contains `push` and `pop` opcode to do stack operations
+****
+****
+**** Virtual Machine
+The emulation of the real machine to understand particular bytecode format
+
+This approach yield great performance benefits
+
+*** Edge cases
+
+**** Emit the bytecode directly
+Source Code -> bytecode -> VM
+
+In the case, parser in interpreter doesn't make the AST. It merely emit bytecode directly to VM
+
+Is this compilation or interpretation?
+
+**** Just In Time
+- Some impletementation convert the bytecode into native code when right before it's executed
+- Others skip the compilation to bytecode
+
+Source Code -> AST -> bytecode -> =be executed= -> native code -> VM
+****
+**** Mixed
+interpreter recursively evaluates the AST
+
+only after evaluating =a particular branch= of the AST =multiple times= does it compile the branch to machine code.
+
+* Tree-walking interpreter
+
+** Tree-walking evaluator
+just evaluate the AST
+
+*** Internal representation of Return Values
+1. not wrapped anything.
+2. representated only as pointers
+3. mixed
+
+**** two type of value representation
+https://github.com/munificent/wren
+
+*** Why the variety?
+1. The host language differ
+
+*** Public API
+**** Java
+***** Primitive data types
+int, byte, short, long, float, double, boolean, char
+
+These closely map to their native counterparts
+
+***** Reference types
+
+** A way to represent Monkey value in host language (Go)

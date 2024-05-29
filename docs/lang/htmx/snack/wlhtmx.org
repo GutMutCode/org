@@ -1,0 +1,17 @@
+#+title: Wlhtmx
+
+* Why learn HTMX?
+
+** Hypermedia: A Good Fit If...
+
+*** If your UI is mostly text & images
+In The Mother Of All htmx Deoms, David Guillot of Contexte shows how replacing React with htmx lead to a 67% reducation in the total codebase, along with numerous other eye-popping results.
+*** If your UI is CRUD-y
+*** If your UI is "nested", with updates mostly taking place within well-defined blocks
+*** If you need "deep links" & good first-render perfomance
+
+** Hypermedia: Not A Good Fit If..
+
+*** If your UI has many, dynamic interdependencies
+*** If you require offline functionality
+*** If your UI state is updated extremely frequently

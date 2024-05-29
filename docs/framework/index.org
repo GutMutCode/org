@@ -1,0 +1,8 @@
+#+title: Frameworks
+
+* Uncategorized
+** [[file:./vite.org][Vite]]
+
+* Web
+** Javascript driven
+*** [[file:./qwik.org][Qwik]]

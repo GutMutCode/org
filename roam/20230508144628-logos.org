@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       a2d9c7d4-073f-4696-a254-47f16f4c0990
+:END:
+#+title: Logos
+* 정보를 적게 습득해야 하는 이유
+#+begin_quote
+정보 습득 보다 중요한 것은, 그 정보가 올바른 지 판별하는 능력이다.
+#+end_quote
+
+* 팀 주피터
+#+begin_quote
+공부가 고통스러운게 아니라, 고통스러운 방법으로 공부하고 있는 것이다.
+#+end_quote
+
+* 홍익학당
+#+begin_quote
+자명한 부분만 믿고, 간다.
+더 나은 답을 준다.
+#+end_quote
+
++ 에고가 괴롭게만든다.
+  - 고행
+
+*
+* Why i think that way is not important.
+- Because i was found more efficient way to learn.
+  - Listening jupyter's lecture
+  - Reading books recommonded by jupyter.
+/Jupeter lecture is based on his books. So reading his book is more efficient way to learn/
+
+** Best way to learn (for now)
+1. Find books recommended by jupyter > Read books
+* Difference between personal youtube and podcast.
+- When i watch personal youtube, i identify with youtuber
+- When i watch podcast, i'm being own myself.

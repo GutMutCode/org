@@ -1,0 +1,6 @@
+#+title: Hateoas
+
+* Hypermedia as the engine of application state
+A constraint of the [[file:./rest_arc.org][Rest application architecture]] that distinguishes it from other network application architectures.
+
+A client interacts with a network application whose application servers provide information dynamically through hypermedia.

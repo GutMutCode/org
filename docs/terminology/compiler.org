@@ -1,0 +1,101 @@
+#+title: Compiler
+
+* Table of Contents :toc:
+- [[#what-is-a-compiler][What is a Compiler?]]
+- [[#how-does-compiler-work-in-general][How does Compiler work in general?]]
+  - [[#front-end][Front-end]]
+  - [[#back-end][Back-end]]
+- [[#memory-allocation][Memory allocation]]
+
+* What is a Compiler?
+
+* How does Compiler work in general?
+** Front-end
+Translate the source code into intermediate representation
+
+*** Lexical Analysis
+Create [[file:./tokenization.org][Token]] by separating a common string data
+
+*** Syntax Analysis
+Create [[file:./ast.org][AST]] by parsing the set of Tokens resulted in previous steps
+
+*** Semantic Analysis
+Create [[file:./ir.org][IR]] by translating AST into other format
+
+** Back-end
+Translate the IR into a specific machine code
+
+*** Code Analysis
+The compiler performs various analyses on the IR to gather information
+
+**** behavior
+**** dependencies
+**** potential optimization
+**** Data Flow Analysis
+Helping the compiler understand how data propagates through the program
+
+***** Optimizaing variable assignments
+***** Identifying opportunities for register allocation
+***** Detecting redundant computations
+
+*** Code Optimization
+Compiler applies optimization passes based on analysis to =transform= the code
+
+Optimization passes focus on improving aspects such as runtime performance, code size, and power consumption
+
+**** Constant folding
+**** Inlining
+The compiler replaces a function call with ~the actual code~ of the called function
+
+#+begin_quote
+send(1, 2) -> replaced by actual code
+#+end_quote
+
+This can lead to improved performance by ~eliminating the overhead~ of the function call
+
+**** Loop Optimization
+***** Loop unrolling
+Replacing loop contrll structures with duplicated code
+
+Trade-off! - this lead code size up
+
+***** Loop fusion
+Combining nested loops
+
+***** Loop interchange ( changing the order of nested loops )
+
+**** Dead code elimination
+**** Common subexpression elimination
+**** Etc.
+
+*** Target Code Generation
+Finally, IR is translated to machine code or assembly code for the target architecture
+
+**** Target-specific Optimization
+Some compiler incorporate target-specific opmimizations
+
+It taking advantage of features and characteristics unique to the target architecture
+
+***** instrcution scheduling
+***** register allocation
+***** platform-specific instructure
+
+* Memory allocation
+Compiler use types to create very efficient machine code
+
+#+begin_src rust
+let a: u32 = 7;
+let b: u32 = 14;
+let c = a + b;
+#+end_src
+
+compiler knows that these two variables that are going to be stored somewhere in memory at runtime are 32bit numbers
+
+so it will emit machine code that fetches both values
+performs an addition
+and then stores the result somewhere else in memroy
+#+begin_src asm
+movl -4(%rbp), %eax
+addl -8(%rbp), %eax
+movl %eax, -12(%rbp)
+#+end_src

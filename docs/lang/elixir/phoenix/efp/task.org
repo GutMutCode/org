@@ -1,0 +1,4 @@
+#+title: Task
+
+* What is task
+The Erlang process that only have a execution, not a state

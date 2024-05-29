@@ -1,0 +1,14 @@
+#+title: Fourier Transform
+
+* What is Fourier Transform?
+* Where it used?
+** decomposing frequency from a sound
+*** A440
+pure A 440 bits for sec
+
+If you measure a air pressure at the sound as a function of time
+
+440 oscillate per sec
+
+*** D294
+294 oscillate per sec

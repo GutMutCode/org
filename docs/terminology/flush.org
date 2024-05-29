@@ -1,0 +1,4 @@
+#+title: Flush
+
+* Definition of a buffer flush
+A process of transfering computer data from a temporary storage area to the computer's permanent memory.

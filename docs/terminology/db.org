@@ -1,0 +1,122 @@
+#+title: Database
+
+* Table of Contents :toc:
+- [[#what-is-database][What is database?]]
+  - [[#stores-data-in-a-structured-manner][Stores data in a structured manner]]
+- [[#why-should-we-use-database][Why should we use database?]]
+  - [[#storing-data-in-program][Storing data in program]]
+  - [[#storing-data-in-file][Storing data in file]]
+  - [[#storing-data-in-database-by-management-system-dbms][Storing data in database by management system (DBMS)]]
+- [[#what-are-some-key-elements-to-consider][What are some key elements to consider?]]
+  - [[#db-design][DB design]]
+  - [[#security-measures][Security measures]]
+  - [[#data-consistency][Data consistency]]
+  - [[#backup-and-recovery][Backup and Recovery]]
+  - [[#optimize][Optimize]]
+  - [[#collaboration][Collaboration]]
+  - [[#maintenance][Maintenance]]
+  - [[#compliance][Compliance]]
+  - [[#monitoring][Monitoring]]
+  - [[#documentation][Documentation]]
+- [[#elements][Elements]]
+  - [[#a-stored-procedure][A stored procedure]]
+  - [[#records][Records]]
+  - [[#transaction][Transaction]]
+
+* What is database?
+An organized collection of data stored electronically to facilitate efficient storage, retrieval, management, and organizations and individuals to store, manage, and access data effectively.
+
+** Stores data in a structured manner
+- Table
+- Indexes
+- Relationships
+- Views
+* Why should we use database?
+** Storing data in program
+1. create array of a specific struct
+2. store data using it
+
+*** Problems
+- You need to compile if you want to append data.
+  A data is always added so while we run new program, we can't use the service
+
+*** What we needs
+We want to use a same program even if we add new data
+
+*** Solution
+We store data into file and program only does manipulate them
+
+** Storing data in file
+*** Problems
+- You need to compile if you want to modify the data structure
+- A file is can't access simultaneously(without OS features), so that you can't access data if other people are using it
+
+*** What we needs
+- We want to modify the structure of data on demand.
+- We want to access the same data by simultaneously, even if other people using it.
+
+*** Solution
+Create a program that store data and structures into file, manipulate them and handle user request by query
+
+** Storing data in database by management system (DBMS)
+Finally we can manipulate data and structure without compiling!
+When we ask the [[file:./dbms.org][DBMS]] to query, the DBMS does whatever we want it to do
+Users can use database all day long, even if we change data and structures
+
+(But when database management system version is changed, you must re-compile)
+
+* What are some key elements to consider?
+** DB design
+For efficient data storage and retrieval
+
+*** Structure of table
+*** Identifying table relationships
+*** Setting up indexes
+*** Creating view
+
+** Security measures
+*** Access control
+*** Authentication
+*** Encryption
+
+** Data consistency
+*** Prevent data duplication
+*** Avoid anomalies
+*** Ensure data integrity
+Enforcing rules for data types, constraints, and integrity check
+
+** Backup and Recovery
+To mitigate data loss and downtime due to system failures or disasters
+
+** Optimize
+*** Choose indexing strategies
+*** Set hardware configuration
+
+** Collaboration
+*** Ensuring proper permissions and access controls
+To allow multiple users to contribute effectively
+
+** Maintenance
+*** vacuuming
+*** analyzing
+
+** Compliance
+Ensuring that your database and its contents comply with relevant regulations (e.g., GDPR)
+
+- to avoid legal issues and protect user privacy.
+
+** Monitoring
+analyzing slow queries or monitoring resource usage helps identify potential issues before they become critical.
+
+** Documentation
+Clearly documenting the database schema design decisions maintenance procedures can help ensure its long-term usability and maintainability.
+
+* Elements
+** A stored procedure
+file:./strd_pd.org
+
+** Records
+One horizontal line in tables
+
+** Transaction
+file:./transaction.org

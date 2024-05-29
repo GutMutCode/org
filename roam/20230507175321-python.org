@@ -1,0 +1,197 @@
+:PROPERTIES:
+:ID:       0c470444-b8c5-447e-b9ca-d2810815e3df
+:END:
+#+title: Python
+
+* How to Think Like Computer Scientist
+** Exercise
+*** 7. iteration
+11. Revisit the drunk pirate problem from the exerciese in chapter 3. This time, the drunk pirate makes a turn, and then takes some steps forward, and repeats this. Our social science student now records =pairs= of data: the angle of each turn, and the number of steps taken after the turn. Her experimental data is [(160, length), (-43, 10), (270, 8), (-43, 12)]. Use a turtle to draw the path taken by our drunk friend.
+
+#+begin_src python :tangle iteration_11.py
+"""Draw Turtle."""
+import turtle
+window = turtle.Screen()
+tess = turtle.Turtle()
+
+data = [(160, length), (-43, 10), (270, 8), (-43, 12)]
+
+for (angle, numOfStep) in data:
+    print(f"angle : {angle}")
+    print(f"numOfStep : {numOfStep}")
+    tess.right(angle)
+    tess.forward(numOfStep)
+
+window.mainloop()
+#+end_src
+
+12. Many intersting shapes can be drawn by the turtle by giving a list of pairs like we did above, where the first item of the pair is the angle to turn, and the second item is the distance to move forward. Set up a list of pairs so that the turtle draws a house with a cross through the centre, as show here. This should be done without going over any of the lines / edges more than once, and without lifting your pen.
+
+#+begin_src python :tangle iteration_12.py
+"""Draw Turtle."""
+import turtle
+from math import sqrt
+
+window = turtle.Screen()
+tess = turtle.Turtle()
+length = 50
+
+# hypotenus = sqrt(adjacent**2 + opposite**2)
+hypotenus = sqrt(length**2 + length**2)
+
+data = [(0, length), (90, length), (90, length), (90, length), (135, hypotenus), (75, length), (120, length), (75, hypotenus)]
+
+for (angle, numOfStep) in data:
+    tess.left(angle)
+    tess.forward(numOfStep)
+
+window.mainloop()
+#+end_src
+
+13. Not all shapes like the one above can be drawn without lifting your pen, or going over an edge more than once. Which of these can be drawn? Now read [[http://en.wikipedia.org/wiki/Eulerian_path][article]] about Eulerian paths. Learn how to tell immediately by inspection whether it is possible to find a solution or not. If the path is possible, you'll also know where to put your pen to start drawing, and where you should end up!
+
+14. What will num_digits(0) return? modify it to return 1 for this case. Why does a call to num_digits(-24) result in an infinite loop? /(hint: -1//10 evaluates to -1)/ Modify num_digits so that it works correctly with any integer value. Add these tests:
+
+#+begin_src python :tangle iteration_14.py
+def num_digits(n):
+    count = 0
+    if n == 0: count = 1
+    # if n < 0: n *= -1
+    n = abs(n)
+    while n != 0:
+        count = count + 1
+        n = n // 10
+    return count
+
+# print(num_digits(-12345))
+# print(num_digits(0))
+# print(num_digits(13))
+# print(-3//10)
+# test(num_digits(0) == 1)
+# test(num_digits(-12345) == 5)
+
+def digit_counter(n: int, count: int = 0):
+    if isinstance(n, int):  #Check type
+        if n > 0:
+            n = n // 10
+            count += 1
+            digit_counter(n, count)  #Recursion
+        elif n < 0:
+            digit_counter(abs(n))
+        else:
+            print(count)
+    else:
+        print("You should input only integer")
+
+digit_counter(-181234)
+
+
+#Functional
+counter = lambda x, count = 1, :print(count) \
+    if abs(x) // 10 == 0 else counter(abs(x) // 10, count + 1)
+
+counter(1234)
+#+end_src
+
+#+RESULTS:
+: None
+
+15. Write a function /num_even_digits(n)/ that counts the number of even digits in n. Theses tests should pass:
+
+#+begin_src python :tangle iteration_15.py
+def num_even_digits(n):
+    count = 0
+    if n == 0: count = count + 1
+    while(n != 0):
+        if n % 2 == 0: count = count + 1
+        n = n//10
+    return count
+
+# print(num_even_digits(123456))
+# print(num_even_digits(2468))
+# print(num_even_digits(1357))
+# print(num_even_digits(0))
+
+# test(num_even_digits(123456) == 3)
+# test(num_even_digits(2468) == 4)
+# test(num_even_digits(1357) == 0)
+# test(num_even_digits(0) == 1)
+
+def even_counter(n:int, count = 0):
+    if isinstance(n, int):
+        if n > 0:
+            if n % 2 == 0:
+                even_counter(n // 10, count + 1)
+            else:
+                even_counter(n // 10)
+        elif n < 0:
+            even_counter(abs(n))
+        else:
+            print(count)
+    else:
+        print("Only can int")
+
+
+# even_counter(-123456)
+# even_counter(2468)
+# even_counter(1357)
+# even_counter(0)
+
+#Functional1
+from functools import reduce
+n = 12
+num_list = [char for char in str(abs(n))]
+res = reduce(lambda acc, x: acc + 1 if int(x) % 2 == 0 else acc, num_list, 0)
+print(res)
+
+
+even_digits = lambda n: reduce(lambda acc, x: acc + 1 if int(x) % 2 == 0 else acc, [char for char in str(abs(n))], 0)
+
+
+print(even_digits(1234324))
+#+end_src
+
+#+RESULTS:
+: None
+
+16. Write a function /sum_of_squares(xs)/ that computes the sum of the squares of the numbers in the list /xs/. For example, /sum_of_squares([2, 3, 4])/ should return 4+9+16 which is 29:
+
+#+begin_src python :tangle iteration_16.py
+def sum_of_squares(xs):
+    sum = 0;
+    for n in xs:
+        sum += n*n
+    return sum
+# print(sum_of_squares([2, -3, 4]))
+# print(sum_of_squares([ ]))
+# test(sum_of_squares([2, 3, 4]) == 29)
+# test(sum_of_squares([ ]) == 0)
+# test(sum_of_squares([2, -3, 4]) == 29)
+
+from functools import reduce
+sum_squares = lambda xs: reduce(lambda acc, x: acc + x*x, xs, 0)
+print(sum_squares([2, -3, 4]))
+#+end_src
+
+17. You and your friend are in a team to write a two-player game, human against computer, such as Tic-Tac-Toe / Noughts and Crosses. Your friend will write the logic to play one round of the game, while you will write the logic to allow many rounds of play, keep score, decide who plays, first, etc. The two of you negotiate on how the two parts of the program will fit together, and you come up with this simple scaffolding (which your friend will improve later):
+
+#+begin_src python :tangle iteration_17.py
+# Your firend will complete this function
+def play_once(human_plays_first):
+    """
+    Must play one round of the game. If the parameter is True, the human gets to play first, else the computer gets to play first. When the round ends, the return value of the function is one of -1 (human wins), 0 (game drawn), 1 (computer wins).
+    """
+    # This is all dummy scaffolding code right at the moment...
+    import random
+    rng = random.Random()
+    # Pick a random result between -1 and 1.
+    result = rng.randrange(-1, 2)
+    print("Human plays  first={0}, winner={1} ".format(human_plays_first, result))
+    return result
+#+end_src
+
+a. Write the main program which repeatedly calls this function to play the game, and after each round it announces the outcome as "I win!", "You win!", or "Game drawn!". It then asks the player "Do you want to play again?" and either plays again, or says "Goodbye", and terminates.
+b. Keep score of how many wins each player has had, and how many draws there have been. After each round of play, also announce the scores.
+c. Add logic so that the players take turns to play first.
+d. Compute the percentage of wins for the human, out of all games played. Also announce this at the end of each round.
+e. Draw a flowchart of your logic

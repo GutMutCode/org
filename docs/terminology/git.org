@@ -1,0 +1,62 @@
+#+title: Git
+
+* What is git
+Version Control System
+
+버그가 발생하면 되돌아가야한다
+
+이전에 작업한 코드를 되돌려야 한다
+
+여러 폴더에서 작업한 코드들을, 쉽게 비교하고 합칠 수 있다.
+
+* How to use
+** Back to the past
+*** Reset
+Commits after the target are removed
+#+begin_src sh
+git reset --hard "commit"
+
+# reset into a last commit
+git reset --hard
+#+end_src
+
+*** Revert
+Execute revert work for target and create new commit
+#+begin_src sh
+git revert "commit"
+# if you are reverting and want to continue
+git revert --continue
+# if you are reverting and want to abort
+git revert --abort
+
+# if you want to revert and to add others (you need to commit manually)
+git revert --no-commit
+#+end_src
+
+** Combine two branches
+*** Merge
+If you want to combine branches and to log a branch
+
+*** Rebase
+If you want to combine branches and to not log a branch
+
+** Remote branches
+*** Push a branch into remote
+#+begin_src sh
+git push -u "remote" "branch"
+#+end_src
+
+*** Get branches within remote
+#+begin_src sh
+git fetch
+#+end_src
+
+*** Check remote branches
+#+begin_src sh
+git branch -a
+#+end_src
+
+*** Copy & Paste remote branch into local
+#+begin_src sh
+git switch -t "remote/branch"
+#+end_src

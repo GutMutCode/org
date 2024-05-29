@@ -1,0 +1,53 @@
+#+title: Brain storm
+
+* How to use neovim
+
+** what is vim
+Neovim is extensible and compact ide for developer and writer
+
+** create short form video first
+
+*** To show advantages for use of neovim
+1. You can move fast between many project by shortcut
+2. You can split screen by shortcut
+3. You can move around many files by shortcut
+4. You can type code effectively
+5. You can repeat some task by macro system
+6. You can reduce hand moving by shortcut
+
+* A Brief History of PostgreSQL
+** let by Professor Michael Stonebraker
+** Where it used
+- a jet engine performance monitoring package
+- an asteroid tracking database
+- medical information database
+- geographic information systems
+** Before 1994
+** After 1994
+Andrew Yn & Jolly Chen added ~an SQL language~ interpreter to POSTGRES
+
+Convert into the complete ANSI C (trimmed in size by 25%)
+
+* Why koreans doesn't married
+
+* The biggest problem in korea
+** meaningless advise
+*** right
+
+** limited ways in life
+
+* To concentrate and enjoy whatever it is
+
+concentrate and enjoy are the kind of ~mind~
+** We need to know the Structure of mind
+*** consciousness
+*** unconsciousness
+**** habits
+
+**** essential body behavior for survive
+things that we can't control
+
+*** superconsciousness
+
+* How to increase success rate, How to increase fail rate
+** Obsessing to the result.

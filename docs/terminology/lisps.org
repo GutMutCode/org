@@ -1,0 +1,7 @@
+#+title: Lisps
+
+* Definition
+A acronim for List Processing
+
+** Lisp programming language
+A programming language based on list processing

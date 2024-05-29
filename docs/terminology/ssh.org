@@ -1,0 +1,11 @@
+#+title: SSH
+
+* What is SSH?
+Secure SHell
+
+A [[file:./protocol.org][protocol]] for securely connecting to remote systems and executing commands on them
+
+Offten used by administrators and remote workers
+
+* Purpose
+Designed on Unix-like operating systems, as a replacement for [[file:../tools/telnet.org][Telnet]] and unsecured remote Unix shell protocols

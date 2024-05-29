@@ -1,0 +1,9 @@
+#+title: Interface
+
+* Interface
+~Softwares~ or ~Hardwares~ that interact between softwares
+
+A shared *boundary* across which two or more separate components of a computer system exchange information.
+The exchange can be between software, computer hardware, peripheral devices, humans, and combinations of these.
+
+A set of code that shared between two or more codes

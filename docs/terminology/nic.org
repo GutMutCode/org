@@ -1,0 +1,32 @@
+#+title: NIC
+
+* What is the NIC?
+=Network Interface Controller= that pluged in Motherboard
+
+It is called Network Adaptor in general desktop
+
+* How does the NIC works?
+NIC processes the [[file:./ethernet.org][Ethernet frame]] and prepares it for transmission over the =physical medium= (e.g., Ethernet cable or wireless channel)
+
+Converting the =digital data= into =electrical signals= or radio waves suitable for the specific network medium and also does oppositely
+
+** Buffer Memory
+To temporarily store incoming and outgoing network [[file:./packet.org][packets]]
+
+*** Receive Buffer
+Incoming network packets are stored in this before they are processed by the operating system
+
+*** Transmit Buffer
+Outgoing network packets are stored in this before being sent onto the network
+
+** Descriptor Rings
+A data structures that point to the location of receive and transmit buffers in memory
+
+It's used to eficiently manage and process incoming and outgoing packets
+
+** Control Structure
+
+** Direct Memory Access (DMA)
+A way to transfer data without involving the CPU
+
+NIC often use this method

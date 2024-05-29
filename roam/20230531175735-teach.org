@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       ea1b0d22-f01d-47d9-aedb-e6a516874408
+:END:
+#+title: Teach
+
+* Java
+1. output
+2. What is the output of the above code, if the code replaced by:
+   - ~throw new MyException_A();~
+   - green: ~throw new MyException_C();~ , purple: ~throw new MyException_C();~
+   - ~throw new MyException_A();~
+3.

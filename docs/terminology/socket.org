@@ -1,0 +1,103 @@
+#+title: Socket
+
+* Table of Contents :toc:
+- [[#what-is-a-socket][What is a Socket?]]
+  - [[#meaning-of-socket][Meaning of Socket]]
+- [[#types-of-socket][Types of Socket]]
+  - [[#stream-socket][Stream Socket]]
+  - [[#diagram-socket][Diagram Socket]]
+- [[#communication-modes][Communication Modes]]
+  - [[#server-client][Server-Client]]
+  - [[#peer-to-peer][Peer-to-Peer]]
+- [[#how-sockets-work][How sockets work?]]
+  - [[#establish-stream-socket][Establish (Stream Socket)]]
+  - [[#maintain][Maintain]]
+  - [[#terminate][Terminate]]
+- [[#sock-on-windows][Sock on Windows]]
+  - [[#initialize][Initialize]]
+
+* What is a Socket?
+An [[file:./endpoint.org][endpoint]] (interface, software, file) that allows two [[file:./process.org][processes]] to communicate with each other =over a network=
+
+A essencial building block of network communcation andare used by various [[file:./protocol.org][protocols]], such as HTTP, FTP, SMTP, and TCP/IP
+
+The socket generator function is contained in the operating system as a system call, `socket()`.
+
+** Meaning of Socket
+Plug(connect) a Electrical Socket
+
+* Types of Socket
+** Stream Socket
+A reliable, connection-oriented communication
+- These type of socket must ensure the data reliability, this tasks are called `establishment`
+- Ensuring is a overhead in different perspective
+
+Examples include [[file:./tcp.org][TCP]]
+
+** Diagram Socket
+[[file:./conn.org][Connectionless]] communication with no guarantees of delivery
+
+Examples include [[file:./udp.org][UDP]]
+
+* Communication Modes
+** Server-Client
+one process (server) listens for incoming connections
+
+and other processes (clients) connect to the server
+
+** Peer-to-Peer
+processes communicate directly with each other (peers)
+
+* How sockets work?
+They are implemented using programming interface provided by [[file:./os.org][operating systems]] and network libraries
+
+** Establish (Stream Socket)
+*** Socket [[file:./open_close.org][FD]] Creation
+Calling a system-defiend function (e.g., "socket" in Unix/Linux or "CreateFile" in Windows)
+
+This create a unique endpoint that can be used to communicate with another process and that unique point called ~socket~
+
+*** Addressing and Identifying
+
+The application must specify a =local IP address= and a =port number= (attacked to process)
+- to identify which socket should receive data from the network and to ensure that there is no conflict with other sockets on the systems
+
+*** Connection Establishment
+The socket can be used to establish a connection between two processes by exchanging SYN (Synchronize) packets over the network
+
+1. Exchanging SYN
+2. Acknowledge receipt of the SYN packet
+3. a full-duplex connection is established (allowing data trasmission in both directions)
+
+** Maintain
+*** Sending and Receiving data
+After the socket connection is established,
+
+data can be sent or received through the socket using different [[file:./protocol.org][protocols]] like TCP/IP, HTTP, or UDP
+
+**** How?
+By writing to the socket's file descriptor using the `write` =system call= or another =network libary= provided by the operating system.
+
+By reading to the socket's file descriptor using the `read` =system call= or another =network libary= provided by the operating system.
+
+*** Error handling and Connection Closure
+- Checking errors
+- Close when the socket is no longer needed (e.g., by sending FIN packet)
+
+*** Socket Pooling
+Multiple sockets within an application or across different applications
+
+** Terminate
+
+* Sock on Windows
+** Initialize
+#+begin_src c
+#include <winsock2.h>
+
+// WORD: typedef WORD unsigned short
+// wVersionRequested: version info: 8bit main version + 8bit alternative version: 2byte
+// lpWSAData: address of WSADATA structure
+int WSAStartup(WORD wVersionRequested, LPWSDATA lpWSAData);
+
+MAKEWORD(1, 2); // construct a WORD structure by macro. main: 1, alternative: 2
+#+end_src

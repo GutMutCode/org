@@ -1,0 +1,38 @@
+#+title: Pipelining
+
+* Definition
+A technique for improving performance by issuing multiple commands at once without waiting for the response to each individual command.
+
+* Problem
+** Request/Response protocols' round-trip time (RTT)
+Whatever the network latency is, it takes time for the packets to travel from the client to the server, and back from the server to the client to carry the reply.
+
+This time called RTT (Round Trip Time).
+
+For instance if the RTT time is 250 milliseconds, even if the server is able to process 100k requests per second, we'll be able to process at max four requests per second. (in case that client needs to perform many requests in a row)
+
+If the interface used is a loopback interface, the RTT is much shorter, typically sub-millisecond, but even this will add up to a lot if you need to =perform many writes in a row=. ??????
+
+Fortunately there is a way to improve this use case.
+
+** Redis Pipelining
+A Request/Response server can be implemented so that it is able to process new requests even if the client hasn't already read the old responses.
+This way it is possible to send /multiple commands/ to the server without waiting for the repiles at all, and finally read the replies in a single step.
+
+This is called =pipelining=, and is a technique widely in use for many decades.
+For instance many POP3 protocol implementations already support this feature, =dramatically speeding up= the process of *downloading* new emails from the server.
+
+#+begin_quote
+"*IMPORTANT NOTE*: While the client sends commands using pipelining, the server will =be forced to queue the replies=, *using memory*.
+So if you need to send a lot of commands with pipelining, it is better to send them as batches each containing a reasonable number, for instance 10k commands, read the repiles, and then send another 10k commands again, and so forth.
+The speed will be nearly the same, but the additional memory used will be at most the amount needed to queue the repiles for these 10k commands."
+#+end_quote
+
+*** Greatly improve the number of operations you can perform per second
+Improving speed of socket I/O => it means going from user land to kernel land. => context switch is a huge speed penalty. => need to reduce
+
+When pipelining is used,
+- Many commands are usually read with a single ~read()~ system call,
+- Multiple replies are deliverd with a single ~write()~ system call.
+
+Consequently, =the number of total queries performed per second= increases almost lineraly with longer pipelines, and eventually reaches 10 times the baseline obtained without pipelining.

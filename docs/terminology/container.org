@@ -1,0 +1,46 @@
+#+title: Container
+
+* History
+** The traditional way a business operates
+*** One application on one server
+The OS didn't have the capability to run multiple application ~securely~ on a single server
+
+**** They would have buy a new server for it to run on
+Application couldn't take full advantage of a server's capability
+
+*** Multiple VM on one server
+**** Hardware(Server)
+**** Hypervisor
+file:./hypervisor.org
+**** Virtual Machine
+file:./vm.org
+
+* Container
+An application that's been packaged with all the:
+- Files
+- Configurations
+- Dependencies
+- necessary for it run
+
+** So,
+This can be hosted without any files, configuration, dependencies, and any other necessary it run
+
+* How to manage Container?
+By use a software like ~docker~
+
+* Structure
+** Hardware(Server)
+** Operating System
+** Container Engine
+a software that unpacks the container files and hands them off to the operating system kernel
+
+This allows applications to share the host operating system
+- Can resolve hypervisor's disadvantages
+
+* Disadvantages
+** Container files must be matched with the Host operating system
+** If Host Operating System goes crash,
+then all containers will go down
+
+* Main difference with VM
+Only contain an application

@@ -1,0 +1,4 @@
+#+title: Pre Calculus
+
+* Table of Contents
+[[file:./pre-calculus/relations-and-functions.org][Relations vs Functions]]

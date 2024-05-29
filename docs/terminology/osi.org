@@ -1,0 +1,51 @@
+#+title: OSI
+
+* What is OSI?
+Open System Interconnection ~for the standard of network~
+
+Separating network communication flow according to managed data structure
+
+** Layer 1
+Hardware boundary that manage signal of such as light, switch, electronic sign, etc
+
+** Layer 2
+Software boundary that manage [[file:./ethernet.org][Ethernet Frame]] / Ethernet Protocol / In [[file:./nic.org][NIC]]
+
+** Layer 3
+Software boundary that is reponsible for routing, logical addressing, and forwarding data between different networks
+
+[[file:./packet.org][Packet]] / IP / In NIC
+
+** Layer 4
+Software boundary that is responsible for data transmission - All actions are performed by ~os~
+
+[[file:./segment.org][Segment]], Datagram / TCP, UDP / In NIC
+
+** Layer 5
+Software boundary that manage [[file:./session.org][Session]] - From this layer, all actions are performed by application ~processes~
+
+In contemporary networking, the session layer has become less prominent
+- It's often handled by application layer (6) or transport layer (3, 4)
+
+** Layer 6
+Software boundary that is responsible for translating data between the application layer and the lower layers
+
+Presentatin Layer
+- Convert various form reqeusts into integrated form structure
+- Convert intregated form data into various form fit to specific application
+
+*** data formatting
+Character [[file:./encoding.org][encoding]]
+
+*** encryption
+[[file:./ssl_tls.org][SSL/TLS]]
+
+*** compression
+JPEG
+
+** Layer 7
+Software boundary that is responsible for interacting with end-user application
+
+App Request -> all request must managed identically
+
+[[file:./http.org][HTTP]]

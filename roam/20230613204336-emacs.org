@@ -1,0 +1,98 @@
+:PROPERTIES:
+:ID:       c892b6cc-4d1b-4d71-a0eb-a8570e22e31e
+:END:
+#+title: Emacs
+
+* Useful keybinds
+** Surround with "text"
+*** Usage
+**** Add
+***** Normal
+ys<text> : For oneline
+yS<text> : For multiline
+***** Visual
+S<text> : For oneline
+gS<text> : For multiline
+Sf<text> : Function
+**** Change
+cs<text><dest>
+**** Delete
+ds<text>
+**** Html tags
+insert <tagname>
+*** Rules
+**** Behavior
+- insert : i
+- oneline : s
+**** Text select
+- word : w
+- tags : t
+- brackets : b
+**** Space
+- with : start bracket - ([{
+- no : end bracket - ]})
+
+*** Test
+"TEST STRING"
+** Align
+*** Commands
+**** glip<text>
+<num>glip<text>
+**** gLip<text>
+<num>gLip<text>
+**** glib<RET>
+*** Tests
+one = 1
+three = 3
+fifteen = 15
+
+one, two, three,
+fifteen, sixteen, seventeen
+
+(red "red"
+(teal-green "#6fb593")
+(wheat "#b9c791")
+(blue "blue")
+(cyan "#54b6b6")
+
+* Vim keybinds
+** Move
+*** Per word
+**** To forward
+***** Start
+w
+***** End
+e
+**** To backward
+***** Start
+b
+***** End
+ge
+*** Only cursor
+**** High
+H
+**** Middle
+M
+**** Low
+L
+*** Screen (C-)
+**** e,y
+**** f,b
+**** d,u
+
+** Select all line
+V
+** Indent
+*** One line
+<<
+>>
+*** Multiline (Visual)
+= (lsp), <,>
+
+** Select current paragraph
+vap
+vip
+** Search current word
+#
+** Change to reverse case
+~

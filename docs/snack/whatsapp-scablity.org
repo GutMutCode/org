@@ -1,0 +1,69 @@
+#+title: Whatsapp Scablity
+
+* WhatsApp Engineering
+** Single Responsibility Principle
+They eliminated *feature creep* at all cost
+- difficult to use
+
+*** With minimalistic product requirements,
+Albe to prioritize the reliablity of App over everything else.
+
+** Technology Stack
+*** =Erlang=
+**** provide extremely high scalablity with =a tiny footprint=
+***** Process
+Erlang's process makes context switching cheaper than OS thread's.
+- because there is no need to save the entire =CPU state=.
+**** support =hot loading=
+Erlang makes easier to deploy cdoe changes without a server restart or traffic redirection.
+
+** Why Reinvent the Wheel?
+WhatsApp was *built on top of ejabberd* (open-source real-time messaging server written in Erlang)
+- just =extend=
+
+** Cross-cutting Concerns
+1. security
+2. logging
+3. alerting
+4. performance
+5. monitoring
+6. exception handling
+
+*Continuous integration(CI)* and *Continuos delivery(CD)* for =improve their software development process=.
+
+** Scalability
+Use to keep the costs and operational complexity low.
+*** Horizontal scaling
+Increasing the number of machines in the source of pool.
+
+*** Vertical scaling
+Increasing the capacity of an existing machine, such as CPU or memory.
+
+*** Diagonal scaling
+A hybrid of horizontal and vertical scaling where the computing resources are added both verticlly and horizontally.
+
+*** FreeBSD
+Operating System to accommodate masive-scale connection.
+
+*Overprovisioning* to handle sudden traffic spikes and keep headroom for failures.
+
+** Flywheel Effect
+The metrics such as CPU, context switches, and system calls were *measured*.
+
+The *bottlenecks* were *identified* and *eliminated*
+
+test => measure => remove bottleneck
+
+** Quality
+*** Load testing
+Identify the single points of failure.
+Performed by either generating artificial production traffic or configuring DNS to redirect more traffic toward a particular server.
+
+1. volume
+2. endurance
+3. performance
+4. scalablity
+5. stress
+
+** Small Team Size
+The communicatio path between engineers get more complex as the team grows in size.

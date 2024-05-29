@@ -1,0 +1,7 @@
+#+title: Iam Ic
+
+* IAM Identify Center
+Successor to AWS ~Single Sign-On~
+
+** Purpose
+=Automatically retrieve refreshed authentication tokens= by AWS SDK or other tools

@@ -1,0 +1,5 @@
+* Artificial Inteligence
+
+** Image resolving
+*** Convolution - CNN
+table multiplication

@@ -1,0 +1,24 @@
+#+title: Tokenization
+
+* Table of Contents :toc:
+- [[#definition][Definition]]
+  - [[#techtarget][Techtarget]]
+  - [[#wiig][WIIG]]
+- [[#what-is-responsible-for-tokenization][What is responsible for tokenization?]]
+- [[#token][Token]]
+
+* Definition
+Convert =string= to =token=
+
+** Techtarget
+The process of replacing sensitive data with =unique identification symbols= that retain all the essential information about the data without compromising it security.
+
+** WIIG
+- The process of giving a name (unique identification symbols) to data
+- Giving minimum semantics to data
+
+* What is responsible for tokenization?
+In general, compiler's ~lexer(lexical analyzer)~ is responsible for tokenization
+
+* Token
+Unique identification symbols for some data

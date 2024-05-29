@@ -1,0 +1,6 @@
+#+title: Finite-state machine
+
+* What is Finite-state machine?
+A mathematical model of computation
+
+An abstract machine that can be in exactly one of a finite number of states at any given time

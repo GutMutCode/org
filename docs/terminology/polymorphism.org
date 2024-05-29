@@ -1,0 +1,15 @@
+#+title: Polymorphism
+
+* What is polymorphism?
+many(poly) + forms(morph) - drived from the Greek words
+
+* In OOP
+allowing objects of different types to be tread as objects of common base type
+
+enabling a single interface or method name to represent different behaviors based on type of object it is operating upon
+
+** Compile-time (Static) polymorphism
+method [[file:./over_loadride.org][overloading]]
+
+** Runtime polymorphism
+method [[file:./over_loadride.org][overriding]]

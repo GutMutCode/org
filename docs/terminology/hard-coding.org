@@ -1,0 +1,4 @@
+#+title: Hard Coding
+
+* Definition
+THe software development practive ofo embeddig data directly into the source code of a program or other executable object, as opposed to obtaining the data from external sources or generating it at runtime.

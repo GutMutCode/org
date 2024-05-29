@@ -1,0 +1,33 @@
+#+title: Application
+
+* Table Of Contents :toc:
+- [[#definition][Definition]]
+- [[#environment][environment]]
+- [[#in-erlang][In Erlang]]
+  - [[#otp-application][OTP Application]]
+  - [[#supervision-tree][Supervision Tree]]
+
+* Definition
+A module for ~defining application callback~ in [[file:../../mix-and-otp/index.org][Erlang/OTP]]
+
+A module for packaging
+
+module = a set of functions
+
+- Every Application has its own environment that devs wanted
+
+Elixir, Erlang -> BEAM bytecode -> Runtime에 컴파일 (JIT)
+
+* environment
+[[file:../../start-guide/kwlist-map.org][A keyword list]] that maps atoms to terms
+
+It is not OS's envs
+
+If it is changed, mix will recompile the files that belong to that application
+
+* In Erlang
+** OTP Application
+A way package system component and is either =a set= of library modules or supervision tree
+
+** Supervision Tree
+A hierarchical tree of ~processes~ (Erlang process, not OS's process)

@@ -1,0 +1,6 @@
+#+title: Javis
+
+Origin: https://juliaanimators.github.io/Javis.jl/stable/
+
+* What is Javis.jl?
+A tool focused on providing an easy to use interface for making =animations= and =developing visulizations= quickly

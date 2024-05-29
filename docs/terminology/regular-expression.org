@@ -1,0 +1,6 @@
+* What is Regular expression?
+A regular expression (regex or regexp);
+=is= a sequence of characters that =specifies= a match pattern in text.
+
+* How to learn?
+[[https://app.codecrafters.io/courses/grep/overview][Codecraft's Build own your grep]]

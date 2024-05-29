@@ -1,0 +1,7 @@
+#+title: File
+
+* What is File
+a memory space in storage
+
+* Low-level File Access
+File accessing by OS's system calls, not ANSI standard.

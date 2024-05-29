@@ -1,0 +1,43 @@
+#+title: Lexing
+
+* Lexing Analysis
+writing code in plain text => programming langauge => transformation process becomes cumbersome
+- We need to represent our source code in other form that *are* easier to work with.
+
+** Process
+- Interpreter : Source Code => Tokens => Abstract Syntax Tree
+- =Lexical Analysis or Lexing= : Source Code => Tokens
+
+** Tokens
+small, easily categorizable data structures that are then fed to the parser, which does the second transformation and turns the tokens in to an "Abstract Syntax Tree".
+
+** Lexer
+From
+#+begin_src source_code
+"let x = 5 + 5";
+#+end_src
+
+To
+#+begin_src output
+[
+  LET,
+  IDENTIFIER("x")
+  EQUAL_SIGN,
+  INTEGER(5),
+  PLUS_SIGN,
+  INTEGER(5),
+  SEMICOLON
+]
+#+end_src
+
+Tokens varies between different lexer implementation
+(convert element at different point)
+
+Whitespace usually acts as a separator for other tokens
+(not for Python)
+
+Production-ready lexer might also attach the line number, column number and filename to a token.
+(to later output more useful error message in the parsing stage)
+#+begin_src bash
+"error: expected semicolon token. line 42, coolumn 23, program.monkey"
+#+end_src

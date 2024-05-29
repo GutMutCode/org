@@ -1,0 +1,5 @@
+#+title: Businesslogic
+
+* Definition
+** Investopedia
+The custom rules or algorithms that handle ~the exchange~ of information =between a database and user interface=

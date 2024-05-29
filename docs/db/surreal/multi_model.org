@@ -1,0 +1,140 @@
+#+title: Multi Model
+
+* What are Multi-Model Databases?
+** Question
+Have you ever wondered how all these online and offline applications effortlessly search through all this complex function?
+
+* What is a Data model?
+Essentially, Data model is a conceptual framework that determines how data is structured, stored, and manipulated in a database system.
+
+** Relational models
+*** Pros
+They are excellent for =handling structured data= and complex queries and provide robust transactional consistency (ACID properties).
+They also support SQL, a powerful and widely-used querying language.
+
+*** Cons
+They are =less flexible= for evolving data needs as changes to the schema can be complex and disruptive.
+They can be more challenging to scale, which can degrade performance.
+
+** Document models
+*** Pros
+They offer =high flexibility= as they don't require a predefiend schema.
+They are great for handling semi-structured or unstructured data and can scale horizontally to accommodate large amounts of data
+
+*** Cons
+They are less suited to =queries with complex relationships=, strict schema enforcement and transactions that span multiple documents.
+
+** Graph models
+*** Pros
+They excel in handling complex and interconnected data.
+They are also efficient with =performing traversals= and =relationship-heavy queries= very quickly.
+
+*** Cons
+They are less suited to use cases that don't involve highly interconnected data.
+They are also less mature than some other types of databases, and there may be fewer tools and resources available to support them.
+
+** Key-value models
+*** Pros
+They are =highly performant for read/write= operations, especially when access patterns are primarily by key.
+They can handle large amounts of data and scale horizontally easily.
+
+*** Cons
+They offer =limited querying capabilities=, with the key generally being the only means to access data.
+They are also unsuited to handle complex relationships or queries across multiple keys.
+
+These are just some of the most commonly used models, while more data cater to particular requirements like the time series data model, columnar data model, etc.
+* Are these data models enough to suport today's complex applications?
+
+The following query would retrieve the information about an order.
+#+begin_src sql
+SELECT * FROM orders WHERE order_id = 123;
+#+end_src
+
+The following query would retrieve all the reviews of a particular product.
+#+begin_src javascript
+db.reviews.find({ product_id : 789 })
+#+end_src
+
+A query fetching the names of customers who bought a product and the name of the product they bought
+#+begin_src gql
+MATCH (c:Customer)-[:BOUGHT]->(p:Product)
+RETURN c.name as customer_name, p.name as product_name
+#+end_src
+
+
+#+begin_quote
+It is evident that a singel data model can not cater to all teh features of the advanced applications today.
+#+end_quote
+
+** Multiple databases?
+/Polyglot persistence/ is a concpet that advocates the use of ~different~ databases to cater to different data modelling needs in the same system.
+[[~/Downloads/cs/polyglot-persistence.auto]]
+
+- User data, Order details => Relational DB
+- Product catalogs => NoSQL DB
+- User activity logs, Price changes => Time-series DB
+- Recommendation logic => Graph DB
+- Product search => Search DB
+- User sessions => Caching service
+
+While this approach can help you solve the problem of handling inconsistent data, it will introduce multiple challenges on the development side.
+
+- Specialising in multiple database products and learning their query languages
+- Building our own a unique architecture for maintaining a relationship between these databases
+- System design not being reusable across multiple products
+- Data consistency and duplication issues across multiple databases.
+- Complicated deployment and frequent upgrades.
+
+*Multi-Model Databases* provide an alternative approach that aims to solve these challenges.
+
+* What are Multi-Model Databases?
+A Multi-Model databases is a database that has the features of multiple data models and databases build into single database.
+It also has a single query language.
+
+This query language can run queries in various ways--ralational, document-based,  or graph-based--depending on the most suitable approach for your current problem or the type of data stored in your database.
+
+Whether dealing with documents, graphs, relational data, key-values, or other data formats, a Multi-Model database can accommodate your data, eliminating the need for complex transformations and migrations between different databases.
+
+The beauty of Multi-model databases lies in their adaptability - they mould to your data needs rather than forcing your data to adapt to a rigid structure.
+
+* SurrealDB, an innovative Multi-model cloud database
+~SurrelDB's~ architecture is built in a layered approach, effectively separating compute from storage.
+This facilitates individual scaling of the compute (AKA qeury layer) and the storage layer as required.
+
+*The query layer* is responsible for handling queries frm the client.
+It intelligently analyses which records must be selected, created, updated, or deleted.
+
+The process involves running the SurrealQL query through a parser, an executor, an iterator, and finally, a document processor.
+Each component plays critical roles, from parsing the query to managing transactions, from determining which data to fetch from the storage engine to processing permissions and alterations.
+
+On the other hand, *the storage layer* manages data storage for /the query layer/.
+The flexibility of SurrealDB is evident in its ability to use several underlying storage engines, each providing support for a transaction-based approach.
+Depending on the mode in which SurrealDB operates - embedded, distributed, or web browser - it uses different high-performing storage engines like RocksDB, TiKV, or IndexedDB, respectively.
+
+In e-commerce store app, here's how SurrealDB would handle all these requirements using a single query language and within the same database.
+
+~Retrieve the informatioon~ about an order.
+#+begin_src sql
+SELECT * FROM orders:123;
+#+end_src
+
+Retrieve all the reviews of a particular product.
+#+begin_src sql
+SELECT reviews.* FROM product:789;
+#+end_src
+
+Fetch the names of customers who bought a product and the name of the product they bought.
+#+begin_src sql
+SELECT name as customer_name, ->bought->product.name as product_name
+FROM customer
+#+end_src
+
+* Advantages an features of SurrealDB.
+
+- Written in Rust
+- Designed to run in a distributed environment from the ground up.
+  You can handling multi-table transactions and document record IDs - without table or row locks.
+- Owning to the size of the binary, SurrealDB can work on IoT devices and run as standalone or clustered enterprise deployments - more modes of operation than other DBs.
+- Advanced table-based and row-based customisable access permissions allow for granular data access patterns for different types of users.
+  Cuts down on backend code for authentication.
+- Full-text indexing, with functionality to search through the full-text index on a table.

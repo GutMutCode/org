@@ -1,0 +1,11 @@
+#+title: Executable and Linkable Format
+
+* Definition
+The standard file format for executable files, object code, shared libraries, and core dumps
+
+#+begin_quote
+Filename extensions:
+none, .axf, .bin, .elf, .o, .out, .prx, .puff, .ko, .mod, .so
+#+end_quote
+
+* Structure

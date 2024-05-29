@@ -1,0 +1,39 @@
+#+title: Consensus
+
+*Software need to consensus*
+
+* In Raft algorithm
+A fundamental problem in fault-tolerant distributed systems.
+
+Consensus involves multiple servesr agreeing on values.
+Once they reach a decision on a value => that decision is final.
+
+** Typical consensus algorithms
+make progress when any majority of thier servers is available.
+
+- a cluster of 5 servers can continue to operate even if 2 servers fail.
+
+- if more servers fail(more than 3), they stop making progress (but they never return an incorrect result)
+
+** Process of concensus
+
+1. take input from its log (log would include command like ~set x to 3~)
+
+2. consensus algorithm take this log, and use to agree on the commands.
+
+3. concensus algorithm must ensure that if any state machine applies ~set x to 3~ as the ~nth~ command, => no others will ever apply ~nth~ coommand
+   to process the same series of commands and produce the same series of results on the other state machines
+
+** from toydb
+
+*** first steps
+1. One node is elected leader
+
+2. replicates commands to the others which apply them to loocal copies of the state machine
+
+*** fail behaviour
+1. leader is lost
+
+2. a new leader is elected, and forward client commands to the leader
+
+3. cluster continue the operation

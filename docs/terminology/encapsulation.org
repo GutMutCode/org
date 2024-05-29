@@ -1,0 +1,14 @@
+#+title: Encapsulation
+
+* Definition
+A way to =restrict the direct access= to some component of an object
+
+** GPT
+The bundling of
+data (attributes or variables) and
+methods (functions or precedures) that
+operate on the data into a single unit,
+called class.
+
+Class restricts access to some of the object's components,
+preventing direct modification or access from outside the unit.

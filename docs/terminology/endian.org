@@ -1,0 +1,7 @@
+* Endian
+  When memory address is increased,
+** Big endian
+   store data to memory from left to right of data
+** Little endian
+   store data to memory from right to left of data
+   (x86)

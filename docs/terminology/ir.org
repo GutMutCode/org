@@ -1,0 +1,78 @@
+#+title: IR
+
+* Table of Contents :toc:
+- [[#what-is-ir][What is IR?]]
+- [[#how-does-ir-work][How does IR work?]]
+- [[#the-primary-goal-of-ir][The primary Goal of IR]]
+- [[#kinds-of-ir][Kinds of IR]]
+  - [[#tree-based-ir][Tree-Based IR]]
+  - [[#three-address-code][Three-Address Code]]
+  - [[#static-single-assignment-ssa-form][Static Single Assignment (SSA) Form]]
+  - [[#control-flow-graph-cfg][Control Flow Graph (CFG)]]
+  - [[#high-level-ir][High-Level IR]]
+
+* What is IR?
+The Intermediate Representation between high-level programming language and assembly language
+
+The programming language used by [[file:./vm.org][virtual machine]] such as Java's Bytecode, [[file:./llvm.org][LLVM's]] LLVM IR and Erlang's BEAM IR for specialized purpose
+
+* How does IR work?
+IR serves as an intermediate step between the front-end and back-end stages of [[file:./compiler.org][compilation]]
+
+* The primary Goal of IR
+To provide a commmon and more manageable representation of the program that facilitates optimization and code generation
+
+* Kinds of IR
+** Tree-Based IR
+The IR based on [[file:./ast.org][AST]]
+
+** Three-Address Code
+The IR that represents instructions with at most three operands
+
+It is expressed in a more machine-independent way than source code
+
+#+begin_src makefile
+t1 = a + b
+t2 = c * d
+result = t1 - t2
+#+end_src
+
+** Static Single Assignment (SSA) Form
+To simplify data flow analysis and optimization
+
+Each variable is assigned exactly once -> making it easier to reason about variable assignments and use in optimization passes
+
+#+begin_src makefile
+t1 = a + b
+t2 = c * d
+result = t1 - t2
+#+end_src
+
+** Control Flow Graph (CFG)
+Captures the flow of control through a program
+
+Nodes in the graph represent basic blocks
+
+Edges represent control flow between them
+
+This is particularly useful for optimization and analysis passes
+
+#+begin_src vbnet
+B1: t1 = a + b
+    goto B3
+B2: t2 = c * d
+    goto B4
+B3: result = t1 - t2
+B4: ...
+#+end_src
+
+** High-Level IR
+Some compilers also use high-level IRs that retain more semantic information about the source program.
+
+These may include constructs like loops, function calls, and higher-level [[file:./abstract.org][abstractions]]
+
+#+begin_src css
+for (i = 0; i < n; i++) {
+    array[i] = array[i] * 2;
+}
+#+end_src

@@ -1,0 +1,125 @@
+:PROPERTIES:
+:ID:       f84a8e65-b4e4-44a5-aad8-17fec0573f79
+:END:
+#+title: RTK
+
+* World Status
+/Dedollorzation. SWIFT/
+** Pakistan
+*** Imran Khan
+has strong stance between US and China. => 쿠데타?
+** Ukraine
+*** History
+- 1991 소비에트 연방 해체 => 인구수 8천만
+- 2020 => 인구수 38백만 (반토막)
+- 2022 => 인구수 35백만
+- 2023 => 인구수 18백만
+
+1. Cudeta (Maidan)
+2. New goverment
+   - Zelensky
+
+*** Interesting status
+- 30년 동안, 새로운 산업단지/서설/공장 => 0
+- 30년 동안, 새로운 갑부 Oriach => 수백명
+- 30년 동안, 국가 GDP => 반토막
+- 30년 동안, 1인 GDP => 지속적 하락
+*** War
+Rusia vs. Ukraine => Rusia vs. Nato => Rusia vs. US => China vs. Us => War of Currency
+*** kyiv => Patriot & Kinzhal (2023.05.21)
+- Patriot
+  - Air defence system
+  - US
+  - maha 5
+  - $3 billian
+- Kinzhal
+  소규모 핵무기 급 미사일
+  - Attack system
+  - Rusia
+  - maha 10
+  - $100 billian
+- East Wind
+  - missile (东风)
+  - China
+  - maha ?
+  - 东西南北
+
+** Unite State
+** China
++ Xian central asia summit
+  - BRI + Dedollarization + 5G
+** Rusia
+
+* Liberal Democracy is destroyed?
+** Human desire was changed.
+- From living to..
+  - Can debate. => Can decide.
+  - Can't debate. => Can't decide.
+** People don't have permission to debate.
+- 산업화 => 정보화
+  - too many information.
+  - ignorance of AI(Artifiial Intelligence) and international relation.
+  - they can't make the decisions they need.
+- Only can in 산업화 시대
+* Democracy, Freedom
+** 미국이 수단의 군벌을 지원 => For Democracy?
+** 유럽이 우크라이나 지원 => For Democracy/Western Value?
+** Internet
+Google, Twitter => FBI, CIA
+*** Eric Schmidt
+- Pentagon(MIC)
+- Bio Lab(Ukraine)
+
+* Process of 쿠데타?
+- 선거
+- 부패 혐의
+- 투옥
+- 재판
+- 수사
+* What is Advertisement
+100원
+- 존재를 알린다
+- 가치의 거품 형성 110원에 판매
+* About Productivity
+** Seasons
+- 일조량 => 식물의 생장
+- 생산량 => 사람의 생장
+** Autonomous
+- White Color (70%) => 1%
+- Blue Color (30%) = 1%
+* ABC Modules
+/Simple is best. So minimize server expense. Simplest UI + Mechanism./
+** Global Bank with low fee
+- 0 employee
+** Web without Domain Registration/Fee
+** Full Safety Email
+** Messging without Ad
+** Video platform (familiar with Vimeo)
+** Market
+/Alternative of Amazon and Alibaba. Services are Product./
++ All product, literally all - ( More product )
++ Trustful product
+  - Rating mechanism
++ Cheap price
+  - Reduce salary of employee
+  - Reduce allocation of shareholder
++ Fast deliver
+  - Create Logistic Networks
++ For all user and group
+*** Perpose of Company
+- Sell as many as you can
+- Sell as high as possible
+**** Change?
+Optimization for customer
+*** Perpose of Advertisement
+- For sell
+**** Change?
+- Is it need to customer?
+
+* ERP
+Enterprise Resource Planning => Who, When, Where, What, How, Why Produce/Service
+- Family, Enterprise(Group) => Nation => Global
+* Trip
+- 정보 부재
+- 에이전시 신뢰성
+- 은행 환전 수수료

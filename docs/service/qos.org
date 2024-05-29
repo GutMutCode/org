@@ -1,0 +1,9 @@
+#+title: Qos
+
+* Quality of Service
+** QoS 0
+fan-out delivery, doesn't matter to the publisher if a message was received by anyone
+** QoS 1
+at least once delivery, the publisher wants a PUBACK confirmation message + requires persistence
+** QoS 2
+exactly once delivery, more complex flow consisting of PUBREC, PUBREL and PUBCOMP messages + requires persistence

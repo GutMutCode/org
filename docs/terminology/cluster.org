@@ -1,0 +1,22 @@
+#+title: Cluster
+
+* What is Cluster?
+A set of ~computers~ that work together so that they can be viewed as a single system.
+
+* Purpose
+Clusters are commonly used to achieve
+
+** High Availability
+To ensure continuous operation and minimize downtime
+
+=others in Chat GPT=
+
+** Load Balancing
+** Parallel Processing
+** Failover
+** Stroage
+** Compute
+
+* Defference
+** with Grid Computers
+Cluster have each ~nodes~ set to perform the same task, controlled and scheculed by software.

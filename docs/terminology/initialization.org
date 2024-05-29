@@ -1,0 +1,4 @@
+#+title: Initialization
+
+* Definition
+The assignment of an initial value for a data object or variable.

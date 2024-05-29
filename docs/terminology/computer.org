@@ -1,0 +1,234 @@
+#+title: Computer
+
+* Table of Contents :toc:
+- [[#definition][Definition]]
+- [[#von-neumann-architecture][Von Neumann architecture]]
+  - [[#central-processing-unit-cpu--계산기][Central Processing Unit (CPU) => 계산기]]
+  - [[#memory-ram][Memory (RAM)]]
+  - [[#mass-storage-hard-drive][mass storage (hard drive)]]
+  - [[#inputoutput-device-keyboard-display-etc][Input/Output device (keyboard, display, etc)]]
+- [[#computer-structure][Computer Structure]]
+  - [[#motherboard][Motherboard]]
+  - [[#power-supply-unit][Power Supply Unit]]
+- [[#how-computer-works][How Computer works?]]
+  - [[#hardware][Hardware]]
+  - [[#cpu][CPU]]
+  - [[#memory-ram-1][Memory (RAM)]]
+  - [[#storage-devices][Storage Devices]]
+  - [[#io-devices][I/O Devices]]
+  - [[#operating-system][Operating System]]
+  - [[#software-programs][Software Programs]]
+
+* Definition
+
+Computer is a Calculator
+
+* Von Neumann architecture
+Describes a way to build a fully-functioning computer with a surprisingly tiny number of parts.
+
+** Central Processing Unit (CPU) => 계산기
+
+*** What does the CPU do?
+**** Fetch-Decode-Execute cycle (Clock Speed - Cycle Per Seconds)
+
+1. =Fetches= an instruction form memory
+   The program counter(PC) tells the CPU where in memory it can find the next instruction
+
+2. =Decodes= the instruction
+   To identify which operation should be executed.
+
+3. =Executes= the instruction
+   This can be either modifying the contents of its registers,
+   or transferring data from the registers to memory,
+   or moving data around in memory,
+   or generating output,
+   or reading inpu,
+   etc..
+
+4. goto 1 again and repeat
+
+*** Structure
+**** A Processing Unit
+***** contains an arithmetic logic unit (ALU)
+***** Multiple processor registers
+
+**** A Control Unit
+***** instruction register
+***** a program counter (PC)
+Program counter keeps track of where to fetch the next instruction
+
+counter => using number
+
+computer memory is seems =like huge amount of array=
+
+
+** Memory (RAM)
+Instead of "array elements" computer memory is segmented into ="words"=
+
+*** words
+Smallest addressable region of memory
+
+=Base unit= when accessing memory
+
+The size of words depends on CPU types among other things (32bits, 64bits are standard)
+
+a word size of 8 bits and 13 bytes on memory (8 * 13 bits)
+file:~/Documents/cs/WCIG/CompilerMemory.svg
+
+We can just store index of memory to some word, it becomes =Pointer=
+
+some computers do somthing entirely different and use [[file:./byteaddressing.org][byte-addressing]] instead of word-adressing
+
+
+*** Virtual Memory
+Memory access today is abstracted away and sits behind many layers and layers of =security= and =performance= optimizations
+- Use virtual memory for this reason (there's more to memory access today than passing number to the CPU)
+
+*** Memory contains not only data, but also program
+-> CPU instructions that make up a program
+
+**** Specifix areas of memory are used to store specific things
+
+1) ="Dumb" data=, "the contents of a text file" or "the response of a HTTP request"
+   Goes in one region of memory
+
+   =The instructions= that make up a program
+   are stored and accessed in another region, where the CPU can easily fetch them.
+
+   they(data + program) are both stored in the same memory.
+
+   fetch -> decode -> depends on whether instructions is valid
+
+2) =Static data= that's used by a program
+
+3) and yet another region
+   is empty and uninitialized, but =reserved= so that it can be used by a program once it's running.
+
+4) =The instructions= belonging to the operating system kernel
+   have their own special region in memory
+
+5) memory region that holds THE STACK
+
+   - region in memory where data =is managed= in a last-in-first-out (LIFO) manner
+   - can grow and shrink
+   - can push elements on to the stakc and later pop them off
+
+=general purpose of the stack= -> implement ~call stack~
+
+**** Why does it need a call stack?
+Because the CPU(and we) needs to ~keep track~ of certain information in order to ~execute~ a program.
+
+- Instructions =are not laid out= in memory in order of execution, next to each other
+  the order of execution(call) =must be protected=.
+
+***** Information about call order
+Once the current function is fully executed,
+- which function is currently being executed?
+- which instruction to execute next? => called ~return address~
+  CPU returns to ~return address~, after executing the current function to execute the next
+
+***** Call stack helps,
+to save execution-relevant data that's local to functions: the arguments of the function call and the local variables only used in the function
+
+because it must be removed(poped off) when execution is ended.
+
+***** Why we should use stack structure for call stack?
+- Because function calls are often ~nested~.
+- Current function no need to access local data of the outer, calling function
+- It's enough to just access to the top part of the stack, so to say
+- Once the current function returns, the local data is simply popped off - there's no need for it anymore
+- That leaves use with the local data of the outer function on the top of the stack
+
+**** Stack is exclusive -> The stack, not any stack
+
+**** Stack is just concepts -> You can organzie your own stack in any other memory region
+
+*** The speed with Memory access
+While access speed is fast, it's not instant ant still has a cost
+=> That's why computer has another place where they can store data - ~Processor Registers~
+
+*** Registers
+They are part of the CPU and accessing them is much faster than accessing the main memory
+
+**** Why not store everything in registers?
+Because they're small, so they can't hold as much data as main memory - (tipically =one word per register=)
+
+x86 Architecture -> 16 general purpose registers, each holding 64 bits of data
+
+So, they are used to store data that's small but frequently accessed
+
+*** Stack Pointer
+The memory pointing to the top of the stack
+- It must need to execute current function (instruction)
+
+This is `commonly` stored in register, because this have used so many times
+
+*** ???
+If there's a large piece of data frequently being accessed in a program, it make sense to store the address of it to a register so it can be accessed by the CPU really fast
+
+** mass storage (hard drive)
+** Input/Output device (keyboard, display, etc)
+* Computer Structure
+** Motherboard
+*** chipset
+Integrated Circuit (IC) = microchip
+** Power Supply Unit
+Convert mains AC to ~low-voltage regulated DC~
+
+* How Computer works?
+Pushing the button -> generate reset signal to motherboard's chipset ->
+
+** Hardware
+some components work together to process data and execute instructions
+
+** CPU
+instruction sets provided by software program
+
+*** Multiple Cores
+allowing them to handle multiple tasks simultaneously
+
+*** Cache Memory
+Copy a main memory space into =cache memory= in the CPU to increase performance
+
+CPU retrieve a cache memory first before the main memory.
+And if it exists in cache, this refer to ~cache hit~ (and a counterpart is cache miss)
+For more efficience, you should increase a cache hit
+
+**** Locality
+If you want to increase a cache hit, you should keep memory spaces as compact as possible.
+And this process is called ~locality~
+
+And for locality, programmer use a [[file:./stack.org][stack]] structure (for compact memory usage)
+
+*** Register
+**** Stack Register
+A register to store stack pointer, a memory address that should be run first
+
+** Memory (RAM)
+used to temporarily store data that a program is actively using.
+
+program runs -> loads the necessary code and data from storage devices into RAM for quicker access by the CPU
+
+As long as power is supplied, data stored in RAM remains accessible
+
+** Storage Devices
+used to store files, operating systems, and software programs
+
+Unlike RAM, data stored on these devices remains after the computer is turned off
+
+** I/O Devices
+allow users to interact with computers and receive output from them
+
+These devices connect to the computer via ports (e.g., USB,
+HDMI) or wireless connections (e.g., Bluetooth).
+
+** Operating System
+providing an interface for users and
+programs to interact with the system.
+
+** Software Programs
+Applications, utilities, and other software
+programs run on top of the operating system to perform various tasks.
+
+They are written in programming languages like C, Java, or Python,
+which are then compiled or interpreted by the =CPU= to produce machine code that can be executed by the computer.

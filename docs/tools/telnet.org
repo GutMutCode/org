@@ -1,0 +1,8 @@
+#+title: Telnet
+
+* Telnet
+A client/server application [[file:../terminology/protocol.org][protocol]] that =provides= access to virtual terminals of remote systems on local area networks or the internet.
+
+Telnet consists tof two components:
+1. the protocol itself which specifies how two parties are to communicate
+2. the software application that provides the service.

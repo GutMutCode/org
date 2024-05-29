@@ -1,0 +1,6 @@
+#+title: Pirate Software
+
+* Mark
+** https://www.youtube.com/watch?v=T8aCOpzA6cM
+*** 1:44:10
+Dark Pattern for user updates

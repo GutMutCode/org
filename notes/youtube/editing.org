@@ -1,0 +1,111 @@
+#+title: Video Editing
+
+* 영상 편집에서 중요한 기능
+** 효과가 적용된 영상의 렌더링 속도
+효과가 적용된 이후, 그 효과를 바로 볼 수 있는게 아니다.
+
+효과가 적용된 결과 영상을 볼려면, 렌더링을 통해 영상을 새로만들어 주어야 하는데
+
+프로젝트를 키자마자 전부 렌더링 하는 방법 (FCPX, DR)
+
+필요할 때만 특정부분을 렌더링 하는 방법 (DR)
+*** Proxy
+ FCPX -> 프록시를 자동으로 만들기 때문에, 경험상 가장 렉이 적었음
+
+** 자막 넣기
+*** Automatic subtitles & Edit by text
+Premiere Pr, Davinci Resolve
+
+*** SRT 파일로 바로 넣기
+
+미리 만들어진 템플릿을, 자막에 적용할 수 있는가?
+- 애니메이션 효과가 적용돼 있어야 함
+
+** 같은 공간에서, 다른 각도로 촬영한 영상의 싱크
+*** Auto align
+based on wave
+
+** 잡음 제거
+Voice isolation
+
+** Object detection
+Depth Map
+Magic Mask
+Remove Object
+
+** 화질 보정
+Super Scale -> AI가 화질을 임의로 좋게 보정
+
+** 화면 전환 감지
+Scene Cut Detection
+
+** 가격
+*** Davinci Resolve Studio (356.79$ - 488,800)
+
+*** Premiere Pro (24,000 per M)
+**** Free 7 day trial
+**** Protect Cancel, Free 60 day trial
+Creative Cloud 패키지 23,100 per M (education sale)
+
+**** Sale
+Creative Cloud 패키지 61,600 per M
+
+1Y - 739,200
+
+Creative Cloud 패키지 18,000 per M
+
+1Y - 231,000
+
+*** Final Cut Pro (449,000)
+**** Motion (66,000)
+
+*** CapCut - 구독 (11,000 or 14,000 per M)
+
+1Y - 110,000
+
+*** 1년 이상 사용한 사람들 -> Premiere에서 다른 것으로 옮기는 것 추천
+
+** 음악에 맞춰서 편집하기
+
+*** CapCut
+Match Cut -> Auto Beat Generate -> Fit the cut to the yellow dot
+
+** Poped In Object
+
+** Picture In Picture - 동영상 속에 동영상 (설명하는 컨텐츠)
+FCPX -> Plugin & Template or Make your own
+
+** Background Removal
+*** FCPX
+- Removal Effect
+  For video that person in it
+
+- MotionVFX's AI Plugin
+  fastest one
+  paid plugin
+  can detect anything
+
+*** Affter Effect
+- Roto Brush 3.0 (AI)
+  Need AE
+  this not good than others
+  can detect anything
+
+*** Davinci Resolve
+- Magic Mask (AI)
+  Brush Can rayered so we can adjust precisely
+  faster than Roto Brush
+  better than Roto Brush
+  can detect anything
+
+*** CapCut
+- Auto CutOut
+  For video that person in it
+
+** Green Screen
+
+** Keyframe Animation
+
+** Auto Captions
+
+** Apply to all

@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       c5f80f76-560a-4c35-8b32-9d9c173b1331
+:END:
+#+title: DailyLife
+
+#+begin_quote
+What do you spend most of your time on?
+#+end_quote
+
+* Daily Life
+** Programming
+** Watch Youtube
+** Improve productibility settings
+
+# What do you want (would you like to do) that spend all time (all day) without (any) external pressure
+* Daily Think
+#+begin_quote
+What do you constantly think about?
+#+end_quote
+** How to achive my goal
+** What i want
+
+* Surrounding Space
+#+begin_quote
+What would you like to fill your space?
+#+end_quote
+** Minimal, Clean, Productible Objects
+** Fun and Growable Person

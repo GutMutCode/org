@@ -1,0 +1,6 @@
+#+title: ACID
+
+* Definition
+Atomicity, Consistency, Isolation, Durability
+
+A set of =properties of database transactions= intended to ~guarantee data validity~ despite errors, power failures, and other mishaps.

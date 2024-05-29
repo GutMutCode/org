@@ -1,0 +1,10 @@
+#+title: Index
+
+* What is Index?
+In linear formed data, index is a location of one of the elements in that data
+
+* What is Indexing?
+Getting a single element from linear formed data
+
+* What is slicing?
+Getting ranged elements from linear formed data

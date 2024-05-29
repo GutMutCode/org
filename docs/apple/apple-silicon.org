@@ -1,0 +1,60 @@
+#+title: Apple Silicon
+
+* Chips
+** iPhone
+*** A17 Pro
+**** Architecture
+3nm
+
+***** 6-CPU cores
+performance cores - 2
+
+efficiency cores - 4
+
+***** 6-GPU cores
+20% faster than A16 Bionic (iPhone 15)
+
+****** Hardware accelerate ray-tracing
+
+***** Neural Engine
+almost twice as fast as the A16 Bionic
+
+
+** Air Pods Pro
+*** H2
+SoC for AiPods Pro
+
+noise cancellation
+
+personalized spatial audio
+
+** Apple watch
+*** S9
+60% more transistor in its CPU
+30% more in its GPU
+
+than the Series 8
+
+boosting on-device processing for Siri requests
+
+faster voice dictation
+
+** Air Drops
+*** U1 - Ultra Wideband
+
+** Vision Pro
+*** R1
+real-time sensor processing
+
+taking input from 12 camearas, five sensors (including a LIDAR), six microphones on the Vision Pro
+
+** Mac
+*** M1
+first SoC chip designed specifically for thier ARM Mac products
+**** 8-core CPU
+**** 8-core GPU
+
+*** M3
+35% faster CPU
+65% faster GPU
+40% faster Neural Engine

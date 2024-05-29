@@ -1,0 +1,5 @@
+#+title: Context
+
+* Definition
+In computer science, a task context =is= the minimal *set of data* =used= by a task (which may =be= a process, thread, of fiber)
+that must =be= =saved= to =allow= a task to =be= =interrupted=, and later =continued= from the same point.

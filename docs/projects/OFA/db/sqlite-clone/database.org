@@ -1,0 +1,6 @@
+#+title: Database
+
+* Limitations
+- support two operations: inserting a row and printing all rows
+- reside =only in memory= (no persistence to disk)
+- support a single, hard-coded table

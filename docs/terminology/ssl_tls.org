@@ -1,0 +1,45 @@
+#+title: SSL/TSL
+
+* What is SSL/TLS?
+Secure Socket Layer is a successor of Transport Layer Security
+
+A cryptographic [[file:./protocol.org][protocol]] for secure communication
+
+* How it works?
+** Handshake
+Include the version of SSL/TLS in payloads
+
+*** ClientHello
+Indicating the intention to establiish a secure connection
+This includes the TLS version, cryptographic algorithm and etc
+
+*** ServerHello
+Confirming the chosen TLS version and selecting cryptographic parameters for the session
+This also sends its ~digital certificate~ (signed by trusted =Certificate Authority=) to the client
+
+** Authentication
+Client checks a certificate against a list of =trusted authorities=
+
+** Key Exchange ( asymmetric encryption )
+1) Once authenticated, the client encrypts its private-key(pre-master secret) by a public-key in the certificate (owned by server)
+2) Client sends the encrypted data to the server
+3) Server decripts the data using its private-key
+
+Finally the client and the server shared secret
+
+** Key Derivation and Session Establishment
+*** Deriving Session-key
+With the exchanged keys, the client and server derive the same session keys for encrypting and decrypting
+
+*** Sending Finished
+Both the client and the server exchange "Finished" message to confirm that the key exchange was successful and that they are ready to begin secure communication
+
+** Data Transfer
+The client and server can now securely exchange data over the encrypted connection
+
+The client and server negotiate and agree upon a set of cryptographic algorithms and parametsr, known as a "cipher suite"
+
+** Connection Closure
+Either the client or the server initiate a connection closure by sending a "close_notify" alert
+
+After receiving "close_notify" alert, both parties perform any necessry cleanup and terminate the TLS session

@@ -1,0 +1,77 @@
+#+title: Request life-cycle
+
+* What is Request Life-Cycle?
+1. Access to https://localhost:4000/
+2. The browser send request to the service in that address
+3. =The router= map each request into a specific part of app
+
+* [[file:./router.org][Router]]
+Mapping request's verb/path pairs to controller/action pairs for dispatching
+
+** allows us to scope functionality
+Some pages in app may require user authentication, others may not
+
+* Controller
+simple Elixir module
+
+- retrieve request information,
+- talk to your business domain,
+- prepare data for the presentation layer
+
+** Actions/2
+The functions in controller that gather the data and perform the tasks needed for rendering.
+
+*** Params
+**** conn
+A struct which holds a ton of data bout the request
+
+**** params
+The request parameters
+
+** render(conn, :view_name)
+render the view
+
+* View
+The modules responsible for rendering
+
+Handles the structured data from the controller and converts it to a presentation to be shown to users.
+
+This modules named after controller and rendering data format
+#+begin_quote
+HelloController, HTML => DiscordWeb.HelloHTML
+#+end_quote
+
+In this view, you must declare proper function (the second argument of the render)
+and in that function, you can declare a template (or use embed_templates)
+
+** Template
+The [[file:./heex.org][HEEX]] template that responsible to make actual HTML
+
+*** Rendering order
+**** With layout
+1. lib/hello_web/components/layouts/root.html.heex
+2. lib/hello_web/components/layouts/app.html.heex
+3. template
+
+injected to the following:
+#+begin_src elixir
+<%= @inner_contents %>
+#+end_src
+
+**** Without layout
+just template
+
+
+* Component
+** embed_templates
+Embed all ~.heex~ templates found in sibling `view_name` directory into our module as functon definitions.
+
+This is compiled into the module as function component itselfs (no runtime fee)
+
+* Endpoint
+The place that all of the app request is started
+
+* Plug
+The [[file:../../../terminology/specification.org][specification]] for stitching web app together
+
+Defining a slice of request processing

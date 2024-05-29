@@ -1,0 +1,34 @@
+#+title: Variables
+
+* Assignment & Mutation
+** Assingment
+giving a new name to a value
+#+begin_src julia
+a = b = 1 # a: 1, b: 1
+a = (b = 2+2) + 3 # b: 4, a: 7
+a = 2
+a = 3 # chaging a to refer a new value 3
+#+end_src
+
+** Mutation
+changing a value
+
+* Convention
+
+** Names of Variables
+in lower case
+
+** Word separation
+indicated by underscores('_')
+
+** Names of ~Types~ and ~Modules~
+- begin with capital letter
+- word separation is shown with =upper camel case= instead underscores
+
+** Names of ~functions~ and ~macro~
+in lower case =without underscores=
+
+** Functions that write to their arguments
+end in ~!~
+
+sometimes called =mutating= ro =in-place= function (intended to produce changes in their arguments after the function is called)

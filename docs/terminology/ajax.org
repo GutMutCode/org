@@ -1,0 +1,5 @@
+#+title: Ajax
+
+* Definition
+Short for "Asynchronous JavaScript and XML"
+A set of web development techniques that uses various web technologies on the client-side to create asynchronous web applications.

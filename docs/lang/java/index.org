@@ -1,0 +1,115 @@
+#+title: Index
+
+* Null Null
+Java Native => domain about OS(Security is important) => JNI (Java Native Interface)
+
+Java bytecode in Method area
+
+** Heap area
+Allocation => Developer
+
+Free => Garbage Collector in JVM
+=> It occurs latency or stops (ERROR) => Related to operation
+
+In range of Instance
+
+Object Unit (based on Class)
+
+*** Permanent generation (JVM 7)
+Space to store Meta data(Class, method, etc.) => ~FIXED~ size => ERROR
+Spring => Reflaction => Permenant gereration
+*** Metasapce (JVM 8)
+JVM => Native => Auto extensions
+*** New (Young generation)
+Space that used by instances (Eden)
+~Eden~, From, To
+
+number of reference to one memory
+*** Old generation
+Space that instances are fallback into
+Full GC => latency
+
+
+** Garbage collector
+Collect references which isn't used anymore and free them.
+
+*** Analyze relation of dependencies
+C => variable => analyze reference of dependencies => compiler optimization
+Java => object => ...
+
+- Mark - =Count= references and Mark
+- Sweep - =Delete= unused references
+- Compact - Put used memory together to one side (From/To)
+
+malloc => 100B
+OS => 4KB (page)
+CPU => 64KB
+
+Depends on memory requirement, you may have to consider about whether memory is wasted. (Slack space - separated memory)
+
+Slack(FROM) => Move to the another memory(TO) to compact => delete previous memory
+
+*** Minro/Major GC (Full)
+stop-the-world => Posibility of DB I/O ERROR
+
+*** GC Roots ( entry point of dependency )
+- a set of static variables (assumption - Mark-Sweep)
+- all object needs to be swept (takes a time depending on heap size)
+Stack data
+static method's data
+JNI data
+
+*** Serial GC (Single thread)
+Mark -> Sweep -> Compact
+*** Parallel GC (Multi thread by default)
+Low-pause
+Throughput
+
+*** Concurrent GC -> Runtime
+
+*** Incremental GC
+
+*** G1(Garbage First) GB
+When you need Heap memory more than 4GB => Separate by range(region)
+Collect garbage on region where we have the most garbage.
+
+Memory lock based on region => concurrency
+
+** Stack area
+Each thread has a separate stack area
+
+JVM is based on stack area => The value which is calculated by a operator is also stored while the operator is still running.
+
+maximum size => determinated at compile time.
+
+** JVM Execution engine
+*** Interpreter
+Convert java bytecode to machine code
+
+- bytecode == opcode
+  - 1byte (8bit)
+  - It is converted =whenever= you call method
+
+*** JIT compiler
+Execute =converted= bytecode
+
+Collect execution log => it takes advantage when program live longer.
+
+Detect repetitive bytecode(hotspot) by profiler
+
+Compiler
+1. intermediate code generate
+2. code optimize
+3. target code generate
+4. profile
+
+*** GC
+
+** Point
+Memory is a limited resource => You have to manage it
+
+
+* Snacks
+Script code -> Interpreter
+
+C/C++ => Make IDE, VM(Script, Interpreter)

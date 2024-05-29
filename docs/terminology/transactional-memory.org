@@ -1,0 +1,4 @@
+#+title: Transactional Memory
+
+* Definition
+A concurrency control mechanism allowing a gruop of load and store instructions to execute in an ~atomic~ way.

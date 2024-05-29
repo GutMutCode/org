@@ -1,0 +1,16 @@
+#+title: Extensible Firmware Interface
+
+* What is EFI?
+on a data storage device(HDD or SSD) that is used by computers that have the Uified Extensible Firmware Interface(UEFI)
+
+When computer is booted, UEFI firmware loads files stored on ESP to start installing operating systems and various utilities
+
+* What is UEFI?
+A [[file:./specification.org][specification]] that defines the architecture of the platform firmware ~used for booting the computer hardware~ and =its interface= for interaction with the operating system.
+
+* What is ESP?
+EFI System [[file:./partition.org][Partition]]
+
+
+* Where the EFI use?
+=The EFI firmware= used on Intel Macs and becoming available as a replacement to [[file:./bios.org][BIOS]] on most recent PC motherboards requires a dedicated partition that holds boot loader files

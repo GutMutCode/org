@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       179ef835-8a12-45c5-bb9e-994f764bb893
+:END:
+#+title: Hash
+
+* Hash
+/Function changing word to other (encrypt)/
+** Usage
+- Encrypt data
+- Ensure data integrity when transfer.
+** Hacking
+1. Collision
+   - find a duplicated value that destroying data integrity
+   - The shorter the length, the more dangerous.
+2. Brute force
+   - Apply data until happen collision.

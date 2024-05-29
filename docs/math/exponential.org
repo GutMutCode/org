@@ -1,0 +1,9 @@
+* Exponentiation
+  An operation involving two numbers,
+  the =base= and the =exponent= or =power=.
+
+  It is written as b^n, where =b= is the base and =n= is the power.
+  this is pronounced as " =b= (raised) to the (power of) =n= ".
+
+  When ~base~ is a positive integer,
+  exponentiation =corresponds= to repeated multiplication of the base

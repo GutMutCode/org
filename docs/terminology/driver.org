@@ -1,0 +1,9 @@
+#+title: Driver
+
+* What is driver?
+A software that interact with the [[file:./os.org][operating system]] and allow it to communicate with hardware
+
+They are normally stored in =operating system kernel= or as standalone files depending on the OS
+
+** OS Commands -> Hardware Signals
+It translates commands from the OS into specific signals or actions required by the hardware devices

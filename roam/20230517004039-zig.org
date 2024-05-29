@@ -1,0 +1,247 @@
+:PROPERTIES:
+:ID:       0c391cdf-4fb1-4a25-b6e8-8478e25c5c4e
+:END:
+#+title: Zig
+
+* What is Zig
+** Simple
+Focus on debugging rather than debugging your programming language knowledge.
+- All control flow is reveal.
+- All memory allcations are reveal.
+- No preprocessor, no macros.
+** Comptime
+A fresh approach to metaprogramming based on compile-time code excution and lazy evaluation.
+- Call any function at compile-time.
+- Manipulate types as values without runtime overhead.
+- Comptime emulates the target archtecture.
+** Maintain it with Zig
+- Zero dependency
+- Full cross platform
+- Cross-language
+
+* Assuming of this tutorial
+- Prior experience programming
+- Some understanding of low-level programming concepts
+- Using ~master~ build
+* Zig first look
+
+llvm backend
+Only 500 line
+
+** Advantage
+*** Connect with c no ffi binding
+- Because libc is included.
+- It can compile .c file and be used to as build tool like cmake.
+*** Memory manual management
+- Rust allocator => difficult if you access to low level
+- Zig => easy custom allocator
+- You can write code except hip location
+*** Choosable standard library
+*** Specific build cash system
+** Project structure
+#+begin_quote
+build.zig    => 프로젝트를 빌드(실행파일생성)하는데 필요한 파일
+src/main.zig => 프로젝트의 시작지점, main() 함수가 있는 파일
+zig-cache    => 빌드 캐시
+zig-out      => 빌드 결과물 (binary)
+#+end_quote
+** Syntax
+- ~defer~ => block을 벗어날때 값을 지정 가능
+- Combine error,type
+  ~error!T~ type is T, it can has error
+- Separated ~try, catch~
+  ~try~ 부분을 일부러 넓히지 않고, 원할떄 ~catch~ 사용
+- Combine between ~error~
+  #+begin_src zig
+const C = A || B
+  #+end_src
+- 해당블록에서 safety 해제가능 (Similar with ~unsafe~ of Rust)
+  ~@setRuntimeSafety~
+- No pointer for ~0, null~ (0?)
+  If you refer const variable then it's become immutable reference
+  Rust distinct with ~&T~, ~&mut T~ => better than zig?
+- enum, struct 정의를 하는부분에서 function 정의도 가능
+  You can make ~global~ variable
+- Support ~union~
+- Support wrapping operator ~%~
+  - This is allow =overflow=
+  - ~var a:u8 = 255; a +%=1;~ => a is 0
+- Attach label to block
+   You can ~break~ any time (Similar with lifetime of Rust)
+- You can add ~else~ keyword to =while=, =for=
+- You can ~capturing~ in =if=, =while=
+  #+begin_src zig
+if (b) |*arg| [ .. ]
+  #+end_src
+  This let you ~allocate~ value inside of b to =arg= if b is not =null=
+  - This called =Playload Capture=
+- You can force run code in compile time by using =Comptime=
+  (Similar with =inline= in Rust)
+- You can ~create~ =custom Struct= by using Anonymous Struct
+  (Similar with =object= in JS)
+* Code of Contents
+   There is no concept of "official" or "unoficial", however, each gathering place has its own moderators and rules.
+   It is everyone's responsibility to maintain a positive environment, especially when disagreements occur.
+
+** Esamples of behavior that contribute to creating a positive environment include:
+   - Using welcoming and inclusive language.
+   - Being respectful of differing viewpoints and experiences.
+   - Gracefully accepting constructive criticism.
+   - Helping another person accomplish their own goals.
+   - Showing empathy towards others.
+   - Showing appreciation for others' work.
+   - Validating someone else's experience, skills, insight, and use cases.
+
+** Examples of unacceptable behavior by participants include:
+   - Unwelcome sexual attention or advances, or use of sexualized language or imagery that causes discomfort.
+   - Trolling, insulting/derogatory comments, and personal attakcs. Anythings antagonistic towards someone else.
+   - Off-topic discussion of any kind - espectially offensive or sensitive issues.
+   - Publishing others' private information, such as a physical or electronic address, without explicit permission.
+   - Discussing this Code of Conduct or publicly accusing someone of violating it.
+   - Making someone else feel like an outsider or implying a lack of technical abilities.
+   - Destructive behavior. Anything that harms Zig or another open-source project.
+
+
+
+
+* Syntax (Change anytime)
+** Assignment 
+*** const
+    Store an immutable value
+    #+BEGIN_SRC zig
+    const constant: i32 = 5;
+    #+END_SRC
+*** var
+    Store an mutable value
+    #+BEGIN_SRC zig
+    var variable: u32 = 5;
+    #+END_SRC
+*** @as
+    performs an explicit type coercion
+    #+BEGIN_SRC zig
+    const inferred_constant = @as(i32, 5);
+    const inferred_variable = @as(u32, 5000);
+    #+END_SRC
+*** Rule
+    Constants and variables ~must~ have a value.
+    If no known value can be given, the ~undefined~ value, which coerces to any type,
+    may be used as long as a type annotation is provided.
+    #+BEGIN_SRC zig
+    const a: i32 = undefined;
+    var b: u32 = undefined;
+    #+END_SRC
+
+    Where possible, const values are preferred over ~var~ values.
+** Arrays
+   #+BEGIN_SRC zig
+   const a = [5]u8 { 'h', 'e', 'l', 'l', 'o' };
+   const b = [_]u8 { 'w', 'o', 'r', 'l', 'd' };
+   // you can infer type!
+   const length = a.len; // 5
+   #+END_SRC
+
+** If
+   It ~only accepts~ a bool value (of values true of false)
+   There is no concepts of truthy of falsy values.
+   If is also expression.
+
+** While
+
+
+* Standard Patterns
+** Imports
+   The built-in function @import takes in a file,
+   and gives you a struct type based on that file.
+   All declarations labelled as pub(for public)
+   will end up in this struct type, ready for use.
+
+   ~@import("std")~ is a special case in the compiler,
+   and gives you access to the standard library.
+   Other @imports will take in a file path,
+   or a package name (more on packages in a later chapter).
+
+   We will explore more fo the standard library in later chapters.
+** Allocators
+   A pattern for allocating memory,
+   which allows the programmer to choose exactly how-
+   memory allocations are done within the stadard library.
+   ( no allocations happen behind you back in the standard library.)
+
+   The most basic allocator is ~std.heap.page_allocator~. (virtual memory)
+   Whenever this allocator makes an allocation 
+   it will ask your OS for entire pages of memory;
+   an allocation of a single byte will likely reserve multiple kibibytes.
+   As asking the OS for memory 
+   requires a system call 
+   this is also extremely inefficient for speed.
+
+
+   The ~std.heap.FixedBufferAllocator~ is an allocator that allocates memory into a fixed buffer,
+   and does not make any heap allocations.
+   This is useful when heap usage is not wanted, for example when writing a kernel.
+   It may also be considered for performance reasons.
+   It wwill give you the error ~OutOfMemory~ if it has run out of bytes.
+   
+
+   ~std.heap.ArenaAllocator~ takes in a child allocator,
+   and allows you to allocate many times and only free once.
+   Here, ~.deinif()~ is called on the arena which frees all memory.
+   Using allocator ~.free~ in this example would be a no-op(i.e. does nothing).
+
+
+   The Zig standard library also has a General Purpose Allocator.
+   This is a ~safe allocator~ which can prevent double-free, use-after-free and can detect leaks.
+   Safety checks and thread safety can be turned off via its configuration struct (left empty below)
+   Zig's GPA is desinged for safety over performance, but may still be many times faster than page_allocator
+
+
+   For hight performance (but very few safety features!), ~std.heap.c_allocator~ may be considered.
+   This however has the disadvantage of requiring linking Libc, which can be done with ~-lc~
+
+   Benjamin Feng's tak [[https://www.youtube.com/watch?v=vHWiDx_l4V0&ab_channel=ZigSHOWTIME][What's a Memory Allocator Anyway?] goes into more detail on this topic,
+   and covers the implementation of allocators.
+
+** Arraylist
+   The ~std.ArrayList~ is commonly used throughout Zig,
+   and serves as a buffer which can change in size.
+   ~std.ArrayList(T)~ is similar to C++'s ~std::vector<T>~ and Rust's ~Vec<T>~.
+   The ~deinit()~ method frees all of the ArrayList's memory.
+   The memory can be read from and written to via its slice field - ~.items~.
+
+   Here we will introduce the usage of the testing allocator.
+   This is a special allocator that only works in tests, and can ~detect memory leaks~.
+   In your code, ~use whatever allocator~ is appropriate.
+   
+
+** File System
+   Let's create and open a file in our current working directory, write to it, and then read then read from it.
+   Here we have to use ~.seekTo~ in order to go back to the start of the file before reading what we have written.
+
+   The functions ~std.fs.openFileAbsolute~ and similar absolute functions exist,
+   but we will not test them here.
+
+   We can get various information about files by using ~.stat()~ on them.
+   ~Stat~ also contains fields for ~inode~ and ~.mode~,
+   but they are not tested here as they rely on the current OS' types.
+
+   We can make directories and iterate over their contents.
+   Here we will use an iterator (discussed later).
+   This directory (and its contents) will be deleted after this test finishes.
+
+** Readers and Writers
+   ~std.io.Writer~ and ~std.io.Reader~ provide standard ways to making use fo IO.
+   ~std.Arraylist(u8)~ has a ~writer~ method which gives us a writer.
+
+   Here we will use a reader to copy the file's content into an allocated buffer.
+   The second argument of ~readAllAlloc~ is the maximum size that it may allocate;
+   if the file is larger than this, it will return ~error.StreamTooLong~.
+
+   A common usecase for readers is to read until the next line (e.g. for user input).
+   here we will do this with the ~std.io.getStdIn()~ file.
+
+   An ~std.io.Writer~ type consists of a context type, error set, and a write function.
+   The write function must take in the context type and a byte slice.
+   The write function must also return an error union of the Writer type's error set
+   and the amount of bytes written.
+   Let's create a type that implements a writer.
+

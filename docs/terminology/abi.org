@@ -1,0 +1,23 @@
+#+title: ABI
+
+* Definition
+Application ~Binary~ Interface
+
+*A standard* pertaining to:
+
+- The in-memory layout of types
+  (i.e. a type's size, alignment, offsets, and the layouts of its fields)
+
+- The in-linker naming of symbols
+  (e.g. name mangling)
+
+- The calling conventions of functions
+  (i.e. how a function call works at a binary level)
+
+** Use case
+By defining these rules and not breaking them, an ABI is said to be stable.
+
+Then this can be used to for example, reliably link together multiple libaries, executables, or objects which were compiled separately
+(Potentially on =different machines= or using =different compilers=)
+
+This allow [[file:./ffi.org][FFI]](Foreign Function Interface) to take place, where we can =share code= between programming languages.

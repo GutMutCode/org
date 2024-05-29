@@ -1,0 +1,20 @@
+#+title: Storage
+
+* What is storage
+** HDD
+hard disk drive
+
+** SSD
+solid-state drive
+
+* Secondary storage
+A storage that can't access by CPU directly
+
+It can be accessed by input/output channels and transfered the desired data to primary storage
+
+In computer, HDD and SSD are generally used as secondary storage
+
+* History
+** The first commercial hard disk drive & file system
+Developed for IBM 305 RAMAC (Random Access Method Accounting and Control) computer in the late 1950s.
+This system, called the IBM 305 RAMAC Disk Operating System (DOS), allowed users to organize and store data on the world's frist commercial hard disk drive.

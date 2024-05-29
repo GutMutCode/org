@@ -1,0 +1,64 @@
+#+title: Sveltejs Bigger
+
+* SvelteJS: My echosystem is bigger than yours
+Svelte 그거 좋긴한데, 코드 생태계가 React보다 작아서 스벨트쓰긴 좀 이른 듯?
+
+레딧, 트위터, 유튜브 댓글에 보면 이렇게 써진 글들을 볼 수 있다.
+만약 여러 선택지를 주면, 사람들은 짜증 내고 혼란스러워 하고, 하는 소리라곤 "작은 생태계" 밖에 없다.
+
+이게 진짠가? 대부분이 틀렸다.
+Svelte 생태계는 React 와 비교해도, 절대 작지 않다.
+
+Svelte는 UI component 라이브러리 개수가 적다는 말은 사실이지만, SkeletonUI, Flowbite Svelte, Svelte UI, DaisyUI등 충분한 라이브러리를 가지고 있다.
+
+만약 더 많은 UI component 라이브러리를 원한다면, 바로 자신만의 라이브러리를 만들고, 배포하고, 다른 사람들이 자신만의 라이브러리를 만들러 가는 것을 구경하면된다.
+
+** 상태 관리
+UI component는 잠시 잊고, 실제 문제에 대해서 이야기 해보자.
+자, 이제 React 프로젝트를 시작해보자.
+무슨 라이브러리를 먼저 설치해야하지?
+Tailwind?
+이건 일반 라이브러리라, Svelte에서도 되는데?
+아 맞다, 상태관리 라이브러리.
+useReducer를 원하는 사람은 아무도 없으니까, 더 좋은게 필요하겠지.
+React 상태관리 라이브러리는 Redux Toolkit, Jotai, Zustand, MobX 등등 많다.
+Svelte에는 별거 없다. svelte/store라고 Svelte에 이미 포함되어 있는 경량 라이브러리 정도?
+그냥 시작하기만하면 되던데..
+이것처것 찾기보다, 그냥 뭐 좀 만들러 갈 수 있잖아.
+
+** 스타일링
+좋다. 이제 상태관리는 해결했고, 스타일링으로 넘어가자.
+component를 스타일링해보자.
+React는 CSS module을 가지고 있다.
+하지만 우리는 cool 하고 hype하므로, JSX파일 내부에 스타일을 넣을 것이다.
+이렇게 하기위해선, CSS-in-JSS 라이브러리도 선택해야한다.
+자, 선택지를 볼까?
+styeld-components, CSS-Modules, Emotion, JSS.
+Svelte 에서는, 프레임워크 기본으로 포함되어있는 <style></style> 블록을 사용한다.
+
+** 트랜지션?
+이제 우리 홈페이지를 위한 멋있는 트랜지션이 필요하다.
+React의 선택지를 살펴보자.
+React Transition Group, React Motion, React Move...
+Svelte에서는 프레임워크에서 기본 API를 지원하므로, 별도의 라이브러리가 필요없다.
+
+여기까지 봤으면, 패턴을 눈치챘을 것 이다.
+Svelte는 많은 기능을 이미 프레임워크에서 지원하므로, 별도의 라이브러리가 필요없는 것이다.
+
+** 다른 Javascript 라이브러리
+만약에 다른 커스텀 라이브러리를 원한다면?
+React와, Svelte가 같은 라이브러리를 다루는 방식은 실제로 매우 비슷하지만,
+React는 따로 라이브러리를 감싸주는 wrapper 코드가 추가로 필요하다.
+.. 레퍼런스 생략
+
+또, Svelte는 useState, useEffect, useMemo또한 필요없고, 이해하기도 쉽다.
+
+** 결론
+React를 사용하는 사람은, 라이브러리 내부에 로직에 대해서 배우는게 아니라, 라이브러리를 둘러싼 wrapper 코드의 사용법을 배우는 것이다.
+이 때문에, 이미 존재하는 라이브러리를 감싸는 형태의 수많은 wrapper 코드가 작성되며,
+거의 분당 1번 꼴로 같은 기능의 라이브러리가 wrapper만 수정되어서 출시된다.
+
+여기서 끝이 아니라, 그 라이브러리를 이용해, 또다른 라이브러리를 만드는 경우도 생각해 볼 수 있는데,
+wrapper를 감싸는 또 다른 wrapper 코드를 만들어야만 한다.
+
+블록하나만 빼면 무너지는 젠가 처럼 쌓이게 되는 것이다.

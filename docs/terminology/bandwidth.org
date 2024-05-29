@@ -1,0 +1,4 @@
+#+title: Bandwidth
+
+* Definition
+The amount of information that can be transferred to and from something.

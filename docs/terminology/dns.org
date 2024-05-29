@@ -1,0 +1,6 @@
+#+title: DNS
+
+* What does DNS stands for?
+Domain Name System
+
+A protocol that translates human-readable domain names into IP addresses, facilitating communication between devices using their unique numerical identifiers

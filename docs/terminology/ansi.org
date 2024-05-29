@@ -1,0 +1,6 @@
+#+title: ANSI
+
+* What does the ANSI stand for?
+[[https://www.ansi.org/][American National Standards Institute]]
+
+This institute oversees standards and conformity assessment activities in the U.S.

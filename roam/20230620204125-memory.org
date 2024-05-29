@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       72f5ee4b-f100-4d24-9377-b69287b1c2c2
+:END:
+#+title: Memory
+
+* Virtual Memory
+** Ram
+** HDD

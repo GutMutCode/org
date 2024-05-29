@@ -1,0 +1,154 @@
+:PROPERTIES:
+:ID:       71fb326b-ec0d-4474-a809-cf6dc776200f
+:END:
+#+title: Git
+* fish shell [[https://github.com/jhillyerd/plugin-git][Alias]]
+
+* Go to past (Staged & Commit Snapshot)
+#+begin_src bash
+git checkout HASH8
+#+end_src
+
+* Set tag of commit to v1.0
+#+begin_src bash
+git tag -a v1.0 -m "Message"
+#+end_src
+
+* Revert files which is already commited
+Undo the specified commit by applying a new commit ( maintain commit history )
+#+begin_src bash
+git revert
+#+end_src
+
+* Revert
+Change staged files to the previous commit
+untracked and staged files will delete
+
+#+begin_src bash
+git reset --hard
+#+end_src
+
+* Convert staged snapshots to unstaged working directory
+#+begin_src bash
+git reset
+#+end_src
+
+* Clean untracked files
+#+begin_src bash
+git clean -f
+#+end_src
+
+* Reset staged snapshot but remain uncommited files.
+#+begin_src bash
+git reset --mixed HASH
+#+end_src
+
+* Merge
+** Rebase
+two differnt branches with their own commit history. > 3-way merging > a new branching. New commits are contain to specific branch which rebase.
+Never, ever rebase commits that have been pushed to a shared repositoy.
+#+begin_src bash
+rebase -i
+#+end_src
+*** Usage
++ pick - be main commit
++ squash - sucked into main
+
+** Fast forwarding
+If any of the commit history of one branch belongs to the other
+
+* Clone
+** HTTP
+It can only read data
+#+begin_src bash
+git clone http://...
+#+end_src
+** HTTPS
+It can update data
+#+begin_src bash
+git clone https://...
+#+end_src
+
+* Show commit between A and B & show stat
+#+begin_src bash
+git log HEAD~4..HEAD --stat
+#+end_src
+
+* Show four commit
+#+begin_src bash
+git log -n 4
+#+end_src
+
+* Remote
+** Add
+#+begin_src bash
+git remote add <remote_name> http...
+#+end_src
+** Show Remote branch
+#+begin_src bash
+git branch -r
+#+end_src
+** Fetch Remote
+#+begin_src bash
+git fetch <Remote>
+#+end_src
+** Push
+#+begin_src bash
+git push <Remote>
+tag push : manually push
+#+end_src
+
+* Central (Read Only?)
+#+begin_src bash
+git init --bare <Workspace>
+#+end_src
+
+* Publishing
+** local : merge with main branch
+** remote : pushing to central repo
+exact same thing as going into central repo & doing fetch/fast-forward marge
+
+* Patch
+** Make Patch
+make patch contained current branch but not in main branch
+#+begin_src bash
+git format-patch main
+#+end_src
+** Apply Patch
+#+begin_src bash
+git am < patch_file
+#+end_src
+
+* Tips & Tricks
+** Archvive The repository
+Takes current last commit of main branch and place all of its files into a ZIP archive(or tarball)
+#+begin_src bash
+git archive main --format=zip --output=../website.zip
+git archive main --format=tar --output=../website.tar
+#+end_src
+** Bundle the Repository
+Turns a repository into a single file. (Can =git log=)
+#+begin_src bash
+git bundle create ../repo.bundle main
+#+end_src
+** Ignore a file
+#+begin_src bash
+git add .gitignore
+#+end_src
+** View Diffs Between Commits
++ Specific Commits
+#+begin_src bash
+git diff HEAD~2..HEAD~1
+#+end_src
++ Last Commits of branches
+#+begin_src bash
+git diff main..john/pink-page
+#+end_src
++ Uncommitted changes
+#+begin_src bash
+git diff
+#+end_src
++ Staged Commit and UnStaged Commit
+#+begin_src bash
+git diff --cached
+#+end_src

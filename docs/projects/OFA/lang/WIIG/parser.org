@@ -1,0 +1,72 @@
+#+title: Parser
+
+* Parser what we make
+the main difference between top down and bottom up parser is that the former starts with constructing root node of the AST and then descends while the latter does it the other way around.
+
+** top-down parsing
+*** recursive descent parsing
+"top down operator precedence"
+
+sometimes called ="Pratt parser"=
+
+** Problems
+1. We want to produce an AST that accurately represents the information contained in the original let statement
+   -> We don't have AST
+   -> We don't know what it should look like
+2. Expressions are more complicated when parse
+   -> We need the better way than parsing statements
+   -> "Pratt parser"
+
+** Pratt parser
+Instead of associating parsing functions(which Pratt calls "semantic code") =with grammar rules=,
+Pratt associates these functions =with the single token types=.
+
+Each token types can have two parsing functions associated with it, depending on the token's position - =infix or prefix=
+
+token type is encountered => the parsing functions are called => parse the appropriate expression => return an AST node
+
+*** Parsing functions
+**** Token is found in prefix position
+**** Token is found in infix position
+
+** Terminology
+*** prefix operator
+An operator "in front of" its operand
+#+begin_src monkey
+--5
+#+end_src
+*** postfix operator
+An operator "after" its operand
+#+begin_src monky
+foobar++
+#+end_src
+*** infix operators
+An operator sits between its operand, appear in =binary expressions=
+#+begin_src monkey
+5 * 8
+#+end_src
+*** operator precedence (order of operations)
+We should make clearer what operator =precedence= describes:
+witch =priority= do different operators have.
+"higher rank", "more important"
+***
+
+* Statements vs. Expressions
+Whether it produce value
+- Produce => Expression
+- Do not => Statement
+
+* Simple process
+It repeatedly advances the tokens and checks the current token to decide what to do next: either call another parsing function or throw an error.
+
+* Why don't we mock or stub out?
+source code is more readable and understandable
+* Terminology
+** prefixParseFns => nuds
+** infixParseFns => leds
+* Left- and Right-binding Power (Which one it the higher precedence?)
+
+parsing : from left to right
+
+result = num-- : `=` > num
+result = --num : `=` < `--`

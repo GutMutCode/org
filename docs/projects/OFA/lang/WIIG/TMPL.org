@@ -1,0 +1,19 @@
+#+title: Tmpl
+
+* The Monkey Programming Language & Interpreter
+Interpreter is built to interprete a specific programming language
+
+** first class functions
+Functions in Monkey are just =values=.
+
+** Process
+1. tokenize and parse Monkey source code in a REPL
+2. building up an internal representation of the code called =abstract syntax syntax=
+3. evaulate this tree
+
+** Aspects
+- the lexer
+- the parser
+- the Abstract Syntax Tree(AST)
+- the internal object system
+- the evaluator

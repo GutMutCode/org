@@ -1,0 +1,7 @@
+* Economy
+[[file:./loan-deposits.org][Loan-Deposits]]
+[[file:./jupyter.org][Jupyter]]
+[[file:./business.org][Business]]
+[[file:./company.org][Company]]
+[[file:./brainstorm.org][BrainStorm]]
+[[file:./putin.org][Vladimir Putin]]

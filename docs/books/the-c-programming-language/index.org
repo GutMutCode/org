@@ -1,0 +1,180 @@
+#+title: The C Programming Language : Second Edition
+
+* Table of Contents :toc:
+- [[#what-are-the-differences-from-the-first-edition][What are the differences from the first edition?]]
+- [[#appendix][Appendix]]
+  - [[#a][A]]
+  - [[#b][B]]
+  - [[#c][C]]
+- [[#preface-to-the-first-edition][Preface to the First Edition]]
+- [[#general-purpose-programming-language][General-purpose programming language]]
+- [[#brief-history][Brief History]]
+  - [[#b-language][B language]]
+  - [[#c-language][C language]]
+- [[#features][Features]]
+  - [[#common-syntax][common syntax]]
+  - [[#variables][variables]]
+  - [[#functions][functions]]
+  - [[#preprocessing-step][preprocessing step]]
+  - [[#structure-assignment-and-enumerations][structure assignment and enumerations]]
+- [[#ansi-c][ANSI C]]
+- [[#key-points][Key-points]]
+  - [[#control-flow][control flow]]
+  - [[#storage-allocation][storage allocation]]
+  - [[#inputoutput][input/output]]
+  - [[#basic-types--control-structure][basic types & control structure]]
+  - [[#independency][independency]]
+  - [[#type][type]]
+  - [[#blemishes][blemishes]]
+- [[#purposes-of-the-book][Purposes of the Book]]
+  - [[#chapter-1][Chapter 1]]
+  - [[#chapter-2--6][Chapter 2 ~ 6]]
+  - [[#chapter-7][Chapter 7]]
+  - [[#chapter-8][Chapter 8]]
+  - [[#appendix-a][Appendix A]]
+  - [[#appendix-b][Appendix B]]
+  - [[#appendix-c][Appendix C]]
+
+* What are the differences from the first edition?
+The second edition of /The C Programming Language/ describes *C* as defined by the [[file:../../terminology/ansi.org][ANSI]] standard.
+
+* Appendix
+** A
+the reference manual
+
+to convey the essentials of the standard in a smaller space because of easy comprehension by programmers, but not as a definition for compiler writers
+
+** B
+standard libraries for programmers, not implementors
+
+** C
+concise summary of the changes from the original version
+
+* Preface to the First Edition
+C was originally designed for and implemented on the UNIX operating systems on the DEC PDP-11, by Dennis Ritchie.
+
+C is not tied to any particular hardware or system.
+
+This book is meant to help the reader learn how to program in C.
+
+pleasant, expressive, and versatile language for a wide variety of program
+
+* General-purpose programming language
+C has been closely associated with the UNIX system where it was developed
+- both the system and most of the programs that run on it are written in C.
+
+Why the C has been called `system programming language`
+- because it is useful for writing compilers and operating systems
+
+* Brief History
+** B language
+Ken Thompson create B language that stem from BCPL in 1970 => first UNIX on DEC PDP-7
+
+- typeless lanaguage
+
+** C language
+
+- typesetted language
+
+* Features
+** common syntax
+- statement grouping (scope {})
+- decision making (if-else)
+- selecting one of a set of possible cases (switch)
+- looping with the termination test at the top (while, for) or do at botton (do), and early loop exit (break)
+
+** variables
+- variables may be declared in a block-structured fashion
+
+** functions
+It may exist in separate source files that are compiled separately.
+
+A function declaration can now include a description of the arguments of the function; the definition syntax changes to match.
+- This extra information makes it much easier for compilers to detect errors caused by mismatched arguments; in our experience, it is a very useful addition to the language.
+
+** preprocessing step
+It performs macro substitution on program test, inclusion of other source files, and conditional compilation
+
+** structure assignment and enumerations
+Which had been widely available, are now officially part of the language.
+
+
+* ANSI C
+One of the goals of the standard was to make sure that most existing programs would remain valid, or, failing that, that compilers could produce warnings of new behavior.
+
+A second significant contribution of the standard is the definition of a library to accompany C.
+- It specifies functions for accessing the operating system (for instance, to read and write files), formatted input and output, memory allocation, string manipulation, and the like.
+
+Most of the library is closely modeled on the "standard I/O library" of the UNIX system.
+
+The standard library functions are only called explicitly, so they can be avoided if they are not needed.
+
+The standard makes portability issues explicit, and prescribes a set of constants that characterize the machine on which the program is run.
+
+The original definition of C frowned on, but permitted, the interchanges of pointers and integers; this has long since been eliminated, and the standard now requires the proper declarations and explicit conversions that had already been enforced by good compilers.
+
+* Key-points
+** control flow
+C offers only straightforward, single-thread control flow:
+tests, loops, grouping, and subprograms, but not multiprogramming, parallel operations, synchronization, or coroutines.
+
+** storage allocation
+It does not define any storage allocation facility other than static definition and the stack discipline provided by the local variables of functions; there is no heap or garbage collection.
+
+** input/output
+It provide no input/output facilities; there are no READ or WRITE statements, and no built-in file access methods.
+All these high-level mechanisms must be provided by explicitly called functions.
+
+** basic types & control structure
+Because these are supported directly by most computer, the run-time library requried to implement self-contained programs is tiny.
+
+** independency
+Although C matches the capabilities of many computers, it is independent of any particular machine architecture.
+With a little care it is easy to write portable programs, that is, programs that can be run without change on a variety of hardware.
+
+** type
+C is not a strongly-typed language, but as it has evolved, its type-checking has been strengthened.
+Compilers will warn of most type errors, and there is no automatic conversion of incompatible data types.
+
+** blemishes
+Some of the operators have the wrong precedence; some parts of the syntax could be better.
+Nonetheless, C has proven to be an extremely effective and expressive language for a wide variety of programming applications.
+* Purposes of the Book
+** Chapter 1
+To get the reader started as quickly as possible, since we believe strongly that the way to learn a new language is to write programs in it.
+
+Although we have tried where possible to show useful programming techniques, the book is not intended to be a reference work on data structures and algorithms; when forced to make a choice, we have concentrated on the language.
+
+** Chapter 2 ~ 6
+The emphasis is still on examples of complete programs, rather than isolated fragments.
+
+*** Chapter 2
+The basic data types, operators and expressions.
+
+*** Chapter 3
+The control flow: if-else, switch, while, for, etc.
+
+*** Chapter 4
+Functions and program structure-external variables, scope rules, multiple source fiels, and so on-and also touches on the preprocessor.
+
+*** Chapter 5
+Pointers and address arithmetic
+
+*** Chapter 6
+Structures and unions
+
+** Chapter 7
+The standard library, which provides a common interface to =the operating system=.
+- This library is defined by the ANSI standard and is meant to be supported on all machines that support C, so programs that use it for input, output and other operating system access can be moved from one system to another without change.
+
+** Chapter 8
+An interface between C programs and the UNIX operating system, concentrating on input/output, the file system, and storage allocation.
+
+** Appendix A
+A language reference manual formost for compiler writers.
+
+** Appendix B
+A summary of the standard library, again for users rather than implementers.
+
+** Appendix C
+A short summary of changes from the original language.

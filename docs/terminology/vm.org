@@ -1,0 +1,138 @@
+#+title: Virtual Machine
+
+* Table of Contents :toc:
+- [[#what-is-virtual-machine][What is Virtual Machine?]]
+- [[#why-should-we-use][Why should we use?]]
+- [[#why-should-i-learn][Why should I learn?]]
+  - [[#for-hacking][For Hacking]]
+  - [[#to-learn-other-os][To learn other OS]]
+  - [[#to-break-stuff][To BREAK STUFF]]
+- [[#properties][Properties]]
+- [[#disadvantages][Disadvantages]]
+  - [[#consuming-a-lot-of-disk-space-ram-and-cpu-power][Consuming a lot of disk space, RAM and CPU power]]
+  - [[#slow-to-startup][Slow to startup]]
+  - [[#requires-a-license-for-each-operating-system][Requires a license for each operating system]]
+- [[#how-to-find-out-solution][How to find out solution?]]
+- [[#writing-compiler-in-go][Writing Compiler In Go]]
+  - [[#a-stack-machine][A Stack Machine]]
+  - [[#a-register-machine][A Register Machine]]
+  - [[#dispatching][Dispatching]]
+  - [[#why-build-one][~Why build one?~]]
+  - [[#general-structure][General Structure]]
+
+* What is Virtual Machine?
+The program managed by [[file:./hypervisor.org][hypervisor]]
+
+This sutable for specific purpose of ~computer hardware~
+
+Every single vm has its own language([[file:./ir.org][IR]]) suitable for analysis or optimization
+
+* Why should we use?
+To reduce server cost that one-app to one-server structure
+
+* Why should I learn?
+** For Hacking
+** To learn other OS
+** To BREAK STUFF
+
+* Properties
+Each virtual machine will have their own [[file:./os.org][operating system]]
+
+* Disadvantages
+** Consuming a lot of disk space, RAM and CPU power
+- because they have their own operating system
+
+** Slow to startup
+- because they have their own operating system (booting time)
+
+** Requires a license for each operating system
+
+* How to find out solution?
+Use [[file:./container.org][Container]]
+
+* Writing Compiler In Go
+It's hard to pin their shape down
+
+They don't emulate an existing machine.
+
+#+begin_quote
+*They are the machine*
+#+end_quote
+
+in the case, virtual indicate machine only exists in software (just abstarct constructs)
+
+"Machine" describe their behaviour. [[file:./computer.org][Computer]]
+
+#+begin_quote
+Virtual machine can be anything.
+
+A function, a struct, an object, a module, or even a whole program.
+#+end_quote
+
+** A Stack Machine
+Use stack for computation
+
+- easier to build
+- You need to execute a lot of instructions - push & pop everywhere
+
+** A Register Machine
+Use registers for computation
+
+- =still= has a stack
+- instruction can make use of the registers
+- instruction can refer to the register directly so it need lesser instruction
+- Writing compiler for this kind of instructions takes more affort.
+
+** Dispatching
+Select instruction before execute
+
+Reduce the overhead of the fetch-decode part of the vm's cycle
+
+- Switch, Case literal -> SLOWEST solution
+- [[https://github.com/Shopify/go-lua/blob/88a6f168eee0ba102d7d20c5281056a5dd3d7550/vm.go#L306][jump tables]]
+- [[https://eli.thegreenplace.net/2012/07/12/computed-goto-for-efficient-dispatch-tables][computed goto]]
+- [[https://www.complang.tuwien.ac.at/forth/threaded-code.html][indirect and direct threaded code]]
+
+** ~Why build one?~
+We want program to be universal (Universal Computation)
+
+If we create compiler for our programming language that allow use to execute the translated program natively on a computer.
+
+But -> we would ~also have to write a new compiler for every computer architecture~ we want to run our programs on (for compiler devs)
+
+Instead -> we can ~translate our programs into instructions~ for a virtual machine
+
+The virtual machine itself runs on many architectures as ~its implementation language~
+
+#+begin_quote
+Virtual Machine is DOMAIN SPECIFIC
+
+What if we only need a subset of the features a computer has to offer to its programmers?
+#+end_quote
+
+*** Computer has A LOT OF FEATURES
+**** No feature comes without cost
+X86-64 family supports between 900 and 4000 instructions
+
+*** The compiler that translate programs natively on a computer
+- It is Really fast => A language that used by OS directly
+- You have to make compiler for every architecture we want to run our program on
+
+**** Instead
+Translate source code into [[file:./bytecode.org][instructions of virtual machine]]
+
+virtual machine itself runs on as many architectures as its implementation language
+
+*** Domain specific
+Compaired with the whole computer, VM has less complextify, less maintenance, less mass
+
+** General Structure
+*** Custom language
+It's tuned to a single programming language
+
+**** All the unneeded features are stripped off
+We just focused on making this =highly-specialized= and =custom-made= machine work as best and go as fast as possible.
+
+**** What exactly do virtual machines execute?
+***** [[file:./bytecode.org][Bytecode]]
+It's called bytecode because [[file:./opcode.org][the opcodes]] contained in =each instruction are one byte in size=.

@@ -1,0 +1,50 @@
+#+title: Cli
+
+* Common Instruction
+** Init
+set tf project
+
+#+begin_src bash
+terraform init # into the same folder containing main.tf file
+#+end_src
+
+** Apply
+apply tf file
+
+#+begin_src bash
+terraform apply
+#+end_src
+
+** Destroy
+inverse of apply
+
+#+begin_src bash
+terraform destroy
+#+end_src
+
+** Flexivility
+variables in tf file
+
+#+begin_src bash
+terraform -var "name=value"
+#+end_src
+
+** Communicate with others
+query information
+
+#+begin_src bash
+terraform output
+#+end_src
+
+** Production
+You should keep your state secure and encrypted, where your teammates can access it too coollaborate on infrastructure.
+
+*** Solutions
+**** Running in Remote environment (with shared access to state)
+*Terraform Clound*
+securely stores variables, including =API tokens= and =access keys=
+
+1. terraform login
+2. Create a Organization in the Cloud and setup to tf file
+3. terraform init (reinitialize)
+4. set env on the website (three type of secrets)

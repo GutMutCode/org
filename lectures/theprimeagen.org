@@ -1,0 +1,10 @@
+#+title: Theprimeagen
+
+* Who is he?
+** Netflix senior engineer
+** CEO of TheStartUp
+** Youtube & Streamer
+
+* The Last Algorithms Class You Need
+[[file:./theprimeagen/algoritms/intro.org][Intro]]
+[[file:./theprimeagen/algoritms/bigO.org][BigO]]

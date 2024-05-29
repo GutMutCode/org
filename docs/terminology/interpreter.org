@@ -1,0 +1,67 @@
+* Interpreter
+A computer program that directly =executes= instructions
+
+witten in a programming or scripting lanuage,
+
+=without requiring= them previously to =have= =been= =compiled= into a machine language program.
+
+(Compiling at runtime)
+
+An interpreter generally uses one of the following strategies for program execution:
+1. ~Parse~ the ~source code~ and preform its behavior directly;
+2. ~Translate~ source code into some efficient [[file:./ir.org][intermediate representation]] or ~object code~ and immediately execute that;
+3. Explicitly execute stored precompiled ~bytecode~ made by a [[file:./compiler.org][compiler]] and =matched= with the interpreter [[file:./vm.org][Virtual Machine]]
+
+** Languages that using interpreter
+Many dynamic language, such as
+Ruby, Python, or JavaScript.
+
+* Memory allocation
+To evaluate variables, interpreter (also compiler) must have a type for each variables
+
+These types are called =the tag= in interpreter and interpreter calculate types at runtime
+So interpreter has more overhead than compiler because of this
+
+** Adding tags
+Initialize, Read, Compared, Written ~at runtime~
+
+*** Code
+#+begin_src javascript
+let c = a + b;
+#+end_src
+
+*** Adding tags
+These are all the overhead (compared by compiler)
+#+begin_src javascript
+// partial code for "a + b => c"
+// (not even compiled yet)
+if (tag(a) = integer) {
+    if (tag(b) = integer) {
+        value(c) = value(a) + value(b);
+        tag(c) = integer;
+    } else if (tag(b) = float) {
+        temp = ConvertToFloat(a);
+        value(c) = temp + value(b);
+        tag(c) = float;
+    } else if (tag(b) = ...) {
+        // handle all other types...
+    }
+    // signal runtime type fault (cannot alocate)
+} else if (tag(a) = float) {
+    if (tag(b) = integer) {
+        temp = ConvertToFloat(b);
+        value(c) = value(a) + temp;
+        tag(c) = float;
+    } else if (tag(b) = float) {
+        temp = ConvertToFloat(a);
+        value(c) = temp + value(b);
+        tag(c) = float;
+    } else if (tag(b) = ...) {
+        // handle all other types...
+    }
+    // signal runtime type fault (cannot alocate)
+} else if (tag(a) = ...) {
+    // handle all other types...
+}
+// signal illegal tag value
+#+end_src

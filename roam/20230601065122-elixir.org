@@ -1,0 +1,227 @@
+:PROPERTIES:
+:ID:       88e2d029-e3f0-4602-93a3-c17acee58bc8
+:END:
+#+title: Elixir
+
+* [[file:../docs/elixir/start-guild/index.org][Elixir start guide]]
+* Elixir-lang
+  /Dynamic, functional language./
+  - scalable
+  - maintainable
+** Preference
+   #+begin_src elixir
+   iex> "Elixir" |> String.graphemes() |> Enum.frequencies()
+   %{"E" => 1, "i" => 2, "r" => 1, "x" => 1}
+   #+end_src
+   1. Runs on the Erlang VM
+      - low-latency
+      - distributed
+      - fault-tolerant systems
+   2. There are use cases.
+      - web development
+      - embedded software
+      - machine learning
+      - data pipelines
+      - multimedia processing
+** Scalability
+   /All Elixir code runs inside lightweight threads of execution (called processes) that are isolated and exchange information via messages:/
+   #+begin_src elixir
+   current_process = self()
+   # Spawn an Elixir process (not an operating sysatem one!)
+   spawn_link(fn ->
+   send(current_process, {:msg, "hello world"})
+   end)
+
+   # Block until the message is received
+   receive do
+   {:msg, contents} -> IO.puts(contents)
+   end
+   #+end_src
+   - Due to their ~lightweight nature~, you can run hundreds of thousands of processes ~concurrently in the same machine~, using all machine resources efficiently (vertical scaling).
+   - Processes may also ~communicate with other processes~ runing on ~different machines~ to coordinate work across multiple nodes (horizontal scaling).
+   - With Numerical Elixir, Elixir scale across cores, clusters, and GPUs.
+
+** Fault-tolerance
+   /The unavoidable truth about software in productions is that things will go wrong. Even more when we take network, file systems, and other third-party resources in account./
+   /To react to failures, Elixir supervisors describe how to restart parts of your system when things go away, going back to a known initial state that is guaranteed to work:/
+   #+begin_src elixir
+
+   children = [
+   TCP.Pool,
+   {TCP.Acceptor, port: 4040}
+   ]
+
+   Supervisor.start_link(children, strategy: :one_for_one)
+   #+end_src
+   - The combination of fault-tolerance and message passing makes Elixir an excellent choice for ~event-driven systems and robust architectures~.
+   - Frameworks, such as Nerves, build on this foundation to enable productive development of reliable embedded/IoT systems.
+
+** Language features
+*** Functional programming
+    /Promotes a coding style that helps developers write code that is short, concise, and maintainable./
+    /Pattern matching allows us to elegantly match and assert specific conditions for some code to execute:/
+    #+begin_src elixir
+
+    def drive(%User{age: age}) when age >= 16 do
+    # Code that drives a car
+    end
+
+    drive(User.get("John Doe"))
+    #=> Fails if the user is under 16
+    #+end_src
+    - Elixir relies on those features to ensure your software is working under the expected constraints. And when it is not, don't worry, supervisors have your back!
+*** Extensibility and DSLs
+    /Elixir has been designed to be ~extensible~, allowing developers naturally extend the language to particular domains, in order to increase their productivity./
+    =As an example=, let's write a simple test case using Elixir's test framework called ExUnit:
+    #+begin_src elixir
+
+    defmodule MathTest do
+    use ExUnit.Case, async: true
+
+    test "can add two numbers" do
+    assert 1 + 1 == 2
+    end
+    end
+
+    #+end_src
+    - ~async: true~ option allows ~test~ to run in parallel, using as many CPU cores as possible, while the ~assert~ functionality can introspect your code, providing great reports in case of failures.
+    - Other example sinclude using Elixir to write SQL queries, compiling a subset of Elixir to the GPU, and more.
+** Tooling features
+*** A growing ecosystem
+    /Elixir ships with a great set of tools to ease development./
+    /Mix is a build tool that allows you to easily create projects, manage tdasks, run tests and more:/
+    #+begin_src bash
+
+    mix new my_app
+    cd my_app
+    mix test
+    .
+
+    #+end_src
+    - Mix also integrates with the ~Hex package manager~ for dependency management and ~hosting documentation~ for the whole ecosystem.
+*** Interactive development
+    /Tools like ~IEx(Elixir's interactive shell)~ leverage the language and platform to provide auto-complete, debugging tools, code reloading, as well as nicely formatted documentation:/
+
+    #+begin_src elixir
+
+    iex> h String.trim          # Prints the documentation
+    iex> i "Hello, World"       # Prints information about a data type
+    iex> break! String.trim/1   # Sets a breakpoint
+    iex> recompile              # Recompiles the current project
+
+    #+end_src
+    - Code notebooks like ~Livebook~ allow you to interact with Elixir directly from your browser, including support for plotting, flowcharts, data tables, machine learning, and much more!
+** Erlang compatible
+   /Elixir runs on the Erlang VM giving developers complete access to Erlang's ecosystem, used by companies like ~WhatsApp~, ~Klarna~ and many more to build distributed, fault-tolerant applications./
+   An Elixir programmer can invoke any Erlang function with no runtime cost:
+   #+begin_src elixir
+
+   iex> :crypto.hash(:sha256, "Using crypto from Erlang OTP")
+   <<192, 223, 75, 115, ...>>
+
+   #+end_src
+   - To learn more about Elixir, check our [[https://elixir-lang.org/getting-started/introduction.html][getting started guide]].
+   - We also have [[https://elixir-lang.org/docs.html][online documentation]] available and a Crash Course for Erlang developers.
+* Code BEAM Lite in MEXICO
+  /Johanna Larsson - @joladev/
+  - Distributed Elixir made easy
+    What won't talk about
+  #+begin_quote
+  - Complex distributed systems
+  - Underlying protocols
+  - Large clusteres
+  - Consensus algorithms
+  - Erlang and other beam languages
+  - Replacing your entire stack with just Elixir
+  #+end_quote
+
+
+** The shortest explanation of message passing you've ever heard*
+*** Processes
+    Sending message ( A -> B )
+    Sending GenServer.cast ( A -> B )
+    Sending GenServer.call ( A <-> B )
+    #+begin_src elixir
+    def handle_cast(:cat, state) do
+    IO.inspect
+    {:reply, "got a cat!"}
+    end
+
+    def handle_call(:cat, _from, state) do
+    IO.inspect("got a cat!")
+    {:reply, "thank you for the cat!", state}
+    #+end_src
+**** Can communicate between different machine.
+     - Another Language : json, graphql, grpc, etc.
+*** High level benefits
+
+
+
+* Pheonix Web Framework
+** Acto
+  Allows our Pheonix application to communicate with a data store,
+  such as PostgreSQL, MySQL, and others.
+  If our application will not require this component 
+  we can skip this dependency by passing the --no-ecto flags to ~mix phx.new~
+
+** File structure
+   - ~_build~ - a directory created by the mix command line tool that ships as part of Elixir that holds all compilation artifacts. 
+     As we have seen in "Up and Running", ~mix~ is the main interface to you application.
+     We use Mix to compile our code, create databases, run our server, and more. 
+     This directory must not be checked into version control and it can be removed at any time.
+     Removing it will force Mix to rebuild your application from scratch.
+   - ~assets~ - a directory that keeps source code for your font-end assets, typically JavaScript and CSS.
+     These sources are automatically bundled by the ~esbuild~ tool.
+     Static files like images and fronts go in ~priv/static~
+   - ~config~ - a directory that holds your project configuration.
+     The ~config/config.exs~ file is the entry point for your configuration.
+     At the end of the ~config/config.exs~, it imports environment specific configuration,
+     which can be found in ~config/dev.exs~, ~config/test.exs~, and ~config/prod.exs~.
+     Finally, ~config/runtime.exs~ is executed and it is the best plcase to read secrets and other dynamic configuration
+   - ~deps~ - a directory with all of our Mix dependencies, You can find all dependencies listed in the ~mix.exs~ file,
+     inside the ~defp deps do~ function definition.
+     This directory must not be checked into versioon control and it can be removed at any time.
+     Removing it will force Mix to download all deps from scratch.
+   - ~lib~ - a directory that holds your application source code.
+     This directory is broken into two subdirectories, ~lib/hello~ and ~lib/hello_web~.
+     The ~lib/hello~ directory will be responsible to host all of business logic and business domain.
+     It typically interacts directly with the database - it is the "Model" in Model-View-Controller architecture.
+     ~lib/hello_web~ is responsible for exposing you business domain to the world, in this case, through a web application.
+     It holds both the View and Controller from MVC.
+     We will discuss the contents of these directories with more detail in the next sections.
+   - ~priv~ a directory that keeps all resources that are necessary in production but are not directly part of your source code.
+     You typically keep database scripts, translation files, images, and more in here.
+     Generated assets, created from files in the ~assets~ directory, are placed in ~priv/static/assets~ by default.
+   - ~test~ a directory with all of our application tests.
+     It often mirrors the same structure found in ~lib~.
+
+*** The lib/hello directory
+    Hosts all of your business domain.
+    Since our project does not have any business logic yet, the directory is mostly empty.
+    You will only find three files:
+
+    + ~/lib/hello/application.ex~ - defines an Elixir application named ~Hello.Application~.
+      That's because at the end of the day Phoenix applications are simply Elixir applications.
+      The ~Hello.Applicaton~ module defines which services are part of our application:
+
+    #+BEGIN_SRC elixir
+    children = [
+      # Start the Telemetry supervisor
+      HelloWeb.Telemetry,
+      # Start the Ecto repository
+      HelloWeb.Repo,
+      # Start the PubSub system
+      { HelloWeb.PubSub, name: Hello.PubSub },
+      # Start the Endpoint (http/https)
+      HelloWeb.Endpoint
+      # Start a worker by calling: Hello.Worker.start_link(arg)
+      # { HelloWeb.Endpoint, arg }
+    ]
+    #+END_SRC
+
+    If it is your first time with Phoenix, you don't need to worry about the details right now.
+    For now, suffice it to say our application starts a database repository, a PubSub system for sharing messages across
+    processes and nodes, and the applicaton endpoint, which effectively serves HTTP requests.
+    These services are started in the order they are defined and
+
+

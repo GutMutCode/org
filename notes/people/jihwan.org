@@ -1,0 +1,110 @@
+* 모드 관리용 모드 (필수) - 0순위
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3040150704
+
+
+
+* 맵 모드모음 - 1순위
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3040143143
+
+
+
+대부분 오류는 맵(모드순서)에서 발생하므로,
+
+먼저 맵부터 설정, 테스트 후에 모드 추가하시는게 속편함.
+
+
+
+게임에서 하나하나 찾으셔서 설정할 수도 있지만,
+
+너무 노가다이기 때문에, 순서 파일을 찾아서 직접 작성함.
+
+
+
+* 모드 순서
+
+
+
+C:\Users\본인사용자명\Zomboid\Lua
+
+경로에 있는 saνed_modlists.txt 파일을 열면,
+
+저장한 모드리스트가 있음
+
+VERSION=2 아래 내용을 추가
+
+HHHH:ModManager;ModManagerELO;ModManagerServer;modoptions;InGameMaps;Trelai_4x4_Steam;coryerdon;BedfordFalls;CONRTF;Chestown;EerieCountry;EVAC_Muldraugh;FORTREDSTONE;Fort Rock Ridge;Glenport;InGameMaps_Glenport;lakeivytownship;LittleTownship;MRE;Muldraugh Fire Department;muldraughmilitarybase;Otr;OtrSR;RavenCreek;Refordville;Riverside Fire Department;RosewoodVHSGunStores;WestPointExpansion;WPEFIX;InGameMaps_WestPointExpansion;West Point Fire Department;EdsAutoSalvage;Xonics Mega Mall;Anthem;Barricaded Strip Mall Challenge;Breakpoint;Cathaya Valley;CorOTRroad;Louisville_Quarantine_Zone;military fuel depot;Orchidwood(official version);Papaville;Southwood2.0;Springwood1;TheCompound;Tugaland;WeyhausenByCallnmx;AzaMountainTiles;BigZombieMonkeys_tile_pack;DylansTiles_Elysium;simonMDsTiles;SkizotsTiles;tkTiles_01;Diederiks Tile Palooza;EN_Newburbs;EN_Flags;FantaStreetTiles_01;PertsPartyTiles;TryhonestyTiles;OujinjinTiles;melos_tiles_for_miles_pack;DylansTiles;CedarHill;Elysium_Island;FinneganMentalAsylum;Fort Waterfront;Hyrule County;Utopia;pz_rosewoodexp_map;TheMallSouthMuldraughFIX;RMH;rbr;rbrA2;Ashenwood;LastMinutePrepperReloaded;Blueberry;wilboreky;Blackwood;Muldraugh-Westoutskirts ShippingCo;Grapeseed;Greenleaf;Militaryairport;NewEkron;Pitstop;McCoysBunker;TheMuseumID;OverlookHotel;Chinatown;Chinatown expansion;MonmouthCounty_new;Petroville;Shortrest_County;BBL;DeltaCreekMunitions;Dirkerdam
+
+
+*** 테스트 이후 모드 추가 ***
+
+
+
+* 자동차 모드 모음 - 3순위
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3041150743
+
+
+
+* 뛰좀 / 특좀 (CDDA) - 4
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=2749928925&searchtext=cdda
+
+
+
+* 내가 쓰는 편의성 모드 모음 (원하는 것만 골라쓰십쇼) - 4
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3041191111
+
+
+
+* 한글 패치 모음 - (무조건 맨아래)
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3040477636
+
+
+* 원하는 모드들
+** 맵 좌표 코드
+** 책 추가
+
+* DC
+YM8F5E2P4UYRS7W
+
+* RAM
+4GB=4096MB
+8GB=8192MB
+16GB=16384MB
+
+* Error mod
+** Skizot's Carryable Everything
+https://steamcommunity.com/sharedfiles/filedetails/?id=2921029369
+
+- TV 복사버그 (2023.10.16)
+
+** Only cure
+
+* Dedi
+** https://drive.google.com/file/d/1Z7f44Hqr_JjQgSmk7fn7wYGJ1PJxQ2ql/view
+
+*** server Initialize
+#+begin_src bash
+sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd default-jre rng-tools
+#+end_src
+
+*** Add User
+#+begin_src bash
+adduser pzserver
+
+su - pzserver
+#+end_src
+
+*** install
+#+begin_src bash
+wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh pzserver
+
+./pzserver install
+#+end_src
+
+* https://drive.google.com/file/d/1vtrCIeN7celO9h7tX0nWvY1ywH49Nuzk/view
+

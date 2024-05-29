@@ -1,0 +1,4 @@
+#+title: Offset
+
+* Definition
+~Offset within an array or other data structure obejct~ is an integer indicating the distance (displacement) between the beginning of the object and a given element or point, presumably within the same object.

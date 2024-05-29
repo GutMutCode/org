@@ -1,0 +1,4 @@
+#+title: Bifs
+
+* Binary Format for Scenes
+Provides a complete framework for the presentation engine of MPEG-4 terminals.

@@ -1,0 +1,147 @@
+#+title: Index
+
+* Beginner
+** Website, App & Game
+*** Young Rewired State
+**** Get Coding!: Learn HTML, CSS & JavaScript & Build a
+
+** Games and Activities
+*** Adrienne Tacke
+**** Coding for Kids: Python: Learn to Code with 50
+
+** Drawing
+*** Andrew Loomis
+**** Drawing The Head & Hands
+**** Creative Illustration
+
+** Automation
+*** Al Sweigart
+**** Automate the Boring Stuff with Python, 2nd Edtion
+Practical Programming for Total Beginners
+
+**** Beyond the Basic Stuff with Python: for Writing Clean Code
+
+** Calligraphy
+*** Honey Badger Coloring
+**** Letter Your Fucking Heart Out: Beginner Lettering & Modern Calligraphy for Crafty Ass Bitches
+
+** Bass
+*** Ariane Cap
+**** Music Theory for the Bass Player: a comprehensive and Hands-on Guide to Playing with More Confidence
+
+** Kapital
+*** Karl Marx
+**** Das Kapital 1 (1867)
+**** Das Kapital 2 (1885)
+**** Das Kapital 3 (1894)
+** Vehicle
+*** lqbal Husain
+[[https://www.amazon.com/Electric-Hybrid-Vehicles-Design-Fundamentals-ebook/dp/B08SHZX9S5/ref=sr_1_1?crid=1X40DHAJ64OOI&dib=eyJ2IjoiMSJ9.wGvNN4HmY2FQXUQ1NTREmLuiXVe9GF_WrD3inTiNHDKJA-1oFXtsvq9mf8ulw2KWNvzYRej0QjZvnKnM4CdLjqPtUqjmYbSBuwimCuNPpobigfWJyjCfi4Bo7etB40a_Mzpv9fjwTNNomUTO7ONKAC9-GnsNgFcZ2McMaQu9QrhLFdVHBT50tObg3yyBtcVPimQ0ePn9oNWiONHvWeHXpWO_o-1I2cY3z0GtIjUPnvs.RoM_NjDcScy5Dg3mjbkUue716MlsIKXEtBX5dGhruxY&dib_tag=se&keywords=vehicle+architecture&qid=1712387436&sprefix=vehicle+architecture%2Caps%2C266&sr=8-1][Electric and Hybrid Vehicles: Design Fundamentals]]
+
+
+* MIT Press
+** Thinking
+*** Jonathan Haber - education basic
+**** Critical Thinking
+
+** Algorithms
+*** A Introduction of Algorithm
+*** Aditya Bhargava
+**** Grokking Algorithms, Second Edition
+first edition - An illustated Guide for Programmers and Other Curious People
+
+** Machine Learning
+*** Kevin P.Murphy - Probabilistic Machine Learning
+A Research Scientist at Google in Mountain View, California, where he works on artificial intelligence, machine leaning, and Bayesian modeling
+
+**** Machine Learning: A Probabilistic Perspective
+
+**** Probabilistic Machine Learning
+***** An Introduction
+***** Advenced Topic
+
+*** Meredith Broussard
+Associated Professor at the Arthur L.Carter Journalism Institute of New York University
+**** Artificial Unintelligence: How Computers Misunderstand the World
+
+*** Deep Learning
+**** John D Kelleher
+***** Deep Learning
+****** Prerequisites
+******* Machine Learning
+******* Artificial Inteligence
+
+**** Ian Goodfellow, Yoshua Bengio, Aaron Courville
+***** Deep Learning (Adaptive Computation and Machine Learning Series)
+
+** Chemical
+*** Jack Challoner
+**** The Atom: A Visual Tour
+
+*** Quantum Computing
+*** Chris Bernhardt
+**** Quantum Computing for Everyone
+***** Prerequisites
+Linear Algebra
+
+** Thesis
+*** Umberto Eco
+**** How to Write a Thesis
+
+** Neuroplasticity
+*** Mohab Constandi
+**** Neuroplasticity
+
+** Urban Develop
+*** Alein Bertaud
+**** Order without Design: How Markets Shapes Cities
+
+*** Kevin Lynch
+**** The Image of the City (Harvard-MIT Joint Center)
+
+** Game Music
+*** Winifred Phillips
+**** A Composer's Guide to Game Music
+
+** Economics
+*** Gary A. Klein
+**** Source of Power, 20th Anniversary Edition: How People Make Decisions
+
+** Architecture
+*** Matthew Fredrick
+**** 101 Things I Learned in Architecture School
+
+* Biographies & Memoirs
+** Mike Massimino
+*** Spaceman: An Astronaut's Unlikely Journey to Unlock the Secret of the Universe
+
+* Computer Science
+** Martin Kelppmann
+Researcher in destributed systems and security at the Univercity of Cambridge
+Previously he was a software engineer and entrepreneur at internet companies like LinkedIn
+
+*** Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems
+멧돼지 책
+
+** David Thomas & Andrew Hunt
+*** The Pragmatic Programmer: Your Journey To Mastery, 20th Anniversary Edition
+
+** Robert C. Martin
+*** Clean Code: A Handbook of Agile Software Craftmanship
+
+** C programming
+`The C programming language` by Brain W.Kernighan, Dennis M.Ritchie
+file:./the-c-programming-language/index.org
+
+** Git
+`Pro Git` by Scott Chacon and Ben Straub
+file:./pro-git/index.org
+
+** Free Source
+large-scale systems
+https://github.com/donnemartin/system-design-primer
+
+* [[file:./supernormal.org][SuperNormal]]
+** [[file:./mean_math.org][Real Meaning of Math]]
+
+* [[file:../index.org][Docs]]

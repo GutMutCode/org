@@ -1,0 +1,4 @@
+#+title: PVC
+
+* What is PVC?
+Polyvinyl Chloride is an economical and versatile [[file:./thermoplastic.org][thermoplastic]] polymer

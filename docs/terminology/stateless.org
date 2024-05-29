@@ -1,0 +1,19 @@
+#+title: Stateless
+
+* What does stateless means?
+A system or application that have all information needed
+
+A system or application that does not maintain any information about the state of a user's [[file:./session.org][session]] beyond what is necessary for immediate processing.
+
+* Stateless application
+Only retains the current request and response data without storing any additional context or history
+
+* Stateful application
+A application that maintains some from of session tracking to keep track of individual user sessions allowing it to remember specific details about users, their actions, and previous interactions
+
+* What are advantages of the stateless?
+They don't rely on storing user informaion in a database of memory, reducing the risk of data leaks or loss
+
+** Scalable
+** Reliable
+** Secure

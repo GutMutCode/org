@@ -1,0 +1,5 @@
+#+title: Spark
+
+* Archtecture labeling => Target triple
+<arch>-<vender>-<sys>
+x86_64-apple-darwin

@@ -1,0 +1,35 @@
+#+title: Session
+
+* What is Session?
+A specific user data that is created by [[file:./conn.org][connection]]
+
+A single continuous instance of a user's interaction
+- with a system that lasts =for a specific period= or until the user chooses to disconnect of log out.
+
+The interaction between a user of client and a server or application
+
+* What informations to store in the session?
+During the connection, session store information about the user, such as preferences, settigns, or sesion-specific data
+
+* What are benefits to use the session?
+It allow user send many requests without requiring each request to re-authenticate the user
+
+Prevent data leakage
+
+* Session information
+** User Identification
+Unique identifiers or credentials that identify the user during the session
+
+** Session ID
+A unique identifier assigned to each user session
+
+** Session Variables
+Temporary data or setting specific to a user's session
+
+** Session State
+The current state of the user's interactions with the system
+
+Like the contents of a shopping cart in an e-commerce webesite, or the current page and settings in a web application
+
+** Authentication Tokens
+Information used for user authentication and authorization during the session

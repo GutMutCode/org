@@ -1,0 +1,113 @@
+#+title: OS
+
+* Table of Contents :toc:
+- [[#how-to-create-os][How to create OS?]]
+- [[#gcc-cross-compiler][GCC Cross-Compiler]]
+  - [[#generic-target-i686-elf][Generic target (i686-elf)]]
+  - [[#why-cross-compilers-are-necessary][Why cross-compilers are necessary?]]
+  - [[#building-gcc][Building GCC]]
+- [[#overview][Overview]]
+  - [[#boots---kernel-entry-point-that-sets-up-the-processor-environment][~boot.s~ - kernel entry point that sets up the processor environment]]
+  - [[#kernelc---your-actual-kernel-routines][~kernel.c~ - your actual kernel routines]]
+  - [[#linkerld---for-linking-the-above-files][~linker.ld~ - for linking the above files]]
+- [[#booting-the-operating-system][Booting the Operating System]]
+  - [[#to-start-operating-system][To start Operating System]]
+- [[#bgm][BGM]]
+
+* How to create OS?
+Minimum solution for creating an operating system fro x86
+
+* [[file:./gcc.org][GCC]] Cross-Compiler
+The compiler that runs on platform A(the *host*),
+but generates executables for platform B(the *target*)
+
+We'll use the current OS as the host and the OS you are about to make as the target
+
+** Generic target (i686-elf)
+Allows you to leave the current operating system behind
+
+No headers or libraries of the host operating system will be used
+
+Without this, a lot of unexpected things can happen because compiler assumes that the code is running on the host operting system
+
+** Why cross-compilers are necessary?
+The compiler must know the correct target platform(CPU, OS)
+
+But host compiler in default OS doesn't know the target platform entirely, unless a lot of problematic options are passed to it, which will create a lot of problems in the future.
+
+** [[file:./gcc.org][Building GCC]]
+
+* Overview
+** ~boot.s~ - kernel entry point that sets up the processor environment
+** ~kernel.c~ - your actual kernel routines
+** ~linker.ld~ - for linking the above files
+
+* Booting the Operating System
+** To start Operating System
+*** an existing piece for software will =be needed to load= it
+Using bootloader -> We use GRUB
+
+* BGM
+커맨드 앤 컨커 레드얼럿 3 - Soviet March
+염소 시뮬레이터 - Main Theme
+마구마구
+Promise - 라온
+
+how to create my own operating system?
+Creating your own operating system (OS) is an ambitious project and
+requires a solid understanding of computer systems architecture,
+programming languages (like C, Assembly), algorithms, and kernel
+development. Here's a general outline of the steps involved:
+
+1. Learn the fundamentals: Start by learning how computers work at a
+low level, including hardware components, memory management, process
+scheduling, file systems, device drivers, networking protocols, etc.
+
+2. Choose a programming language: C and Assembly are commonly used for
+developing OS kernels, but you can also use Rust or other languages
+that provide better memory safety guarantees.
+
+3. Build your kernel: A kernel is the core of an operating system,
+which manages resources, hardware interfaces, and processes. You may
+want to start with a simple kernel that handles basic tasks like
+input/output operations and process scheduling.
+
+4. Implement device drivers: Device drivers allow your OS to interact
+with hardware components like storage devices, graphics cards, and
+networking interfaces. These are crucial for providing user-level
+applications with access to necessary resources.
+
+5. Create a file system: A file system stores data on disk drives or
+other storage media and allows users to organize, access, and
+manipulate files. You can choose to implement your own custom file
+system or use an existing one like FAT or ext4.
+
+6. Implement memory management: Memory management involves allocating
+and deallocating memory for processes, handling paging or swapping when
+necessary, and protecting the kernel's memory from user-level access.
+
+7. Add support for multi-tasking and multithreading: These features
+enable your OS to run multiple processes simultaneously, improving
+system performance and responsiveness.
+
+8. Develop a user interface: Depending on your goals, you can create a
+text-based or graphical user interface (GUI) for users to interact with
+the operating system.
+
+9. Include basic applications: At a minimum, provide essential
+utilities like command-line shells, text editors, and file management
+tools.
+
+10. Test your operating system: Use virtual machines or dedicated
+hardware to test your OS in various scenarios, identify bugs, and
+optimize performance.
+
+11. Document your work: Maintain detailed documentation on your
+development process, design decisions, and codebase for future
+reference and collaboration with others.
+
+Keep in mind that developing a full-fledged operating system is an
+immense undertaking, often taking years of focused effort by
+experienced developers. It's recommended to start small, perhaps by
+contributing to an existing open-source project or creating simpler
+utilities and tools before tackling the creation of a complete OS.

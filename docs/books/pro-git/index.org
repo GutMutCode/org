@@ -1,0 +1,8 @@
+#+title: Pro Git
+
+/Everything you need to know about git/
+
+* Preface for Second Edition
+To address changes and updates about git
+
+This new edition consider the explosion of graphical user interfaces to git for all platforms, in IDE support and in business use.

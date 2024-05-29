@@ -1,0 +1,92 @@
+#+title: Merriam-Webster
+
+* Table of Contents :toc:
+- [[#how-to-read-this-article][How to read this article]]
+  - [[#text-color][Text Color]]
+- [[#transitive-adjective][transitive (adjective)]]
+  - [[#transitive-verb][transitive verb]]
+  - [[#intransitive-verb][intransitive verb]]
+- [[#adjective][adjective]]
+  - [[#noun][noun]]
+- [[#noun-1][noun]]
+  - [[#what-is-a-noun][What is a /noun/?]]
+  - [[#categories-of-nouns][Categories of nouns]]
+- [[#determiner][determiner]]
+  - [[#examples-of-determiner-in-a-sentence][Examples of /determiner/ in a Sentence]]
+
+* How to read this article
+** Text Color
+*** ~Orange Text~ : new grossary
+A word that dosen't defined at that time
+
+*** =Blue Text= : usage of grossary
+A example of a word that defined in previous title
+
+* transitive (adjective)
+
+** transitive verb
+a verb that requires ~direct object~ which is a noun, pronoun
+and transitive verb can also have an ~indirect object~
+
+*** direct object
+The word or phrase denoting the receiver of the action or a verb
+
+**** Examples
+I like =a pie=
+- "like" : transitive verb
+- "a pie" : direct object
+
+I make =a choice=
+- "make" : transitive verb
+- "a choice" : direct object
+
+*** indirect object
+The word or phrase that occurs in addition to a direct object
+- after some verbs
+- and indicates the person or thing that receives what is being given or done
+
+**** Examples
+He gave =me= the book
+- "me" : indirect object (who)
+- "gave" : trasitive verb
+- "book" : direct object (what)
+
+** intransitive verb
+This is not used with =direct obeject=
+
+* adjective
+** noun
+
+* noun
+any member of a class of words that typically can be combined with determiners
+
+** What is a /noun/?
+Nouns make up the largest class of words in most language, including English.
+
+A noun is a word that refers to a thing (book), a person (Noah Webster), an animal (cat), a place (Omaha), a quality (softness), an idea (justice), or an action (yodeling).
+
+It's usually a single word, but not always: /cake/, /shoes/, /school bus/, and /time/ and a /half/ are all nouns.
+
+** Categories of nouns
+*** Common nouns
+This refer to a person, place, or thing but is not the name of a particular person, place, or thing.
+
+**** Examples
+/animal/, /sunlight/, and /happiness/
+
+*** Proper nouns
+This is the name of a particular person, place, or thing; it usually begins with a captial letter
+
+**** Examples
+/Abraham Lincoln/, /Argentina/, and /World War I/
+
+* determiner
+one that determines
+
+** Examples of /determiner/ in a Sentence
+*** Recent Examples on the Web
+But in his view, the icons are more a reflection of people's cultural values and online conversation than a =determiner= of them.
+
+So what do these three major =determiners= of your astrological personality say about you?
+
+The price of crude oil is a =determiner= for prices at the pump

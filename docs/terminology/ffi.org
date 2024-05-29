@@ -1,0 +1,4 @@
+#+title: FFI
+
+* What is FFI?
+Foreign Function Interface

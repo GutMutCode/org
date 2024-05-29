@@ -1,0 +1,4 @@
+#+title: Open Standard
+
+* What is Open Standard?
+A standard that is openly accessible and usable by anyone

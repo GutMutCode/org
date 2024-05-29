@@ -1,0 +1,22 @@
+#+title: Checksum
+
+* What is Checksum?
+A small-sized block of data derived from another block of digital data =for the purpose of detecting errors= that may have been introduced during its transmission or storage
+
+Checksums are ofthen used to verify =data integrity= but are not relied upon to verify =data authenticity=
+
+* How it works?
+A general idea behind a checksum is to use a mathematic algorithm to generate a fixed-size value(checksum) based on content of the data
+
+** Common Checksum Algorithm
+*** Cyclic Redundancy Check (CRC)
+- Dividing the data into blocks
+- Performing polynomial division to generate checksum
+
+*** Checksums using Hash Functions
+Hash functions like MD5, SHA-1, or SHA-256 can be used to generate checksums
+This algorithm generate fixed-size hash value based on the entire content of the data
+
+*** Parity Bits
+In simple cases, parity bits used as checksums
+Even or odd parity bits can be employed

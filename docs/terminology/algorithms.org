@@ -1,0 +1,75 @@
+* Algorithms
+  In mathematics and computer science,
+  an algorithm =is= a finite sequence of rigorous instructions,
+  tipically =used= to =solve= a class of specific problems or to =perform= a computation.
+
+* For coding interview
+** Tok K elements
+- Finding k largest or smallest numbers in an array
+- Finding the k most frequent numbers in an array
+
+*** Simple way to find
+1. sorting the array
+2. find k largetst or smallest elements
+
+**** Why we don't use this?
+Time complexity: O(n * log(n))
+
+*** Efficient way to find
+Use Heap datastructure
+
+1. insert first k + 1 elements on a heap
+2. remove min from the heap
+3. add next element to the heap
+4. reapeat 2~3 until the end
+
+Time complexity: O(n * log(k))
+
+** Sliding window
+- Largest substring without repeating characters
+- Maximum sum subarray of size k
+- Largest substring with k distict characters
+
+*** Procedure
+1. point the first element by two variables, left and right.
+2. store the value that is pointed by right pointer.
+3. move the right pointer to the next element.
+4. repeat 2~3 until met a value already stored or the end.
+5. update the size as the length of stored elements.
+6. remove the value that is pointed by left pointer.
+7. move the left pointer to the next element.
+8. back to 3
+
+** Backtracking
+- Combination Sum
+  array of numbers
+  a target sum
+  elements can be picked more than once.
+- Word Ladder
+  a number of words in the shortest transformation sequence
+- Permutations
+- Sudoku Solver
+
+*** Main idea
+recursion
+
+*** Procedure
+1. If current sum is equal to the target, append it to answer list and terminate recursion.
+2. If current sum is greater than the target, terminate recursion.
+   (because you cannot reach the target anymore.)
+3. Else, separate the operation by length of candidates
+4. For each cadidate:
+   passing the candidates to find combination
+
+** Dynamic Programming
+- Combination Sum
+
+*** Procedure
+1. Iterate from 0 to target one by one
+2. Explore combination in current number by the first two candidates until you reached the target.
+3. Pick the next cadidate. and iterate from 0 to a equal value.
+   (add it to the combination)
+4. Move to the next and explore new combination with previous combination
+   (create a new by the previous)
+
+** Breadth First Search & Depth First Search

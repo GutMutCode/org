@@ -1,0 +1,44 @@
+#+title: Opening / Closing
+
+* Table of Contents :toc:
+- [[#what-is-openingclosing-in-computing][What is Opening/Closing in Computing?]]
+- [[#how-to-openclose][How to open/close?]]
+- [[#how-it-works][How it works?]]
+  - [[#opening][Opening]]
+  - [[#closing][Closing]]
+- [[#what-is-a-file-descriptorfd-or-file-handle-in-windows][What is a File Descriptor(FD)? (or File Handle in Windows)]]
+  - [[#reserved-fd][Reserved FD]]
+  - [[#identify][Identify]]
+
+* What is Opening/Closing in Computing?
+The process of creating/terminating a =communication channel= between two [[file:./process.org][processes]], sockets, or threads
+
+* How to open/close?
+Using system calls or libary functions that interact directly with the operating system's [[file:./file.org][file]] and network systems
+- like `open()` or `close()` in Unix-like systems
+
+* How it works?
+In Unix like operating systems,
+
+** Opening
+Creating a instance of file descriptor
+
+** Closing
+terminating a instance of file descriptor
+
+* What is a File Descriptor(FD)? (or File Handle in Windows)
+A unique identifier(integer) assigned by a operating system to connect between various resources such as processes, files, sockets, or devices
+
+It is saved in RAM by a [[file:./os.org][operating system]] when a process request to it
+
+Serves as a handle for accessing or minipulating the file's data
+
+(maximum size of FD is typically 65535 - 16bit)
+
+** Reserved FD
+0: standard input
+1: standard output
+2: standard error
+
+** Identify
+*Port 7777's file descripter 3* != *Port 1234's file descripter 3*

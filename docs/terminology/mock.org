@@ -1,0 +1,4 @@
+#+title: Mock
+
+* Definition
+A simulated object or module that acts as a stand-in (alternative) for a real object of module.

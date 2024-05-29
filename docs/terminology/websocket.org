@@ -1,0 +1,93 @@
+#+title: Websocket
+
+* What is Websocket?
+A commnication [[file:./protocol.org][protocol]] that provides bi-directional, real-time comminication between client and server over the same [[file:./tcp.org][TCP]] connection
+
+- It is built on top of the [[file:./http.org][HTTP]]/1.1 protocol (be aware to version)
+- It provides an alternative to tranditional HTTP requests and responses
+
+* Features
+instant, two-way data transfer between web clients and servers
+
+
+* How is the WebSocket work?
+** WebSocket Connection Establish (Handshake)
+*** HTTP Handshake
+Once HTTP connection is established, client sends a HTTP request with special header called ~Upgrade~
+
+This header indicate the desire to establish a WebSocket connection
+#+begin_src makefile
+GET /chat HTTP/1.1
+Host: example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+Sec-WebSocket-Version: 13
+#+end_src
+
+*** Server Response
+If the server support WebSocket, it responds with an HTTP response confirming the upgrade to WebSocket
+
+This response include the ~Upgrade~ and ~Connection~ header to signal the transition from HTTP to WebSocket
+#+begin_src makefile
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+#+end_src
+
+*** WebSocket Connection Established
+Upon receiving the server's response, the connection is considered upgraded to WebSocket.
+
+The connection remains open, allowing for bidirectional communication
+** WebSocket Frame
+*** Data Framing
+Once the WebSocket connection is established, both the client and server can send data to each other in the ~form of frames~
+
+**** WebSocket frames
+can carry =text= or =binary data=
+
+can be fragmented and each frame includes control information such as opcode, masking (for security), and payload length
+
+#+begin_src bin
+0x81 0x05 0x48 0x65 0x6C 0x6C 0x6F
+#+end_src
+
+- ~0x81~ : FIN bit (1), Opcode for text data (0x01)
+- ~0x05~ : Payload lenth (5 byte)
+- ~0x48 0x65 0x6C 0x6C 0x6F~ : Payload (ASCII values for "Hello")
+
+** Bidirectional Communication
+*** Full-Duplex Communication
+
+Once the WebSocket connection is established, both the client and server can send messages independently =without the need for a request-response pattern=.
+
+The connection remains open, allowing for real-time updates and bidirectional communication
+
+** Connection Termination
+*** Connection Closure
+Either the client or the server can initiate the closure of the WebSocket connection
+
+A specific frame called fhe Close frame is sent to indicate the intention to close the connection
+
+#+begin_src bin
+0x88 0x00
+#+end_src
+
+- ~0x88~ : Opcode for the Close frame, FIN bit(1)
+- ~0x00~ : Payload lenth (0 byte)
+
+*** Connection Closed
+Once both parties have send and received the Close frame, the WebSocket connection is considered closed
+
+* Overview of how WebSockets work:
+
+1. The client establishes a single persistent connection with the server using a unique ID (called "session\_id")
+
+2. Messages are sent to the server using this connection in either direction (client -> server, server -> client)
+
+3. Both client and server can send and receive data without having to establish new connections for each message
+
+4. The WebSocket protocol uses text-based messages, with the client sending "text/plain" or "binary/base64" content-type headers in the HTTP request
+
+5. The server responds to incoming messages by sending back a text or binary response, depending on the type of message received

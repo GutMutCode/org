@@ -1,0 +1,81 @@
+#+title: Lunatic
+
+* Docs
+https://github.com/lunatic-solutions/lunatic
+
+WebAssemby runtime to provides minimal size of processes inspired by Erlang. (similar with OS's processes)
+- It's based on =actor model=
+
+** Advantages
+*** Don't neet to manually manage non-block/block and sync/async oprations
+Lunatic runtime automatically manage it =efficient way= based on Rust's std-async
+
+- We can freely focus on designing and implementing the functionality
+
+*** Deviding responsibilities into separate process
+Crateing a microcosm system within application.
+
+** Process
+task that run by OS thread
+#+begin_src rust
+spawn_link!(|..|{...})
+#+end_src
+
+- Each process has its =own isolated memory=
+
+- Processes can communicate between each other by passing message
+  (The message must be serialized)
+
+- To make the system more reliable -> =automatically restart process by supervisor=
+
+- Processes can be =linked= to other processes. -> supervisor restart all of the process which be linked
+
+*** Properties
+- own stack, heap
+- own syscall
+
+*Don't affect to other process*
++ *Using C bindings directly in app without fear*
+
+*** Mailbox
+A queue into which other processes can =push messages=.
+
+** Abstract Process
+A template for a process that is in an infinite loop and is able to accept message one by one.
+
+- ~AbscractProcess~ trait
+- ~#[abstract_process]~ macro - wrapper for the usual ~AbstractProcess~ implementation.
+
+Provide the abilty separate different lifetime handlers for a process.
+
+*** Without abstract proces
+1. Manually manage state
+2. Manually check mailbox
+3. Manually initialize
+4. Manually handle error
+
+** Process of schduling processes
+- prevents cpu-hungry processes to starve other processes.
+
+* Projects
+** [[file:./mqtt/index.org][MQTT]]
+** [[file:./ipcm/index.org][IPCM]]
+** [[file:./todo/index.org][TODO]]
+
+* My experience
+** in Web
+*** What i needed
+- for style
+  hot-reload features for developing css
+  tailwindcss bindings
+*** Decide
+- I don't have to accept many request
+- I want to analyze user behavior more detailed => websocket connection
+- I want to freely control SEO than SPA => Server Side Rendering features
+- I want to develop my site when i want it => fault-tolerant system
+- I want to be familiar with Ector model
+
+  => Phoenix's Liveview
+
+* Reference
+** [[file:./index.org][Rust library]]

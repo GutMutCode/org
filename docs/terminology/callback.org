@@ -1,0 +1,4 @@
+#+title: Callback
+
+* What is Callback? (or callback function)
+A function that able to send as arguments of another functions

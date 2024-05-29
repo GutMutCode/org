@@ -1,0 +1,5 @@
+#+title: Wrapper
+
+* What is Wrapper in programming?
+** Wrapper function
+A function in a software library or a computer program whose main purpose is to call second subroutine

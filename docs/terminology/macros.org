@@ -1,0 +1,45 @@
+#+title: Macros
+
+* What is Macros?
+Functionality that =expend= the source code
+
+macros are replaced into source code before [[file:./evaluate.org][evaluating]]
+
+** The lost Chapter, A Macro system
+The system that uses a separate language consist of the origin lang's [[file:./ast.org][AST]] node in the rest of code
+
+Macro allows you to generate and modify =code= by using ~a separate macro language~ in the rest of your =normal code=
+
+It works by parsing and evaluating this separate language before the resulting code is then compiled by the Compiler.
+
+*** search-and-replace
+
+*** code-as-data
+Like a surgeon operating on themself
+
+
+*** macro expansion
+macros are in =after parsing= and =before evaluating=
+
+- evaluating all calls to macros in source code
+- replacing them with the return value of this evaluation
+
+So, by calling them we 'expand' the source code because each call might result in more of it
+
+**** Usage
+Macro definition
+#+begin_src rust
+let myMacro = macro(x, y) { quote(unquote(x) + unquote(y)) }
+#+end_src
+
+Macro call
+#+begin_src rust
+macro(1 + 4, 3)
+// The arguments of macro call aren't evaluated, they are just managed as AST node ( InfixExpression(Integer(1) + Integer(4)), Integer(3))
+#+end_src
+
+**** Instruction
+1) Traverse AST and find all the macro definitions
+2) Extract all macro definitions and remove it in source code
+3) Find the calls to those macros and evaluate them
+4) Reinsert the result of the macro into the AST

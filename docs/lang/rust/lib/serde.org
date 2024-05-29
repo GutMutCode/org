@@ -1,0 +1,6 @@
+#+title: Serde
+
+* Serde
+https://crates.io/crates/serde
+
+[[file:../../../cs/serialization.org][Serialization]] Crate

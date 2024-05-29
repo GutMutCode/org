@@ -1,0 +1,21 @@
+* What is the Logarithm?
+The exponent that a base could become some number.
+
+* Logarithmic
+How many times do you break the stick if the stick is being 1 unit?
+
+The inverse function to [[file:./exponential.org][exponentation]].
+That means that the logarithm of a number =x= to the base =b=
+=is= the exponent to which ~b~ must =be= =raised= to =produce= x.
+
+For example, since ~1000 = 10^3~,
+the logarithm base 10 of 1000 =is= 3, or log10(1000) =is= 3.
+
+3 is a logarithm based on 10 of 1000
+This mean, when you have 1000, and you have to divide by 10, you should have to break 3 times to get 1
+
+The logarithm of ~x~ to base ~b~ =is= =denoted= as logb(x),
+or without parentheses, logbx,
+or even without the explicit base, logx,
+when no confusion =is= possible,
+or when the base does not matter such as in [[file:./big-o.org][big O notation]]

@@ -1,0 +1,28 @@
+#+title: Science
+
+* Electronics
+[[file:./transistor.org][Transistor]]
+
+* Natural science
+Concerned with the description, understanding and prediction of =natural phenomena= base on empirical evidence from observation and experimentation
+
+** Physical science
+A branch of natural science that studies non-living systems
+
+*** Particle
+A small localized =object= which can be described by serveral physical or chemical properties
+
+**** Charged particle
+A particle with an electric charge
+
+***** Electric charge
+A physical property of matter that will cause objects to attract or repel one another
+
+****** Force
+An influence that can cause an object to change its velocity, i.e., to accelerate
+
+******* Velocity
+A change in speed or direction
+
+****** Electromagnetic field
+A mathematical representation of the influences on and due to electric charges

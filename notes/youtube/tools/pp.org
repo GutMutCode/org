@@ -1,0 +1,4 @@
+#+title: Premiere Pro
+
+* What i'm struggled
+** Should i manualy stretch keyframe?

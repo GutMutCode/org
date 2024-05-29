@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       83bf2643-8bc5-4e44-9524-ccc5958d9198
+:END:
+#+title: Idea
+
+* Org Mode App
+** Sync github Org mode with Mobile App
+** Features
++ Snippets
+  - touch icons
++ Templates
+  - make & use & share
+* Just i want
+** 자발적인 공부 사람들의 모임 => 취미 모임
+** 자유로운 사람들의 모임 => 프리랜서, 유튜버
+* Problems i have experience
+** IT 웹, 앱 서비스를 출시하고 싶은 사람들
+*** 기술적으로 불가능한지 판단하는 과정 필요
+- 기술자만 파악 할 수 있음?
+  - 일반인도 검색으로 조사를 할 수 있음.
+    - 기술자에 비해 효율이 떨어짐
+- 기술자는 얻는게 없으면 알려주고 싶어하지 않음
+  - 시간대비 효율이 떨어짐
+    - 사람들은 이에 대해 많은 비용을 지불하고 싶어하지 않음?
+    - IT 서비스를 기획하는데 어려움을 격는 사람들이 있지 않을까?
+      - 많나? 기획에 돈을 지불할 의사가 있나?

@@ -1,0 +1,54 @@
+#+title: Packet (3Layer)
+
+* What is Packet?
+A unit of data used in [[file:./ip.org][IP]] protocol
+
+Packets are maanged by [[file:./nic.org][NIC]]
+
+* How Packet looks like?
+** Header
+A metadata about this packet, such as protocol versions, checksum, and window size
+
+*** Length
+*** Type
+**** Flags
+***** Offset
+
+*** Source IP
+The IP address of the system =sending= the data packet
+
+*** Destination IP
+The IP address of the system =receiving= the data packet
+
+*** Source Port
+A unique identifier for the source process's socket connection that initiated the data transmission.
+
+*** Destination Port
+A unique identifier for the destination process's socket connection that expected to receive and process the data packet
+
+** Payload
+The actual data being transmitted
+
+** Trailer (Opt)
+Additional error checking or other purpose
+
+** Fragmentation (Opt)
+If the payload is not fit to =Maximum Transmission Unit (MTU)=,
+
+The packet may be fragmented into smaller fragments and later reassembled at the destination
+
+* Transmission
+Packets are sent from a =source device= to a =destination device= over the network
+
+During their journey, they may pass through [[file:./router.org][routers]], [[file:./switch.org][switches]], and other networking devices
+- These devices use information in the packet header to determine the corret path for the packet to reach its destination
+
+* Packet-switched networks
+First, the data is devided into packets,
+
+and each packet can take a different route to its destination
+
+This can achieve efficient use of network resources
+
+* Circuit-switched networks
+A dedicated communication path is established for the duration of the communication.

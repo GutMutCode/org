@@ -1,0 +1,32 @@
+#+title: Ethernet
+
+* What is Ethernet?
+The traditional [[file:./protocol.org][protocol]] for connecting devices in a wired local
+
+In the local network, the IP [[file:./packet.org][packet]] is then encapsulated into an =Ethernet frame=
+
+* Ethernet frame (Layer2)
+A form of data used in Ethernet protocol
+
+This is used by [[file:./nic.org][NIC]]
+
+** Header
+Informations about control
+
+*** Source MAC address
+*** Destination MAC address
+*** Ethertype or length
+*** 802.1Q tag (Opt)
+
+** Payload
+Actual data
+
+** Frame check sequence (FCS)
+A four-octet [[file:./crc.org][CRC]]
+
+* Ethernet packet (Layer1 - physical)
+This is not a [[file:./packet.org][packet]] in the IP protocol
+
+** Preamable
+** Start frame delimiter (SFD)
+** Interpacket gap (IPG)

@@ -1,0 +1,128 @@
+* Prerequisites
+** Some programming experience
+*** Recursive procedures
+*** simple data structure
+**** Array
+**** Linked List
+
+** Mathematics
+Part 1 & Appendices A-D
+
+*** Proofs by mathematical induction
+*** Elementary calculus
+
+* What is algorithm?
+Problem solving procedure
+
+** Informally
+Any well-defined computational procedure that
+take some value,
+or set of values, as ~input~ and produces some value,
+or set of values, as ~output~ in finite amount of time.
+
+An algorithm is thus a sequence of computational step that transform the input into the output.
+
+You can also view an algorithm as a tool for solving a well-specified computational problem
+
+*** The statement of the problem
+This specifies in general terms the =disired= input/output relationship for problem instances, typically of arbitrarily large size.
+(this may be not clear in this time, but you can see after)
+
+*** The algorithm
+This describes a specific computational procedure for =achieving= that input/output relationship for all problem instances.
+
+** Examples
+
+*** Sorting problem
+Suppose that you need to sort a sequence of numbers into monotonically increasing order.
+
+Input: A sequence of ~n~ numbers ~<a1, a2, ..., an>~
+Output: A permutation (reordering) ~<ap1, ap2, ..., apn>~ of the input sequence such that ~ap1 <= ap2 <= ... <= apn~
+
+**** Such an input sequence above
+is called an ~instance~ of the sorting problem
+
+**** Instance of a problem
+In general, this consists of the input (satisfying whatever constraints are imposed in the probem statement) needed to compute a solution of the problem.
+
+**** Why the sorting problem is imporatant?
+Because many problems use it as an intermediate step, so many people make a large number of good sorting algorithms
+
+**** Which sorting problem is the best?
+This depends on:
+
+- the number of items to be sorted
+- the extent to which the items are already somewhat sorted
+- possible restrictions on the item values
+- the architecture of the computer
+- kind of storage to be used (main memory, disks, or even--archaically--tape)
+
+**** What is correct algorithm for problem?
+***** Correct Algorithm
+If algorithm can ~solve~ every problem instances provided as input, it ~halts~--finished its computing in finite time--and outputs the correct solution to the problem instance, it can be called ="Correct Algorithm"=
+
+***** Incorrect Algorithm
+- might not halt at all on some input instances
+- might halt with an incorrect answer
+
+****** Incorrect Algorithm is sometimes useful?
+If you can control their error rate (more advanced topic)
+** Conclusion
+An algorithm can be specified in English,
+as a computer program,
+or even as a hardware design
+
+The only requirement is that the specification must provide a precise description of the computational procedure to be followed.
+
+* Why is the study of algorithms worthwhile?
+* What is role of algorithms relative to other technologies used in computers?
+
+* Where we use?
+microwave oven, washing machine, computer
+
+You can ask algorithms to make recommendations to you
+
+As a programmer, you may need to some mathematical tools to show that your algorithms do the right thing and do it efficiently.
+
+** Practical Uses
+For lower labor, costs and time
+
+*** The Human Genome Project
+Many method to solve various biological problems, enabling scientists to accomplish tasks while using resources efficiently.
+They use Dynamic Programming in general.
+
+- Determining similarity between DNA sequences (Chapter 14)
+
+*** The internet
+With the aid of clever algorithm, sites on the internet are able to manage and manipulate this large volume of data
+
+- Finding fast routes on which the data travels (Chapter 22)
+- Enabling to a search engine to find pages quickly on which particular information resides (Chapter 11 and 32)
+
+*** Electronic commerce
+These are enable goods and services to be negotiated and exchanged electronically
+and it depends on the privacy of personal information such as credit card numbers, passwords, and bank statements
+
+- Encrypting and decrypting information by pcryptography such as public-key which based on numerical algorithms and number theory (Chapter 31)
+
+*** Manufacturing and other commercial enterprises
+These often need to allocate scarce resources in the most beneficial way.
+
+- An oil company might wish to know where to place its wells =in order to to maximize its expected profit=
+- A political candidate might want to determine where to spend money buying campaign advertising =in order to maximize the chances of winning an electron=
+- An airline might wish to assign crews to flights in the least expensive way possible, marking sure that each flight is covered and that government regulations regarding crew scheduling are met.
+- An internet service provider might wish to determine where to place additional resources =in order to serve its customers more effectively=
+
+All of these are examples of problem that can be solved by modeling them as linear programs, which Chapter 29 explores.
+
+** Characteristics common to many algorithmic problems
+*** They have many candidate solutions
+
+A example of a case that easily find a candidate solutions
+**** the discrete Fourier transform
+file:../../math/3blue1brown/fourier_trans.org
+
+*** They have practical applications
+
+* Once you understand algoritms
+You can educate others about what algoritms are, how they operate, and what their limitations are

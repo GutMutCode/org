@@ -1,0 +1,4 @@
+#+title: Snapshot
+
+* Snapshot
+Simple picture of server. (as name implies.)

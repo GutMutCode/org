@@ -1,0 +1,20 @@
+#+title: Protocol
+
+* Communication Protocol
+A set of ~rules~ or ~guidelines~ that dictate the format and communication methods for exchanging data between devices
+
+A component of network systems ensuring reliable and efficient transmission of information over various channels such as Ethernet cables, Wi-Fi, Bluetooth, and the Internet
+
+* Kinds
+[[file:./http.org][HTTP]] - 7
+[[file:./http.org][HTTPS]]
+[[file:./dns.org][DNS]]
+[[file:./ssh.org][SSH]]
+[[file:./ssl_tls.org][SSL/TLS]] - 6
+[[file:./rpc.org][RPC]] - 5 or 6, 4, 3...
+[[file:./ftp.org][FTP]]
+[[file:./smtp.org][SMTP]]
+[[file:./udp.org][UDP]] - 4
+[[file:./tcp.org][TCP]] - 4
+[[file:./ip.org][IP]] - 3
+[[file:./ethernet.org][Ethernet Protocol]] - 2

@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       c6cba199-2070-4dc1-b5b7-5b796a9f8587
+:END:
+#+title: nulnul
+
+* Question
+** 대용량 데이터 처리 => 자료 구조?
+- 대용량이요?
+  실제 어느 정도의 용량을 대용량이라고 말하는지?
+*** 임베디드
+가성비 => 최소한의 하드웨어, 최대의 소프트웨어
+- 데이터가 몇개냐
+- 메모리 크기
+  1. RAM
+  2. HDD, SSD ( 구별 => IO 속도 차이가 심하므로 )
+- 대용량 => 비선형 자료구조
+  - B-Tree - 삭제가 이루어질 경우 유리
+  - B+Tree - 추가만 될 경우 유리
+*** 선형구조의 태생적 한계
+- Slow search
+  list 내부에 존재하지 않는 자료 검색시, 뻘짓 함
+- No Metadata
+  느림
+** 메모리 효율성 증진 => 자료구조?
+- 일반적인 경우
+  운영체제에서 Heap 구조로 관리하므로, Heap을 선택하겠다.
+- 사용하는 양
+  mem-chunk 로 관련
+- 속도
+** ETC
+*** malloc
+*** mem-chunk
+Heap 구조로 관리되고 있다.
+*** CPU allocation size
+- 공급자 ( Many Box ) - allocation size, Inter 64kb
+- 도매상 ( Box ) - heap page 4kb ( 남는 부분없이 많이 사용하면 좋음 )
+- 소매상 ( one )
+*** 메모리 접근시 효율이 좋은 자료구조
+선형구조가 가장 빠르게 접근 가능
+- 계산 코드가 간단하므로

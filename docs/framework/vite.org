@@ -1,0 +1,74 @@
+#+title: Vite
+
+* Main Idea
+/Native mechanism for authoring JavaScript in a modularized fashion./
+
+* What they solve
+** Slow Server Start
+*** When cold-starting the dev server
+**** Bundler-base Build
+Setup eagerly crawl and build entire app before it can be served.
+
+**** Vite
+Dividing the modules in an application into two categories
+
+***** Dependencies
+=pre-bundles= dependencies using esbuild (written in ~Go~)
+
+this is mostly plain JavaScript that do not change often during development
+
+***** Source code
+Vite only needs to transform and serve source code =on demand=, as the browser requests it. (only the need for current screen)
+
+the browser =take over part of jobs of a bundler= by serves source code over native ESM
+
+file:./vite-bundle.svg
+
+file:./vite-nativeESM.svg
+
+this is often contain non-plain JavaScript that needs transforming, and will be edited very often.
+(JSX, CSS or Vue/Svelte components)
+
+Not all source code needs to be loaded at the same time (e.g. with route-based code-splitting)
+
+** Slow update
+*** When a file is edited
+**** Bundler-base Build
+Inefficient to rebuild the whole bundle
+- the update speed will degrade linealy with the size of the app.
+
+***** To address this problem - Hot Mudle Replacement
+allowing a module to =hot replace= itself without affecting the rest of the page.
+
+but, it can't be enough with bundle => the size of the app still mater for update speed
+
+**** Vite
+Only needs to =precisely invalidate= the chain between the edited mudle and its closest HMR boundary
+
+this makes HMR updates consistently fast regardless of the size of application
+
+
+Speed up full page relaods by leverages HTTP headers.
+
+- source code requests are made conditional via ~304 Not Modified~
+- dependencies module requests are strongly cached via ~Cache-Control:max-age=31536000, immutable~ so they don't hit there server again once cached.
+
+
+* What they Do
+** How to use modules in large scale project
+*** Modern method - Bundling
+- crawl, process and concatenate our source module into files that can run in the browser
+
+- webpack, rollup, parcel and more..
+
+
+this can be take an unreasonably long wait to spin up a dev server (=sometimes up to minutes=)
+
+even with Hot Module Replacement(HMR), file edits can =take a couple of seconds= to be ~reflected~ in the browser
+
+slow feedback loop can greatly affect developer's productivity
+
+*** Vite's method
+Leveraging the availability of native ES modules in the browser,
+
+and rise of JavaScript tools written in compile-to-native language

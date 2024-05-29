@@ -1,0 +1,4 @@
+#+title: Latency
+
+* Definition
+A combination of external network delays, plus processing time to create a response, and then deliver that response to the user.

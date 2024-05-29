@@ -1,0 +1,14 @@
+* Tail Call
+** Tail
+A subroutine =preformed= as the final action of a procedure.
+
+If the target of a tail =is= the same subroutine, the subroutine is =said= to be tail recursive,
+which =is= a special case of direct recursion.
+
+Tail recursion (or tail-end recursion) =is= particularly useful,
+and =is= often easy to =optimize= in implementations.
+
+* Glossary
+** subroutine
+Same as function.
+A sequence of program instructions that =perfoms= a specific task.

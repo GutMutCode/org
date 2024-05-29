@@ -1,0 +1,20 @@
+#+title: Segment
+
+* What is segment
+A form of data used in [[file:./tcp.org][TCP]] protocol
+
+* Structure
+** Header (Metadata)
+*** Source Port
+*** Destination Port
+*** Sequence Number
+*** Acknowledgment Number
+*** Control Flags
+*** Window Size
+*** Checksum
+*** Urgent Pointer
+
+** Payload (Data)
+A actual data being transmitted
+
+The size of payload is determined by =Maximum Segment Size (MSS)= negotiated during the TCP handshake

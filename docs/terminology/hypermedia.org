@@ -1,0 +1,9 @@
+#+title: Hypermedia
+
+* Definition
+An extension of the term hypertext, is a nonlinear medium of information that includes graphics, audio, video, plain text and hyperlinks.
+
+This designation contrast with the broader term multimedia, which may include non-interactive linear presentations as well as hypermedia.
+
+The World Wide Wed is a classic example of hyprmedia to access web content,
+whereas a non-interactive cinema presentation is an example of standard multimedia due to the absence of hyperlinks.

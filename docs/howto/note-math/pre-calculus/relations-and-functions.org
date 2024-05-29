@@ -1,0 +1,130 @@
+#+title: Relations And Functions
+
+* Coordinate Systems (좌표)
+** rectangular coordinate system
+x-axis
+y-axis
+
+floating point
+
+*** quadrants
+**** one
+x: positive
+y: positive
+**** two
+x: negative
+y: positive
+**** three
+x: negative
+y: negative
+**** four
+x: positive
+y: negative
+
+*** Where the x and y axis meet - origin
+point(0, 0)
+
+*** World problems
+miles or kilometers
+
+liters per kilometer
+
+**** miles per gallon
+How far I was getting on a gallon of gas?
+
+we'll be able to control the ~speed~ as a driver -> speed : independent variable
+
+efficiency of the car : dependent variable
+
+*** Input/Output - equation(방정식)
+**** Input
+what numbers are you putting into the equation
+
+**** Output
+your answers, what the equation is geving out to you
+
+*** Domain/Range
+**** Domain (영역)
+Domain is going to be the ~Input~, or the ~Independent variable~, or just the ~x coordinate~
+
+The horizontal movement along the graph
+**** Range (범위)
+The range values are your ~Output~, the ~Dependent variable~, or just simply the ~y coordinate~
+
+The virtical movement along the vertical axis of our coordinate system
+
+** polar coordinate system
+** imaginary type system
+
+
+* Functions
+/Each x has only one y/
+
+Special type of relation
+
+A set of all orderd pairs such that
+each element (number)
+in the domain (your input or the x's)
+corresponds to only one y (or only one dependent variable)
+
+Each element in the domain corresponds to one element in the range.
+
+Independent for the x
+Dependent for the y
+
+* Relations
+One, some, or all of the x's
+in your set of points
+or in your graph
+can have more than one y
+
+All set of ordered pairs
+
+* Functions vs Relations
+** quadrilateral (사각형)
+** rectangle (직사각형)
+** square (정사각형)
+
+** sides (변)
+** ellipse/oval (타원)
+
+* Graphical Comparison
+** Vertical line test (tools to determine whether graph is a function)
+If you can draw a vertical line through a graph
+and it only crosses the graph once,
+no matter where you draw that vertical line, *it is a function.*
+
+If not, *it is a relation*
+
+vertical line in graph
+
+x = # -> only crosses the graph once -> corresponds to only one y => this is a function
+
+x = # -> crosses the graph more than once -> corresponds to multiple y => this is a relation
+
+** piecewise function
+*** slope (기울기)
+*** parabola (포물선)
+*** ends with a hole, opened dot (less than #)
+*** start with solid dot (greater than # and equals)
+
+* How do we tell the difference between a relation and a function if we don't have the coordinates and we don't have a graph
+
+Y as a function of x
+or Y in terms of X
+
+Get these solved for y
+
+** polynomial (다항)
+
+** x being raised to power of two (X의 2제곱)
+
+** leading (선행하는)
+
+** coefficient (계수)
+
+** parabola
+*** opened up
+*** opened down
+
+** plug an x (X를 대입하다)

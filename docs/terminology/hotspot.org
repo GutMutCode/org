@@ -1,0 +1,6 @@
+#+title: Hotspot
+
+* Definition
+A region of a computer program where a high proprotion of exectued instruction occur
+
+Where most time is spent during the program's execution.

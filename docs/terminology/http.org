@@ -1,0 +1,99 @@
+#+title: HTTP / HTTPS
+
+* Table Of Contents :toc:
+- [[#what-is-http][What is HTTP?]]
+- [[#why-use-http][Why use HTTP?]]
+- [[#how-is-the-http-connection-establish][How is the HTTP connection establish?]]
+  - [[#dns-resolution][DNS Resolution]]
+  - [[#tcp-handshake][TCP Handshake]]
+  - [[#http-request][HTTP Request]]
+  - [[#server-processing][Server Processing]]
+  - [[#http-response][HTTP Response]]
+  - [[#tcp-connection-closure][TCP Connection Closure]]
+- [[#what-is-https][What is HTTPS?]]
+- [[#how-http-procotol-data-looks-like][How HTTP procotol data looks like?]]
+  - [[#method][*Method*:]]
+  - [[#uri][*URI*:]]
+  - [[#http-version][*HTTP Version*:]]
+  - [[#headers][*Headers*:]]
+
+* What is HTTP?
+The Hypertext Transfer [[file:./protocol.org][Protocol]] (HTTP) is a family of:
+- [[file:./stateless.org][stateless]]
+- application-level
+- request/response
+
+protocols that share:
+- a generic interface
+- extensible semantics
+- self-descriptive messages
+to enable flexible interaction with network-based hypertext information systems.
+
+* Why use HTTP?
+HTTP ~hides the detail~ of how a services is implemented by presenting a uniform interface to client independent of types of resources provided
+
+Servers do not need to be aware of each client's purpose:
+- a request can be considered in isolation rather than being associated with a specific type of client or a predetermined sequence of application steps
+
+This allows general purpose implementation to be used effectively in many different contexts:
+- reduces interaction complexity
+- enables independent evolution over time
+
+* How is the HTTP connection establish?
+** DNS Resolution
+Before initiating an HTTP connection, the client needs to resolve the domain name of the server to an IP address
+
+This process, known as DSN(Domain Name System) resolution, is typically handled by the client's operating system or a DNS resolver
+
+** TCP Handshake
+HTTP typically runs over the Transmission Control Protocol [[file:./tcp.org][TCP]]
+
+** HTTP Request
+Ones the TCP connection is established, the client can send an [[file:./httpreq.org][HTTP request]] to the server
+
+** Server Processing
+The server receives the HTTP request and processes it
+
+** HTTP Response
+After processing the request, the server sends HTTP response to client
+
+** TCP Connection Closure
+After the server has sent the HTTP response, the TCP connection may ~be kept open~ for subsequent requests (in the case of HTTP/1.1 with keep-alive)
+
+If the connection is closed, [[file:./tcp.org][a four-way TCP connection termination process]] may occur
+
+* What is HTTPS?
+HTTP Secure
+
+A encrypted version of HTTP, commonly used to protect sencitive data transmitted over the Internet
+
+* How HTTP procotol data looks like?
+
+#+begin_src bash
+GET / HTTP/1.1
+Host: www.example.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+#+end_src
+This is an example of a request sent to a web server using the HTTP protocol. The key components are as follows:
+
+** *Method*:
+GET - This specifies the type of action being requested from the server. In this case, it's a standard GET request for retrieving a
+webpage resource.
+
+** *URI*:
+/ - This is the address or path on the server where the requested resource can be found. The forward slash (/) signifies the root
+directory and typically points to an index file containing links to other resources within the website.
+
+** *HTTP Version*:
+HTTP/1.1 - This indicates the version of the HTTP protocol being used in the communication. In this example, it's the latest
+version (HTTP 1.1).
+
+** *Headers*:
+These provide additional information about the request or response to optimize communication between client and server. Some common
+headers include Host, Accept, Connection, and Upgrade-Insecure-Requests.
+
+This is a simplified representation of an HTTP GET request example; in practice, requests often contain more complex headers and may use encryption
+for better security.

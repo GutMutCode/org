@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       ea463343-69b8-4b67-8215-d9e69c7691a5
+:END:
+#+title: DeskSetup
+* Full wireless setting
+- 선 묶어서 => 하나로 통합
+* Color Theme
+- dracula theme
+* 모니터 암
+* 데스크 선반
+- 선정리할때, 위쪽으로 케이블 고정 => 깔끔
+* 간접조명
+- 헤이홈 2m / 4.0
+* 발판
+- 로우모
+* 데스크 패드
+* 모션 데스크
+- 의자 팔 밭침이랑 안부딫이게
+- 선정리 쉽게 구멍내기?
+- 타공판, 멀티탭 결합

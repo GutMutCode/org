@@ -1,0 +1,12 @@
+
+* Motion
+** Rectangle
+*** Shape
+**** Geometry
+***** Width & Height
+1920 x 1080
+960 x 480
+
+** Keybinds
+*** Duplicate
+Cmd + D

@@ -1,0 +1,4 @@
+#+title: Network
+
+* What is network?
+A statement that two or more computers are connected

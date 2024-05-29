@@ -1,0 +1,22 @@
+#+title: Overload & Override
+
+* A Context of this page
+The overload and override is related in object-oriented programming
+This two concepts are related to [[file:./polymorphism.org][polymorphism]], which allow objects of different classes to be treated as objects of a common base class
+
+* What is Overload?
+define multiple methods in the same class with the same name but different parameter lists
+
+- you can call different featured methods by the same name
+- this provide flexibility in handling different types or numbers of parameters
+
+** When does this run?
+In compile-time, compiler determines which method to invoke based on the number or types of arguments
+
+* What is Override?
+define a method that is named as the parent class's method name into subclass
+
+- to provide subclass a specific implementation for that named method
+
+** When does this run?
+In runtime, process determines which method to invoke based on the hierarchy of classes

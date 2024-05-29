@@ -1,0 +1,7 @@
+#+title: Byteaddressing
+
+* Definition
+** Wikipedia
+/Accessing individual bytes in memory/
+
+Computers with byte addressign are sometimes called =byte machines=

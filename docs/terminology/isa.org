@@ -1,0 +1,19 @@
+#+title: Instructions Set Architecture
+
+* Definition
+The architectures that are constituted set of instructions that available on a Computer (e.g., CPU, architecture, platform)
+
+=Set of instruction = Machine Code=
+
+** Versus Microarchitecture
+https://stefanheule.com/blog/how-many-x86-64-instructions-are-there-anyway/
+
+microarchitecture implements ISA
+
+*** Different microarchitecture can implement the same ISA
+Intel's & AMD's microarchitecture implement essentialy the same ISA
+
+*** Backward compatibility
+There's many weired corner-case and historical artifacts because of the backward compatibility
+
+Even the latest ISA of microarchitecture, Haswell's ISA, still has most of the instructions in the very first generation of X86, and anything in between

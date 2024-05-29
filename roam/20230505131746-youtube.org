@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       48a439bb-c00c-477c-b344-5f6ee6be5604
+:END:
+#+title: Youtube
+* How to be a Youtuber
+* 내가 좋아하는 지 확인하는 법
+** 그 분야의 가장 뛰어난 사람, 회사를 알고 있나요?
+** 지금 가장 유행하는 것이 무엇인지 알고 있나요?
+** 일반인들은 유행이라고 생각하지만, 사실은 한 물 간 제품 (주장, 가설, 서비스, 사람)은 무엇인가요?
+** 다음으로 유행할 것을 예측할 수 있나요?
+** 가장 주류적으로 인정받고 있는 주장은 무엇인가요?
+** 인기가 많지만, 전문가들은 인정하지 않는 것은 무엇인가요?
+** 인기는 많지만 뛰어나지는 않은 것은 무엇인가요?
+** 인기가 없지만 가장 뛰어난 사람은 누구인가요?
+** 한국에서는 아니지만 전 세계적으로 인기 있는 제품 (또는 주장, 가설)
+
+* 1달동안 진실만을 판별한다.
+** DB 만들기
+
+* Ideas
+**
+** Subtitle
+- description
+- 강조 => 색상 변경
+** 말하는 중 => 영상 변경
+** Sound
+- effect
+  - change scene
+- bgm
+* JEG
+** 내 홈화면에 뜨고 있는애 중에, 구독자가 작은애가 있나?
+- 특징이 있지 않을까?
+
+* What i want to use
+** Sound
+*** 파티 용 불개 ( 뿌우우~ )
+*** 키보드 타이핑
+*** 클릭
+*** 거품 터지는 소리
+
+** Background
+*** Anime lightning background - layer 1
+*** Space background - layer 0
+*** Brightness
+*** Blur - 빨려들어가는 효과
+
+** Effect
+*** Stroke (border)
+*** Drop shadow
+*** Inner Glow - 그라데이션
+*** Color Balance - 여러 이미지간 색상 맞추기

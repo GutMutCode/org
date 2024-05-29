@@ -1,0 +1,33 @@
+#+title: OpenSSL
+
+* What is OpenSSL?
+open-source software library that provides a toolkit for implementing the Transport Layer Security [[file:./ssl_tls.org][(TLS)]] and Secure Sockets Layer protocols.
+
+These protocols are widely used to secure communication over a computer network, such as the internet
+
+includes various cryptographic algorithms and utilities
+
+* Features
+** Encryption and Decryption
+*** symmetric-key algorithms
+AES
+
+*** asymmetric-key algorithms
+RSA
+
+*** hash functions
+SHA-256
+
+** SSL/TLS implementation
+
+** Certificate Handling
+Manage a certificates, including creation, signing, and verification of X.509 certificates
+
+** Public Key Infrastructure (PKI)
+Manage a Public Key Infrastructure, which is a set of roles, policies, and procedures needed to create, manage, distribute, and revoke digital certificates
+
+** Command-Line Utilities
+Allow users to perform cryptographic operations, generate key pairs, create and verify digital signature, and more
+
+** Cross-Platform Support
+OpenSSL is designed to be portable and can be used on various operating systems,

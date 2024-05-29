@@ -1,0 +1,4 @@
+#+title: Ping
+
+* Definition
+A measurement of how long packets take to traverse the various routers on the internet between two points and return.

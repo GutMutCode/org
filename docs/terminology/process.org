@@ -1,0 +1,25 @@
+#+title: Process
+
+* What is Process?
+The program on memory = loaded program = instance of the program
+
+These processes are executed by CPU core always if the computer running
+
+Each process runs in its own isolated environment, and it is managed by the [[file:./os.org][operating system]]
+
+* Program Execution
+A process beigins when a [[file:./execution.org][program]] is loaded into memory and starts
+
+* Process Communication
+Inter-process a communication (IPC) mechanism, such as pipes, shared memory, and message queues
+
+* Process Termination
+A process can terminated either by completing its execution or by
+explicitly being terminated by the operating system or another process
+
+When the process is terminated, the operating system releases its allocated resources and update relevant data structures
+
+* Parent-Child Processes
+In many operating systems, a process can create new processes known as child processes
+
+These child processes inherit certain characteristics from their parent and they can exectued independently
