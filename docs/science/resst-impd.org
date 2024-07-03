@@ -1,0 +1,27 @@
+#+title: Resst Impd
+
+* Resistance & Impedance
+These are both terms that refer to how much a component in an electrical circuit opposes the flow of current.
+
+** Resistance
+It applies to direct current (DC) circuits.
+
+*** What's the cause?
+- The opposition by the resistive elements in the circuit.
+
+** Impedance
+It applies to alternating current (AC) circuits.
+
+- It's a more general concept
+
+*** What's the cause?
+- The opposition by the resistive elements in the circuit.
+- Reactive elements
+  energy in storage ( capacitors )
+  magnetic fields ( inductors )
+
+*** Resistance
+the real part
+
+*** Reactance
+the imaginary part

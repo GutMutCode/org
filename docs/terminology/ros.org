@@ -1,0 +1,111 @@
+#+title: Ros
+
+* Ros1 vs Ros2
+** Ros1
+** Ros2
+Multiple Robot
+Imbedded System
+Realtime Control
+Flexible Networking
+Multi Platform
+Recent Skill Supporting
+Production Supporting
+
+*** Foxy
+
+* Structure
+** Node
+프로세스
+특정 작업 수행, 실행가능 파일
+다른 노드와 메시지 송수신
+
+*** Publisher
+Topic에 메시지 발행
+
+*** Subscriber
+Topic의 메시지 수신
+
+*** Service Server
+Request에 Service제공 (Response)
+
+*** Service Client
+Service Request 보냄
+Service받음
+
+*** Action Server
+Action 실행 작업 처리
+진행 상황 보고 (-> Client)
+
+*** Action Client
+Action Request 보냄
+진행 상황 모니터링 (<- Server)
+
+** ROS Network
+Node들이 메세지를 주고 받는 방식
+
+*** ROS Master
+모든 노드가 서로를 찾고 통신할 수 있도록 관리하는 노드 (중앙 레지스트리)
+
+*** Another Nodes
+
+** ROS communication
+*** Topic
+여러개의 Node들이 Data 공유
+
+- 이름으로 구분 (식별)
+- Publisher -> one or more Subscriber (One-to-Many)
+
+*** Service
+두개의 Node가 Data 송수신
+
+- Request-Response
+- One-to-One
+
+*** Action
+두개의 Node가 Data 송수신, 모니터링
+
+Client에게 작업 보고
+
+** ROS Namespace
+Node, Topic, Service의 이름을 구조화 -> 그룹화
+
+같은 이름을 가진 자원 구분
+
+여러개의 Node들을 묶음
+
+** ROS Parameter Server
+Node 실행중 필요한 *구성데이터* 저장소
+
+- 저장
+- 검색
+
+* Just Write!
+** node_handle_
+Node interface Object
+
+#+begin_src cpp
+ros::NodeHandle nh;
+
+ros::NodeHandle private_nh("~");
+#+end_src
+
+*** ROS 시스템과의 통신을 가능하게 해줌
+
+- Node가 Topic을 구독, 발행
+- Node가 Service Request/Response
+- Node가 Parameter Server 접근
+
+*** Namespace 지정가능
+
+객체 생성시, Namespace 지정가능
+-> Namespace 안에서 Topic, Server 이름을 추가
+
+node_handle_ `~` Namespace로 초기화 -> `~` 내부 Topic, Service 관리
+
+*** 자원 관리
+Node와 ROS 시스템간의 연결 관리
+
+node_handle_의 생성, 소멸
+
+객체 생성 -> ROS 연결 시작
+객체 소멸 -> ROS 연결 종료

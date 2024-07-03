@@ -1,0 +1,4 @@
+#+title: Game
+
+* Game Notes
+[[file:./lostark/index.org][Lost Ark]]

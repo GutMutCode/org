@@ -1,0 +1,294 @@
+#+title: Project
+
+* 1일차
+** Github
+회의 내역
+로그 남기기
+
+** 제한사항
+IoT 기기 구현
+
+*** wifi module
+- esp32
+- xnode
+
+**** kind
+- node
+  센싱
+
+- gateway
+  Cloud 중계기 역할
+
+  Jetson Nano
+
+  클라우드 데이터베이스 활용
+
+*** cloud computing
+ aws, azure, gcp
+
+ ubuntu + database
+
+*** big data & rangling
+**** local
+
+**** cloud (remote)
+속도가 더 빠름
+
+* 2일차
+
+* 2주차 수요일
+맥시머스 멘토링
+
+* 2주차 목요일
+이은희 강사님
+
+* 2주차 금요일
+마지막 결제 날
+
+* 3주차 금요일
+
+* 4주차 화요일
+최종발표
+
+* 7월 9일날 아침 발표
+
+* 분석
+** STM32 core board
+*** direct plug-in
+*** drive serial bus servos and PWM servos
+*** serial ports
+
+* 계획 발표
+** 목표
+로봇암으로 물체를 구별하고, 원하는 물체를 잡고 옮기기
+
+** 목적
+
+** 역할분담
+기술서, 계획서 작성
+
+** 기술스택
+카메라 -> 최소 1GHz -> ESP 안됨
+
+라즈베리파이 제로 시리즈
+
+서브로 사용
+
+RTOS -> Arm architecture 도 MCU처럼 사용하는 방법
+
+raspberrypi 4 -> OS를 설치해서 Linux로 돌린다.
+arduino -> bootloader -> OS, GPIO 실시간성 보장 불가능 -> 센싱에 단점
+
+** 일자별계획
+*** 20240620
+**** 프로젝트 목표, 목적 설정
+
+**** 하드웨어 선정
+***** Claw
+- 집게부
+- 미세 조절 정도
+
+***** Frame of Arm
+- 프레임 판매처
+- 서보모터 연결 가능 여부
+  - 제품 호환
+
+****** https://www.robotis.com/shop/item.php?it_id=905-0023-000
+- X430 모터 기반 (미포함)
+- XH, XM 시리즈 전용 공구 포함
+
+***** Servo Motor
+- 로봇팔 관절
+
+***** Streaing Gear
+- 로봇팔 방향 설정
+
+***** MCU
+****** ESP32
+****** STM32
+****** raspberrypi zero
+
+***** Gateway
+****** Jetson Nano
+ROS를 쓸수 있는데, 보드가 STM32
+
+STM32 - Motor 소스코드 참조
+
+로보티즈 - 독자 서비스
+
+SE - Jetson 없이, STM32으로만 사용하는 버전
+
+**** 기술 선정
+***** ROS
+Robot Operating System
+- 다양한 로봇 제어 함수 제공
+- 프로세스간 메시지 전송
+- 디버깅 도구 제공
+
+****** Pros
+오픈소스, 무료, 활발한 커뮤니티
+
+****** Cons
+용량 큼, 높은 성능요구, 실시간성 보장 X
+
+****** Characteristics
+- 분산 프로세스
+  최소단위 프로세스가 독립적으로 실행된다.
+
+- 시뮬레이션
+  가상의 로봇을 제어해 볼 수 있다!
+
+- 센서 데이터 처리 함수 제공
+
+***** RTOS
+Real Time Operating System
+- 정해진 시간안에, 작업 수행을 수행해낼 수 있도록 보장
+
+
+*** 20240621
+**** 일자별 계획 수립
+
+**** 계획서, 기술서, 발표자료 작성
+
+**** 역할 분담
+***** 신지환
+사용-활용처 조사
+
+***** 김진성
+계획서, 기술서 작성
+
+***** 김진세
+슬라이드, 계획 발표자료 작성
+
+***** 김진호
+기술 분석 및 전체 프로젝트 구성
+
+
+** 예산안
+
+** 예상결과물
+
+* RM-X52
+카메라 X & IOT X
+
+** Claw + Frame
+326,700
+
+** Plate
+217,800
+
+** XM430-W350-T
+290,400 x 5
+
+** SMPS 12V 5A
+24,200
+
+** OpenCR1.0
+242,000
+
+** raspberry pi
+
+* Yahboom Dofbot kit
+50만
+
+* wifi 모듈
+** 해외 직구
+2주 -> 불가능
+
+** 국내
+
+* 과정
+** 통계 활용
+*** 등장 빈도
+
+* Analyze the DOFBOT code
+device name & device
+-> isn't fixed, but is assigned in sequence (according to the order in which the devices are connected to the system)
+-> trouble some to plug and unplug the device every time the system starts.
+-> The serial port can be mapped to a fixed device name.
+
+* OpenManipulator-X
+with moveit library
+
+https://youtu.be/8yzPcjxFebg?si=RMxEAgTjpmG-c04e
+
+** Pose
+X: 가로
+Y: 세로
+
+Z: 높이
+** Orientation
+W:
+X:
+Y: 높이
+Z:
+
+* ArduCam IMX219 B0191
+Test Camera
+#+begin_src bash
+DISPLAY=:0.0 gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM), width=3280, height=2464, format=(string)NV12, framerate=(fraction)20/1' ! nvoverlaysink -e
+
+ls /dev/video0
+#+end_src
+
+** Sony 8MP IMX219 Sensor
+- MP: Megapixels
+  8MP: 8,000,000 pixels
+
+** 1/4 inch
+This influences various aspects of image quality
+
+- Depth of field
+- Low-light performance
+- Overall sharpness
+
+** EFL (Effective Focal Length)
+
+** F.NO 2.0
+
+** Fixed Focus
+
+** 62.2 View Angle (Diagonal)
+
+** MIPI CSI-2 2-lane
+Mobile Industry Processor Interface(MIPI)
+Camera Serial Interface 2(CSI-2)
+2-lane : 4-wire (1-lane consists of D+ and D- wire)
+
+** IR (infrared) Sensitivity
+Visible light
+650nm IR Filter
+
+- For low-light environments
+- For filter IR
+
+* Object Detection
+** YOLO
+You can use pre-trained object detection model by YOLO
+
+** MobileNet SSD
+object detection model that combines two key innovations in deep learning and computer vision
+
+- For mobile devices, edge computing scenarios
+
+*** MobileNet
+A class of efficient models
+
+It uses depthwise separable convolutions
+To reduce the computational load and model size
+
+**** Depthwise Separable Convolutions
+
+  The standard convolution operation
+  - used primarily in deep learning, particularly in convolution neural networks (CNN)
+
+***** Convolution opertion
+a mathmatical operation
+
+combining two functions to produce a third function that expresses how the shape of one is modified by the other.
+("blending" two functions)
+
+
+- used in signal processing, image processing, and data analysis.
+
+*** Single Shot MultiBox

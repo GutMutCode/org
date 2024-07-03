@@ -139,7 +139,7 @@ so you must be careful when determinate this size
 OSs are composed of a colletion of software that works and communicates with each other
 
 ** Two main parts of OS
-*** Kernal
+*** Kernel
 /Heart of the OS/
 
 The primary program that loads when the PC starts

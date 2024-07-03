@@ -1,0 +1,12 @@
+#+title: Hdl
+
+* Hardware Discription Language (HDL)
+Designing FPGA block by verilog
+
+* Hardware Synthesis Language (HSL)
+Designing circuit
+
+* Software on Chip (SoC)
+- Porting Linux to CPU core
+- Porting peripherals to AXI, AMBA BUS
+- Creating the real chip (backend)

@@ -1,0 +1,46 @@
+#+title: Dpdk
+
+* Data Plane Development KIT
+A set of libraries and drivers =for fast packet processing= in data plane applications.
+
+* Purpose
+It's designed to accelerate packet processing workloads running on a wide variety of CPU architectures.
+
+* How does performance improve?
+It allows for faster packet processing by =bypassing the kernel= and directly accessing network interfaces.
+
+** what interfaces?
+
+* Characteristics
+** Network Components
+- libraries
+- drivers
+- optimization tools
+
+** Multi-core support
+optimized for multi-core and NUMA (Non-Uniform Memory Access) systems.
+
+*** Non-Uniform Memory Access?
+
+** C & Python
+** Open source
+Managed by the Linux Foundation
+** NICs supports
+
+* Use cases
+High-performance networking applications
+
+** Network function virtualization (NFV)
+** Software-defined networking (SDN)
+
+* BPF in DPDK
+- packet filtering/tracing (aka tcpdump)
+- packet classification
+- statistics collection
+- HW/PMD live-system debugging/prototyping
+  trace HW descriptors, internal PMD SW state
+
+** What is a PMD?
+Programming Mistake Detector
+
+An open-source static code analyzer that scans source code and looks for potential problems, possible bugs, inefficient code, and overly complicated expressions.

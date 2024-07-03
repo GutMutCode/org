@@ -1,0 +1,43 @@
+#+title: Socket Filtering
+
+* Socket Filtering?
+Refers to the process of controlling =the types of network packets= that a socket (an endpoint for sending or receiving data across a computer network) can receive or send.
+
+* Why should I use?
+** Enhancing security
+** Optimizing network performance
+** implementing specific app logic
+
+* Main aspects
+** Packet Inspection
+Examining network packets at various layers of the OSI modle
+(e.g., IP layer, transport layer).
+
+It inspects packet headers and payloads to determine if they should be =allowed= or =blocked=.
+
+** Berkeley Packet Filter (BPF)
+One of the most common mechanisms for socket filtering is the Berkeley Packet Filter.
+
+BPF provides a raw interface to data link layers, allowing programs to filter packets before they reach the application level.
+
+It uses a small, efficient virtual machine to execute filter programs, written in a specific language, =to decide the fate of packets=.
+
+** In Firewalls and Intrusion Detection Systems
+Firewalls use socket filtering to block or allow traffic based on predefined security rules.
+
+Intrusion detection systems (IDS) employ socket filtering to detect suspicious or malicious activities by analyzing packet content
+
+** Network Programming
+To create more efficient network applications by only processing relevant packets.
+
+This reduces the amount of data that applications need to handle, leading to performance improvements.
+
+** Customization and Flexibility
+Filters can be customized to match specific criteria such as source/destination IP addresses, port numbers, protocols, etc.
+
+Filters can be changed based on network condition or security policies.
+
+** Kernel-Level Implementation
+To provide low-latency filtering and high performance.
+
+This is crucial =for high-speed networks= where processing each packet in user space would introduce significant overhead.

@@ -5,6 +5,18 @@
 
 ** Examples
 *** Serialization
-General String -> Json format
+Java's and C#'s object -> binary or XML format
+
 *** Deserialization
-Json format -> General String
+binary or XML format -> Java's and C#'s object
+
+** Differences with encoding
+*** Purpose
+S: to store or transmit
+
+E: to standardize or compress or encrypt
+
+*** Scope
+S: entire data structure
+
+E: raw data

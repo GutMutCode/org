@@ -1,0 +1,32 @@
+#+title: G Rpc
+
+* What is gRPC?
+Remote Precedure Call (RPC) framework that can run in any environment.
+
+** RPC?
+You can call the precedure of code in another machine remotely by using proto buf interface.
+
+* Prerequsites
+** Go lang env
+** proto3
+
+#+begin_src sh
+brew install protobuf
+#+end_src
+** go plugins for proto3
+
+1. install
+#+begin_src sh
+go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+#+end_src
+
+2. update the path
+#+begin_src sh
+export PATH="$PATH:$(go env GOPATH)/bin"
+#+end_src
+
+** clone repo
+#+begin_src sh
+git clone -b v1.63.0 --depth 1 https://github.com/grpc/grpc-go
+#+end_src

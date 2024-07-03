@@ -1,0 +1,42 @@
+#+title: Bpf
+
+* Berkeley Packet Filter
+A VM in the kernel allowing to execute bytecode at various hook points in a safe manner.
+
+** hook points?
+
+** safe manner?
+
+** When should I use?
+*** networking
+- Socket filtering for most protocols
+- tc classifier (cls bpf)
+- netfilter xtables (xt bpf)
+- XDP
+
+*** tracing
+- BPF as kprobes-based extensions
+
+* BPF Architecture
+** Classic BPF (cBPF)
+- 32 bit
+- Forward jumps only
+
+- JIT for all major archs
+
+** Extended BPF (eBPF)
+- 64 bit
+- Forward & backend jumps
+
+- New insns(instructions)
+  dw ld/st, mov, alu64 + signed shift, endian, calls, xadd
+
+- Generic helper function concept
+  several kernel-provided helpers
+
+- Maps with arbitrary sharing
+  user space apps, between eBPF progs(programs)
+
+- clang eBPF backend (v3.7 or above)
+
+- HW offlaod

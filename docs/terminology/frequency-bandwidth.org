@@ -1,0 +1,14 @@
+#+title: Frequency Bandwidth
+
+* What is the Bandwidth?
+** In signal processing
+The difference between the upper and lower frequencies in continuous band of frequencies.
+
+** In computing
+The maximum rate of data transfer across a given path
+- network bandwidth
+- data bandwidth
+- digital bandwidth
+
+** wifi frequency
+the range of radio waves used by a wireless network to transmit data between devices.

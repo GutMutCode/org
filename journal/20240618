@@ -1,0 +1,28 @@
+#+TITLE: Daily Journal
+#+STARTUP: showeverything
+* Tuesday, 18 June 2024
+** 09:33
+*** data structure
+pg = data + command( operator & function )
+
+**** Stack
+함수가 실행되는 영역
+
+자료구조를 만든다
+
+***** 특징
+Last in First Out
+
+함수: 제일 마지막에 =호출된= (in - push) 함수가, 제일 먼저 =사라진다= (out - pop)
+
+**** Queue
+Stack -> Queue 만들수 있음
+
+**** Linked List
+
+**** Tree
+
+**** Graph
+
+*** 취업 팁
+네이버 -> 백준 or leetcode 단계 ( 객관적인 지표 )

@@ -5,13 +5,14 @@
 ** [[file:./lang/index.org][Programming languages]]
 ** [[file:./db/index.org][Databases]]
 ** [[file:./infra/index.org][Infrastructure]]
-** [[file:./design/index.org][Software Designs]]
+** [[file:./soft-design/index.org][Software Designs]]
 ** [[file:./framework/index.org][FrameWork]]
 ** [[file:./service/index.org][Service]]
 ** [[file:./tools/index.org][Tools]]
 ** [[file:./math/index.org][Math]]
 ** [[file:./snack/index.org][Snack]]
 ** [[file:./bussiness/index.org][Bussiness]]
+** [[file:./science/index.org][Science]]
 
 ** [[file:./apple/index.org][Apple]]
 

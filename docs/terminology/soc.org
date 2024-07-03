@@ -1,0 +1,4 @@
+#+title: Soc
+
+* What the SoC stands for?
+

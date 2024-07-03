@@ -9,6 +9,7 @@
 ** [[file:./java/index.org][Java]]
 ** [[file:./julia/index.org][Julia]]
 ** [[file:./wasm/index.org][Wasm]]
+** [[file:./python/index.org][Python]]
 
 * Reference
 [[file:../index.org][Docs]]
