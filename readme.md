@@ -18,4 +18,4 @@
 
 ## :page_facing_up: notes
 
->
+> my minds and brainstorm

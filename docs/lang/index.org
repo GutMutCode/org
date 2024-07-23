@@ -10,6 +10,7 @@
 ** [[file:./julia/index.org][Julia]]
 ** [[file:./wasm/index.org][Wasm]]
 ** [[file:./python/index.org][Python]]
+** [[file:./cpp/index.org][Cpp]]
 
 * Reference
 [[file:../index.org][Docs]]

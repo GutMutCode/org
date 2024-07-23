@@ -1,0 +1,9 @@
+#+title: Index
+
+* Curious Things in Cpp
+Using ConstPtr &msg in Callbacks
+
+The ConstPtr is a type alias in ROS that represents a smart pointer (boost::shared_ptr or std::shared_ptr in ROS2) to a constant sensor_msgs::JointState message. This ensures that the message data cannot be modified within the callback function, providing safety and consistency.
+
+** type alias
+** smart pointer

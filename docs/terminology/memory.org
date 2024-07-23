@@ -28,3 +28,8 @@ Electrically Erasable Programmable Read Only Memory
 
 ** RAM
 Random Access Memory
+
+* Regions
+** Kernel Region
+The memory region that the operating system be stored.
+**

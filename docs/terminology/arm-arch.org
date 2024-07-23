@@ -1,0 +1,15 @@
+#+title: Arm Arch
+
+* Why am I curious this?
+OS -> Interrupt -> How? -> MCU -> Atmega128A -> STM32 -> Arm Arch
+
+* What does the ARM stand for?
+** Advanced RISC Machines
+[[file:./isa.org][ISAs]] for computer processors
+
+*** RISC & CISC
+**** Reduced instruction set computer
+하나의 기계어 명령어로, 단 하나의 작업만 하는 CPU
+
+**** Complex instruction set computer
+하나의 기계어 명령어로, 여러개의 작업을 한번에 끝내는 CPU

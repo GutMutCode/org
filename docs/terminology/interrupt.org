@@ -1,0 +1,5 @@
+#+title: Interrupt
+
+* Notes
+#+attr_html: :alt  :align left :class img
+[[file:./imgs/IntProc.JPG][Interrupt Process]]

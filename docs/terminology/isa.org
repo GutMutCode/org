@@ -17,3 +17,9 @@ Intel's & AMD's microarchitecture implement essentialy the same ISA
 There's many weired corner-case and historical artifacts because of the backward compatibility
 
 Even the latest ISA of microarchitecture, Haswell's ISA, still has most of the instructions in the very first generation of X86, and anything in between
+
+** Wikipedia
+An abstract model that generally =defines how software controls the CPU= in a computer or a family of computers.
+
+*** Software > Hardware
+Hardware should follow the software architecture.
