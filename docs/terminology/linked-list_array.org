@@ -1,0 +1,79 @@
+#+title: Linked-List and Array
+
+* Key differences
+** Structure
+*** Array
+1. Contiguous Memory
+   An array stores elements in contiguous memory locations,
+   which means all elements are located next to each other in memory.
+
+2. Fixed Size
+   The size of an array is fixed at the time of creation and cannot be changed dynamically.
+
+3. Direct Access
+   Elements in an array can be accessed directly using an index,
+   providing O(1) time complexity for access.
+
+*** Linked List
+1. Non-Contiguous Memory
+   A linked list stores elements in nodes that are linked using pointers,
+   and these nodes can be scattered throughout memory.
+
+2. Dynamic Size
+   The size of a linked list can grow or shrink dynamically as nodes are added or removed.
+
+3. Sequential Access
+   Elements in a linked list must be accessed sequentially starting from the head, leading to O(n) time complexity for access.
+
+** Memory Usage
+*** Array
+1. Efficient Memory Use
+   Arrays have less memory overhead
+   since they only store the actual data elements.
+
+2. Static Memory Allocation
+   Requires allocation of memory for all elements at once,
+   which can lead to unused allocated memory if the array is not fully utilized.
+
+
+*** Linked List
+1. Memory Overhead
+   Each node in a linked list contains data and a pointer to the next node
+   (and sometimes to the previous node in doubly linked lists),
+   leading to additional memory overhead.
+
+2. Dynamic Memory Allocation
+   Allocates memory as needed for new nodes,
+   which can be more efficient if the total number of elements is not known in advance.
+
+** Insertion and Deletion
+*** Array
+1. Insertion and Deletion at End
+   Adding or removing elements at the end of an array is eficient - O(1)
+
+2. Insertion and Deletion at Middle/Beginning
+   Inserting or deleting elements at the beginning or in the middle requries shifting elements, leading to O(n) time complexity.
+
+*** Linked List
+1. Insertion and Deletion
+   Insertion deletion operations are ~generally~ efficient O(1)
+   if the position is known (e.g., at the head or tail).
+   However, finding the position requires O(n) time.
+
+2. No Shifting
+   Insertion and deletion do not require shifting elements, only updating pointers.
+
+** Use Cases
+*** Array
+1. Static Collections
+   Suitable for collections of fixed size where the number of elements does not change frequently.
+
+2. Fast Access
+   Ideal for scenarios where fast, random access to elements is required (e.g., accessing elements by index).
+
+*** Linked List
+1. Dynamic Collections
+   Suitable for collections where the number of elements can change frequently, and where elements are frequently inserted and deleted.
+
+2. Sequential Access
+   Better suited for scenarios where elements are accessed sequentially or when the cost of shifting elements in an array is too high.

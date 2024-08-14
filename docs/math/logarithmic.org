@@ -1,3 +1,5 @@
+#+title: Logarithm
+
 * What is the Logarithm?
 The exponent that a base could become some number.
 
@@ -19,3 +21,31 @@ or without parentheses, logbx,
 or even without the explicit base, logx,
 when no confusion =is= possible,
 or when the base does not matter such as in [[file:./big-o.org][big O notation]]
+
+* Omitting
+** Common Logarithm
+If the base of any numbers is a `10`, you can ommit the base 10.
+
+This is called common logarithm.
+
+** Natural Logarithm
+If the base of any numbers is a `e` (Euler's number), you can ommit the base e.
+
+*** Why use Euler's number?
+1. Natural growth and decay
+   'e' appears naturally in descriptions of continuous growth or decay,
+   such as compound interest, radioactive decay, or population growth.
+
+2. Calculus
+   ?? is its own derivative,
+
+3. Complex analysis
+
+4. Probability theory
+
+5. Engineering and physics
+
+6. Computer science
+
+7. Natural logarithms
+   In(x), based on 'e', often simplifies calculations compared to logarithms with other bases.

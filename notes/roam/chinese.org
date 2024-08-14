@@ -3,7 +3,8 @@
 * How to type pronounce
 ralt + a = ¯
 ralt + e = ´
-ralt + v = ˇ ralt + ` = `
+ralt + v = ˇ
+ralt + ` = `
 
 * 学习
 [[https://en.wiktionary.org/wiki/Appendix:Mandarin_Frequency_lists/1-1000][Mandarin Frequncy lists]]
@@ -389,6 +390,17 @@ ralt + v = ˇ ralt + ` = `
 * 발제
 +
 - 癶 (bō) 등지다 발
+
+* 유휴
++ 遊 (yòu) 놀다 유
+  - 辶 (chuò) 쉬엄쉬엄 갈 착
+  - 斿 (yóu) 놀다 유, 깃발 유
+    깃발 아래 놀고 있는 아이
+    - 㫃 (yǎn) 나부끼다 언, 쓰러지다 언
++ 休 (xiū) 쉬다 휴
+  나무에 기대 쉬는 사람
+  - 人 (rén) 사람 인
+  - 木 (mù) 나무 목
 
 * 발음 규칙
 정확한 사전 발음 들어보기

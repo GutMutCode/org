@@ -1,0 +1,10 @@
+#+title: Class & Struct
+
+* Differences
+** Class
+1. Complex data structure with inheritance
+2. Properties are =private= by default
+
+** Struct
+1 .Simple data structure
+2. Properties are =public= by default

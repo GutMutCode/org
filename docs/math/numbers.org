@@ -1,0 +1,11 @@
+#+title: Numbers
+
+* Irrational number (무리수)
+A number that cannot be expressed as a simple fraction.
+
+* Transendental (초월수)
+Not the root of any polynomial with rational coefficients.
+
+* Polynomial (다항식)
+
+* Coefficient (유리수)
