@@ -1,0 +1,14 @@
+#+title: GPIO
+
+* General Purpose Input and Output
+** Output Level
+*** High
+3.3V
+
+*** Low
+0V
+
+** Mode
+*** Push Pull
+*** Open Drain
+*** Pull-up & Pull-down

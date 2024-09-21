@@ -1,0 +1,224 @@
+#+title: The Art of Electronics
+
+* History of Electronics
+** spark-gap transmitter
+Radio transmitter which generates radio waves by means of electric spark
+
+*** Radio transmitter
+An electronic device which produces radio waves with an antenna with the purpose of signal transmission up to a radio receiver.
+
+(often abbreviated as XMTR or TX)
+
+*** Electric spark
+An abrupt electrical discharge
+
+갑작스런 전기 방출
+
+** cat whisker
+Crystal detector?
+
+** vacuum-tube electronics
+
+** solid-state electronics
+*** discrete transistors
+*** magnificent arrays of transistors
+Integraded Circuit
+
+* Voltage & Current
+These are quantities
+These are usually changing with time
+
+** Voltage (symbol V or sometimes E)
+*** Definition
+The voltage between two points is ~the cost in energy~ (work done) required to move ~a unit of positive charge~ from the more negative point (lower potential) to the more positive point (higher potential).
+
+양전하가 음지(1)에서 양지(2)로 이동하는데 필요한 에너지의 양
+양전하가 음지(1)에서 양지(2)로 이동할때 발생하는 에너지의 양
+
+#+begin_quote
+전압을 표현할때, 항상 2개의 지점을 언급해야만 한다!
+
+1개의 지점에서 전압을 표현할때는, =ground= 와 비교한다.
+#+end_quote
+
+The energy released when a unit charge moves "downhill" from the higher potential to the lower.
+
+단위전하가 높은 위치에서 낮은 위치로 이동할때 발생하는 에너지
+
+/Potential difference/ or /electromotive force (EMF)/
+
+*** Units
+- volts (V)
+- kilovolts (1kV = 10^3V)
+- milivolts (1mV = 10^-3V)
+- microvolts (1uV = 10^-6V)
+
+*** joule (J) & 1J
+A joule (J) of work is done in moving a coulomb (C) of charge through a potential difference of 1V.
+
+1J = 1C의 전하가 1V만큼 움직였을때 힘
+
+**** coulomb (C)
+The unit of electric charge
+
+It equals the charge of approximately 6x10^18 electrons.
+
+*** Generating
+**** batteries
+The conversion of electrochemical energy
+
+화학작용 -> 전압
+
+**** generators
+The conversion of mechanical energy by magnetic forces
+
+운동에너지 -> 전압
+
+**** solar cells
+photovoltaic conversion of the energy of photons
+
+광 효과 -> 전압
+
+
+** Current (symbol I)
+*** Definition
+The rate of flow of electric charge past a point.
+
+한 지점을 지나는 전하가 흐르는 속도, 세기
+
+#+begin_quote
+전류를 표현할때, 항상 기기나, 연결을 언급해야만 한다!
+(어떤 기기, 연결을 지나갈때의 속도인지)
+#+end_quote
+
+*** Units
+The unit of measure is the ampere, or amp, with currents
+
+- amperes (A)
+- milliamperes (1mA = 10^-3)
+- microamperes (1uA = 10^-6)
+- nanoamperes (1nA = 10^-9)
+
+*** 1A
+A current of 1 amp equals a flow of 1 coulomb of charge per second.
+
+1A = 1C의 전하가 1초동안 흐르는 속도
+
+*** Generating
+By pacing voltages across things
+
+물건에 전압을 적용하면,
+
+내부의 전자의 흐름, 즉 전류가 생긴다.
+** How to see these things? (Voltage and Current)
+By oscilloscope
+
+*** Oscilloscope
+This allows you to look at voltages(or occasionally currents) in a circuit as a function of time.
+
+회로안의 전압을 시간에 대한 함수로 볼수있게 해준다
+** In Components
+*** Resistors - /I/ simply proportional to /V/
+*** Capacitors - /I/ proportional to rate of change of /V/
+*** Diodes - /I/ flows in only one direction
+*** Thermistors - light-dependent resistor
+*** Strain gauges - strain-dependent resistor
+
+* Rules
+** K's Current Law
+(Conservation of charge)
+The sum of the currents into a point(node) in a circuit equals(==)
+The sum of the currents out
+
+For a series circuit (a bunch of two-terminal things all connected end-to-end),
+the current is the same everywhere.
+
+The sum of the "voltage drops" from A to B via one path through a circuit equals(==)
+the sum by any other route
+
+** K's Voltage Law
+The sum of the voltage drops around any closed circuit is zero.
+
+* Power
+The power (energy per unit time) consumed by a circuit device is /P = VI/
+
+기기 소모 전력 P = 전압(V) X 전류(I)
+For /V/ in volts and /I/ in amps, /P/ comes out in watts
+
+** watts (W)
+A joule per second (1W = 1J/s)
+
+** Goes into
+- heat
+- mechanical work (motor)
+- radiated energy (lamp, transmitters)
+- stored energy (batteries, capacitors, inductors)
+
+** Why should I use?
+엄밀히 말하면, 순간의 전력을 말하나,
+
+일정한 시간마다 달라지는 전압과 전류에서는 일반화하여(퉁쳐서) 생각한다.
+
+To deal with average power
+
+* Relationship between voltage and current
+
+전압과 전류의 다양한 조합을 이용
+** Resistors
+/I/ 가 /V/ 에 비례
+
+임계 전압 (critical voltage)에 도달하기 전까지 0
+
+도달후 급격하게 오르는
+
+전선 - 전도성 물질 - 전선
+
+저항 /R/ = /V/ / /I/
+
+단위: Ohm
+
+주로 1~ 10M Ohm의 저항을 사용한다
+
++capacitor = filter for operating currents and signal levels
+
+- to reduce voltages by dissipating power
+- to measure currents
+- to discharge capacitors after power is removed
+
+resistance can be differ with temperature, voltage, time, and humidity
+
+voltage to a current, and vice versa
+
+** Capacitors
+/I/ 가 /V/ 의 변화량에 비례
+
+** Diodes
+/I/ 가 한방향으로 흐름
+
+** Thermistors
+온도에 따라 변하는 resistor
+
+** Photoresistor
+빛에 따라 변하는 resistor
+
+** Strain gauges
+장력에 따라 변하는 resistor
+
+gauge - a diameter
+
+** /three-terminal/ devices
+*** transistors
+The current that can flow between a pair of terminals is =controlled by the voltage= applied to a third terminal
+
+terminal: 전기가 통하는 입출구
+
+* Practice
+** 엑스라이더
+*** X50
+**** 48V
+**** 500W
+500J/s
+
+1C의 전하가, 1초에 500V 만큼 움직였을때 힘
+
+약 10A

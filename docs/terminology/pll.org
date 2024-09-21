@@ -1,0 +1,15 @@
+#+title: PLL
+
+* Phase-Locked Loops
+A feedback control system that generates a clock signal with a higher frequency than the input clock source.
+
+In microcontrollers, PLLs are used to multiply the base clock frequency, providing the flexibility to run the microcontroller at higher speeds without needing an external high-frequency clock.
+
+** Clock multiplication
+Increases the frequency of the input clock, allowing the microcontroller to run at higher clock speeds, improving performance.
+
+** Frequency stability
+Ensures that the generated clock is stable and synchronized with the reference clock.
+
+** Fine-tunning
+Allows precise control over clock frequency to meet the timing requirements of different parts of the system.

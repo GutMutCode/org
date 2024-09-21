@@ -1,0 +1,11 @@
+#+title: RCC
+
+* Reset and Clock Control
+** Clock source selection
+Allow you to chose between internal oscillators, external oscillators, and PLLs for generating the system clock
+
+** Clock gating
+Enables or disables the clock for individual peripherals to reduce power consumption when not needed
+
+** Reset control
+Manages the reset state of the microcontroller and its peripherals, ensuring that all components start from a known state after a power-up or reset event

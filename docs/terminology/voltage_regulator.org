@@ -1,0 +1,6 @@
+#+title: Voltage Regulator
+
+* What is it?
+An electronic device that maintains a constant output voltage regardless of variations in input voltage or load conditions.
+
+It is widely used inpower supply systems to ensure that sensitive electronic components receive a steady and safe level of voltage, preventing damage from fluctuations.

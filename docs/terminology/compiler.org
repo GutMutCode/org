@@ -6,6 +6,8 @@
   - [[#front-end][Front-end]]
   - [[#back-end][Back-end]]
 - [[#memory-allocation][Memory allocation]]
+- [[#type][Type]]
+  - [[#cross-compiler][Cross compiler]]
 
 * What is a Compiler?
 
@@ -99,3 +101,6 @@ movl -4(%rbp), %eax
 addl -8(%rbp), %eax
 movl %eax, -12(%rbp)
 #+end_src
+* Type
+** Cross compiler
+A compiler that translate a source code (C/C++, etc) into a binary that can be executed on the target.

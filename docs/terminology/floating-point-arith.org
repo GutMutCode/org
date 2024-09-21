@@ -1,0 +1,16 @@
+#+title: Floating Point Arithmetic
+
+* Types of floating point arithmetic
+Different formats used to represent floating-point numbers
+
+|            | Single-Precision Arithmetic     | Double-Precision Arithmetic       |
+|------------+---------------------------------+-----------------------------------|
+| Bit Length | 32 bits (4 bytes)               | 64 bits (8 bytes)                 |
+|------------+---------------------------------+-----------------------------------|
+|            | Sign bit (1 bit)                | Sign bit (1 bit)                  |
+| Structure  | Exponent (8 bits)               | Exponent (11 bits)                |
+|            | Mantissa (fraction) (23 bits)   | Mantissa (fraction) (52 bits)     |
+|------------+---------------------------------+-----------------------------------|
+| Range      | (-3.4 x 10^38) to (3.4 x 10^38) | (-1.8 x 10^308) to (1.8 x 10^308) |
+|------------+---------------------------------+-----------------------------------|
+| Precision  | 6 to 7 decimal digits           | 15 to 17 decimal digits           |

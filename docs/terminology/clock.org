@@ -1,0 +1,19 @@
+#+title: Clock
+
+* Clock in computer
+많은 앱들은 일정한 시간마다 작업을 수행하는 기능이 필요하다.
+-> 일정한 시간마다 작업을 수행하려면?
+-> 일정한 시간간격으로 반복되는 신호를 이용
+-> 발진기(oscillator)로 신호를 만들기
+-> 1ms 동안 발생하는 신호의 개수를 측정
+-> 주파수가 해당개수 만큼 발생할때마다, interrupt 신호 발생시킴
+-> interrupt 발생시, 해당 작업 수행
+-> "1ms마다 해당 작업 수행"이 가능해진다
+
+** Why should I use 1ms?
+자주 수정되는 작업에 적합하다
+
+- 타이머 수정
+- 센서데이터 읽기
+
+It is suitable for tasks that need to be updated frequently,

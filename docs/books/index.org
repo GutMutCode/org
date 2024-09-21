@@ -37,6 +37,9 @@ Practical Programming for Total Beginners
 ** Vehicle
 *** lqbal Husain
 [[https://www.amazon.com/Electric-Hybrid-Vehicles-Design-Fundamentals-ebook/dp/B08SHZX9S5/ref=sr_1_1?crid=1X40DHAJ64OOI&dib=eyJ2IjoiMSJ9.wGvNN4HmY2FQXUQ1NTREmLuiXVe9GF_WrD3inTiNHDKJA-1oFXtsvq9mf8ulw2KWNvzYRej0QjZvnKnM4CdLjqPtUqjmYbSBuwimCuNPpobigfWJyjCfi4Bo7etB40a_Mzpv9fjwTNNomUTO7ONKAC9-GnsNgFcZ2McMaQu9QrhLFdVHBT50tObg3yyBtcVPimQ0ePn9oNWiONHvWeHXpWO_o-1I2cY3z0GtIjUPnvs.RoM_NjDcScy5Dg3mjbkUue716MlsIKXEtBX5dGhruxY&dib_tag=se&keywords=vehicle+architecture&qid=1712387436&sprefix=vehicle+architecture%2Caps%2C266&sr=8-1][Electric and Hybrid Vehicles: Design Fundamentals]]
+** Electronics
+
+[[file:./the-art-of-electronic/index.org][The Art of Electronics 3rd ed]]
 
 
 * MIT Press

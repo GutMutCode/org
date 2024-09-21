@@ -1,49 +1,33 @@
 #+TITLE: Org Agenda file
 * Task List
-** Elixir [%]
-** Rust [%]
-*** TODO Easy Rust
-SCHEDULED: <2023-05-12 Fri ++1d>
-+ [X] Listen lecture if you don't know what to do.
-+ [X] Read 1 chapter.
-** ML
-*** TODO EMC
-SCHEDULED: <2023-05-08 Mon ++1d>
-+ [ ] Listen 1 lecture.
-+ [ ] Fix IBM acount
+** Firmware
+*** TODO STM [0/2]
+**** TODO Analyze the HAL code in STMCubeIDE
+여태껏 분석한 내용이 있으니 해당내용 정리 마무리
 
-** VIDEO Be YouTuber [16%]
-DEADLINE: <2023-05-29 Mon>
-+ [-] Watch Video about video editing [50%]
-  - [X] Write What i want
-  - [X] Videos Making video
-  - [ ] Idea Making
-  - [ ] Get insite
-+ [ ] Write ideas [0%]
-  - [ ] Pacman
-  - [ ] Legend of Zelda
-+ [ ] Concept Art [0%]
-  - [ ] Get Reference
-  - [ ] Twitter
-  - [ ] Discord Server ( Live2D )
-+ [X] Face Tracking [100%]
-  - [X] VTubeStudio
-    background => 8 : 크로마키
-+ [ ] OBS Studio [0%]
-  - [ ] Broadcast
-+ [ ] Make a video about nvim & emacs.
-  - [ ] Collect Reference
+- [ ] Analyze the generated code.
+- [ ] Analyze the HAL libray code that use a GPIO pins.
 
-** DONE Decide Rest of Leave [100%]
-CLOSED: [2023-05-23 Tue 15:03] DEADLINE: <2023-05-22 Mon>
-+ [X] Rest
-+ [X] Leave
-** TODO Find the truth about human [0%]
-- [ ] Select relative contents
-- [ ] Read relative books
-- [ ] Watch relative vedios
+**** TODO Analyze the Keil MDK into the ppt
+
+*** TODO Learn about the electronics
+- [ ] Resistors
+- [ ] Capacitors
+- [ ] Transistors
+
+*** TODO 컵세척기
+SCHEDULED: <2024-09-23 Mon>
+
+**** 유량계 조사
+
+점성있는 액체
+
+적당한 가격
+
+데이터를 받을 수 있는지 (통신 프로토콜)
+
+**** 무게
 
 * Personal Task List
 ** Shopping List
-SCHEDULED: <2023-05-14 Sun 17:00>
 + [ ] shrimp

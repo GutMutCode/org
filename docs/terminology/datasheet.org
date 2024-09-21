@@ -1,0 +1,148 @@
+#+title: Datasheet
+
+* [[file:./firmware.org][How to find information about hardware]]
+* How to read the Datasheet
+1. 기능 확인
+2. 전압 확인
+
+* 데이터
+** AX
+Address line X
+
+It used to select memory locations or specific registers.
+
+** ADX
+Analog-to-Digital Converter Channel X
+
+This pin is used for inputting analog signals, which are converted to digital values by the ADC.
+
+** ADCX
+Analog-to-Digital Converter Channel X
+
+Similar to ADX, this pin is used for analog signal input, but it corresponds to channel X of the ADC.
+
+** AVCC
+Analog Voltage Supply
+
+This is supply pin for the analog portion of the microcontroller, typically connected to the same voltage as VCC but with added filtering
+
+** AINX
+Analog Comparator Negative Input X
+
+This pin is used as the negative input to the analog comparator, which compares two voltages.
+
+** ALE
+~Address Latch~ Enable
+
+This pin is used to =latch= the lower byte of the address bus in microcontroller systems, particularly in systems with an external memory interface.
+
+** AREF
+Analog ~Reference Voltage~
+
+This pin is used to provide a reference voltage for the ADC, against which the input voltages are compared.
+
+** CLKO
+Clock Output
+
+This pin outputs the system clock signal, which can be used to synchronize external devices
+
+** VCC
+Voltage Common Collector
+
+This pin is the power supply voltage pin for the microcontroller, typically +5V or +3.3V depending on the system.
+
+** GND
+Ground
+
+This pin is the ~reference point~ for the voltage supply and the common ground for the circuit.
+
+** SCL
+Serial Clock Line
+
+This pin is used in ~I2C~ communication to carry the clock signal, synchronizing the communication between devices.
+
+** SDA
+Serial Data Line
+
+This pin is used in ~I2C~ communication for data transfer between devices.
+
+** SS
+Slave Select
+
+This pin is used in ~SPI~ communication to select the slave device.
+
+** INTX
+External Interrupt X
+
+This pin is used to trigger an external interrupt, allowing external devices to interrupt the microcontroller's main program.
+
+** ICPX
+Input Capture Pin X
+
+This pin is used for input capture in timers, recording the value of a timer at the moment ~an external event~ is detected.
+
+** MISO
+Master Out Slave Out
+
+This pin is used in ~SPI~ communication to transfer data from the slave device to the master.
+
+** MOSI
+Master Out Slave In
+
+This pin is used in ~SPI~ communication to transfer data from the master device to the slave
+
+** OCXY
+Output Compare X(num) Y(alpha)
+
+This pin is used in ~PWM~ to output a signal when the timer matches a certain value.
+
+- 값을 정함
+- 타이머가 정해진 값에 도달하면 해당핀이 변함 (0 or 1)
+
+** PGX
+Port G pin X
+
+This refers to a specific pin X on Port G of the microcontroller. Each port typically controls multiple GPIO (General Purpose Input/Output) pins.
+
+** PCINTX
+Pin Change Interrupt X
+
+This pin can trigger an interrupt on a change of state (high-to-low or low-to-high) on pin X
+
+** RESET
+This pin used to reset the microcontroller, restarting the program execution from the beginning.
+
+** RD (with -)
+This pin is used to trigger a read operation, typically in memory-mapped I/O systems, where the microcontroller reads data from a peripheral.
+
+** RXDX
+Receive Data X(num)
+
+This pin is used to receive data in serial communication, such as ~UART~
+
+** TXDX
+Transmit Data X(num)
+
+This pin is used to transmit data in serial communication, such as ~UART~
+
+** TX
+Timer X Input
+
+This pin is used as an external input to Timer X, which can count external events.
+
+** TOSC
+Timer Oscillator
+
+This pin is used to connect an external oscillator for the timer/counter subsystem, often used in real-time clocks.
+
+** WR (with -)
+This pin is used to trigger a write operation, typically in memory-mapped I/O systems, where the microcontroller writes data to a peripheral.
+
+** XCKX
+External Clock X(num)
+
+This pin is used as an external clock source for synchronous serial communication, such as USART.
+
+** XTAL1
+This is one of the two used to connect an external crystal oscillator to provide the clock signal for the microcontroller.
+The other pin is typically labeled XTAL2

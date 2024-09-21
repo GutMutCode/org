@@ -1,0 +1,21 @@
+#+title: Project Zomboid
+
+* 서버설정 (Zomboid/Server/servertest.ini)
+#+begin_src txt
+Map=InGameMaps_Main;Trelai_4x4;Trelai_spawns;coryerdon;Pertville;Florius;Tashtego;Dirkerdam;Dirkerdam west;Dirkerdam_Spawns;Greenport;TheRomero;Ashenwood;BedfordFalls;North;South;West;Blackwood;Blueberry;Breakpoint;CONRTF;Chestown;Chinatown;Chinatown_EX;Crowlake;Riverdeltabase;EVAC_Muldraugh;Elysium_Island;FortRedstone;Fort Rock Ridge;Glenport;Grapeseed;Greenleaf;lvinternationalairport;li_township;LastOfUs;LittleTownship;MREX;Military Fuel Depot;MonmouthCounty;MuldraughCheckpoint;Muldraugh Fire Department;Muldraugh Military Base;NewEkron;orchidwood;Otr;CorOTRroad;Over the River - Secondary Route;OverlookHotel;Petroville;PineVille;Pitstop;RavenCreek;RedstoneRaceway;Riverside Fire Department;Road from Monmouth County to Bedford Falls;pz_rosewoodexp_map;Rosewood VHS Store;Southwood2.0;Springwood;Tandil;Taylorsville;Taylorsville_bridge_to_Coryerdon;The Compound;The Museum;Tugaland;Utopia;west_point_expansion;WestPointExpansionFix;West Point Fire Department;WestPointTrailerParkAndVhsStore;Westwood;Winchester, KY;Xonics Mega Mall Interior;Xonics Mega Mall Exterior;Xonics Mega Mall;Xonics Mega Mall Roof;Muldraugh, KY
+#+end_src
+
+* 모드 설정 (Zomboid/Lua/saved_modlists_server.txt)
+#+begin_src
+VERSION=1
+[Map1]
+WorkshopItems=2800337234;2756689895;2782415851;2977898120;2384329562;2337452747;2837923608;3033014448;3218473190;2879745353;2774834715;2852704777;2898138850;2844829195;2923495608;2599752664;2784607980;3017609101;2973698541;2820363371;522891356;2536865912;2671890843;2852608098;2766626985;2840889213;2730975264;2895386882;2892795238;3236566430;2789237738;2928391710;2819655145;1516836158;2806456685;2490642410;2463499011;2778799110;3045726312;2252982049;3138407232;2542249811;2778676843;2940881350;2887123503;2804428637;2926652828;2789097802;2706673644;2712480036;2889235913;926737806;2881386527;2844685624;2554699200;2886261613;3183799205;2597946327;2196102849;2707344076;2799120190;2944975401;2718350686;2922087098;2947314444;2914532881;2932153147;3134394569;2796180494;2881370621;2781180323;2868565253;2195155059;2787439893;2721653030;2894668584;2890129618;1713269594;2603239477;3137753538;2805994608
+Mods=FantaStreetTiles_01;TryhonestyTiles;BigZombieMonkeys_tile_pack;AsianStyle;wists_tiles_public;EN_Flags;DylansTiles;dylanstiles_bundle;OujinjinTiles;iverytiles_01;simonMDsTiles;EN_Newburbs;melos_tiles_for_miles_pack;tkTiles_01;Diederiks Tile Palooza;PertsPartyTiles;InGameMaps;Trelai_4x4_Steam;coryerdon;Dirkerdam;Greenport;TheRomero;Ashenwood;BedfordFalls;Blackwood;Blueberry;Breakpoint;CONRTF;Chestown;Chinatown;Chinatown expansion;CorOTRroad;Crowlake;DeltaCreekMunitions;EVAC_Muldraugh;Elysium_Island;FORTREDSTONE;Fort Rock Ridge;Glenport;Grapeseed;Greenleaf;SimonMDLVInternationalAirport;lakeivytownship;LastOfUs;LittleTownship;MRE;military fuel depot;MonmouthCounty_new;MuldraughCheckpoint;Muldraugh Fire Department;muldraughmilitarybase;NewEkron;Orchidwood(official version);Otr;OtrSR;OverlookHotel;Petroville;pineville;Pitstop;RavenCreek;RedRacer;Riverside Fire Department;RfMCtBF_addon;pz_rosewoodexp_map;RosewoodVHSGunStores;Southwood2.0;Springwood1;Tandil;Taylorsville;Taylorsville_bridge_to_Coryerdon;TheCompound;TheMuseumID;Tugaland;Utopia;WestPointExpansion;WPEFIX;West Point Fire Department;WestPointTrailerParkAndVhsStore;westwoodremake;Winchester;Xonics Mega Mall
+#+end_src
+* 모드
+책읽고 다시 넣는 모드
+읽은 책 표시모드
+비디오 이름 [요리] 이런식으로 나오는 모드
+앉기 모션
+앉으면 편안함
+가방 드래그 위치 변경

@@ -13,3 +13,25 @@ OS -> Interrupt -> How? -> MCU -> Atmega128A -> STM32 -> Arm Arch
 
 **** Complex instruction set computer
 하나의 기계어 명령어로, 여러개의 작업을 한번에 끝내는 CPU
+
+* Series
+** Cortex
+A family of ARM processor designs for embedded systems, consumer electronics, and mobile devices
+
+*** Cortex-M family
+For =Microcontroller= embedded applications
+
+**** What does the number mean?
+A model number within the Cortex-M series for different purposes.
+
+***** Cortex-M4
+DSP & FPU
+
+***** Cortex-M7
+High-performance (Double-precision FPU) +alpha
+
+*** Cortex-R family
+For =Real-time= processors
+
+*** Cortex-A family
+For =Applications= that need high performance such as smartphone and tablets.

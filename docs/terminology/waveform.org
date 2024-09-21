@@ -1,0 +1,7 @@
+#+title: Waveform
+
+* Waveform
+** square wave
+A type of waveform that alternates between two distinct levels, usually high and low, with an abrupt transition between these levels.
+
+It hsa only two states: "on" and "off", making the shape of the wave look like a series of squares when plotted on a graph.

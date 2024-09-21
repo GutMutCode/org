@@ -13,3 +13,23 @@ The firmware is smart enought to find those files and load on instead of just lo
 Provide some diagnostic outputs
 Provide a way to configure the hardware
 locates and load the boot loader which in turn locates and loads the OS
+
+* How to find information about a specific hardware?
+** Datasheet (DS)
+- Functional =overview=
+- Pin assignment and definition
+- Electrical characteristics
+- Packaging
+- Ordering information
+
+** Reference Manual (RM)
+This targets =application= developers.
+
+- how to use the hardware (MCU, memory and peripherals)
+
+** Programming Manual (PM)
+This targets application and =system-level software= developers.
+
+- Programming model
+- instruction set
+- =core= peripherals

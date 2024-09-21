@@ -1,3 +1,60 @@
 #TITLE: Brainstorm
 
-*
+* 집
+월세 or 전세
+
+** 월세
+50~60
+
+** 전세
+이자
+* 커리어
+** 몸값 올리기
+** 외국 개발 수주
+- 영어 회화
+- 비즈니스 영어
+
+* 우선순위 정하기
+- 투입해야 하는 노력
+  지속적인가?
+  단기적인가?
+
+- 얻게 되는 성과
+  지속적인가?
+  단기적인가?
+
+** 보드 기능 구현하기
+*** 모르는 개념 정리하기
+*** 모르는 용어 정리하기
+
+** 교육자료 만들기
+* 펌웨어
+최소한 기능은 알것
+
+50% 이상 이해가능하도록
+
+bits수가 많아서 -> ADC 정밀도 높히기
+
+외부 ADC -> 단가, 프로세서 보호
+* 프로젝트
+** 목표
+*** 컵세척기
+물 히팅 -> 컵에 뿌리기
+
+**** 큰 펌프 용량
+4L/Min
+
+*** 리필 스테이션
+**** 일정량 펌프질
+물통 -> 텀블러
+
+
+** 회로
+*** Relay
+An electrically operated switch.
+
+It allows a low-power electrical signal to control a high-power circuit without a direct elctrical connection between them.
+
+저전력 신호를 통해, 고전력 회로를 컨트롤하는 스위치
+
+코일, 전자석에 전류를 흘림 -> 전자기장 발생
