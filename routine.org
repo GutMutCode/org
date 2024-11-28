@@ -1,0 +1,167 @@
+#+TITLE: Routine
+#+TAGS: { @OFFICE(o) @HOME(h) }
+
+* Priority
+** Daily Routine
+*** Morning
+#+begin_quote
+Review your comprehensive task list
+Identify your 1-3 Most Important Tasks (MITs)
+#+end_quote
+
+*** Throughout the Day
+#+begin_quote
+Focus on completing your MITs first.
+After completing MITs, move on to other tasks based on their urgency and importance.
+#+end_quote
+
+*** Evening
+#+begin_quote
+Review your progress
+Update your tasks list to reflect changes  in deadlines or priorities.
+#+end_quote
+
+**** Peer-toPeer Feedback
+#+begin_quote
+Use the "Pairs" method from, pairing up team members to give each other specific and sincere praise, as well as kind and clear criticism, enhancing mutual appreciation and trust within the team.
+#+end_quote
+
+*** Daily Review
+**** Gratitude
+#+begin_quote
+Write down three things you're thankful for.
+#+end_quote
+
+**** Pray/Reflection
+#+begin_quote
+Reflect on your day and note any specific achievements or concerns
+#+end_quote
+
+**** Creative Work
+#+begin_quote
+Track your completed proejct or tasks.
+#+end_quote
+
+**** MITs for Tommorrow
+#+begin_quote
+Identify your Most Important Tasks for the next day.
+#+end_quote
+
+
+** Weekly Routine
+*** Monday
+#+begin_quote
+Evaluate your long-term goals and break them down into weekly tasks
+Prioritize your tasks using the ABCDE method or MoSCoW method.
+#+end_quote
+
+*** End of Week
+#+begin_quote
+Review your accomplishments and any challenges faced.
+Plan for the upcoming week, adjusting your priorities as needed.
+#+end_quote
+
+*** Weekly Review
+#+begin_quote
+Hold a weekly review session to assess project progress and task completion.
+Focus on how effectively tasks were prioritized and make adjustments as needed.
+#+end_quote
+
+** Monthly Routine
+*** End of Month
+**** Gauge Your Feedback
+#+begin_quote
+Use the Radical Candor framework to have team members rate the feedback they receive, helping to understand if it aligns with your intentions and providing insights for improvement each others.
+#+end_quote
+
+**** Whoops-a-Daisy
+#+begin_quote
+Implement a system where team members publicly acknowledge and learn from their mistakes, promoting a culture of continuous learning and improvement.
+#+end_quote
+
+
+** Yearly Routine
+*** End of Year
+**** Annual Assessment
+#+begin_quote
+Conduct a comprehensive review of your feedback process and its effectiveness in fostering open communication and continuous improvement.
+#+end_quote
+
+**** Feedback Evolution
+#+begin_quote
+Use the annual assessment to refine your feedback methods and practices, ensuring they align with the changning needs and goals of your team.
+#+end_quote
+
+
+* Create a Comprehensive Task List
+** Write down all your tasks
+#+begin_quote
+meetings, emails, project deadlines, long-term project, etc
+#+end_quote
+
+** Categorize your tasks
+#+begin_quote
+Consider who each task impacts, what the reward or outcome is, and what the risk of not completing the task might be
+#+end_quote
+
+*** Person who are impacted
+*** Reward
+*** Risk
+
+* Use a Task Prioritization
+** ABCDE Method
+*** A (Must do)
+#+begin_quote
+Critical tasks
+#+end_quote
+
+*** B (Should do)
+#+begin_quote
+Important but less critical tasks
+#+end_quote
+
+*** C (Could do)
+#+begin_quote
+Nice-to-haves
+#+end_quote
+
+*** D (Delegate)
+#+begin_quote
+Tasks that can be done by others
+#+end_quote
+
+*** E (Eliminate)
+#+begin_quote
+Non-essential tasks.
+Focus on A and B tasks first.
+#+end_quote
+** Eisenhower Matrix
+Classify tasks into four quadrants
+
+*** Urgent and Important (Do)
+Tasks that need immediate action and have significant impact
+
+*** Important but Not Urgent (Schedule)
+Tasks that are crucial but not time-sensitive
+
+*** Urgent but Not Important (Delegate)
+Tasks that need to be done quickly but have low impact
+
+*** Neither Urgent nor Important (Eliminate)
+Non-essential tasks
+
+* Schedule Your Tasks
+** Create a schedule
+#+begin_quote
+Plan your day based on task priorities and deadlines.
+Block time for focused work and set daily reminders.
+#+end_quote
+
+** Time Blocking
+Reserve space on your calendar for tasks in order of their priority.
+
+* Review and Adjust
+** Regularly review your priorities
+#+begin_quote
+Reassess task urgency and importance as needed to adapt to changing circumstances.
+#+end_quote

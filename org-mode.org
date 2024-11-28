@@ -1,5 +1,0 @@
-#+title: Org-mode
-
-* Table
-| This is the content of the first cell |
-| < Here I am after pressing TAB        |

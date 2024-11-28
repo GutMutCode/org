@@ -1,0 +1,38 @@
+#+title: Computer
+
+* CPU
+** AMD Ryzen 5 라파엘 7500F
+*** Core
+6
+*** Thread
+12
+*** Clock
+3.7GHz
+*** 대리점정품
+O
+*** 멀티팩
+O
+*** 쿨러포함
+O
+
+* Cooler
+** CPU
+*** JONSBO CR-1000 EVO AUTO RGB (WHITE)
+
+* Mainboard
+** MSI PRO B650M-P (AMD B650/M-ATX)
+
+* Memory
+** Samsung DDR5 PC5-44800 [16GB] 5600
+
+* GPU
+** MSI GeForce RTX 4060 벤투스 2X 블랙 OC D6 8GB
+
+* SSD
+** SK hynix Gold P31 M.2 NVMe 2280 [1TB TLC]
+
+* Case
+** darkFlash DS900 ARGB 강화유리 (화이트) (미들타워)
+
+* Power
+** 마이크로닉스 Classic II 풀체인지 700W 80PLUS BRONZE 230V EU ATX3.1 (ATX/700W)

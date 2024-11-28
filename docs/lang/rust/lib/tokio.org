@@ -4,6 +4,63 @@
 https://tokio.rs/
 
 Network domain feature library.
+* How it works?
+** Event loop
+Reactor Pattern
+
+- Linux: epoll
+- macOS/BSD: kqueue
+- Windows IOCP (Input/Output Completion Ports)
+
+  #+begin_src rust
+stream.write_all(b"hello world\n").await
+  #+end_src
+
+** State Machine
+#+begin_src rust
+enum Poll<T> {
+    Ready(T),
+    Pending
+}
+#+end_src
+
+** Async/Await Flow
+#+begin_src rust
+loop {
+    match stream.poll_write() {
+        Poll::Ready(result) => break result,
+        Poll::Pending => yield_to_runtime();
+    }
+}
+#+end_src
+
+** Runtime Scheduler
+- Manage multiple tasks (futures)
+- Uses work-stealing algorithm
+- Efficiently distributes work across threads
+
+#+begin_src rust
+async fn write_all(stream: &mut TcpStream, data: &[u8]) {
+    while !data.is_empty() {
+        match stream.poll_write(data) {
+            Poll::Ready(n) => {
+                data = &data[n..];
+            }
+            Poll::Pending => {
+                tokio::task::yield_now().await;
+            }
+        }
+    }
+}
+#+end_src
+
+** System Calls
+#+begin_src rust
+fn set_nonblocking(fd: RawFd) {
+    fcntl(fd, F_SETFL, O_NONBLOCK);
+}
+#+end_src
+
 
 * Main Features
 1. A multi-thread runtime for executing asynchronous code.

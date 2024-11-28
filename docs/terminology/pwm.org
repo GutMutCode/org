@@ -1,7 +1,7 @@
 #+title: PWM
 
 * What is the PWM?
-Pulse Width Modulation
+_Pulse Width_ Modulation
 
 A technique used to control the amount of power delivered to an electrical device by varying the width of the pulse in a pulse signal
 
@@ -9,7 +9,7 @@ It is commonly used in applications live motor control, LED dimming, and audio s
 
 In PWM, a digital signal alternates between on and off states.
 
-** "On" time (or width of pulse)
+** "On" time (or width of pulse, duty)
 It's adjusted (modulated) to control the effective power.
 
 The ratio of the "On" time to the total period of the signal is called the =duty cycle=

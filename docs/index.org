@@ -13,6 +13,7 @@
 ** [[file:./snack/index.org][Snack]]
 ** [[file:./bussiness/index.org][Bussiness]]
 ** [[file:./science/index.org][Science]]
+** [[file:./videos/index.org][Video Editing]]
 
 ** [[file:./apple/index.org][Apple]]
 

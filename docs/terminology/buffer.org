@@ -1,0 +1,4 @@
+#+title: Buffer
+
+* What is the Buffer?
+A temporal memory space for Trasmit or Receive

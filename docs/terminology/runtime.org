@@ -5,6 +5,31 @@ The execution time that code is running
 
 The meaning of Runtime is more close to ~Runtime Libary~
 
+The part of program that manages resource allocation, instruction execution, and provides services like memory management or performance tuning during application execution
+
+** Examples
+*** Virtual Machine (VM)
+Provides uniform runtime environments, like .NET's CLR or Java's JVM, abstracting hardware sepcifics.
+
+*** Language-Specific Runtime
+"Ruby Runtime" for Ruby, "JavaScript's runtime environments" like V8, Node.js, etc.
+
+*** Operating Systems Runtime
+Features associated with the underlying OS.
+
+*** Run-Time System
+Also known as RTS, which are components or software services launched with the application to:
+- Manage memory.
+- Handle dynamic linking.
+- Offer services for exception handling or security.
+
+**** Java runtime environment (VM)
+For running Java bytecode
+
+**** Python interpreter
+From resource allocation to program elevation
+
+
 ** Runtime Library
 A set of code that need to run but not in source code (written by creator of compiler)
 

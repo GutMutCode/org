@@ -1,0 +1,13 @@
+#+title: Web
+
+* What is the Web?
+** VM
+A virtual machine that runs the Web app's code, e.g. the Javascript code that powers your apps.
+
+*** How it works?
+VM loads javascript and interpret it.
+
+Only javascript? -> No. [[file:../lang/wasm/index.org][WebAssembly]]
+
+** [[file:./web_apis.org][Web APIs]]
+A set of Web APIs that the Web app can call to control web browser/device functionality and make things happen (DOM, CSSOM, WebGL, IndexedDB, Web Audio API, etc.)

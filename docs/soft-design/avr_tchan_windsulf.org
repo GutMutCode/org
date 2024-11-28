@@ -1,0 +1,19 @@
+#+title: Avr Tchan Windsulf
+
+* Maintanance
+** Fix the Timer Code
+*** Things we don't do
+**** Update motor driver
+** Modular Programming
+
+* Readablity
+
+* Redundancy
+* Consistancy
+* Stability
+
+* Debug Capability
+* Error Handling
+* Recovery Mechanism
+* Security
+** Buffer Overflow

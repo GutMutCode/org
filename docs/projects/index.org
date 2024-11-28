@@ -3,10 +3,10 @@
 #+auto_tangle: t
 
 * One For All
-** What want to make
+** What I want to make
 *** Virtual Processing or Virtual Threading ( Inspired by Erlang )
-+ For thousand of websockets => full interactive, effective and reasonable webpage
-+ Using concurrency, parallel without verbose boilerplate as async, and without any performance cost.
++ For thousand of websockets => full interactive, effective and reasonable webpage ( Inspired by Pheonix framwork in Elixir )
++ Using concurrency, parallel without verbose boilerplate as async, and without any performance cost. ( Inspired by Rust )
 
 *** Using javascript without javascript
 + We need javascript, whereas don't like syntax.
@@ -17,6 +17,8 @@
 
 *** Fault-tolerant
 + We are lazy, so we need ability to choose when we code.
++ By isolate the state of each actor
++ If failure is limited to single actor, the whole system becomes more resilient
 
 *** Multi-model Database (General purpose)
 + In modern programing world, we need multiple database even if our service's main purpose is one.
@@ -38,17 +40,18 @@
 *** Programming language for Musician
 
 *** Integrate Code to Video Editing
+*** Easy Scale up
+I don't want to adapt your code at all to scale up.
 
 ** What need to make
-
-*** TODO [#B] Understand about Virtual Machine for Virtual Processing and Fault-tolerant
+*** TODO Understand about Virtual Machine for Virtual Processing and Fault-tolerant
 **** [ ] Search learning documents and list up
 **** [ ] Find who knows this well
 **** [ ] Cloning exist virtual machine briefly
 ***** What through?
 ****** [[file:./OFA/db/index.org][SQLite clone]] in C
 
-*** TODO [#B] Use JS Without JS
+*** TODO Use JS Without JS
 **** [ ] Find who already doing this
 ***** [ ] Start HTMX project
 ****** How long?
@@ -58,7 +61,7 @@
 ***** How long?
 ***** What through?
 
-*** TODO [#B] Understanding programming language's main structure and control flow (by Zig?) => for OFA
+*** TODO Understanding programming language's main structure and control flow (by Zig?) => for OFA
 **** [ ] Cloning interpreter & compiler in GO => [[file:./OFA/lang/index.org][WIIG & WCIG]]
 ***** How long?
 Until the end
@@ -67,7 +70,7 @@ Until the end
 ***** How long?
 ***** What through?
 
-*** TODO [#B] Understanding database's main structure and modern model's purposes => Multi model database
+*** TODO Understanding database's main structure and modern model's purposes => Multi model database
 **** [ ] Search learning documents and list up
 ***** How long?
 ***** What through?
@@ -82,7 +85,7 @@ Until the end
 **** [ ] Contribute with opensource database project
 
 
-*** TODO [#B] Apply math to my real work
+*** TODO Apply math to my real work
 **** [ ] Make Game
 + Clone `Don't starve` & `Project Zomboid`
 

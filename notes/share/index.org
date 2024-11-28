@@ -1,0 +1,74 @@
+#+title: Share
+
+* Difficults
+The difficults i experienced
+
+** 집 구할때
+*** Dificults
+**** 도대체 집은 어떻게 사야하는 거지?
+**** 대출은 어떻게 받는 거지?
+**** 매매, 전세, 월세 중에 뭐가 나에게 제일 좋은 선택일까?
+*** Solutions
+*** Thinking
+
+** 컴퓨터 살때
+file:./computer.org
+
+*** 내가 좋아하는 게임이 잘돌아가나?
+*** 기기간의 호환성을 충분히 고려한 견적인가?
+
+** 차 살때
+*** 월 유지비가 얼마나 들지?
+
+** 돈 쓸때
+*** 내가 이번달에 이걸 사도 되나?
+
+** 미래 계획 할때
+*** 돈 벌때
+file:./sales.org
+file:./alex.org
+
+* Likes
+The reason that why am i like
+
+** 1
+*** Reasons
+* Learning Routines
+** Date:
+
+*** What did I learn today?
+(Hint: Summarize key concepts)
+
+*** What did not go well?
+(Hint: Challenges faced, areas of confusion)
+
+*** What will I change in my study habits or strategy?
+(Hint: Adjustments for improvement)
+
+*** Mental Replay
+**** Why did I make mistakes?
+**** Even if correct, how to improve?
+
+** Peer learning
+*** Topic
+- Explain to your peer
+
+*** Peer
+- Listen actively
+- Ask for clarity
+
+*** Reframe
+- Paraphrase what was explained
+
+*** Review
+- Encourage each other
+
+** Diagnosis
+*** Understood
+Moving to discussion on application and delving deeper
+
+*** Formulaic
+Focus on Rear-World/Application Challenges
+
+*** Vague
+Elaborate on learning and confusion points -- Proceed?

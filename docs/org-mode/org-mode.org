@@ -1,0 +1,35 @@
+#+title: Org-mode
+#+TAGS: { @OFFICE(o) @HOME(h) } COMPUTER (c) PHONE(p) READING(r)
+
+https://doc.norang.ca/org-mode.html#HowToUseThisDocument
+
+* Table
+| This is the content of the first cell |
+| < Here I am after pressing TAB        |
+
+* Test
+** Heading2
+1. ordered
+2. ordered
+3. ordered
+
+** Heading3
+- unordered :: description
+  + unordered
+  + unordered :: description
+
+- unordered
+
+- unordered
+
+** TODO Heading4 :@HOME:COMPUTER:PHONE:READING:
+*bold*
+/italic/
+_underlined_
+=code=
+~verbatim~
++strike-through+
+
+
+** Call fred
+SCHEDULED: <2024-10-04 Fri>

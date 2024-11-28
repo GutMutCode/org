@@ -33,3 +33,9 @@ This targets application and =system-level software= developers.
 - Programming model
 - instruction set
 - =core= peripherals
+* in Arduino Mega
+** ATmega8U2 firmwares (하나의 파일)
+ATmega8U2를 통해, ATmega2560에 Serial 접근할 수 있도록 만듬 (Port 생성)
+
+ - ATmega8U2 DFU bootloader
+ - usb to serial firmware

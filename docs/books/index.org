@@ -145,6 +145,7 @@ large-scale systems
 https://github.com/donnemartin/system-design-primer
 
 * [[file:./supernormal.org][SuperNormal]]
-** [[file:./mean_math.org][Real Meaning of Math]]
+* [[file:./mean_math.org][Real Meaning of Math]]
+* [[file:./how-to-win-friends/index.org][How to win Friends]]
 
 * [[file:../index.org][Docs]]

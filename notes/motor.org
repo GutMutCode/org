@@ -1,0 +1,67 @@
+#+title: Motor
+
+* How to control motor?
+** Software Considerations
+*** Control Logic
+Define Up/Down positions (retract/extend)
+Use _PWM signals_ to control speed/position if supported by the actuator
+
+*** Feedback Mechanism (if needed)
+Use _limit switches_ to detect end positions
+_Potentiometers or encoders_ to measure position (if precise control is required)
+
+*** Microcontroller Code
+Use _timers_ to generate =PWM signals= or control =stepper pulses=.
+Implement _H-Bridge logic_ (e.g. forward/reverse control for DC motors)
+If using I2C/SPI, communicate with a dedicated motor controller module
+
+*** Safety Considerations
+**** Current Limiting
+Avoid overloading the actuator
+
+What's this mean?
+
+**** Debounce Logic
+If using limit switches, debounce them to avoid false triggers.
+
+**** Emergency Stop
+Implement a button or software logic to stop movement immediately
+
+*** Smoothens Considerations
+#+begin_quote
+The techniques that _gradually adjust_ the speed rather than abruptly starting or stopping the actuator.
+
+- reduce mechanical stress
+- prevents wear or system failures
+#+end_quote
+
+**** Accelerating
+***** Speed Control with PWM
+****** You can control the speed by varying the duty cycle
+- Start with a low duty cycle
+- Gradually increase it to accelerate smoothly
+
+****** If the actuator's motor driver supports _variable speed_
+Use analog control or PWM input
+
+****** Example Logic
+Start at 10% PWM duty cycle & increase to 100% in steps
+
+***** Acceleration Profile
+Implement ramping logic to control acceleration and deceleration
+
+ramping: The ways to change the duty cycle over time
+
+****** Linear ramp
+Increase speed gradually in fixed steps (constant rate over time)
+
+****** Exponential ramp
+Faster acceleration at later stages (accel: __-^)
+
+****** S-curve ramp
+Smooth start and stop for soft transitions (accel: ____-^-____)
+
+***** Timers and Delays
+Use microcontroller timers to control the rate at which PWM duty cycles change.
+
+A timer interrupt can adjust PWM values periodically to create smooth acceleration.

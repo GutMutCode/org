@@ -1,0 +1,205 @@
+#+title: Code the AVR in Assembly
+
+* AVR architecture (based on ATmega2560)
+** Memories in ATmega2560
+*** Program Memory (Flash)
+Stores the main code or firmware
+
+*** EEPROM
+Stores non-volatile data that must persist after power loss
+
+*** Data Memory
+**** General Purpose Registers (32 bytes)
+CPU가 연산할때 사용하는 레지스터 (arithmetic, logic)
+
+- Size: 8bit
+- Address Locations: 0x0000 ~ 0x000F
+- Access Method: Direct (MOV, ADD)
+
+**** I/O Registers (64 bytes)
+주변장치들을 제어하는데 사용하는 레지스터 (I/O pins, timers)
+
+These are dedicated to specific functions
+
+(Extended I/O Memory?)
+
+- Size: 8bit
+- Access Method: IN, OUT or memory access (ST, LD)
+
+**** Internal data SRAM - Static Random Access Memory
+It's used for storing data and parameters by AVR programmers and c compiler
+
+- Address Locations: 0x0010 ~ 0x20FF
+
+**** Status Registers
+***** Zero
+작업중인 레지스터값이, 0인지 확인하는 레지스터
+
+***** Carry
+작업중인 레지스터값이, Overflow 확인하는 레지스터
+
+***** Half-carry
+작업중인 레지스터값이, Overflow의 반을 채웠는지 확인하는 레지스터
+
+***** Sign
+작업중인 레지스터값이, The number of in the step above is positive or negative
+양수인지 음수인지 확인하는 레지스터
+
+* Command
+** GPRs
+*** LDI - Load Immediate
+Load values into general purpose registers
+
+#+begin_src asm
+LDI r16, 0x2f // why 0x2f?
+#+end_src
+*** ADD
+Add the contents of two registers and store them within the first register
+
+#+begin_src asm
+ADD r16, r17
+#+end_src
+*** MOV
+Copies data among the GPRs of r0 to r31
+
+#+begin_src asm
+MOV r17, r18
+#+end_src
+*** SUB
+Subtract the contents of two registers and store them within the fitst register
+
+#+begin_src asm
+SUB r16, r18 // r16 - r18
+#+end_src
+*** MUL
+Multiply
+*** AND, OR, XOR...
+*** INC
+Increments the register that we passed to it
+
+#+begin_src asm
+INC r19
+#+end_src
+*** COM
+Performs the one's complement of the values within the register you passed to it
+
+#+begin_src asm
+COM r20 // 0x00(initial value) -> 0xFF
+#+end_src
+
+**** one's complement?
+0b10101100 -> 0b01010011
+
+** Interfacing the GPRs and the internal SRAM
+These commands are only implemented in some of the AVRs
+
+*** LDS - Load Direct from SRAM
+Loads GPRS values from SRAM registers
+
+#+begin_src asm
+LDS r16, 0x00
+#+end_src
+
+#+begin_quote
+The value that it loads r16 with _is not the address_ that you pass to it.
+It's _what's stored at that address_ within the internal SRAM
+#+end_quote
+*** STS - STore into SRAM
+Stores SRAM register values into GPRs
+
+#+begin_src asm
+STS 0x00, r17
+#+end_src
+
+** Interfacing the GPRs and the I/O registers
+*** IN/OUT
+_Tell GPU_ to load one byte from an IO register to the GPR
+
+#+begin_src asm
+IN r21, 0x01
+OUT 0x3E, r21
+#+end_src
+
+#+begin_quote
+CPU execute the ~IN/OUT~ instruction faster than ~LDS/STS~
+
+~IN/OUT~ : 2 byte instruction
+~LDS/STS~ : 4 byte instruction
+#+end_quote
+** Control Flow
+*** Jump
+mainly used for making loops and conditions
+
+**** unconditional
+***** RJMP - Relative JuMP
+Jump to a location that we specify.
+
+#+begin_src asm
+RJMP L3
+#+end_src
+
+**** conditional
+***** BRNE - BRanch Not Equal
+Branch(Jump) to a location that we specify, if the Zero-resister is not 0
+
+#+begin_src asm
+BRNE L1
+#+end_src
+***** BRGE - BRanch Greater or Equal (Signed)
+Branch(Jump) to a location that we specify, if the sign-resister is not 0
+
+#+begin_src asm
+BRGE L1
+#+end_src
+***** BRLT - BRanch Less Then (Signed)
+Branch(Jump) to a location that we specify, if the sign-resister is not 0
+
+#+begin_src asm
+BRLT L1
+#+end_src
+***** BRLO - BRanch if LOw
+Branch(Jump) to a location that we specify, if the Carry resister is not 0
+
+#+begin_src asm
+BRLO L1
+#+end_src
+
+***** BRSH - BRanch if Same or Higher
+Branch(Jump) to a location that we specify, if the Carry resister is 0
+
+#+begin_src asm
+BRSH L1
+#+end_src
+
+***** BRHC - BRanch Half-carry Cleared
+Branch(Jump) to a location that we specify, if the Half-carry resister is 0
+
+#+begin_src asm
+BRHC L1
+#+end_src
+
+#+begin_quote
+Half-carry register is set, if 0x0F -> 0x10
+#+end_quote
+
+***** BRHS - BRanch Half-carry Seted
+Branch(Jump) to a location that we specify, if the Half-carry resister is not 0
+
+#+begin_src asm
+BRHS L1
+#+end_src
+
+*** Call
+mainly used for making function calls
+
+It consumes 5 Clock to execute
+
+**** CALL
+#+begin_src asm
+CALL L3
+#+end_src
+
+**** RET - RETurn
+#+begin_src asm
+RET // return to the caller
+#+end_src
