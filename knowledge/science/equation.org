@@ -1,0 +1,4 @@
+#+title: Equation
+
+* What is equation?
+A [[file:./statement.org][statement]] that the values of two mathematical expreessions are equal (indicated by the sign =)

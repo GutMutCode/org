@@ -1,0 +1,13 @@
+#+TITLE: Daily Journal
+#+AUTHOR: Jinho Kim (MoonCo)
+#+EMAIL: logosevens@gmail.com
+#+PROPERTY: header-args
+#+STARTUP: showeverything
+* June 15, 2023 (Thursday)
+** 01:14
+뭘 해야할 지 모르겠다는 뜻은 무엇인가?
+- 무엇을 하고 싶은지 모르겠다는 뜻
+  찍먹이 필요하다
+
+  좋은것을 하고 싶지만, 정작 좋다는 기준이 없는 상태
+-> 너에게 좋은 것은 무엇인가?

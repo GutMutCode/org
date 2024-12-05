@@ -1,0 +1,301 @@
+#+title: How to take all the Math Classes You Need
+
+* Pre-calculus / Algebra2 & Trigometry
+** Lectures
+*** Pre-Calculus Lectrues
+https://www.youtube.com/watch?v=oFwRPH0JrFY&list=PL4FB17E5C77DCCE69&index=2
+
+**** Trigometry (contained in pre-calculus)
+https://www.youtube.com/watch?v=ABDKOmamIwo&list=PL085526F86A268B57
+
+**** [[file:./pre_calculus/index.org][Notes]]
+
+** Assignments
+*** Pre-Calc/Algebra 2 (With Solutions)
+http://tutorial.math.lamar.edu/Problems/Alg/Alg.aspx
+
+*** Pre-Calc/Algebra 2 (Without Solutions)
+http://tutorial.math.lamar.edu/ProblemsNS/Alg/Alg.aspx
+
+*** Trigonometry
+https://www.khanacademy.org/math/trigonometry
+
+* Single Variable Calculus / Calculus 1 / Caculus AB
+** Prerequisites
+[[Pre-calculus / Algebra2 & Trigometry][Pre-Calculus or Algebra 2]]
+
+** Majors
+All Engineers, Computer Science, Math, Most Sciences (Physics, Chem, Bio, etc), Business (business calc)
+
+** Lectures
+*** Professor Leonard: First Choice
+https://www.youtube.com/watch?v=fYyARMqiaag&list=PLF797E961509B4EB5&index=1
+
+*** MIT Opencourseware
+https://www.youtube.com/watch?v=jbIQW0gkgxo&index=1&list=PLE2215608E2574180
+
+** Assignments
+*** With Solutions
+http://tutorial.math.lamar.edu/Problems/CalcI/CalcI.aspx
+
+*** Without Solutions
+http://tutorial.math.lamar.edu/ProblemsNS/CalcI/CalcI.aspx
+
+** Textbooks
+*** First Choice: "Calculus" by Ron Larson"
+This textbook can be used for Calc 1-3 and I have listed this one for all of those lectures below
+
+*** Second Choice: Listed on MIT Site
+https://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf
+
+This textbook can be used for Calc 1-3 and I have listed this one for all of those lectures below
+* Calc 2
+** Prerequisites
+[[Single Variable Calculus / Calculus 1 / Caculus AB][Calc 1]]
+
+** Majors
+All Engineers, Computer Science, Math, Physics, Chemistry
+** Lectures
+*** Professor Leonard: First Choice
+https://www.youtube.com/watch?v=H9eCT6f_Ftw&list=PLDesaqWTN6EQ2J4vgsN1HyBeRADEh4Cw-
+
+*** MIT Opencourseware
+https://www.youtube.com/watch?v=Bv9kVDcj7yo&list=PL590CCC2BC5AF3BC1&index=24
+
+MIT kind of combined calculus 1&2 into one playlist.
+So this link will start off at lecture 27 which is a typical starting point for a calc 2 class
+
+** Assignments
+*** With Solutions
+http://tutorial.math.lamar.edu/Problems/CalcII/CalcII.aspx
+
+*** Without Solutions
+http://tutorial.math.lamar.edu/ProblemsNS/CalcII/CalcII.aspx
+
+** Textbooks
+*** First Choice: "Calculus" by Ron Larson"
+This textbook can be used for Calc 1-3 and I have listed this one for all of those lectures below
+
+*** Second Choice: Listed on MIT Site
+https://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf
+
+This textbook can be used for Calc 1-3 and I have listed this one for all of those lectures below
+
+* Multivariable Calculus / Calc 3
+** Prerequisites
+[[Calc 2][Calc 2]]
+
+** Majors
+All Engineers, Computer Science, Math, Physics, Chemistry
+** Lectures
+*** Professor Leonard: First Choice
+https://www.youtube.com/watch?v=tGVnBAHLApA&index=1&list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7
+
+This is longer than the one's listed below at MIT
+
+*** MIT Opencourseware
+https://www.youtube.com/watch?v=PxCxlsl_YwY&list=PL4C4C8A7D06566F38&index=1
+
+** Assignments
+*** With Solutions
+http://tutorial.math.lamar.edu/Problems/CalcIII/CalcIII.aspx
+
+*** Without Solutions
+http://tutorial.math.lamar.edu/ProblemsNS/CalcIII/CalcIII.aspx
+
+** Textbooks
+*** First Choice: "Calculus" by Ron Larson"
+This textbook can be used for Calc 1-3 and I have listed this one for all of those lectures below
+
+*** Second Choice: Listed on MIT Site
+https://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf
+
+This textbook can be used for Calc 1-3 and I have listed this one for all of those lectures below
+* Differential Equations
+** Prerequisites
+[[Calc 2][Calc 2]]
+
+** Corequisites
+[[Multivariable Calculus / Calc 3][Calc 3]]
+
+** Majors
+All Engineers, Some Computer Science Majors, Math, Physics
+
+** Lectures
+*** MIT Opencourseware
+https://www.youtube.com/watch?v=XDhJ8lVGbl8&list=PLAA803F96E213B277
+
+** Assignments
+*** With Solutions
+https://ocw.mit.edu/courses/mathematics/18-03-differential-equations-spring-2010/assignments/
+
+These go along with the lecture
+
+*** More Practice Problems (w/ notes)
+http://tutorial.math.lamar.edu/Classes/DE/DE.aspx
+
+There aren't official assignment problems here like for Calc 1-3, but there are example problems that are explained that you can use as practice problems
+
+** Textbooks
+*** "Elementary differential equations" by Henry Edwards and David Penney
+
+* Linear Algebra
+** Prerequisites
+[[Multivariable Calculus / Calc 3][Calc 3]]
+
+** Majors
+All Engineers, Computer Science, Math, Physics
+
+** Lectures
+*** MIT Opencourseware
+https://www.youtube.com/watch?v=ZK3O402wf1c&list=PL49CF3715CB9EF31D
+
+** Assignments
+*** With Solutions
+https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/assignments/
+
+The solutions also contain the questions themselves
+
+** Textbooks
+*** "Linear Algebra and it's Applications 4th edition" by Gilbert Strang
+*** "Linear Algebra done right" by Sheldon Axier
+**** Website
+https://linear.axler.net/
+
+**** Book
+https://link.springer.com/content/pdf/10.1007/978-3-031-41026-0.pdf
+
+* Discrete Math
+** Prerequisites
+[[Single Variable Calculus / Calculus 1 / Caculus AB][Calc 1]]
+
+** Majors
+Computer Science, Math, Computer Engineering, Software Engineering,some Physics Majors
+
+** Lectures
+*** MIT Opencourseware
+https://www.youtube.com/watch?v=L3LMbpZIKhQ&list=PLB7540DEDD482705B
+
+This class is listed as "mathematics for computer science" but pretty much all the materal coverd is what math majors will see in their discrete math/proof class (logic, proofs, number theory, graph theory, etc)
+You also do NOT need computer science experience to take tis class and can take it anytime ~after calc 1~
+
+** Assignments
+*** With Solutions
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2005/assignments/
+
+These assignments are from ANOTHER year this course was taught (same material mostly but different order), but they do have solutions.
+So you might need to do a little searching sometimes to match up exactly what is taught in the lecture vs what the homework is
+
+*** Without Solutions
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/assignments/
+
+These assignments go along with the lecture but don't contain solutions
+
+** Textbooks
+*** "Electrical Engineering and Computer Science" by Gilbert Strang
+
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/readings/MIT6_042JF10_notes.pdf
+
+* Real Analysis
+** Prerequisites
+*** [[Discrete Math][Discrete Math]]
+*** [[Linear Algebra][Linear Algebra]]
+
+** Majors
+Math
+
+** Lectures
+*** Harvey Mudd
+https://www.youtube.com/watch?v=sqEyWLGvvdw&index=1&list=PL0E754696F72137EC
+
+** Assignments
+*** With Solutions
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/assignments/
+These don't match the lecture exactly but are more organized and contain solutions
+
+*** Without Solutions
+https://www.math.hmc.edu/~su/math131/
+
+These assignments are directly from the lecture, but are a little harder to follow and are less organized
+
+** Textbooks
+*** "Principles of Mathmetical Analysis" by Walter Rudin
+
+* Complex Analysis
+** Prerequisites
+[[Multivariable Calculus / Calc 3][Calc 3]]
+
+** Recommended
+*** [[Discrete Math][Discrete Math]]
+*** [[Linear Algebra][Linear Algebra]]
+
+** Majors
+Math, Some Electrical Engineers, Some physics majors
+
+** Lectures
+*** Harvey Mudd
+https://www.youtube.com/watch?v=sqEyWLGvvdw&index=1&list=PL0E754696F72137EC
+
+** Assignments
+*** With Solutions
+http://www.supermath.info/Complex.html
+
+** Textbooks
+*** "Complex Analysis" by Gamelin
+
+* Abstract Algebra
+** Prerequisites
+*** [[Discrete Math][Discrete Math]]
+*** [[Linear Algebra][Linear Algebra]]
+
+** Majors
+Math, Some physics majors
+
+** Lectures
+*** Liberty College
+https://www.youtube.com/watch?v=sqEyWLGvvdw&index=1&list=PL0E754696F72137EC
+
+These lectures match the assignments below but I listed two sets of lectures so you can choose your favorite
+
+*** Harvard
+https://www.youtube.com/watch?v=VdLhQs_y_E8&list=PLelIK3uylPMGzHBuR3hLMHrYfMqWWsmx5
+
+** Assignments
+*** Lecture Notes and Practice Problems
+http://www.supermath.info/AlgebraInotes_2016.pdf
+
+These go with the liberty college lectures.
+Currently cannot find assignments for the Harvard one's
+
+*** Solutions to Problems (and some test examples)
+http://www.supermath.info/AbstractAlgebra.html
+
+** Textbooks
+*** "Contemporary Abstract Algebra" by Joseph Gallian
+
+* General Topology
+** Prerequisites
+[[Real Analysis][Real Analysis]]
+
+** Corequisites
+[[Abstract Algebra][Abstract Algebra]]
+
+** Majors
+Math
+
+** Lectures
+*** Ohubrismine
+
+Couldn't find any university lecture but theses still do a pretty good job
+
+*** Harvard
+https://www.youtube.com/watch?v=VdLhQs_y_E8&list=PLelIK3uylPMGzHBuR3hLMHrYfMqWWsmx5
+
+** Assignments
+*** With solutions
+https://ocw.mit.edu/courses/mathematics/18-901-introduction-to-topology-fall-2004/assignments/
+
+You need the textboot to see what the problems are
+
+** Textbooks
+*** "Topology" by James Munkres

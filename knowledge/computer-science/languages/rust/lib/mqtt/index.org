@@ -1,0 +1,13 @@
+#+title: Index
+
+* MQTT
+** Actor-driven Structure 1. Client Process: Responsible for managing client connections and handling incoming and outgoing MQTT packets
+
+2. MessageQueue Process: Responsible for keeping track of client subscriptions, persisting and tracking QoS 1 and QoS 2 messages, and sending publish jobs to the worker processes.
+
+3. Servecie Worker Process: Responsible for pulling data that needs to be publisehd from the coordinator and sending it to all subscribers according to the QoS fo the message.
+   These processes can also scale well and will play an important role in creating more throughput.
+[[file:~/Downloads/cs/lunatic/role_of_process.webp]]
+
+* Reference
+[[file:../lunatic.org][Lunatic]]

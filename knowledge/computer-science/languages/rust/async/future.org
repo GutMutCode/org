@@ -1,0 +1,63 @@
+#+title: Future
+
+* The ~Future~ Trait
+The ~Future~ trait is at the center of asynchronous programming in Rust.
+A ~Future~ is an asynchronous computation that can produce a value (although that value may be empty, e.g. ~()~).
+A /simplified/ version of the future trait might look something like this:
+#+begin_src rust
+trait SimpleFuture {
+    type Output;
+    fn poll(&mut self, wake: fn()) -> Poll<Self::Output>;
+}
+
+enum Poll<T> {
+    Ready(T),
+    Pending,
+}
+#+end_src
+
+Futures can be advanced by calling the ~poll~ function, which will drive the future as far towards completion as possible.
+If the future completes, it returns ~Poll::Ready(result)~.
+If the future is not able to complete yet, it returns ~Poll::Pending~ and arranges for the ~wake()~ function to be called when the ~Future~ is ready to make more progress.
+When ~wake()~ is called, the executor driving the ~Future~ will call ~poll~ again so that the ~Future~ can make more progress.
+
+Without ~wake()~, the executor would have no way of knowing when a particular future could make progress, and would have to be constantly polling every future.
+With ~wake()~, the executor knows exactly which futures are ready to be ~poll~ ed.
+
+For example, consider the case where we want to read from a socket that may or may not have data available already.
+If there is data, we can read it in and return ~Poll::Ready(data)~, but if no data is ready, our future is blocked and can no longer make progress.
+When no data is available, we must register ~wake~ to be called when data becomes ready on the socket, which will tell the executor that our future is ready to make progress.
+A simple ~SocketRead~ future might look something like this:
+#+begin_src rust
+pub struct SocketRead<'a> {
+    socket: &'a Socket,
+}
+
+impl SinpleFuture for SocketRead<'_> {
+    type Output = Vec<u8>;
+
+    fn poll(&mut self, wake: fn()) -> Poll<Self::Output> {
+        if self.socket.has_data_to_read() {
+            // The socket has data -- read it into a buffer and return it.
+            Poll::Ready(self.socket.read_buf())
+        } else {
+            // The socket does not yet have data
+            // Arrange for `wake` to be called once data is available.
+            // When data becomes available, `wake` will be called, and the
+            // user of this `Future` will know to call `poll` again and
+            // receieve data.
+            self.socket.set_readable_callback(wake);
+            Poll::Pending
+        }
+    }
+}
+#+end_src
+
+This model of ~Future~ s allows for composing together multiple asynchronous operations without needing intermediate allocations.
+Running multiple futures at once or chaining futures together can be implemented via allocation-free state machines, like this:
+#+begin_src rust
+/// A SimpleFuture that runs two other futures to completion concurrently.
+///
+/// Concurrency is achieved via the fact that calls to `pull` each future
+///
+#+end_src

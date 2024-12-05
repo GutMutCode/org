@@ -1,0 +1,109 @@
+#+title: Index
+
+* Table of Contents :toc:
+- [[#what-is-phoenix-framework][What is Phoenix framework?]]
+  - [[#difference-from-others][Difference from others]]
+- [[#docs][Docs]]
+  - [[#introduction][Introduction]]
+  - [[#guides][Guides]]
+  - [[#authentication][Authentication]]
+  - [[#real-time-components][Real-time components]]
+  - [[#testing][Testing]]
+  - [[#deployment][Deployment]]
+  - [[#how-tos][How-to's]]
+- [[#phoenix-framework][Phoenix Framework]]
+  - [[#ecto][Ecto]]
+  - [[#liveview][LiveView]]
+  - [[#plug][Plug]]
+  - [[#router][Router]]
+  - [[#heex][HEEx]]
+  - [[#html][HTML]]
+  - [[#pubsub][PubSub]]
+  - [[#livedashboard][LiveDashboard]]
+- [[#elixir-modules-in-phoenix][Elixir Modules in Phoenix]]
+  - [[#exunit][ExUnit]]
+  - [[#gettext][Gettext]]
+  - [[#swoosh][Swoosh]]
+  - [[#telemetry][Telemetry]]
+- [[#references][References]]
+
+* What is Phoenix framework?
+The Web framework built in Elixir ( [[file:./efp/index.org][Elixir for Phoenix]] )
+
+** Difference from others
+1. Channels for implementing realtime features
+2. precompiled template
+
+
+* Docs
+** Introduction
+How to get your first application
+
+** Guides
+Covering the main components in Phoenix
+
+** Authentication
+in-depth guide covering how to use mix phx.gen.auth
+
+** Real-time components
+in-depth guides covering Phoenix'x built-in real-time components
+
+** Testing
+in-depth guides about testing
+
+** Deployment
+How to [[file:./deployment.org][deploy]] your application in production
+
+** How-to's
+a collection of articles on how to achieve tings with Phoenix
+
+* Phoenix Framework
+** Ecto
+[[file:./ecto.org][Ecto]] a language integrated query and database wrapper
+
+** LiveView
+[[file:./liveview.org][LiveView]] build rich, =real-time= user experiences with server-rendered HTML
+
+** Plug
+[[file:./plug.org][Plug]] is a specification and convenience for =building composable modules= web applications.
+
+** Router
+[[file:./router.org][Router]]
+
+** HEEx
+[[file:./heex.org][HEEx]] "/HTML + EEx"/
+
+** HTML
+[[file:./phoeHTML.org][HTML]] is a bulding blocks for working with HTML and Phoenix
+
+** PubSub
+[[file:./pubsub.org][PubSub]] is a distributed pub/sub system with presence support
+
+** LiveDashboard
+[[file:./livedashboard.org][LiveDashboard]] is a real-time performance monitoring and debugging tools for Phoenix devs
+
+* Elixir Modules in Phoenix
+** ExUnit
+[[file:./exunit.org][ExUnit]] is Elixir's build-in test framework
+
+** Gettext
+[[file:./gettext.org][Gettext]] is a module for internationalization and localization
+
+** Swoosh
+[[file:./swoosh.org][Swoosh]] is a library for composing, deliverling and testing emails, also used by ~mix phx.gen.auth~
+
+** Telemetry
+[[file:./telemetry.org][Telemetry]]
+
+*** Matrics
+Common interface for defining metrics based on =:telemetry= events
+
+
+* References
+The [[file:./interArch.org][Internal Architecture]]
+
+The [[file:./reqlcycle.org][Request Life-Cycle]]
+
+The [[file:./auth.org][Authentication]]
+
+The [[file:./liveview.org][LiveView]]

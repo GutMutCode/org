@@ -1,0 +1,26 @@
+#+title: Twos Comp
+
+* Two's complement
+A mathematical operation to reversibly convert a positive ~binary number~ into a negative binary number with equivalent negative value, using the ~binary digit with the /greatest/ place value~ as the /sign/ to indicate whether the binary number is positive or negative.
+
+It is used in computer science as the most common ~method of representing signed~ (positive, negative, and zero) ~integers~ on computers, and more generally, ~fixed point binary~ values.
+When the ~most significant bit~ is 1, the number is signed as negative; and when the most significant bit is /0/ the number is signed as positive /(see ~Converting from two's complement representation~, below)/.
+
+** Procedure
+Two's complement is achieved by:
+1. starting with the equivalent positive number.
+2. inverting (or flipping) all bits --changing every 0 to 1, and every 1 to 0;
+3. adding 1 to the entire inverted number, ignoring any ~overflow~, Accounting for overflow will produce the wrong value for the result.
+
+For example, to calculate the ~decimal~ number -6 in binary:
+1. +6 in decimal is /0110/ in binary; the leftmost significant bit (the first 0) is the ~sign~.
+   +6 is not 110, because 110 in binary is /-2/ in decimal.
+2. flip all bits in /0110/, giving /1001/.
+3. add the place value 1 to the flipped number /1001/, giving /1010/.
+
+To verify that /1010/ indeed has a value of /-6/, add the place values together, but /substracting/ the sign form the final calculation.
+Because that the first significatn digit is the number sign it must be subtracted to produce the correct result:
+
+#+begin_example
+1010 = (1x-2^3) + (0x2^2) + (1x2^1) + (0x2^0) = 1x-8 + 0 + 1x2 + 0 = -6
+#+end_example

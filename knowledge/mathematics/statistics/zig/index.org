@@ -1,0 +1,4 @@
+#+title: Zig
+
+* Youtube Video
+** [[file:./purpose.org][The Road to Zig 1.0]]

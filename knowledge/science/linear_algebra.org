@@ -1,0 +1,8 @@
+#+title: Linear Algebra
+
+* Why we should learn Linear Algebra?
+- To understand deep-learning
+- You could choose a right model for your purpose if you have a knowledge about linear algebra
+
+* Prerequisites
+You don't have to learn Multivariate Calculous before Linear Algebra

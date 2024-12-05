@@ -1,0 +1,108 @@
+#+title: Plug
+
+* Table of Contents :toc:
+- [[#what-is-plug][What is Plug?]]
+  - [[#whats-different-from-other-middlewares-like-rack][What's different from other middlewares like Rack?]]
+- [[#structures][Structures]]
+  - [[#function-plugs][Function plugs]]
+  - [[#module-plugs][Module plugs]]
+- [[#subsequent-modules][Subsequent Modules]]
+  - [[#builder][Builder]]
+  - [[#conn][Conn]]
+- [[#where-to-plug][Where to plug]]
+  - [[#endpoint-plugs][Endpoint plugs]]
+  - [[#router-plugs][Router plugs]]
+  - [[#controller-plugs][Controller plugs]]
+
+* What is Plug?
+A module or a function using [[file:../../../terminology/http.org][HTTP connection]] (is called plug because it can be plugged like plug)
+
+A [[file:../../../terminology/specification.org][specification]] to connect modules in between web apps.
+
+=An abstraction layer= for HTTP connection adapters of different web servers.
+
+#+begin_quote
+Unify the concept of a "connection"
+#+end_quote
+
+The package resposible for the connection abstraction and the regular request-response life-cycle
+
+** What's different from other middlewares like Rack?
+*** Rack
+The request and response are separated in the middleware stack
+
+* Structures
+** Function plugs
+The function that is managing ~Plug.Conn~
+
+In order to act as a plug, a function needs to:
+- accept a connection struct (~%Plug.Conn{}~) as its first argument, and connection options as its second one;
+- return a conection struct
+
+** Module plugs
+The module that is define a connection transformation
+
+module plug only needs to implement two functions:
+- ~init/1~ which =initializes= any arguments or options to be passed to ~call/2~
+- ~call/2~ which carries out the connection transformation
+  this is just a function plug
+
+* Subsequent Modules
+** Builder
+convenience for building plug
+
+It allows us to use ~plug~ macro
+
+** Conn
+It allows us to handle HTTP connection
+
+
+* Where to plug
+The endpoint, router, and controlles in Phoenix accpets plugs
+
+** Endpoint plugs
+*** Plug.Static
+serves static assets
+
+*** Phoenix.LiveDashboard.RequestLogger
+Sets up the Request Logger for Phoenix LiveDashboard
+- you can have the option to:
+  pass a query parameter to stream requests logs
+  enable/disable a cookie that streams requests logs from your dashboard
+
+*** Plug.RequestId
+generates a unique request ID for each request
+
+*** Plug.Telemetry
+adds instrucmentation point => Phoenix can log the request path, status code and request time by default
+
+*** Plug.Parsers
+parses the request body when a known parser is available.
+Be default, this plug can handle:
+- URL-encoded,
+- multipart
+- JSON contents (with =Jason=)
+
+The request body is left untouched if the request content-type cannot be parsed
+
+*** Plug.MethodOverride
+converts the request method to PUT, PATCH or DELETE for POST requests with a valid ~_method~ parameter
+
+*** Plug.Head
+converts HEAD request to GET request and strips the response body
+
+*** Plug.Session
+sets up session management (how the session is fetched)
+
+~fetch_session/2~ must stil be explicitly called before using the session
+
+** Router plugs
+In the router we can declare plugs in pipelines
+
+*** Pipeline
+The plug which compose many other plugs
+
+** Controller plugs
+The controller is also plug
+
+In controller, plugs can be executed within certain action

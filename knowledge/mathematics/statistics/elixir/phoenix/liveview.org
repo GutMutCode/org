@@ -1,0 +1,37 @@
+#+title: Liveview
+
+* What is Liveview?
+real-time user experiences with server-rendered HTML over HTTP and WebSocket
+
+Handle hundrd-thousands or even millions of WebSocket connections handled by multiple BEAM processes
+
+mounting live views in pages served via Phoenix
+
+** Jose Valim
+integration between server and client, allowing it todrastically optimize both latency and bandwidth, leading to user experiences that are faster adn smoother than any other client-server combo out
+
+* How this works?
+Defines ~Phoenix.Components~ and the [[file:./heex.org][HEEX]] tempalte engine
+
+used for rendering HTML contents in both regular and real-time applications
+
+Sending tiny [[file:./dom.org][DOM]] diffs of server-rendered HTML over the wire, computed thanks to server-side change tracking
+
+Each ~live view~ being viewed by a specific user (or browser) is backed by a single Erlang VM process
+
+* Features
+live from validation
+
+error presentation
+
+real-time file uploads
+
+browser API event integrations
+
+optimistic updates
+
+latency evaluation
+
+support to write tests
+
+error handling

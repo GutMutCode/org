@@ -1,0 +1,11 @@
+#+TITLE: Daily Journal
+#+AUTHOR: Jinho Kim (MoonCo)
+#+EMAIL: logosevens@gmail.com
+#+PROPERTY: header-args
+#+STARTUP: showeverything
+* June 28, 2023 (Wednesday)
+** 14:47
+긴장을 창출 해내는가?
+- 지속가능한 방법인가?
+  - 개인의 자율성이 무시된 교육은 지속될 수 없다. 오히려 반발심을 일으킨다.
+- 잘하는 것이 좋은 것이지, 힘들게 하는 것이 좋은 게 아니다.

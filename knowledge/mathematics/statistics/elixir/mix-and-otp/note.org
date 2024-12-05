@@ -1,0 +1,28 @@
+#+title: Note
+
+* Common use cases
+** Processes
++ We need many process => duplicated definition => Bucket
++ We need to separate function to client features and server features => GenServer
+** Task
+Only execute some code with supervisors
+** Agent
+To store state to processes (just wrap)
+** Bucket
+To use many process in one module without duplicated definition.
+- buckets are started dynamically based on user input without assign atoms directly. => need Registry
+~use Agent~
+** Registry
+To associate a bucket name to the bucket process [{name, pid}...]
+~use GenServer~
+
+Manage process according to specific conditions.
++ Make ~Registry~ which has callbacks to manage processes
+** Supervisor
+Process that manage another process.
+
+** ETS
+In-memory data store for registry
+** Testing
+~use ExUnit.Case~
++ Use ~start_supervised!~ instead of directly start the ~start_link/1~ function

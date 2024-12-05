@@ -1,0 +1,11 @@
+
+* Pattern Matching
+#+begin_src elixir
+# 호출 부분
+user = ${key-value 형식의 데이터..., "product" => "jaerok"}
+create(conn, user)
+
+# 정의 부분
+def create(conn, ${"product" => product_param})
+    printf(product_param) #-> jaerok
+#+end_src

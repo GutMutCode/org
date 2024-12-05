@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Index</title>
+<meta name="author" content="Skoler"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/dist/theme/Black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Index</h1><h2 class="author">Skoler</h2><p class="date">Created: 2023-08-28 Mon 05:32</p>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-1">1. MQTT</a>
+<ul>
+<li><a href="#/slide-1-1">1.1. Actor-driven Structure 1. Client Process: Responsible for managing client connections and handling incoming and outgoing MQTT packets</a></li>
+</ul>
+</li>
+<li><a href="#/slide-2">2. oooooooo</a>
+<ul>
+<li><a href="#/slide-2-1">2.1. oooooooo</a>
+<ul>
+<li><a href="#/slide-2-1-1">2.1.1. oooooooo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-1">
+<h2 id="1"><span class="section-number-2">1.</span> MQTT</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+<section id="slide-1-1">
+<h3 id="1-1"><span class="section-number-3">1.1.</span> Actor-driven Structure 1. Client Process: Responsible for managing client connections and handling incoming and outgoing MQTT packets</h3>
+<ol>
+<li>MessageQueue Process: Responsible for keeping track of client subscriptions, persisting and tracking QoS 1 and QoS 2 messages, and sending publish jobs to the worker processes.</li>
+
+<li>Servecie Worker Process: Responsible for pulling data that needs to be publisehd from the coordinator and sending it to all subscribers according to the QoS fo the message.
+These processes can also scale well and will play an important role in creating more throughput.</li>
+
+</ol>
+
+<div id="org0389f92" class="figure">
+<p><img src="file:///Users/skoler/Downloads/cs/lunatic/role_of_process.webp" alt="role_of_process.webp" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-2">
+<h2 id="2"><span class="section-number-2">2.</span> oooooooo</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-2-1">
+<h3 id="2-1"><span class="section-number-3">2.1.</span> oooooooo</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+</section>
+<section id="slide-2-1-1">
+<h4 id="2-1-1"><span class="section-number-4">2.1.1.</span> oooooooo</h4>
+<div class="outline-text-4" id="text-2-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="2-1-1-1"></a>oooooooo<br />
+<ol class="org-ol">
+<li><a id="2-1-1-1-1"></a>oooooooo<br />
+<ol class="org-ol">
+<li><a id="2-1-1-1-1-1"></a>oooooooo<br />
+<ol class="org-ol">
+<li><a id="2-1-1-1-1-1-1"></a>oooooooo<br />
+<ul>
+<li>oooooooo
+<ul>
+<li>oooooooo</li>
+
+</ul></li>
+
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+<script src="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/dist/reveal.js"></script>
+<script src="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/plugin/markdown/markdown.js"></script>
+<script src="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/plugin/notes/notes.js"></script>
+<script src="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/plugin/search/search.js"></script>
+<script src="/Users/skoler/.emacs.d/.local/straight/build-29.1/revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

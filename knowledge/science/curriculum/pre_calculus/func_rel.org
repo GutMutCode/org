@@ -1,0 +1,8 @@
+#+title: Functions and Relations
+
+* Geometry
+** Cartesian Coordinate systems
+*** Axis
+X, Y
+*** Floating Point
+***

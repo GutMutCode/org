@@ -1,0 +1,289 @@
+#+title: Intro Mix
+
+* Introduction to Mix
+In this guide, we will learn how to build a complete Elixir application, with its own supervision tree, configuration, tests and more.
+
+The requeriments for this guide are (see ~elixir -v~):
+- Elixir 1.11.0 onwards
+- Erlang/OTP 22 onwards
+
+The application works as a distibuted key-value store. We are going to organize key-value pairs into buckets and distribute those buckets across multiple nodes.
+We will also build a simple client that allows us to connect to any of those nodes and send requests such as:
+#+begin_src elixir
+CREATE shopping
+OK
+
+PUT shopping milk 1
+OK
+
+PUT shopping eggs 3
+OK
+
+GET shopping milk
+1
+OK
+
+DELETE shopping eggs
+OK
+#+end_src
+
+In order to build our key-value application, we are going to use three main tools:
+- OTP (Open Telecom Platform) is ~a set of libraries~ that ships with Erlang.
+  Erlang developers use OTP to build robust, fault-tolerant applications.
+  In this chapter we will explore how many aspects from OTP integrate with Elixir, including supervision trees, event managers and more;
+
+- [[https://hexdocs.pm/mix/Mix.html][Mix]] is a build tool that ships with Elixir that provides tasks for creating, compiling, testing your application, managing its dependencies and much more;
+
+- [[https://hexdocs.pm/ex_unit/ExUnit.html][ExUnit]]s is test-unit based framework that ships with Elixir;
+
+In this chapter, we will create our first project using Mix and explore different features in OTP, Mix and ExUnit as we go.
+
+If you have any questions or improvements to the guide, please reach discussion channels such as the [[https://elixirforum.com/][Elixir Forum]] or the [[https://github.com/elixir-lang/elixir-lang.github.com/issues][issues tracker]].
+Your input is really important to help us guarantee the guides are accessible and up to date!
+
+The final code for the application built in this guide is in [[https://github.com/josevalim/kv_umbrella][this repository]] and can be used as a reference.
+
+The Elixir guides are also available in EPUB format
+
+** Our first project
+When you install Elixir, besides getting the ~elixir~, ~elixirrc~ and ~iex~ executables, you also get an executable Elixir script named ~mix~.
+
+Let's craet our first project by invoking ~mix new~ from the command line.
+We'll pass the poject path as the argument (~kv~, in this case).
+By default the application name and module name wil be retrieved from the path.
+So we tll Mix that our main module should be the all-uppercase ~KV~, instead of the default,
+which would have been ~Kv~:
+#+begin_src bash
+mix new kv --module KV
+#+end_src
+
+Mix will create a directory named ~kv~ with a few files in it.
+Let's take a brief look at those generated files.
+
+/Note: Mix is an Elixir executable. This means that in order to run ~mix~, you need to have both ~mix~ and ~elixir~ executables in your PATH. That's what happens when you install Elixir./
+
+** Project compilation
+A file named ~mix.exs~ was generated inside our new project folder (~kv~) and its main responsibility is to configure our project. Let's take a look at it:
+#+begin_src elixir
+defmodule KV.MixProject do
+  use Mix.Project
+
+  def project do
+    [
+      app: :kv,
+      version: "0.1.0"
+      elixir: "~> 1.15",
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
+  end
+
+  # Run "mix help compile.app" to learn about applications
+  def application do
+    [
+      extra_applications: [:logger]
+    ]
+  end
+
+  # Run "mix help deps" to learn about dependencies.
+  defp deps do
+    [
+      # {:dep_from_hexpm, "~> 0.3.0"},
+      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+end
+#+end_src
+
+Our ~mix.exs~ defines two public functions: ~project~, which returns project configuration like the project name and version, and ~application~, which is used to genereate an application file.
+
+There is also a private function named ~deps~, which is invoked from the ~project~ function, that defines our project dependencies.
+Defining ~deps~ as a separate function is not required, but it helps keep the project configuration tidy.
+
+Mix also generates a file at ~lib/kv.ex~ with a module containing exactly one function, called ~hello~
+
+#+begin_src bash
+cd kv
+mix compile
+#+end_src
+
+Will output:
+#+begin_src bash
+Compiling 1 file(.ex)
+Generated kv app
+#+end_src
+
+The ~lib/kv.ex~ file was compiled, an application manifest named ~kv.app~ was generated.
+All compilation artifacts are placed inside the ~_build~ directory using the options defined in the ~mix.exs~ file.
+
+Once the project is compiled, you can start an ~iex~ session inside the project by running the command below.
+
+The ~-S mix~ is necessary to load the project in the interactive shell:
+#+begin_src bash
+iex -S mix
+#+end_src
+
+We are goint to work on this ~kv~ project, making modifications and trying out the latest changes from an ~iex~ session.
+While you may start a new session whenever there are changes to the project source code,
+you can also recompile the project from within ~iex~ with the ~recompile~ helper, like this:
+#+begin_src elixir
+recompile()
+Compiling 1 file (.ex)
+:ok
+recompile()
+:noop
+#+end_src
+
+If anything had to be compiled, you see some informative text, and get the ~:ok~ atom back, otherwise the function is silent, and returns ~:noop~.
+
+** Running tests
+Mix also generated the appropriate structure for running our projecct tests.
+Mix projects usually follow the convention of having a ~<filename>_test.exs~ file in the ~test~ directory for each file in the ~lib~ directory.
+For this reason, we can already find a ~test/kv_test.exs~ corresponding to our ~lib/kv.ex~ file.
+It doesn't do much at this point:
+#+begin_src elixir
+defmodule KVTest do
+  use ExUnit.Case
+  doctest KV
+
+  test "greets the world" do
+    assert KV.hello() == :world
+  end
+end
+#+end_src
+
+It is important to note a couple of things:
+1. the test file is an Elixir script file (~.exs~).
+   This is convenient because we don't need to compile test files before running them;
+
+2. we define a test module named ~KVTest~, in which we [[https://hexdocs.pm/ex_unit/ExUnit.Case.html][use ExUnit.Case]] to inject the testing API;
+
+3. we use one of the imported macros, [[https://hexdocs.pm/ex_unit/ExUnit.DocTest.html#doctest/1][doctest/1]], to indicate that the ~KV~ module contains doctests (we will discuss those in a later chapter);
+
+4. we use the [[https://hexdocs.pm/ex_unit/ExUnit.Case.html#test/2][test/2]] macro to define a simple test;
+
+Mix also generated a file named ~test/test_helper.exs~ which is responsible for setting up the test framwork:
+#+begin_src elixir
+ExUnit.start()
+#+end_src
+This file will be requied by Mix every time before we run our tests.
+We can run tests with:
+
+#+begin_src bash
+mix test
+Compiled lib/kv.ex
+Generated kv app
+..
+
+Finished in 0.0f seconds
+1 doctest, 1 test, 0 failures
+
+Randomized with seed 12018
+#+end_src
+Notice that by running ~mix test~, Mix has compiled the source files and generated the application manifest once again.
+This happens becuase Mix =supports= multiple environments, which we will discuss later in this chapter.
+
+Furthermore, you can see that ExUnit prints a dot for each successful test and automatically randomizes tests too.
+Let's make the test fail on purpose and see what following:
+#+begin_src elixir
+assert KV.hello() == :oops
+#+end_src
+
+Now run ~mix test~ again(notice this time there will be no compilation)
+#+begin_src bash
+mix test
+1) test greets the world (KVTest)
+
+    Assertion wait == failed
+    code:  assert KV.hello() == :oops
+    left:  :world
+    right: :oops
+    stacktrace:
+      test/kv_test.exs:7: (test)
+
+Finished i 0.01 seconds (0.00s async, 0.01s sync)
+1 doctest, 1 test, 1 failure
+
+Randomized with seed 490957
+#+end_src
+For each failure, ExUnit prints a detailed report, containing the test name with the test case, the code that failed and the values for the left side and right side (rhs) of the ~==~ operator.
+
+In the second line of the failure, right below the test name, there is the location where the test was defined.
+If you copy the test location in full, including the file and line number, and append it to ~mix test~, Mix will load and run just that particular test:
+#+begin_src bash
+mix test test/kv_test.exs:5
+#+end_src
+
+This shortcut will be extremely useful as we build our project,
+allowing use to quickly iterate by running a single test.
+
+Finally, the stacktrace relates to the failure itself, giving information about the test and often the place the failure was generated from within the source files.
+
+** Automatic code formatting
+One of the files generated by ~mix new~ is the ~.formatter.exs~.
+Elixir ships with a code formatter that is capable of automatically formatting our codebase according to a consistent style.
+The formatter is triggered with the ~mix format~ task.
+The generated ~.formatter.exs~ file configures which files should be formatted when ~mix format~ runs.
+
+To =give= the formatter a try, =change= a file in the ~lib~ or ~test~ directories to =include= extra spaces or extra newlines, such as ~def hello do~, and then =run= ~mix format~.
+
+Most editors provide built-in integration with the formatter, allowing a file to be formatted on save or via a chosen keybinding.
+If you are learning Elixir, editor integration gives you useful and quick feedback
+when learning the Elixir syntax.
+
+For companies and teams, we =recommend= developers to run ~mix format --check-formatted~ on their continuous integration servers, =ensuring= all current and future code follows the standard.
+
+You can learn more about the code formatter by checking [[https://hexdocs.pm/mix/Mix.Tasks.Format.html][the format task documentation]] or by reading [[https://elixir-lang.org/blog/2018/01/17/elixir-v1-6-0-released/][the release announcement for Elixir v1.6]], the first version to include the formatter.
+
+** Environments
+Mix provides the concept of "environments".
+They allow a developer to customize compilation and other options for specific scenarios.
+By default, Mix understands three environments:
+- ~:dev~ - the one in which Mix tasks (like ~compile~) run by default
+
+- ~:test~ - used by ~mix test~
+
+- ~:prod~ - the one you will use to run your project in production
+
+The environment applies only to the current project.
+As we will see in future chapters, any dependency you add to your project will by default run in the ~:prod~ environment.
+
+Customization per environment can be done by accessing [[https://hexdocs.pm/mix/Mix.html#env/0][the Mix.env function]] in your ~mix.exs~ file, which returns the current environment as an atom. That's what we have used in the ~:start_permanent~ options:
+#+begin_src elixir
+def project do
+  [
+    ...,
+    start_permanent: Mix.env() == :prod,
+    ...
+  ]
+end
+#+end_src
+When true, the ~:start_permanent~ option starts your application in permanent mode, which means the Erlang VM will crash if your application's supervision tree shuts down.
+Notice we don't want this behaviour in dev and test because it is useful to keep the VM instance running in those environments for troubleshooting purposes.
+
+Mix will default to the ~:dev~ environment, except for the ~test~ task that will default to the ~:test~ environment.
+The environment can be changed via the ~MIX_ENV~ environment variable:
+#+begin_src bash
+MIX_ENV=prod mix compile
+#+end_src
+
+Or on Windows:
+#+begin_src bash
+set "MIX_ENV=prod" && mix compile
+#+end_src
+
+/Mix is a build tool and, as such, it is not expected to be available in produnction. Therefore, it is =recommended= to access ~Mix.env~ only in configuration files and inside ~mix.exs~, never in your application code(~lib~)./
+
+** Exploring
+There is much more to Mix, and we will continue to explore it as we build our project.
+A [[https://hexdocs.pm/mix/Mix.html][general overview is available on the Mix documentation]].
+Read [[https://github.com/elixir-lang/elixir/tree/main/lib/mix][the Mix source code here]].
+
+Keep in mind that you can always =invoke= the help task to list all available tasks:
+#+begin_src bash
+mix help
+#+end_src
+
+you can get further information about a particular task by invoking ~mix help TASK~.
+
+Let's write some code!

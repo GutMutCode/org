@@ -1,0 +1,4 @@
+#+title: Index
+
+* Functions and Relations
+file:./func_rel.org

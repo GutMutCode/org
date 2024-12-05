@@ -1,0 +1,14 @@
+#+title: Zigs Purpose
+
+* Main purpose
+Improving C lang
+
+* Advantages
+** compatibility for c
+- Zig is also c compiler
+** easy to understand than c
+- no preprocess
+  All processes are explicitly present.
+** easy meta-programming
+Used by ~comptime~ keyword
+** easy Error handling

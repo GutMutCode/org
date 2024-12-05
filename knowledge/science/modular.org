@@ -1,0 +1,9 @@
+#+title: Modular
+
+* Modular Arithmetic in Mathmatics
+A system of ~arithmetic~ for ~integers~, where numbers ="wrap around"= when reaching a certain value, called the *modulus*.
+
+** Familiar use
+*** 12-hour clock
+the day is devided into two 12-hour periods.
+clocks ="wrap around"= every 12 hours.

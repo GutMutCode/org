@@ -1,0 +1,24 @@
+#+title: HEEx
+
+* HEEx template
+"/HTML + EEx"/
+
+** EEx
+Elixir library that uses ~<%= expression %>~ to execute Elixir expressions and interpolate their results into the template.
+
+** Features
+*** HTML validation
+*** components
+*** automatic escaping of values
+Protecting you from security vulnerabilities like =Cross-Site-Scripting= with no extra work on your part
+
+* Usage
+** HEEx tag
+We use ~<%= %>~ for executing Elixir expressions in HEEx template
+These code will results into HTML, and replaced
+
+#+begin_src html
+<section>
+  <h2>Hello World,from <%= @messenger %>!</h2>
+</section>
+#+end_src

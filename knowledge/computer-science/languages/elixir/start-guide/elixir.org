@@ -1,0 +1,82 @@
+#+title: Elixir
+
+* Table Of Contents :toc:
+- [[#how-does-elixir-work-under-the-hood][How does Elixir work under the hood?]]
+- [[#beam-vm][BEAM VM]]
+  - [[#stands-for-bogdanbjörns-erlang-abstract-machine][stands for Bogdan/Björn's Erlang Abstract Machine]]
+- [[#runtime-of-elixir][Runtime of Elixir]]
+- [[#executing-scheduler][Executing =Scheduler=]]
+- [[#procedure][Procedure]]
+  - [[#they-dont-share-memory-between-one-another-immutable-stack--heap][They =don't share memory= between one another (immutable stack & heap)]]
+  - [[#the-only-coordination-that-happen-is-may-via-send-messages][The only coordination that happen is may via send messages]]
+- [[#concurrency][Concurrency]]
+  - [[#premption-선점][Premption (선점)]]
+- [[#otp][OTP]]
+- [[#erts][ERTS]]
+
+* How does Elixir work under the hood?
+Elixir is use Erlang's virtual machine named =BEAM=
+
+* BEAM VM
+** stands for Bogdan/Björn's Erlang Abstract Machine
+[[file:../../../terminology/vm.org][virtual machine]] at the core of Erlang =Open Telecom Platform (OTP)=
+
+BEAM is wirtten in mostly C
+
+Because of Elixir use the same vm with Erlang, it can run Erlang's Code and vise versa without the need to write any bindings
+
+* [[file:../../../terminology/runtime.org][Runtime]] of Elixir
+The Elixir Runtime is a instance of BEAM (Erlang's VM)
+
+Once compiling is done, the OS process starts and =Erlang take the entire control=.
+
+* Executing =Scheduler=
+#+begin_quote
+[smp8:8] - 8 available core : 8 schedulers
+#+end_quote
+1. *BEAM* instance starts in a ~single OS process~ ( you can look it up by its name beam )
+2. Creates thread for every available CPU cores ( take advantage of all available cores )
+3. Creates exactly one Scheduler for each OS threads
+4. Schedules queue to create Erlang's processes
+5. Pulls Erlang processes from the queue and allocates a time slot to execute each of them
+
+* Procedure
+** They =don't share memory= between one another (immutable stack & heap)
+nor is there a global shared memory that can be shared between them.
+
+For this reason, a crash of one process doesn't cause a crash of another one.
+
+** The only coordination that happen is may via send messages
+They can send a copy of their data =only=
+
+To receive messages, they have local message queue
+
+Sending message results in,
+- copying the message into the receiver heap
+- storing the message reference in the receiver message queue.
+
+While waiting for messages to be received
+- a process is swapped out and is added to the scheduler queue only when =a new message= is received or =a time-out= occurs
+
+* Concurrency
+** Premption (선점)
+1. Proccess exeeds its execution time slot
+2. BEAM pause the process
+3. The process store its current state in its suspension record
+4. Put it back on the queue
+
+* OTP
+A set of Erlang libraries, which consists of the =Erlang Runtime System (ERTS)=
+
+A number of ready-to-use components mainly(there's another lang?) written in Erlang
+
+A set of design principle s for Erlang programs
+
+OTP Provides =modules= and =behaviours= that represent =standard implementations of common practices= like process supervision, message passing, spawning tasks, etc.
+
+* ERTS
+/Erlang Runtime System/
+
+=BEAM= is also part of =ERTS=
+
+ERTS Compiles both Erlang and Elixir code into =bytecode= (saved in ~module_name.beam~ files)

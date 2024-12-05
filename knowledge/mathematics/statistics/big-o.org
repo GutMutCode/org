@@ -1,0 +1,5 @@
+* Big O notation
+  A mathematical notation that =describes= the limiting behavior of a function
+  when the argument =tends= towards a particular value or infinity.
+
+  A member of a family of notations =invented= by Paul Bachmann, Edmund Landau, and others

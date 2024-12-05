@@ -1,0 +1,12 @@
+#+title: Adv Types
+
+* Advanced Types
+The Rust type system has some features that we've so far mentioned but haven't yet discussed.
+We'll start by discussing newtypes in general as we examine why newtypes are useful as types.
+Then we'll move on to type aliases, a feature similar to newtypes but with slightly different semantics.
+We'll also discuss the ~!~ type adn dynamically sized types.
+
+** Using the Newtype Pattern for Type Safety and Abstraction
+#+begin_quote
+Note: This section assumes you've read the earlier section ~"Using the Newtype Pattern to Implement External Traits on Extarnal Trats on External Types."~
+#+end_quote

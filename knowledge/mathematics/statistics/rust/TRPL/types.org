@@ -1,0 +1,97 @@
+#+title: Types
+
+* Data Types in Rust
+Every value in Rust is of a certain data type, which tells Rust
+what kind of data is being specified
+so it knows how to work with that data.
+We'll look at two data type subsets: scalar and compound.
+
+Keep in mind that Rust is a statically typed language, which means that it must know the types of all variables at compile time.
+The compiler can usually infer what type we want to use based on the value
+and how we use it.
+
+In cases when many types are possible, such as when we converted a ~String~ to a numeric type using ~parse~ in the "Comparing the Guss to the Secret Number" section in Chapter 2, we must add a type annotation, like this:
+#+begin_src rust
+let guess: u32 = "42".parse().expect("Not a number!");
+#+end_src
+
+If we don't add the ~: u32~ type annotation shown in the preceding code, Rust will display the following error, which means the compiler needs more information from us to know which type we want to use:
+
+#+RESULTS:
+: type annotations needed
+: let guess = "42".parse().expect("Not a nubmer!");
+: help: consider giving `guess` an explicit type
+: let guess _ = "42".parse().expect("Not a number!")
+
+You'll see different type annotations for other data types.
+
+** Scalar Types
+A scalar type represents *a single value*.
+Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
+You may recognize these from other programming languages.
+Let's jump into how they work in Rust.
+*** Integer Types
+An /integer/ is a number without a fractional component.
+We used one integer type in Chapter 2, the ~u32~ type.
+This type declaration indicates that the value it's associated with should be unsigned integer (signed integer types start with ~i~ instead of ~u~) that takes up 32 bits of space.
+Table 3-1 shows the built-in integer types in Rust.
+We can use any of these variants to declare the type of an integer value.
+
+... 8, 16, 32, 64, 128, arch (u, i)
+
+Each variant can be either signed or unsigned and has an explicit size.
+/Signed/ and /unsigned/ refer to whether it's possible for the number to be negative--in other words, whether the number needs to have a sign with it (signed) or whether it will only ever be positive and can therefore be represented without a sign (unsigned).
+It's like writing numbers on paper: when the sign matters, a number is shown with a plus sign or minus sign; however, when it's safe to assume the number is positive, it's shown with no sign.
+Signed numbers are stored uisng ~two's complement~ representation.
+
+--snip--
+
+Additionally, the ~isize~ and ~usize~ types depend on the architecture of the computer your program is running on, which is denoted in the table a "arch": 64 bits if you're on a 64-bit architecture and 32 bits if you're on a 32-bit architecture.
+
+--snip--
+
+So how do you know which type of interger to use?
+If you're unsure, Rust's defaults are generally good places to start: integer types default to ~i32~.
+The primary situation in which you'd use ~isize~ or ~usize~ is =when indexing some sort of collection=.
+
+*** Integer Overflow
+#+begin_quote
+Let's say you have a variable of type ~u8~ that can hold values between 0 and 255.
+If you try to change the variable to a value outside that range, such as 256, integer overflow will occur, which can result in one of two behaviors.
+When you're compiling in debug mode, Rust includes checks for integer overflow that cause your program to panic at runtime if this behavior occurs.
+Rust uses the term panicking when a program exits with an error
+
+When you're compiling in release mode with the ~--release~ flag, Rust does not include checks for integer overflow that cause panics.
+Instead, if overflow occurs, Rust performs two's complement wrapping.
+In short, values greater than the maximum value the type can hold "wrap around" to the minimum of the values the type can hold.
+In the case of a ~u8~, the value 256 becomes 0, the value 257 becomes 1, and so on.
+The program won't panic, but the variable will have a value that probably isn't what you were expecting it to have.
+Relying on integer overflow's wrapping behavior is considered an error.
+
+To explicitly handle the possibility of overflow, you can use these families of methods provided by the standard library for primitive numeric types:
+
+- Wrap in all modes with the ~wrapping_*~ methods, such as ~wrapping_add~.
+- Return the ~None~ value if there is overflow with the ~checked_*~ methods.
+- Return the value and a boolean indicating whether there was overflow with the ~overflowing_*~ methods.
+- Saturate at the value's minimum or maximum values with the ~saturating_*~ methods.
+#+end_quote
+
+*** Invalid Array Element Access
+Let's see what happens if you try to access an element of an arry that is past the end of the array.
+Say you run this cooode, similar to the guessing game in Chapter 2~ to get an array index from the user:
+...
+
+If you enter a number past the end of the array, such as ~10~, yoo'll see output like this:
+#+RESULT
+: thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 10'
+: mote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+The program resulted in a runtime error at the point of using an invalid value in the indexing operation.
+THe program exited with an error messages and didn't execute the rest ~println!~ statement.
+When you attempt to access an element using indexing, *Rust will check* that the index you've specified is less than the array length.
+If the index is greater than or equal to the length, Rust will panic.
+This check has to happen at runtime, especially in this case, because the compiler can't possibly know what value a user will enter when they run the code later.
+
+This is an example of Rust's memory safety principles in action.
+In many low-level languages, this kind of check is not done, and when you provide an incorrect index, invalid memory can be accessed.
+Rust prootects you against this kind of error by immediately exiting instead of allowing teh memory access and continuing.

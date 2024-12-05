@@ -1,0 +1,6 @@
+#+title: Telemetry
+
+* What is Telemetry?
+
+* Matrics
+Aggregations of Telemetry events with specific name, providing a view of the system's behaviour over time.

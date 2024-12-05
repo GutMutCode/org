@@ -1,0 +1,11 @@
+#+title: Lunatic
+
+* Characteristics
+Lunatic is written in =Rust= and uses Mozilla's =Wasmtime= to create processes as WebAssembly instances.
+
+* A Rule of Thumb
+** Modeling each connection with an actor
+You'll get sandboxing per connection and, therefore, additional security.
+
+* Used Library (RUST)
+[[file:../rust/lib/tokio.org][Tokio]]

@@ -1,0 +1,32 @@
+#+title: Guessing
+
+* Intro
+This code contains a lot of information, so let's go over it line by line.
+To obtain user input and then print the result as output, we need to bring the ~io~ input/output library into scope.
+The ~io~ library comes from the standard library, known as ~std~:
+#+begin_src rust
+use std::io
+#+end_src
+
+By default, Rust has a set of items defined in the standard library that it brings into the scope of =every program=.
+This set is called the *prelude*.
+If a type you want to use isn't in the prelude, you have to bring that type into scope explicitly with a ~use~ statement.
+Using the ~std::io~ library provides you with a number of useful features, including the ability to accpet user input.
+
+As you saw in Chapter 1, the ~main~ function is the entry point into the program.
+The ~fn~ syntax declares a new function; the parentheses, ~()~, indicate there are no parameters; and the curly bracket, ~{~, starts the body of the function.
+
+As you also learned in Chapter 1, ~println!~ is =a macro= that prints a string to the screen.
+
+* Storing Values with Variables
+Next, we'll create a variable to store the user input
+
+Now the program is getting interesting! There's a lot going on in this little line.
+We use the ~let~ statement to create the variable.
+#+begin_src rust
+let apples = 5;
+#+end_src
+This line creates a new variable named ~apples~ and binds it to the value 5.
+
+In Rust, variables are immutable by default, meaning once we give the variable a value, the value won't change.
+We'll discussing this concept in detail in the [[https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#variables-and-mutability][Variables and Mutability]] section in Chapter 3.

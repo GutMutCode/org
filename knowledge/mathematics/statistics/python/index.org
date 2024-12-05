@@ -1,0 +1,58 @@
+#+title: Index
+
+* Python Guding Principles
+** Explicit is better than implicit.
+*** Implicit
+#+begin_src python
+def add(a, b):
+    return a + b
+#+end_src
+
+*** Explicit
+#+begin_src python
+def add(int a, int b) -> int:
+    return a + b
+#+end_src
+
+type hints! -> other developer can understand the code more easily.
+
+** Simple is better than complex.
+*** Complex
+#+begin_src python
+def reverse(string myStr):
+    if myStr:
+        return(myStr[1:]) + myStr[0]
+    else:
+        return myStr
+#+end_src
+
+*** Simple
+#+begin_src python
+myStr[::-1]
+#+end_src
+
+many benefits -> reduce errors
+
+*** Complex is better than complicated.
+
+** Flat is better than nested.
+
+** Sparse is better than dense.
+Do not try to perform many operations in a single statement.
+
+*** Dense
+#+begin_src python
+Numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evenSquares = [number**2 for number in Numbers if number%2 == 0]
+#+end_src
+
+*** Sparse
+#+begin_src python
+
+Numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evenSquares = []
+for number in Numbers:
+    if number % 2 == 0:
+        square = number**2
+        evenSquares.append(square)
+#+end_src

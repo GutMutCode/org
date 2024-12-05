@@ -1,0 +1,72 @@
+#+title: Deployment
+
+* Instruction
+** Handling of your application secrets
+** Compiling you application assets
+generate [[file:./degest.org][digests]]
+
+** Starting your server in production
+
+* Mix Replease
+Assembles a self-contained release for the current project
+
+** What is release?
+*** can be packeged and deployed to a target
+on the same operating systme distribution
+
+** How to configure release?
+in ~mix.exs~ file under the ~:release~ key inside ~def project~
+#+begin_src elixir
+def project do
+  [
+    releases: [
+      demo: [...],
+      ...
+    ],
+    ...
+  ]
+end
+#+end_src
+
+** Why releases?
+Releases allow developers to precompile and package all of their code and the runtime into a single unit
+
+*** The benefits of releases
+**** Code preloading
+embedded all code into target code
+
+**** Configuration and customization
+It's support useful configuration options and the VM flags
+
+**** Self-contianed
+The precompiled release is contain VM by default
+The libraries are stripped to bring only the parts you are actually using
+
+**** Multiple releases
+You can assemble different releases with different configuration per application or even with different applications altogether
+
+**** Management scripts
+Support scripts to start, restart, connect to the running system remotely, execute [[file:../../../terminology/rpc.org][RPC]] calls, run as daemon, run as a Windows service, and more
+
+*** Running the release
+_build/prod/rel/my_app/bin/my_app start
+
+This will start the system connected to the current standard input/output, where logs are also written to by default
+
+Also has one-off commands ( see by execute ~bin/RELEASE_NAME~ )
+
+**** One-off commands (eval and RPC)
+#+begin_src bash
+bin/RELEASE_NAME eval "IO.puts(:hello)"
+bin/RELEASE_NAME rpc "IO.puts(:hello)"
+#+end_src
+
+***** eval
+This execute its own VM without any release application
+
+***** rpc
+This connected to the system currently running and instruct it to execute the given expression
+
+You need to guarantee the system was already starteed and be careful with the instructions you are executing
+
+You can also use ~remote~ command to connect a remote IEx sessionwe to the system

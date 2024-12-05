@@ -1,0 +1,82 @@
+#+title: Index
+
+* Inter Process CoMmunication
+** Separate by Process
+1. Reader process - External Source Reading Process
+2. Servers - Mailbox-checking Process
+
+* Server-process Communication Patterns
+** Fire-and-Forget messages
+- Doesn't expect a response
+- It's fine if a message get lost.
+- Uni-directional
+
+*** Use cases
+- logging
+- tracing
+- broadcasting
+
+- Social Media
+- Mobile notifications
+- Analytics tracking (ex. mouse tracking in website)
+- Game state update (tons of messages)
+- IoT sensor data reprting
+- Logging & Monitoring
+- Analog wireless video broadcasting
+
+*** Pros & Cons
+**** Pros
+- fast execution for ~process_a~
+- less dependencies on one another
+**** Cons
+- no way to tell whether action was completed or rejected (=state=)
+- no way to know the =new status= after the change
+- doesn't know to inspect/ask about state of ~counter_process~
+
+
+** Requests
+Send response to caller, caller doesn't wait for the response to continue.
+- successful handling of request
+- invalidity of request
+- failed handling request
+
+*** Loose Coupling
+Each process has is own responsibilities and doesn't need to know the intricate details of other processes.
+
+- Modify and replace the process without affecting the rest of the system.
+
+**** Client
+"I want to know about contract"
+**** Server
+"I should to know data structure"
+*** High cohesion
+Each process's resposibilities should closely related and well-defined.
+
+One purpose per process
+- maintainable
+- readable
+
+*** Inversion of Control (IoC)
+A principle where the control flow of a program is inverted.
+
+**** Control Flow
+- Single central piecs of code control all the code
+- Each component (in this case, processes) control it's own code
+
+**** Implement IoC
+- React to messages they received
+  rather than being explicitly called by a controlling process.
+
+***** in OOP
+calling ~interface~ instead of a concrete ~Class~
+
+You can swap out the ~Class~ that implements the interface without changing a single line of =code on the caller side=.
+
+Devs (control)-> ~Class~ (implements)-> Interface <-(call) ~Counter~ <-(control) App
+
+*Dependency Injection* framework (Spring Boot, NextJS etc.) for wiring up the correct ~Class~ that implements the ~Interface~
+
+
+** Deferred requests
+regular request
+- =Caller= waits for the response before continuing.

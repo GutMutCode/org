@@ -80,3 +80,12 @@ It allows a low-power electrical signal to control a high-power circuit without 
 
 ** 인카피
 팜플렛 만들기
+* 질문
+
+What's the most impactful improvment should I implement into @dir directory based on @docs/development/rules/naming perspective?
+
+Where should I document this to follow the @README.md ?
+
+Please create a refactoring plan to standardize these names across the codebase.
+
+What do you think of @file from previous perspective?

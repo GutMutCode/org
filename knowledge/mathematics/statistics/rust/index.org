@@ -1,0 +1,10 @@
+#+title: Rust
+
+* Documents
+** [[file:./TRPL/index.org][TRPL]]
+** [[file:./async/index.org][Asynchronous Programming in Rust]]
+** [[file:./wasm/index.org][Rust and WebAssembly]]
+
+* Reference
+** [[file:../index.org][Programming Languages]]
+** [[file:./lib/index.org][Libraries]]

@@ -1,0 +1,36 @@
+#+title: HTMX
+
+* Intro
+Gives you to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML.
+Using attributes, so you can build modern user interfaces with the simplicity and power of hypertext.
+
+A library that allows you to access modern browser features directly from HTML, rather than using javascript.
+
+* Motivation
+- Why should only ~<a>~ and ~<form>~ be able to make HTTP requests?
+- Why should only ~click~ & ~submit~ events trigger them?
+- Why should only ~GET~ & ~POST~ methods be available?
+- Why should you only be able to replace the entire screen?
+
+By removing these ardbitrary constraints, htmx completes HTML as a hypertext
+
+* Quick start
+#+begin_src html
+<script src="https://unpkg.com/htmx.org@1.9.2"></script>
+<!-- have a button POST a click via AJAX -->
+<button hx-post="/clicked" hx-swap="outerHTML">
+  Click Me
+</button>
+#+end_src
+
+The ~hx-post~ and ~hx-swap~ attributes on this button tell htmx:
+#+begin_quote
+Whey a user clicks on this button, issue an AJAX request to /clicked, and replace the entire button with the HTML response
+#+end_quote
+
+htmx is the successor to intercooler.js
+
+Read the docs introduction for a more in-depth
+
+* Docs
+[[file:./nutshell.org][htmx in a Nutshell]]

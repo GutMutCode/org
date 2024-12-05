@@ -1,5 +1,0 @@
-#TITLE: Statistic
-
-* 통계 (統計, Statistics)
-* 회귀 (回歸, Regression)
-변수(變數) 간(間)의 관계(關係)를 이해(理解)

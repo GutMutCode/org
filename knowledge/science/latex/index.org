@@ -1,0 +1,4 @@
+#+title: LATEX
+
+* Rule of LATEX
+There are two ways to present a mathematical expression ~inline~ or as an [[file:../equation.org][equation]]

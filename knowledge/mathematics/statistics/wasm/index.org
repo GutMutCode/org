@@ -1,0 +1,121 @@
+#+title: Wasm
+
+* What is the _WebAssembly_?
+A binary instruction format for a stack-based virtual machine (e.g., Web browser)
+
+It is not primarily intended to be written by hand,
+rather it is designed to be an _portable compliation target_ for programming languages (ex. C/C++, Rust, Zig).
+
+** It's Impacts
+You can choose your favorite language (Zig?!) to make web apps.
+
+** GOALs
+*** Be fast, efficient, and portable
++ near-native speed (efficient)
++ portable (OSs, ISAs, etc)
+
+**** Portability
+Enforce _secure isolation_ between WebAssembly modules and other modules or process executing on the same machine.
+
+Availability of lock-free atomic memory operators, when naturally aligned
+- What is the `natural align` mean?
+*** Be readable and debuggable
+It is low-level assembly code, but human readable
+- To be written, viewed, and debugged by hand
+*** Keep secure
+It provides sandboxed execution environment.
+- To be ran in a safe
+- It will enforce the browser's same-origin and permission policies like other web code.
+*** Don't break the Web
+To plays nicely with other web technologies and maintains backwards compatibility.
+
+** Not only for Web
+WebAssembly is also being designed to be capable of being executed _without a Javascript VM present_.
+
+** Not a replacement
+We can take advantage of both language's strong points
+
+- Flexibility and massive echosystems of Javascript
+- Performance and low-level memory controls
+
+* Main characteristics
+** sandbox environment
+*Completely isolated environment per actor*
+
+Each instance has its own stack, heap and syscalls
+
+- guarantees memory safety
+
+** faster than erlang
+** lighter than docker
+** can be built in any language supporting WebAssembly as a target
+C/C++, Rust, AssemblyScript, Zig, etc
+* Key concepts
+** Module
+Represent _a WebAssembly binary_ that has been compiled by browser into executable machine code.
+
+*** Stateless
+Module can be explicitly shared between windows ans workers via `postMessage()` like Blob.
+- because it is stateless.
+
+** Memory
+_A resizable ArrayBuffer_ that contains the linear array of bytes read and written by WebAssembly's low-level memory access instruction.
+
+** Table
+_A resizable typed array of references (e.g. to functions)_ that could not otherwise be stored as raw bytes in Memory (for safety and portability reasons)
+
+** Instance
+_A module paired with all the state it uses at runtime_ including a Memory, Table, and set of imported value.
+* Current Tasks
+- Porting a C/C++ application with [[file:./emscripten.org][Emscripten]]
+
+- Writing or generating WebAssembly directly at the assembly level.
+
+- Writing a Rust application and targeting WebAssembly as its output
+
+- Using AssemblyScript which looks similar to Typescript and compiles to WebAssembly binary.
+
+* Core system
+** Type
+- i32
+- i64
+- f32
+- f64
+** Function
+Wasm has functions which map a vector of value types to a vector of value types:
+#+begin_src wasm
+function = vec(valtype) -> vec(valtype)
+#+end_src
+** Memory model
+Wasm has a linear memory model which is just a contiguous vector of raw bytes.
+
+code can grow this memory but =not shrink it=.
+
+*** accessing
+by load and store operations in Wasm module (can be accessed directly in JS)
+
+*** modeling
+1. popping some values off a virtual stack
+2. do something with this value
+3. pushing some values onto this stack
+
+*** Examples
+
+#+begin_src wasm
+i64.const 16
+i64.const 2
+i64.div_u
+#+end_src
+
+1. push ~16~ on the top of stack as an i64 constant
+2. push ~2~ on the top of stack as an i64 constant
+3. pop two values off the top of stack, perform unsigned division between those two values and push the result back onto the top of the stack
+
+* With other langauge
+** The languages that use LLVM backend
+LLVM is used to turn intermediate representation (IR) into machine code for the particular target of your choosing
+*** Targets
+It's kind of architecture such as ~x86_64~ or ~armv7~.
+*Wasm is just another target*
+* Refs
+[[file:./lunatic.org][Lunatic]]

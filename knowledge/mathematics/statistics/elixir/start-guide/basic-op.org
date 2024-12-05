@@ -1,0 +1,69 @@
+* Basic operators
+  Elixir provides many operators like ~+, _, *, /~, plus the functions ~div/2~ and ~rem/2~ for integer division and remainder.
+
+** ~++~ and ~--~ to manipulate lists:
+   #+begin_src elixir
+   [1, 2, 3] ++ [4, 5, 6] # [1, 2, 3, 4, 5, 6]
+   [1, 2, 3] -- [2] # [1, 3]
+   #+end_src
+
+** String concatenation is done with <>:
+   #+begin_src elixir
+   "foo" <> "bar" # "foobar"
+   #+end_src
+
+** Boolean operators: ~or~, ~and~ and ~not~.
+   These operators are strict in the sense that they expect something that ~evaluates~ to a =boolean= (true or false) as their first argument:
+   #+begin_src elixir
+   true and true # true
+   true or is_atom(:example) # true
+   #+end_src
+
+   Providing a non-boolean will raise an exception:
+   #+begin_src elixir
+   1 and true # error
+   #+end_src
+
+   - Short-circuit
+     ~or~ and ~and~ are =short-circuit= operators.
+     They ~only execute~ the =right side= _if the left side is not enough to determine_ the result:
+   #+begin_src elixir
+   false and raise("This error will never be raised") # false
+   true or raise("This error will never be raised") # true
+   #+end_src
+
+   - Accept arguments of any type
+     Besides these boolean operators, Elixir also provides ~||~, ~&&~ and ~!~ which =accept arguments of any type=.
+     For these operators, =all values= except ~false~ and ~nil~ will ~evaluate~ to true:
+   #+begin_src elixir
+   1 || true # 1
+   false || 11 # 11
+   nil && 13 # nil
+   true && 17 # 17
+   !true # false
+   !1 # false
+   !nil # true
+   #+end_src
+
+   As a rule of thumb, use ~and~, ~or~ and ~not~ when you are ~expecting~ =booleans=.
+
+   If any of the arguments are non-boolean, use ~&&~, ~||~ and ~!~.
+
+   ~==~, ~!=~, ~===~, ~!==~, ~<=~, ~>=~, < and > as comparison operators:
+   #+begin_src elixir
+   1 == 1 # true
+   1 != 2 # true
+   1 < 2  # true
+   #+end_src
+
+   The difference between == and === is that the latter is more strict when comparing integers and floats:
+   #+BEGIN_SRC elixir
+   1 == 1.0 # true
+   1 === 1.0 # false
+   #+END_SRC
+
+   We say these operators perform ~structural comparison~.
+   For more information, you can read our documentation on [[https://hexdocs.pm/elixir/Kernel.html#module-structural-comparison][Structural vs Semantic comparisons]].
+
+   In the next chapter we are going to discuss pattern matching through the use of ~=~, the match operator.
+

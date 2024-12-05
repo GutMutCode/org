@@ -1,0 +1,46 @@
+#+title: Wheretogo
+
+* Where to go next
+Eager to learn more? Keep reading!
+
+** Build your first Elixir project
+In order to get your first project started, Elixir ships with a build tool called Mix.
+You can get your new project started by running:
+#+begin_src bash
+mix new path/to/new/project
+#+end_src
+
+We have written a guide that covers how to build an Elixir application, with its own supervision tree, configuration, tests, and more.
+The application works as a distributed key-value store where we organize key-value pairs into buckets and distribute those buckets across multiple nodes:
+
+- [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][Mix and OTP]]
+
+If you are planning to write your first library for other developers to use,
+don't forget to read our [[https://hexdocs.pm/elixir/library-guidelines.html][Library Guidelines]].
+
+** Meta-programming
+Elixir is an extensible and very customizable programming language thanks to its eta-programming support.
+Most meta-programming in Elixir is done through macros, which are very useful in several situations, especially for writing DSLs.
+We have written a short guide that explains teh basic mechanisms behind macros, shows how to write macros, and how to use macros to create DSLs:
+
+- [[https://elixir-lang.org/getting-started/meta/quote-and-unquote.html][Meta-programming in Elixir]]
+
+** Community and other resources
+We have a [[https://elixir-lang.org/learning.html][Learning]] section thata suggests books, screencasts, and other resources for learning Elixir and exploring the ecosystem. There are also plenty of Elixir resource out there, like conference talks, open source projects, and other learning material produced by the community.
+
+Don't forget that you can also check the [[https://elixir-lang.org/learning.html][source code of Elixir itself]], which is mostly written in Elixir (mainly the ~lib~ directory), or [[https://elixir-lang.org/docs.html][explore Elixir's documentation]].
+
+** A byte of Erlang
+Elixir runs on the Erlang Virtual Machine and, sooner or later, an Elixir developer will want to interface with existing Erlang libraries.
+Here's a list of online resources that cover Erlang's fundamentals and its more advanced features:
+
+- This [[https://elixir-lang.org/crash-course.html][Erlang Syntax: A Crash Course]] provides a concise intro to Erlang's syntax.
+  Each code snippet is accompanied by equivalent code in Elixir.
+  This is an opportunity for you to not only get some exposure to Erlang's syntax but also review some of the things you have learned in this guide.
+
+- Erlang's official website has a shot [[https://erlang.org/course/][tutorial]].
+  There is a chapter with pictures briefly describing Erlang's primitives for [[https://erlang.org/course/concurrent_programming.html][concurrent programmig]].
+
+- [[https://learnyousomeerlang.com/][Learn You Some Erlang for Great Good!]] is an excellent introduction to Erlang, its design principles, standard library, best practices, and much more.
+  Once you have read through the crash course mentioned above, you'll be able to safely skip the first couple of chapters in the book that mostly deal with the syntax.
+  When you reach [[https://learnyousomeerlang.com/the-hitchhikers-guide-to-concurrency][The Hitchhiker's Guide to Concurrency]] chapter, that's where the real fun starts.

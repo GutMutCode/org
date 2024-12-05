@@ -1,4 +1,0 @@
-#+title: Index
-
-* Mit Lectures
-[[file:./algorithms.org][Algorithms and Computation]]

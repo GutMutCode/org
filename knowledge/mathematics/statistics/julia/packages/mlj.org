@@ -1,0 +1,6 @@
+#+title: MLJ
+
+Origin: https://alan-turing-institute.github.io/MLJ.jl/dev/about_mlj/#About-MLJ
+
+* What is MLJ.jl?
+A toolbox written in Julia providing a common interface and meta-algorithms for selecting, tuning, evaluating, composing and comparing over 180 machine learning models written in Julia and other languages

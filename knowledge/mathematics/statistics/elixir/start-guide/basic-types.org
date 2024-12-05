@@ -1,0 +1,296 @@
+* Basic Types
+#+begin_src elixir
+iex> 1          # integer
+iex> 0x1F       # integer
+iex> 1.0        # float
+iex> true       # boolean
+iex> :atom      # atom / symbol
+iex> "elixir"   # string
+iex> [1, 2, 3]  # list
+iex> {1, 2, 3}  # tuple
+#+end_src
+
+** Divide
+A Operator ~/~ in Elixir always returns a float.
+You can get integer division by invoke ~div~ or ~rem~
+
+** Allow Drop the parenthese
+~Only~ for named functions with at least one argument
+=Clean syntax=
+#+begin_src elixir
+div(10, 2)
+
+div 10, 2 # This is works!
+#+end_src
+** Shortcut notations
+#+begin_src elixir
+0b1010 # binary
+0o777 # octal
+0x1f # hexadecimal
+1.0e-10 # support e
+#+end_src
+** Math functions
+#+begin_src elixir
+round(3.14) # closest
+trunc(3.79)
+#+end_src
+** Functions
+/identified by both their name and their arity./
+- Arity
+  describes the number of arguments that the function takes
+  - trunc/1 != trunc/2
+    =These functions are different!=
+- The Help Function
+~h~ is function which you can use to access documentation.
+=Only for module in the Kernel=
+#+begin_src elixir
+h trunc/1
+h Kernel.trunc/1
+h Kernel.+/2
+#+end_src
+
+All functions int the Kernel module are automatically improted into our namespace.
+** Booleans
+~true~ and ~false~ in Elixir is actual bool
+
+Elixir provides a bunch of predicate functions =to check for a value type=.
+
+#+begin_src elixir
+is_boolean(true) # true
+is_boolean(1) # false
+is_integer(1) # true
+is_float(1) # false
+is_number(1) # true
+#+end_src
+
+** Atoms
+/A constant whose value is its =own= name./
+(similar with Symbols)
+Often useful to enumerate over distinct values.
+#+begin_src elixir
+:apple
+:orange
+:watermelon
+:ok
+:error
+true == :true
+false == :false
+is_atom(true)
+is_boolean(false)
+#+end_src
+- Elixir allows you to =skip the leading= : for the atoms false, true and nil.
+** Aliases
+- Start in upper case
+- It's also atoms
+#+begin_src elixir
+is_boolean(Hello)
+#+end_src
+** String
+/Delimited by =double qutes=, and they are encoded in UTF-8/
+
+- If you are running on =Windows=, there is a chance your terminal does not use UTF-8 by default.
+
+- You can change the encoding of you current session by running =chcp 65001= before entering IEx.
+
+- interpolation
+  #+begin_src elixir
+  string = :world
+  "hello #{string}"
+  #+end_src
+
+- line breaks
+  #+begin_src elixir
+  "hello
+  world"
+  #+end_src
+
+- Print by using function
+  #+begin_src elixir
+  IO.puts("Hello\nworld")
+  #+end_src
+  It also return =:ok= after printing
+
+  - String is =binary=
+    #+begin_src elixir
+    is_binary("hello") # true
+    byte_size("hello") # 5, unicode => 2byte
+    String.length("hello") # 5
+    String.upcase("hello") # HELLO
+    #+end_src
+
+** Anonymous functions
+/Allow us to =store and pass executable code= around as if it was integer or a string./
+
+- Delimited by the keywords ~fn~ and ~end~
+  #+begin_src elixir
+  add = fn a, b -> a + b end # make fn!
+  add.(1, 2) # execute by .() => 3
+  is_function(add) # true
+  #+end_src
+
+- Dot (.) operator
+  To =ensures there is no ambiguity= between =calling= the anonymous function matched to variable ~add~ and a named function ~add/2~
+
+- We will write our own =named functions= when dealing with ~Modules and Functions~
+
+- We can =check= if a function is of any given arity by using ~function/2~
+  #+begin_src elixir
+  is_function(add, 2) # check if add has exactly 2 arity => true
+  is_function(add, 1) # expects 1 arity => false
+  #+end_src
+
+- Typically refered =Closure=
+  Close over their scope.
+
+  They can access variables that are in scope when the function is defined.
+
+  #+begin_src elixir
+  double = fn a -> add.(a, a) end # uses add in double
+  double.(2)
+  #+end_src
+
+  A variable assigned inside a function does not affect its surrounding environment.
+  #+begin_src elixir
+  x = 42 # 42
+  (fn -> x = 0 end).() # 0 (Inside of closure)
+  x # 42 (Not affect!)
+  #+end_src
+
+** (Linked) Lists
+Uses =square brackets= to specify a list of values.
+
+- Values can be of any type
+  #+begin_src elixir
+  [1, 2, true, 3] # [1, 2, true, 3]
+  length [1, 2, 3] # 3
+  #+end_src
+
+- Two lists can be concatenated or subtracted using the ~++/2~ and ~--/2~ operators respectively
+  #+begin_src elixir
+  [1, 2, 3] ++ [4, 5, 6] # [1, 2, 3, 4, 5, 6]
+  [1, true, 2, false, 3, true] - [true, false] # [1, 2, 3, true]
+  #+end_src
+
+- Immutable!
+  List operators =never modify= the existing list.
+
+  Concatenating to or removing elements from a list =returns= a ~new~ list.
+
+  One advantage of immutability is that it leads to clearer code.
+
+  You can freely pass the data around with the =guarantee no one will mutate= it in memory
+
+- Head & tail
+  /Head : the ~first element~ of a list/
+  /Tail : the ~remainder~ of the list/
+
+  They can be =retrieved= with the functions ~hd/1~ and ~tl/1~.
+
+  Assign, retrieve head and tail
+  #+begin_src elixir
+  list = [1, 2, 3] # [1, 2, 3]
+  hd(list) # 1
+  tl(list) # [2, 3]
+  hd([]) # :error
+  tl([]) # :error
+  #+end_src
+
+- you will create a list with ~ASCII number~ and it will return a value in =single quotes (charlist)=.
+  #+begin_src elixir
+  [11, 12, 13] # '\v\f\r'
+  [104, 101, 108, 108, 111] # 'hello' (charlist)
+  "hello" = 'hello' # false (is not equivalent - strigns)
+  #+end_src
+
+It usually be used when interfacing with existing =Erlang code=.
+
+** Information
+Whenever you see a value i IEx and you are not quite sure what it is, you can use the ~i/1~ to retrieve information about it.
+#+begin_src elixir
+i 'hello' # => print information of 'hello'
+#+end_src
+** Tuples
+Elixir uses curly brackets to define tuples.
+*** Like lists, tuples can hold any value
+#+begin_src elixir
+{:ok, "hello"} # {:ok, "hello"}
+tuple_size {:ok, "hello"} # 2
+#+end_src
+
+*** Tuples store elements =contiguously in memory=.
+This means accessing a tuple element by =index= or getting the =tuple size= is a ~fast~ operation.
+#+begin_src elixir
+tuple = {:ok, "hello"} # {:ok, "hello"}
+elem(tuple, 1) # "hello" => return element by using index
+tuple_size(tuple) # 2
+#+end_src
+
+in a tuple with ~put_elem/3~
+#+begin_src elixir
+tuple = {:ok, "hello"} # {:ok, "hello"}
+put_elem(tuple, 1, "world") # {:ok, "world"}
+tuple # {:ok, "hello"} - It's not changed!
+#+end_src
+
+Like lists, tuples are also immutable.
+Every operation on a tuple returns a new tuple, it never changes th given one
+*** Difference with list
+Lists are stored in memory =as linked lists=, meaning that each element in a list holds its value and =points to the following element= until the end of the list is reached.
+
+This means accessing the length of a list is a =linear operation=: we need to traverse the whole list in order to figure out its size.
+
+Similarly, the =performance= of list concatenation depends on the ~length~ of the =left-hand list=:
+#+begin_src elixir
+list = [1, 2, 3] # [1, 2, 3]
+[0] ++ list # [0, 1, 2, 3] => Fast because we only need prepend to `list`
+list ++ [4] # [1, 2, 3, 4] => Slow because we need to traverse `list`
+#+end_src
+
+Tuples, on the other hand, are stored =contiguously in memory=.
+
+This means getting the tuple size or ~accessing~ an element =by index= is ~fast~.
+
+However, updating or adding elements to tuples is expensive because it ~requires~ creating a =new tuple in memory=:
+#+begin_src elixir
+tuple = {:a, :b, :c, :d} # {:a, :b, :c, :d}
+put_elem(tuple, 2, :e) # {:a, :b, :e, :d}
+#+end_src
+
+Note that this ~applies~ =only to the tuple itself=, not its contents.
+For instance, when you update a tuple, all entries are ~shared~ between the old and the new tuple, =except= for the entry that has been replaced.
+In other words , tuples and lists in Elixir are =capable of sharing= their contents.
+This ~reduces~ the amount of =memory allocation= the language needs to perform and is only possible thanks to the immutable semantics of the languages.
+
+Those performance characteristics dictate the usage of those data structures.
+
+*** Common Case
+One very ~common use case~ for tuples is to use them to =return extra information=.
+
+For example, ~File.read/1~ is a function that can be used to =read file contents=. It returns a tuple:
+#+begin_src elixir
+File.read("path/to/existing/file") # {:ok, "... contents ..."}
+File.read("path/to/unknown/file") # {:error, :enoent}
+#+end_src
+
+Most of the time, Elixir is going to guide you to do the right thing.
+For Example, there is an ~elem/2~ function to access a tuple item but there is no built-in equivalent for lists:
+#+begin_src elixir
+tuple = {:ok, "hello"} # {:ok, "hello"}
+elem(tuple, 1) # "hello"
+#+end_src
+
+** Counting elements
+When ~counting~ the elements in a data structure, Elixir also abides by a simple rule: the function is named =size= if the operation is *in constant time* (i.e. the value is pre-calculated) or =length= if the *operation is linear* (i.e. calculating the length gets slower as the input grows).
+
+As a mnemonic, both "length" and "linear" start with "l"
+For example, we have used 4 counting functions so far:
+- ~byte_size/1~ (for the number of bytes in a string)
+- ~tuple_size/1~ (for tuple size)
+- ~length/1~ (for list length)
+- ~String.length/1~ (for the number of graphmemes in a string)
+
+  We use ~byte_size~ to get the number of bytes in a string -- a cheap operation.
+
+  Retrieving the number of Unicode graphemes, on the other hand, uses ~String.length~, and may be expensive as it relies on a traversal of the entire string.
+
+  Elixir also provides ~Port~, ~Reference~, and ~PID~ as data types (usually used in process communication)

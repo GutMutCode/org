@@ -1,0 +1,28 @@
+#+title: Authentication
+
+* mix phx.gen.auth
+The authentication generators that support a flexible, pre-built authentication system
+
+You can choose Phoenix LiveView, for enchanced UX
+
+* How to use it
+#+begin_src bash
+mix phx.gen.auth Accounts User users
+#+end_src
+
+** Create ~Accounts~ context with an ~Accounts.User~ with ~users~ table
+Since Phoenix generates codes directly into application instead of building these modules into Phoenix itself,
+
+You now have complete freedom to modify the authentication system
+
+- create table users
+- create index users_email_index
+- create table users_tokens
+- create index users_tokens_user_id_index
+- create index users_tokens_context_token_index
+
+** Migrate
+We need to verify the database connection details for the development and test environments in ~config/~ so the migrator and tests can run properly
+#+begin_src bash
+mix ecto.setup
+#+end_src

@@ -1,0 +1,55 @@
+#+title: Note
+
+* Difference between Mutated variables and Shadowed variables
+** Mutated
+- Same memory address
+  You can't have =variable= that has different type
+** Shadowed
+- Different memory address
+  So you can have =variables= that has different type
+
+* Stack & Heap
+Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
+
+Comparatively, allocating space on the heap requires more work because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation.
+
+** Purpose of Garbage collect
+Keeping track of what parts of code are using what data on the heap, minimizing the amount of duplicate data on the heap, and cleaning up unused data on the heap so you don't run out of space are all problems that ownership addresses.
+
+
+~String~ - This type manages data allocated on the heap and as such is able to store an amount of text that is unknown to us at compile time.
+
+* Immutable, Mutable, Interior mutability
+** Immutable
+Shared memory which is only used to ~read~
+** Mutable
+Only one owner per memory in their entire lifetime.
+** Interor mutability
+Shared memory that can be accessed to only one owner at a time
+
+* Pattern Match
+** ~=~ operater
+Bind the right handside value to left handside pattern's name if left it's matched.
+
+* Protocols
+** request-response Protocols
+A client initiate requests and a server listen to the requests and provide a response to the client
+** HTTP
+- Hypertext Transfer Protocols
+- Build on top of TCP
+- Defining contents of the requests and responses
+** TCP
+- Transmission Control Protocols
+- How information gets from one server to another
+- But doesn't specify what that information is.
+*** Port
+Socket identifier
+*** Bind (Binding to a port)
+Connecting to a port to listen to
+*** Stream (single)
+An open connection between the client and the server
+*** Connection
+The name for the full request and response process (open ~ close)
+*** BufReader (Buf + Reader)
+- Add buffering
+- By managing calls to I/O Read functionality

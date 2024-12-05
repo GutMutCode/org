@@ -1,0 +1,27 @@
+#+title: Elixir
+
+* Documents
+[[file:./mix-and-otp/index.org][Mix and OTP]]
+[[file:./start-guide/index.org][Start Guide]]
+[[file:./meta-p-ex/index.org][Meta-programming in Elixir]]
+
+* [[file:./phoenix/index.org][Phoenix Framework]]
+
+* Library
+Neburex? => shared cache memory
+
+* Erlang VM
+** Copy message from sender to receiver
+1. Calculating the size of the message
+2. Copying the message to the receiver's heap
+3. Delivering the message to the receiver's message queue.
+
+* Curious
+** general purpose language
+- To send message - Erlang, Elixir
+- To compute calculation - Rust
+** The advantage of ensuring hardcoded routes
+
+* Ref
+[[file:../index.org][Programming Languages]]
+[[file:./jaerok/index.org][Jaerok]]

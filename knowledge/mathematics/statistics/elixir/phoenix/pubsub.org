@@ -1,0 +1,8 @@
+#+title: Pubsub
+
+* Docs
+https://hexdocs.pm/phoenix_pubsub/Phoenix.PubSub.html
+
+* What is PubSub?
+Realtime Publisher/Subscriber service
+

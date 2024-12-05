@@ -1,7 +1,0 @@
-#+title: Index
-
-* Tools
-[[file:./telnet.org][Telnet]]
-
-* Reference
-[[file:../index.org][Docs]]
